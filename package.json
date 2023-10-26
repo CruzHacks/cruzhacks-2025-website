@@ -5,13 +5,14 @@
   "type": "module",
   "scripts": {
     "start": "vite",
-    "build": "tsc && vite build",
+    "build": "tsc && vite build --mode development",
+    "build:prod": "tsc && vite build --mode production",
     "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\"",
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json}\"",
     "preview": "vite preview",
-    "deploy:dev": "firebase deploy -P default --only hosting:live-site",
-    "deploy:prod": "firebase deploy -P production --only hosting:production",
-    "emulate:hosting": "vite build && firebase serve -P default --only hosting:live-site -p 3000"
+    "deploy:dev": "yarn run build && firebase deploy -P default --only hosting:development",
+    "deploy:prod": "yarn run build:prod && firebase deploy -P production --only hosting:production",
+    "emulate:hosting": "vite build && firebase serve -P default --only hosting:development -p 3000"
   },
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^5.48.0",
@@ -22,7 +23,7 @@
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jsx-a11y": "^6.6.1",
     "eslint-plugin-react": "^7.31.11",
-    "firebase": "^9.16.0",
+    "firebase": "^10.5.0",
     "firebase-tools": "^11.22.0",
     "prettier": "^2.8.2",
     "react": "^18.2.0",

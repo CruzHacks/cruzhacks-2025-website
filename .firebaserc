@@ -1,0 +1,22 @@
+{
+  "projects": {
+    "default": "cruzhacks-2024-developme-d58c3",
+    "production": "cruzhacks-4a899"
+  },
+  "targets": {
+    "cruzhacks-4a899": {
+      "hosting": {
+        "production": [
+          "cruzhacks-2024-website"
+        ]
+      }
+    },
+    "cruzhacks-2024-developme-d58c3": {
+      "hosting": {
+        "development": [
+          "cruzhacks-2024-developme-d58c3"
+        ]
+      }
+    }
+  }
+}
