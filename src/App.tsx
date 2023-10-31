@@ -15,7 +15,7 @@ const App: React.FC = () => {
   return (
     <AuthContextProvider>
       <Navbar />
-      <div className='mx-auto max-w-screen-md p-10'>
+      <div className=''>
         <Routes>
           <Route index element={<Home />} />
 
