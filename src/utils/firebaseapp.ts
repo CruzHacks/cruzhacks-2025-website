@@ -25,3 +25,4 @@ if (import.meta.env.DEV) {
 }
 
 export { auth, db }
+export default app

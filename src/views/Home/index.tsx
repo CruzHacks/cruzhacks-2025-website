@@ -8,6 +8,7 @@ import {
   Timestamp,
 } from "firebase/firestore"
 import { db } from "../../utils/firebaseapp"
+import { useAuth } from "../../contexts/auth"
 
 const ENV_VAR = import.meta.env.VITE_EXAMPLE_ENV_VAR || ""
 
@@ -51,6 +52,9 @@ const Document = ({ name, time }: TestDoc) => {
 const Home = () => {
   const [documents, setDocuments] = useState<TestDoc[]>([])
   const [loading, setLoading] = useState<boolean>(true)
+
+  const auth = useAuth()
+  console.log("Home: log auth object:", auth)
 
   useEffect(() => {
     const loadDocs = async () => {
