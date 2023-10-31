@@ -1,14 +1,8 @@
 import React, { useEffect, useState } from "react"
-
-import {
-  collection,
-  addDoc,
-  query,
-  getDocs,
-  Timestamp,
-} from "firebase/firestore"
+import { collection, addDoc, Timestamp, onSnapshot } from "firebase/firestore"
 import { db } from "../../utils/firebaseapp"
 import { useAuth } from "../../contexts/auth"
+import type { User } from "@firebase/auth"
 
 const ENV_VAR = import.meta.env.VITE_EXAMPLE_ENV_VAR || ""
 
@@ -26,14 +20,21 @@ const createDocument = async () => {
   })
 }
 
-const getDocuments = async () => {
-  const q = query(collection(db, "Test"))
+const getRole = async (user: User) => {
+  const idToken = await user.getIdToken(false)
+  const response = await fetch(
+    "http://127.0.0.1:5001/cruzhacks-2024-developme-d58c3/us-central1/auth/checkRoleSynced",
+    {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${idToken}`,
+      },
+    }
+  )
 
-  const res: any = []
-  const querySnapshot = await getDocs(q)
-  querySnapshot.forEach(doc => res.push(doc.data()))
-
-  return res as TestDoc[]
+  const data = await response.json()
+  return data
 }
 
 const Document = ({ name, time }: TestDoc) => {
@@ -52,18 +53,35 @@ const Document = ({ name, time }: TestDoc) => {
 const Home = () => {
   const [documents, setDocuments] = useState<TestDoc[]>([])
   const [loading, setLoading] = useState<boolean>(true)
+  const [roleCheck, setRoleCheck] = useState<string>("")
 
-  const auth = useAuth()
-  console.log("Home: log auth object:", auth)
+  const { auth } = useAuth()
 
   useEffect(() => {
-    const loadDocs = async () => {
-      const docs = await getDocuments()
-      setDocuments(docs)
-      setLoading(false)
-    }
-    loadDocs()
+    const unsubscribe = onSnapshot(collection(db, "Test"), snapshot => {
+      setDocuments(
+        snapshot.docs.map(doc => ({ ...(doc.data() as TestDoc), id: doc.id }))
+      )
+    })
+    setLoading(false)
+    return unsubscribe
   }, [])
+
+  useEffect(() => {
+    const loadRole = async () => {
+      if (!auth.user) {
+        return
+      }
+
+      const rolesData = await getRole(auth.user)
+      if (!rolesData || !rolesData.synced) {
+        setRoleCheck(JSON.stringify(rolesData))
+        return
+      }
+      setRoleCheck("Firestore and User Claims in Sync !")
+    }
+    loadRole()
+  }, [auth.user])
 
   return (
     <div className='flex flex-col gap-10'>
@@ -95,6 +113,10 @@ const Home = () => {
                 </li>
               ))}
         </ul>
+      </div>
+      <div>
+        <p>User Role Sync Check:</p>
+        <p>{roleCheck}</p>
       </div>
     </div>
   )

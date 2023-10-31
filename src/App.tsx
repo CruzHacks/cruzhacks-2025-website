@@ -7,9 +7,9 @@ import Login from "./views/Login"
 import Signup from "./views/Signup"
 import HackerPortal from "./views/HackerPortal"
 import { AuthContextProvider } from "./contexts/auth"
-import UnauthenticatedRoute from "./components/UnauthenticatedRoute"
-import AuthenticatedRoute from "./components/AuthenticatedRoute"
+import UnauthenticatedRoute from "./components/protectedRoutes/UnauthenticatedRoute"
 import AdminPortal from "./views/AdminPortal"
+import RoleProtectedRoute from "./components/protectedRoutes/RoleProtectedRoute"
 
 const App: React.FC = () => {
   return (
@@ -26,10 +26,12 @@ const App: React.FC = () => {
           </Route>
 
           {/* You must be logged in to access these routes*/}
-          <Route element={<AuthenticatedRoute />}>
+          <Route element={<RoleProtectedRoute allowedRole='hacker' />}>
             <Route path='portal/hacker' element={<HackerPortal />}>
               {/* Hacker Portal sub-routes go here*/}
             </Route>
+          </Route>
+          <Route element={<RoleProtectedRoute allowedRole='admin' />}>
             <Route path='portal/admin' element={<AdminPortal />}>
               {/* Admin Portal sub-routes go here*/}
             </Route>

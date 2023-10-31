@@ -11,7 +11,11 @@ import {
 } from "firebase/firestore"
 
 // Auth Context
-export const AuthContext = createContext({
+export const AuthContext = createContext<{
+  user: User | null
+  role: string | null
+  error: Error | null
+}>({
   user: null,
   role: null,
   error: null,
