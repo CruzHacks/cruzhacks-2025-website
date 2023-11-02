@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import { collection, addDoc, Timestamp, onSnapshot } from "firebase/firestore"
 import { db } from "../../utils/firebaseapp"
 import { useAuth } from "../../contexts/auth"
-import type { User } from "@firebase/auth"
+import { checkRoleSynced } from "../../utils/functionsApi"
 
 const ENV_VAR = import.meta.env.VITE_EXAMPLE_ENV_VAR || ""
 
@@ -18,23 +18,6 @@ const createDocument = async () => {
     name: "New Document",
     time: Timestamp.fromDate(new Date()),
   })
-}
-
-const getRole = async (user: User) => {
-  const idToken = await user.getIdToken(false)
-  const response = await fetch(
-    "http://127.0.0.1:5001/cruzhacks-2024-developme-d58c3/us-central1/auth/checkRoleSynced",
-    {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${idToken}`,
-      },
-    }
-  )
-
-  const data = await response.json()
-  return data
 }
 
 const Document = ({ name, time }: TestDoc) => {
@@ -69,16 +52,8 @@ const Home = () => {
 
   useEffect(() => {
     const loadRole = async () => {
-      if (!auth.user) {
-        return
-      }
-
-      const rolesData = await getRole(auth.user)
-      if (!rolesData || !rolesData.synced) {
-        setRoleCheck(JSON.stringify(rolesData))
-        return
-      }
-      setRoleCheck("Firestore and User Claims in Sync !")
+      const rolesData = await checkRoleSynced(auth.user)
+      setRoleCheck(JSON.stringify(rolesData))
     }
     loadRole()
   }, [auth.user])
