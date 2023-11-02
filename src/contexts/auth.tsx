@@ -1,14 +1,18 @@
 import { onAuthStateChanged } from "@firebase/auth"
 import React, { createContext, useContext, useEffect, useState } from "react"
-import { auth, db } from "../utils/firebaseapp"
+import { auth } from "../utils/firebaseapp"
 import type { User } from "@firebase/auth"
 import userRoles, { UserRole } from "../utils/roles"
-import {
-  DocumentSnapshot,
-  Timestamp,
-  doc,
-  onSnapshot,
-} from "firebase/firestore"
+
+// This is a hacky fix to get around the fact that when a user token is first
+// created on signup it does not contain the custom claim role (the
+// cruzhacks-2024-backend trigger is creating and setting it on the server after
+// the token is already created and sent to client). This is a problem for
+// routing that requires the hacker role to be known. This is a temporary fix to
+// get around that.
+//
+// TODO: Refetch the token after signup to get the role from custom claims
+const DEFAULT_ROLE = "applicant"
 
 // Auth Context
 export const AuthContext = createContext<{
@@ -25,43 +29,31 @@ export const AuthContextProvider = (props: any) => {
   const [user, setUser] = useState<User | null>(null)
   const [role, setRole] = useState<UserRole | null>(null)
   const [error, setError] = useState<Error | null>(null)
-  const [lastCommitted, setLastCommitted] = useState<Timestamp>()
-
-  /**
-   * Refreshes the user's Id token (including custom claims)
-   * @param snapshot User account data snapshot
-   */
-  const onNewClaim = async (snapshot: DocumentSnapshot, u: User) => {
-    if (!u || !u.uid) {
-      console.error("Auth: onNewClaim: No user to listen to claims for")
-      return
-    }
-
-    const data = snapshot.data()
-    if (data && data._lastCommitted) {
-      if (!lastCommitted || !data._lastCommitted.isEqual(lastCommitted)) {
-        // Force a refresh of the user's ID token
-        const result = await u.getIdTokenResult(true)
-        const _role = result.claims.role
-        if (userRoles.indexOf(_role as any) === -1) {
-          console.error("Auth: onNewClaim: Invalid role", _role)
-          return
-        }
-        setRole(result.claims.role as UserRole)
-      }
-      setLastCommitted(data._lastCommitted)
-    }
-  }
 
   useEffect(() => {
+    // When authentication state changes, set the user and role
     const unsubscribe = onAuthStateChanged(
       auth,
       _user => {
         if (_user) {
           setUser(_user)
-          onSnapshot(doc(db, "users", _user.uid), snapshot =>
-            onNewClaim(snapshot, _user)
-          )
+          _user.getIdTokenResult(true).then(tokenId => {
+            const role = tokenId.claims.role as UserRole
+
+            if (!role) {
+              console.log("User has no role, defaulting to", DEFAULT_ROLE)
+              setRole(DEFAULT_ROLE)
+              return
+            }
+
+            if (!userRoles.includes(role)) {
+              setError(new Error("User has invalid role"))
+              console.error("User has invalid role!")
+              return
+            }
+
+            setRole(role)
+          })
         } else {
           setUser(null)
           setRole(null)
@@ -69,6 +61,7 @@ export const AuthContextProvider = (props: any) => {
       },
       setError
     )
+    // On component unmount, unsubscribe to the auth listener
     return () => unsubscribe()
   }, [])
 

@@ -3,9 +3,6 @@
 interface ImportMetaEnv {
   VITE_EXAMPLE_ENV_VAR: string
 
-  // Firebase Functions Endpoint URL for hitting CruzHacks-2024-Backend
-  VITE_FIREBASE_ENDPOINT_URL: string
-
   // Firebase Config (https://firebase.google.com/docs/web/setup#config-object)
   VITE_FIREBASE_API_KEY: string
   VITE_FIREBASE_AUTH_DOMAIN: string

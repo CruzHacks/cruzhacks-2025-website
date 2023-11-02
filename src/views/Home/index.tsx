@@ -53,6 +53,16 @@ const Home = () => {
   useEffect(() => {
     const loadRole = async () => {
       const rolesData = await checkRoleSynced(auth.user)
+      if ("message" in rolesData) {
+        console.error(rolesData)
+        return
+      }
+
+      if (rolesData.synced) {
+        setRoleCheck("Synced!")
+        return
+      }
+
       setRoleCheck(JSON.stringify(rolesData))
     }
 

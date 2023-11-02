@@ -21,8 +21,7 @@ const Navbar = () => {
     <div className='flex h-20 w-full items-center justify-between border-2'>
       <Link to='/'>Home</Link>
       <div className='flex grow justify-center gap-10'>
-        <Link to='/portal/hacker'>Hacker Portal</Link>
-        <Link to='/portal/admin'>Admin Portal</Link>
+        <Link to='/portal'>Portal</Link>
       </div>
       <div className='flex items-center gap-10'>
         {!isAuthenticated ? (

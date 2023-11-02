@@ -8,7 +8,11 @@ import React, { useState } from "react"
 import { signInWithEmailAndPassword } from "firebase/auth"
 import { auth } from "../utils/firebaseapp"
 
-//email and password formatting
+// This component uses react-hook-form to handle data validation and input
+// specific errors. Follow this tutorial to learn more about how Zod is used in
+// react-hook-form to validate the schema:
+// https://react-hook-form.com/get-started#SchemaValidation
+
 const formSchema = z.object({
   email: z.string().email("Invalid email address").min(1, "Email is required"),
   password: z
@@ -30,11 +34,13 @@ export default function Login() {
     signInWithEmailAndPassword(auth, data.email, data.password)
       .then(() => {
         setError(false)
-        setLoading(false)
       })
       .catch(err => {
         setError(true)
         console.error(err)
+      })
+      .finally(() => {
+        setLoading(false)
       })
   }
 
