@@ -31,10 +31,13 @@ const App: React.FC = () => {
           <Route path='portal' element={<PortalRedirectRoute />} />
 
           <Route element={<RoleProtectedRoute allowedRole='applicant' />}>
-            <Route path='portal/applicant' element={<ApplicantPortal />}>
-              {/* Hacker Portal sub-routes go here*/}
-            </Route>
+            <Route
+              index
+              path='portal/applicant'
+              element={<ApplicantPortal />}
+            />
           </Route>
+
           <Route element={<RoleProtectedRoute allowedRole='hacker' />}>
             <Route path='portal/hacker' element={<HackerPortal />}>
               {/* Hacker Portal sub-routes go here*/}

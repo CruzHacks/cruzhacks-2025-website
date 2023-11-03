@@ -38,7 +38,9 @@ const Home = () => {
   const [loading, setLoading] = useState<boolean>(true)
   const [roleCheck, setRoleCheck] = useState<string>("")
 
-  const { auth } = useAuth()
+  const {
+    auth: { user },
+  } = useAuth()
 
   useEffect(() => {
     const unsubscribe = onSnapshot(collection(db, "Test"), snapshot => {
@@ -52,7 +54,10 @@ const Home = () => {
 
   useEffect(() => {
     const loadRole = async () => {
-      const rolesData = await checkRoleSynced(auth.user)
+      if (!user) return
+
+      const rolesData = await checkRoleSynced(user)
+
       if ("message" in rolesData) {
         console.error(rolesData)
         return
@@ -66,8 +71,8 @@ const Home = () => {
       setRoleCheck(JSON.stringify(rolesData))
     }
 
-    if (auth.user) loadRole()
-  }, [auth.user])
+    if (user) loadRole()
+  }, [user])
 
   return (
     <div className='flex flex-col gap-10 p-32'>

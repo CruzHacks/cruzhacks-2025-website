@@ -24,11 +24,15 @@ const formSchema = z.object({
 type FormSchemaType = z.infer<typeof formSchema>
 
 export default function Login() {
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState(false)
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<FormSchemaType>({ resolver: zodResolver(formSchema) })
+
   const handleLogin: SubmitHandler<FormSchemaType> = async data => {
     setLoading(true)
     signInWithEmailAndPassword(auth, data.email, data.password)
@@ -44,8 +48,6 @@ export default function Login() {
       })
   }
 
-  const [loading, setLoading] = useState(false)
-  const [error, setError] = useState(false)
   return (
     <div className='flex min-h-full w-screen flex-1'>
       <div className='flex flex-1 flex-col items-center justify-center px-4 py-12 sm:px-6 lg:flex-none lg:px-20 xl:px-24'>
