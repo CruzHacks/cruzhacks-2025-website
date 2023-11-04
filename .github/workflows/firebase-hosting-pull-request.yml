@@ -1,0 +1,62 @@
+name: Deploy to Firebase Hosting on PR
+"on": pull_request
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    environment: development
+    env:
+      VITE_FIREBASE_API_KEY: "${{ secrets.API_KEY }}"
+      VITE_FIREBASE_AUTH_DOMAIN: "${{ secrets.AUTH_DOMAIN }}"
+      VITE_FIREBASE_DATBASE_URL: "${{ secrets.DATABASE_URL }}"
+      VITE_FIREBASE_PROJECT_ID: "${{ secrets.PROJECT_ID }}"
+      VITE_FIREBASE_STORAGE_BUCKET: "${{ secrets.STORAGE_BUCKET }}"
+      VITE_FIREBASE_MESSAGING_SENDER_ID: "${{ secrets.MESSAGING_SENDER_ID }}"
+      VITE_FIREBASE_APP_ID: "${{ secrets.APP_ID }}"
+      VITE_FIREBASE_MEASUREMENT_ID: "${{ secrets.MEASUREMENT_ID }}"
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16
+      - name: Install Dependencies
+        run: yarn install --frozen-lockfile
+      - name: Create Production Build
+        run: yarn build
+      - name: Archive Production Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: preview
+          path: build
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16
+      - name: Install Dependencies
+        run: yarn install --frozen-lockfile
+      - name: Lint
+        run: yarn lint
+
+  deploy_preview:
+    if: "${{ github.event.pull_request.head.repo.full_name == github.repository }}"
+    needs: [build, lint]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Download Artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: preview
+          path: build
+      - name: Deploy to Firebase
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          target: sponsorship-website
+          repoToken: "${{ secrets.GITHUB_TOKEN }}"
+          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_CRUZHACKS_2024_DEVELOPME_D58C3 }}"
+          projectId: cruzhacks-developme-d58c3
