@@ -1,7 +1,6 @@
 import React from "react"
 import { Route, Routes } from "react-router-dom"
 import Footer from "./components/Footer"
-import Navbar from "./components/Navbar"
 import Home from "./views/Home"
 import Login from "./views/Login"
 import Signup from "./views/Signup"
@@ -12,12 +11,13 @@ import AdminPortal from "./views/AdminPortal"
 import RoleProtectedRoute from "./components/protectedRoutes/RoleProtectedRoute"
 import PortalRedirectRoute from "./components/protectedRoutes/PortalRedirectRoute"
 import ApplicantPortal from "./views/ApplicantPortal"
+import Dashboard from "./views/ApplicantPortal/Dashboard"
+import Application from "./views/ApplicantPortal/Application"
 
 const App: React.FC = () => {
   return (
     <AuthContextProvider>
-      <Navbar />
-      <div className=''>
+      <div>
         <Routes>
           <Route index element={<Home />} />
 
@@ -31,11 +31,10 @@ const App: React.FC = () => {
           <Route path='portal' element={<PortalRedirectRoute />} />
 
           <Route element={<RoleProtectedRoute allowedRole='applicant' />}>
-            <Route
-              index
-              path='portal/applicant'
-              element={<ApplicantPortal />}
-            />
+            <Route path='portal/applicant' element={<ApplicantPortal />}>
+              <Route index element={<Dashboard />} />
+              <Route path='application' element={<Application />} />
+            </Route>
           </Route>
 
           <Route element={<RoleProtectedRoute allowedRole='hacker' />}>

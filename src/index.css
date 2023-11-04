@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+    @apply text-white;
+  }
+  @font-face {
+    font-family: Andaleo Mono;
+    src: url("./assets/fonts/Andaleo Mono.woff") format("woff");
+  }
+
+  @font-face {
+    font-family: Proxima Nova;
+    src: url("./assets/fonts/Proxima Nova.woff") format("woff");
+
+  }
+
+  @font-face {
+    font-family: StretchPro;
+    font-weight: 400;
+    src: url("./assets/fonts/Stretch Pro.woff") format("woff");
+  }
+}

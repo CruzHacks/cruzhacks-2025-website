@@ -36,24 +36,28 @@ export const AuthContextProvider = (props: any) => {
       auth,
       _user => {
         if (_user) {
-          setUser(_user)
-          _user.getIdTokenResult(true).then(tokenId => {
-            const role = tokenId.claims.role as UserRole
+          _user
+            .getIdTokenResult(true)
+            .then(tokenId => {
+              const role = tokenId.claims.role as UserRole
 
-            if (!role) {
-              console.log("User has no role, defaulting to", DEFAULT_ROLE)
-              setRole(DEFAULT_ROLE)
-              return
-            }
+              if (!role) {
+                console.log("User has no role, defaulting to", DEFAULT_ROLE)
+                setRole(DEFAULT_ROLE)
+                return
+              }
 
-            if (!userRoles.includes(role)) {
-              setError(new Error("User has invalid role"))
-              console.error("User has invalid role!")
-              return
-            }
+              if (!userRoles.includes(role)) {
+                setError(new Error("User has invalid role"))
+                console.error("User has invalid role!")
+                return
+              }
 
-            setRole(role)
-          })
+              setRole(role)
+            })
+            .finally(() => {
+              setUser(_user)
+            })
         } else {
           setUser(null)
           setRole(null)

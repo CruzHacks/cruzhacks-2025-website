@@ -3,6 +3,7 @@ import { collection, addDoc, Timestamp, onSnapshot } from "firebase/firestore"
 import { db } from "../../utils/firebaseapp"
 import { useAuth } from "../../contexts/auth"
 import { checkRoleSynced } from "../../utils/functionsApi"
+import Navbar from "../../components/Navbar"
 
 const ENV_VAR = import.meta.env.VITE_EXAMPLE_ENV_VAR || ""
 
@@ -75,41 +76,46 @@ const Home = () => {
   }, [user])
 
   return (
-    <div className='flex flex-col gap-10 p-32'>
-      <h1 className='text-center text-xl font-bold'>This is the Home Page</h1>
-      <div>
-        <p className='py-5'>Example env variable (VITE_EXAMPLE_ENV):</p>
-        <p>&quot;{ENV_VAR}&quot;</p>
-      </div>
-      <div>
-        <h1 className='py-5 text-lg font-bold'>Firebase Firestore Test</h1>
-        <button
-          className='rounded-xl bg-emerald-500 p-3 text-white'
-          onClick={createDocument}
-        >
-          Create Document
-        </button>
+    <>
+      <Navbar />
+      <div className='flex min-h-screen flex-col gap-10 p-10'>
+        <h1 className='text-center font-title text-4xl font-bold uppercase'>
+          This is the Home Page
+        </h1>
+        <div>
+          <p className='py-5'>Example env variable (VITE_EXAMPLE_ENV):</p>
+          <p>&quot;{ENV_VAR}&quot;</p>
+        </div>
+        <div>
+          <h1 className='py-5 text-lg font-bold'>Firebase Firestore Test</h1>
+          <button
+            className='bg-emerald-500 rounded-xl p-3 text-white'
+            onClick={createDocument}
+          >
+            Create Document
+          </button>
 
-        <p className='pt-5'>Documents:</p>
-        <ul className='list-disc space-y-2 pl-6 pt-4'>
-          {loading
-            ? [...Array(5).keys()].map(i => (
-                <li key={i}>
-                  <span className='inline-block h-4 w-60 animate-pulse rounded bg-slate-200'></span>
-                </li>
-              ))
-            : documents.map((doc, i) => (
-                <li key={i}>
-                  <Document {...doc} />
-                </li>
-              ))}
-        </ul>
+          <p className='pt-5'>Documents:</p>
+          <ul className='list-disc space-y-2 pl-6 pt-4'>
+            {loading
+              ? [...Array(5).keys()].map(i => (
+                  <li key={i}>
+                    <span className='bg-slate-200 inline-block h-4 w-60 animate-pulse rounded'></span>
+                  </li>
+                ))
+              : documents.map((doc, i) => (
+                  <li key={i}>
+                    <Document {...doc} />
+                  </li>
+                ))}
+          </ul>
+        </div>
+        <div>
+          <p>User Role Sync Check:</p>
+          <p>{roleCheck}</p>
+        </div>
       </div>
-      <div>
-        <p>User Role Sync Check:</p>
-        <p>{roleCheck}</p>
-      </div>
-    </div>
+    </>
   )
 }
 

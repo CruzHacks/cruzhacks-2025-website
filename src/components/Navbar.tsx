@@ -18,7 +18,7 @@ const Navbar = () => {
   const { isAuthenticated } = useAuth()
 
   return (
-    <div className='flex h-20 w-full items-center justify-between border-2'>
+    <div className='flex h-20 w-full items-center justify-between px-10'>
       <Link to='/'>Home</Link>
       <div className='flex grow justify-center gap-10'>
         <Link to='/portal'>Portal</Link>
