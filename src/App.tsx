@@ -1,6 +1,5 @@
 import React from "react"
 import { Route, Routes } from "react-router-dom"
-import Footer from "./components/Footer"
 import Home from "./views/Home"
 import Login from "./views/Login"
 import Signup from "./views/Signup"
@@ -17,41 +16,38 @@ import Application from "./views/ApplicantPortal/Application"
 const App: React.FC = () => {
   return (
     <AuthContextProvider>
-      <div>
-        <Routes>
-          <Route index element={<Home />} />
+      <Routes>
+        <Route index element={<Home />} />
 
-          {/* You cannot be logged in to access these routes*/}
-          <Route element={<UnauthenticatedRoute />}>
-            <Route path='login' element={<Login />} />
-            <Route path='signup' element={<Signup />} />
+        {/* You cannot be logged in to access these routes*/}
+        <Route element={<UnauthenticatedRoute />}>
+          <Route path='login' element={<Login />} />
+          <Route path='signup' element={<Signup />} />
+        </Route>
+
+        {/* You must be logged in to access these routes*/}
+        <Route path='portal' element={<PortalRedirectRoute />} />
+
+        <Route element={<RoleProtectedRoute allowedRole='applicant' />}>
+          <Route path='portal/applicant' element={<ApplicantPortal />}>
+            <Route index element={<Dashboard />} />
+            <Route path='application' element={<Application />} />
           </Route>
+        </Route>
 
-          {/* You must be logged in to access these routes*/}
-          <Route path='portal' element={<PortalRedirectRoute />} />
-
-          <Route element={<RoleProtectedRoute allowedRole='applicant' />}>
-            <Route path='portal/applicant' element={<ApplicantPortal />}>
-              <Route index element={<Dashboard />} />
-              <Route path='application' element={<Application />} />
-            </Route>
+        <Route element={<RoleProtectedRoute allowedRole='hacker' />}>
+          <Route path='portal/hacker' element={<HackerPortal />}>
+            {/* Hacker Portal sub-routes go here*/}
           </Route>
-
-          <Route element={<RoleProtectedRoute allowedRole='hacker' />}>
-            <Route path='portal/hacker' element={<HackerPortal />}>
-              {/* Hacker Portal sub-routes go here*/}
-            </Route>
+        </Route>
+        <Route element={<RoleProtectedRoute allowedRole='admin' />}>
+          <Route path='portal/admin' element={<AdminPortal />}>
+            {/* Admin Portal sub-routes go here*/}
           </Route>
-          <Route element={<RoleProtectedRoute allowedRole='admin' />}>
-            <Route path='portal/admin' element={<AdminPortal />}>
-              {/* Admin Portal sub-routes go here*/}
-            </Route>
-          </Route>
+        </Route>
 
-          <Route path='*' element={<div>Not Found</div>} />
-        </Routes>
-      </div>
-      <Footer />
+        <Route path='*' element={<div>Not Found</div>} />
+      </Routes>
     </AuthContextProvider>
   )
 }

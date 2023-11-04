@@ -4,6 +4,7 @@ import { db } from "../../utils/firebaseapp"
 import { useAuth } from "../../contexts/auth"
 import { checkRoleSynced } from "../../utils/functionsApi"
 import Navbar from "../../components/Navbar"
+import Footer from "../../components/Footer"
 
 const ENV_VAR = import.meta.env.VITE_EXAMPLE_ENV_VAR || ""
 
@@ -115,6 +116,7 @@ const Home = () => {
           <p>{roleCheck}</p>
         </div>
       </div>
+      <Footer />
     </>
   )
 }

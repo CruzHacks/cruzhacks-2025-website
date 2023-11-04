@@ -58,14 +58,14 @@ export default function SignUp() {
               Home
               {/* <image className='h-10 w-auto' src={logo} alt='StudentStay' /> */}
             </Link>
-            <h2 className='mt-8 text-2xl font-bold leading-9 tracking-tight text-gray-900'>
+            <h2 className='text-gray-900 mt-8 text-2xl font-bold leading-9 tracking-tight'>
               Create an account
             </h2>
-            <p className='mt-2 text-sm leading-6 text-gray-500'>
+            <p className='text-gray-500 mt-2 text-sm leading-6'>
               Already a member?{" "}
               <Link
                 to='/login'
-                className='font-semibold text-green-800 hover:text-green-700'
+                className='text-green-800 hover:text-green-700 font-semibold'
               >
                 Login
               </Link>
@@ -81,7 +81,7 @@ export default function SignUp() {
                 <div>
                   <label
                     htmlFor='email'
-                    className='block text-sm font-medium leading-6 text-gray-900'
+                    className='text-gray-900 block text-sm font-medium leading-6'
                   >
                     Email
                   </label>
@@ -95,7 +95,7 @@ export default function SignUp() {
                         errors.email
                           ? "text-red-900 ring-red-300 placeholder:text-red-300 focus:ring-red-500"
                           : "",
-                        "block w-full rounded-md border-0 px-3 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-800 sm:text-sm sm:leading-6"
+                        "ring-gray-300 placeholder:text-gray-400 focus:ring-green-800 block w-full rounded-md border-0 px-3 py-1.5 shadow-sm ring-1 ring-inset focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"
                       )}
                       placeholder='you@example.com'
                       aria-invalid={errors.email ? "true" : "false"}
@@ -104,7 +104,7 @@ export default function SignUp() {
                     {errors.email && (
                       <div className='pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3'>
                         <ExclamationCircleIcon
-                          className='h-5 w-5 text-red-500'
+                          className='text-red-500 h-5 w-5'
                           aria-hidden='true'
                         />
                       </div>
@@ -112,7 +112,7 @@ export default function SignUp() {
                   </div>
 
                   {errors.email && (
-                    <p className='mt-2 text-sm text-red-600' id='email-error'>
+                    <p className='text-red-600 mt-2 text-sm' id='email-error'>
                       {errors.email.message}
                     </p>
                   )}
@@ -120,7 +120,7 @@ export default function SignUp() {
                 <div>
                   <label
                     htmlFor='password'
-                    className='block text-sm font-medium leading-6 text-gray-900'
+                    className='text-gray-900 block text-sm font-medium leading-6'
                   >
                     Password
                   </label>
@@ -134,7 +134,7 @@ export default function SignUp() {
                         errors.password
                           ? "text-red-900 ring-red-300 placeholder:text-red-300 focus:ring-red-500"
                           : "",
-                        "block w-full rounded-md border-0 px-3 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-800 sm:text-sm sm:leading-6"
+                        "ring-gray-300 placeholder:text-gray-400 focus:ring-green-800 block w-full rounded-md border-0 px-3 py-1.5 shadow-sm ring-1 ring-inset focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"
                       )}
                       aria-invalid={errors.password ? "true" : "false"}
                       aria-describedby='password-error'
@@ -142,7 +142,7 @@ export default function SignUp() {
                     {errors.password && (
                       <div className='pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3'>
                         <ExclamationCircleIcon
-                          className='h-5 w-5 text-red-500'
+                          className='text-red-500 h-5 w-5'
                           aria-hidden='true'
                         />
                       </div>
@@ -150,7 +150,7 @@ export default function SignUp() {
                   </div>
 
                   {errors.password && (
-                    <p className='mt-2 text-sm text-red-600' id='email-error'>
+                    <p className='text-red-600 mt-2 text-sm' id='email-error'>
                       {errors.password.message}
                     </p>
                   )}
@@ -158,7 +158,7 @@ export default function SignUp() {
                 <div>
                   <label
                     htmlFor='password-confirm'
-                    className='block text-sm font-medium leading-6 text-gray-900'
+                    className='text-gray-900 block text-sm font-medium leading-6'
                   >
                     Confirm Password
                   </label>
@@ -172,7 +172,7 @@ export default function SignUp() {
                         errors.passwordConfirm
                           ? "text-red-900 ring-red-300 placeholder:text-red-300 focus:ring-red-500"
                           : "",
-                        "block w-full rounded-md border-0 px-3 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-800 sm:text-sm sm:leading-6"
+                        "ring-gray-300 placeholder:text-gray-400 focus:ring-green-800 block w-full rounded-md border-0 px-3 py-1.5 shadow-sm ring-1 ring-inset focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"
                       )}
                       aria-invalid={errors.passwordConfirm ? "true" : "false"}
                       aria-describedby='password-error'
@@ -180,7 +180,7 @@ export default function SignUp() {
                     {errors.passwordConfirm && (
                       <div className='pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3'>
                         <ExclamationCircleIcon
-                          className='h-5 w-5 text-red-500'
+                          className='text-red-500 h-5 w-5'
                           aria-hidden='true'
                         />
                       </div>
@@ -188,7 +188,7 @@ export default function SignUp() {
                   </div>
 
                   {errors.passwordConfirm && (
-                    <p className='mt-2 text-sm text-red-600' id='email-error'>
+                    <p className='text-red-600 mt-2 text-sm' id='email-error'>
                       {errors.passwordConfirm.message}
                     </p>
                   )}
@@ -197,7 +197,7 @@ export default function SignUp() {
                 <div>
                   <button
                     type='submit'
-                    className='mt-10 flex w-full justify-center rounded-md bg-green-800 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-green-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600'
+                    className='bg-green-800 hover:bg-green-700 focus-visible:outline-indigo-600 mt-10 flex w-full justify-center rounded-md px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2'
                   >
                     Register
                   </button>

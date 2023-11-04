@@ -82,7 +82,7 @@ const Application = () => {
         <div>
           <label
             htmlFor='first_name'
-            className='block text-sm font-medium leading-6 text-gray-900'
+            className='text-gray-900 block text-sm font-medium leading-6'
           >
             First Name
           </label>
@@ -96,7 +96,7 @@ const Application = () => {
                 errors.first_name
                   ? "text-red-900 ring-red-300 placeholder:text-red-300 focus:ring-red-500"
                   : "",
-                "block w-full rounded-md border-0 px-3 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-800 sm:text-sm sm:leading-6"
+                "ring-gray-300 placeholder:text-gray-400 focus:ring-green-800 block w-full rounded-md border-0 px-3 py-1.5 shadow-sm ring-1 ring-inset focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"
               )}
               placeholder='you@example.com'
               aria-invalid={errors.first_name ? "true" : "false"}
@@ -105,7 +105,7 @@ const Application = () => {
             {errors.first_name && (
               <div className='pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3'>
                 <ExclamationCircleIcon
-                  className='h-5 w-5 text-red-500'
+                  className='text-red-500 h-5 w-5'
                   aria-hidden='true'
                 />
               </div>
@@ -113,7 +113,7 @@ const Application = () => {
           </div>
 
           {errors.first_name && (
-            <p className='mt-2 text-sm text-red-600' id='email-error'>
+            <p className='text-red-600 mt-2 text-sm' id='email-error'>
               {errors.first_name.message}
             </p>
           )}
@@ -122,13 +122,13 @@ const Application = () => {
         <div>
           <button
             type='submit'
-            className='flex w-full justify-center rounded-md bg-green-800 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm transition-colors hover:bg-green-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-800 disabled:bg-gray-500'
+            className='bg-green-800 hover:bg-green-700 focus-visible:outline-green-800 disabled:bg-gray-500 flex w-full justify-center rounded-md px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2'
           >
             {loading ? (
               <div role='status'>
                 <svg
                   aria-hidden='true'
-                  className='mr-2 h-6 w-6 animate-spin fill-gray-200 text-gray-200 dark:text-green-800'
+                  className='fill-gray-200 text-gray-200 dark:text-green-800 mr-2 h-6 w-6 animate-spin'
                   viewBox='0 0 100 101'
                   fill='none'
                   xmlns='http://www.w3.org/2000/svg'
@@ -152,7 +152,7 @@ const Application = () => {
       </form>
 
       <div>
-        {error && <span className='mt-10 text-xs text-rose-500'>{error}</span>}
+        {error && <span className='text-rose-500 mt-10 text-xs'>{error}</span>}
       </div>
     </div>
   )
