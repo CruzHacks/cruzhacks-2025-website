@@ -6,14 +6,14 @@ import { UserBasics } from "../../../../utils/types"
 
 const UsersAdmin = () => {
   const {
-    auth: { user },
+    auth: { user: currentUser },
   } = useAuth()
   const [users, setUsers] = useState<UserBasics[]>([])
 
   useEffect(() => {
-    if (!user) return
+    if (!currentUser) return
 
-    getUsers(user).then(res => {
+    getUsers(currentUser).then(res => {
       if ("message" in res) {
         console.error(res.message)
         return
@@ -50,13 +50,13 @@ const UsersAdmin = () => {
                 <tr>
                   <th
                     scope='col'
-                    className='sticky top-0 z-10 border-b border-white/20 bg-blue-imperial/50 py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-white backdrop-blur sm:pl-6 lg:pl-8'
+                    className='sticky top-0 z-10 hidden border-b border-white/20 bg-blue-imperial/50 px-3 py-3.5 text-left text-sm font-semibold backdrop-blur sm:table-cell'
                   >
                     Name
                   </th>
                   <th
                     scope='col'
-                    className='sticky top-0 z-10 hidden border-b border-white/20 bg-blue-imperial/50 px-3 py-3.5 text-left text-sm font-semibold backdrop-blur sm:table-cell'
+                    className='sticky top-0 z-10 border-b border-white/20 bg-blue-imperial/50 py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-white backdrop-blur sm:pl-6 lg:pl-8'
                   >
                     Email
                   </th>
@@ -65,6 +65,12 @@ const UsersAdmin = () => {
                     className='sticky top-0 z-10 border-b border-white/20 bg-blue-imperial/50 px-3 py-3.5 text-left text-sm font-semibold backdrop-blur'
                   >
                     Role
+                  </th>
+                  <th
+                    scope='col'
+                    className='sticky top-0 z-10 border-b border-white/20 bg-blue-imperial/50 px-3 py-3.5 text-left text-sm font-semibold backdrop-blur'
+                  >
+                    UID
                   </th>
                   <th
                     scope='col'
@@ -82,7 +88,7 @@ const UsersAdmin = () => {
                         userIdx !== users.length - 1
                           ? "border-b border-white/20"
                           : "",
-                        user.displayName ? "text-white" : "text-white/50",
+                        user.displayName ? "" : "text-white/50",
                         "whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium sm:pl-6 lg:pl-8"
                       )}
                     >
@@ -93,6 +99,7 @@ const UsersAdmin = () => {
                         userIdx !== users.length - 1
                           ? "border-b border-white/20"
                           : "",
+                        user.email === currentUser?.email ? "text-orange" : "",
                         "hidden whitespace-nowrap px-3 py-4 text-sm sm:table-cell"
                       )}
                     >
@@ -103,10 +110,22 @@ const UsersAdmin = () => {
                         userIdx !== users.length - 1
                           ? "border-b border-white/20"
                           : "",
+                        user.email === currentUser?.email ? "text-orange" : "",
                         "whitespace-nowrap px-3 py-4 text-sm"
                       )}
                     >
                       {user.role}
+                    </td>
+                    <td
+                      className={classNames(
+                        userIdx !== users.length - 1
+                          ? "border-b border-white/20"
+                          : "",
+                        user.email === currentUser?.email ? "text-orange" : "",
+                        "whitespace-nowrap px-3 py-4 text-sm"
+                      )}
+                    >
+                      {user.uid}
                     </td>
                     <td
                       className={classNames(
