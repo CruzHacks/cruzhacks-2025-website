@@ -10,8 +10,6 @@ const UsersAdmin = () => {
   // TODO: Pagination
   const { data: users, error, isLoading, isError } = useUsers(currentUser)
 
-  console.log(users)
-
   const handleNewUser = () => {
     alert("This feature is not yet implemented.")
   }

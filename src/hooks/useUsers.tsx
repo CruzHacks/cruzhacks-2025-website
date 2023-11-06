@@ -4,6 +4,8 @@ import axios, { isAxiosError } from "axios"
 import { API_URL } from "../utils/functionsApi"
 import { useQuery } from "@tanstack/react-query"
 
+// TODO: Pagination
+
 /**
  * CruzHacks-2024-Backend API endpoint for retrieving a list of users
  * @param user Firebase User
