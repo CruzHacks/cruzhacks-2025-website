@@ -1,23 +1,23 @@
 import React, { Fragment, useState } from "react"
 import { Dialog, Transition } from "@headlessui/react"
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline"
-import { classNames } from "../utils/string"
+import { classNames } from "../../utils/string"
 import { Link, Outlet, useLocation } from "react-router-dom"
-import CruzHacksLogo from "../assets/logos/CruzHacks.svg"
-import Avatar from "boring-avatars"
-import useAuth from "../hooks/useAuth"
-
-type NavigationItem = {
-  name: string
-  href: string
-  icon: any // TODO: Fix this type
-}
+import CruzHacksLogo from "../../assets/logos/CruzHacks.svg"
+import useAuth from "../../hooks/useAuth"
+import AvatarButton from "./AvatarButton"
 
 // const teams = [
 //   { id: 1, name: "Heroicons", href: "#", initial: "H", current: false },
 //   { id: 2, name: "Tailwind Labs", href: "#", initial: "T", current: false },
 //   { id: 3, name: "Workcation", href: "#", initial: "W", current: false },
 // ]
+
+type NavigationItem = {
+  name: string
+  href: string
+  icon: any // TODO: Fix this type
+}
 
 interface SidebarProps {
   navigation: NavigationItem[]
@@ -29,20 +29,9 @@ const Sidebar = ({ navigation }: SidebarProps) => {
     auth: { user, role },
   } = useAuth()
 
-  const email = user?.email || ""
-  const fullName = user?.displayName || "Hacker"
-
-  const colors = [
-    "#190CA6",
-    "#13E4CA",
-    "#F9D318",
-    "#F9A318",
-    "#ECBC50",
-    "#E558F4",
-    "#8924F1",
-  ]
-
   const location = useLocation()
+  const email = user?.email || ""
+
   return (
     <>
       <div>
@@ -232,19 +221,7 @@ const Sidebar = ({ navigation }: SidebarProps) => {
                   </ul>
                 </li> */}
                 <li className='-mx-6 mt-auto'>
-                  <a
-                    href='/'
-                    className='hover:bg-gray-800 flex items-center gap-x-4 px-6 py-3 text-sm font-semibold leading-6 text-white'
-                  >
-                    <Avatar
-                      size={30}
-                      name={email}
-                      variant='beam'
-                      colors={colors}
-                    />
-                    <span className='sr-only'>Your profile</span>
-                    <span aria-hidden='true'>{fullName}</span>
-                  </a>
+                  <AvatarButton email={user?.email || ""} direction={"left"} />
                 </li>
               </ul>
             </nav>
@@ -263,10 +240,7 @@ const Sidebar = ({ navigation }: SidebarProps) => {
           <div className='flex-1 font-title text-sm font-semibold capitalize leading-6 text-white'>
             {role} Portal
           </div>
-          <Link to='/'>
-            <span className='sr-only'>Your profile</span>
-            <Avatar size={30} name={email} variant='beam' colors={colors} />
-          </Link>
+          <AvatarButton email={email} direction={"down"} />
         </div>
 
         <main className='py-10 lg:pl-72'>
