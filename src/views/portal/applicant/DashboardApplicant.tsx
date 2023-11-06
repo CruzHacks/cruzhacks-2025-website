@@ -1,7 +1,7 @@
 import React from "react"
-import { useAuth } from "../../contexts/auth"
+import { useAuth } from "../../../contexts/auth"
 
-const Dashboard = () => {
+const DashboardApplicant = () => {
   const {
     auth: { user },
   } = useAuth()
@@ -19,4 +19,4 @@ const Dashboard = () => {
   )
 }
 
-export default Dashboard
+export default DashboardApplicant

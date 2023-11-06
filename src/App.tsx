@@ -1,18 +1,22 @@
 import React from "react"
 import { Route, Routes } from "react-router-dom"
+import RoleProtectedRoute from "./components/protectedRoutes/RoleProtectedRoute"
+import PortalRedirectRoute from "./components/protectedRoutes/PortalRedirectRoute"
+import UnauthenticatedRoute from "./components/protectedRoutes/UnauthenticatedRoute"
+import { AuthContextProvider } from "./contexts/auth"
 import Home from "./views/Home"
 import Login from "./views/Login"
 import Signup from "./views/Signup"
-import HackerPortal from "./views/HackerPortal"
-import { AuthContextProvider } from "./contexts/auth"
-import UnauthenticatedRoute from "./components/protectedRoutes/UnauthenticatedRoute"
-import AdminPortal from "./views/AdminPortal"
-import RoleProtectedRoute from "./components/protectedRoutes/RoleProtectedRoute"
-import PortalRedirectRoute from "./components/protectedRoutes/PortalRedirectRoute"
-import ApplicantPortal from "./views/ApplicantPortal"
-import Dashboard from "./views/ApplicantPortal/Dashboard"
-import Application from "./views/ApplicantPortal/Application"
 import NotFound from "./views/NotFound"
+import HackerPortal from "./views/portal/hacker"
+import AdminPortal from "./views/portal/admin"
+import DashboardAdmin from "./views/portal/admin/DashboardAdmin"
+import ApplicationsAdmin from "./views/portal/admin/applications"
+import UsersAdmin from "./views/portal/admin/users"
+import TeamsAdmin from "./views/portal/admin/teams"
+import ApplicationApplicant from "./views/portal/applicant/ApplicationApplicant"
+import PortalApplicant from "./views/portal/applicant"
+import DashboardApplicant from "./views/portal/applicant/DashboardApplicant"
 
 const App: React.FC = () => {
   return (
@@ -30,9 +34,9 @@ const App: React.FC = () => {
         <Route path='portal' element={<PortalRedirectRoute />} />
 
         <Route element={<RoleProtectedRoute allowedRole='applicant' />}>
-          <Route path='portal/applicant' element={<ApplicantPortal />}>
-            <Route index element={<Dashboard />} />
-            <Route path='application' element={<Application />} />
+          <Route path='portal/applicant' element={<PortalApplicant />}>
+            <Route index element={<DashboardApplicant />} />
+            <Route path='application' element={<ApplicationApplicant />} />
           </Route>
         </Route>
 
@@ -43,7 +47,10 @@ const App: React.FC = () => {
         </Route>
         <Route element={<RoleProtectedRoute allowedRole='admin' />}>
           <Route path='portal/admin' element={<AdminPortal />}>
-            {/* Admin Portal sub-routes go here*/}
+            <Route index element={<DashboardAdmin />} />
+            <Route path='applications' element={<ApplicationsAdmin />} />
+            <Route path='teams' element={<TeamsAdmin />} />
+            <Route path='users' element={<UsersAdmin />} />
           </Route>
         </Route>
 

@@ -2,11 +2,11 @@ import React, { useState } from "react"
 import { z } from "zod"
 import { SubmitHandler, useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
-import { classNames } from "../../utils/string"
+import { classNames } from "../../../utils/string"
 import { ExclamationCircleIcon } from "@heroicons/react/24/solid"
-import { useAuth } from "../../contexts/auth"
+import { useAuth } from "../../../contexts/auth"
 import validator from "validator"
-import { submitApplication } from "../../utils/functionsApi"
+import { submitApplication } from "../../../utils/functionsApi"
 
 // This component uses react-hook-form to handle data validation and input
 // specific errors. Follow this tutorial to learn more about how Zod is used in
@@ -46,7 +46,7 @@ export const ApplicationSchema = z.object({
 
 export type ApplicationSchema = z.infer<typeof ApplicationSchema>
 
-const Application = () => {
+const ApplicationApplicant = () => {
   const {
     auth: { user },
   } = useAuth()
@@ -158,4 +158,4 @@ const Application = () => {
   )
 }
 
-export default Application
+export default ApplicationApplicant

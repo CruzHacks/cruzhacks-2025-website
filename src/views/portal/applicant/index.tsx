@@ -1,5 +1,5 @@
 import React from "react"
-import Sidebar from "../../components/Sidebar"
+import Sidebar from "../../../components/Sidebar"
 import { HomeIcon, UsersIcon } from "@heroicons/react/24/outline"
 
 const nav = [
@@ -15,7 +15,7 @@ const nav = [
   },
 ]
 
-const ApplicantPortal = () => {
+const PortalApplicant = () => {
   return (
     <div className='min-h-screen'>
       <Sidebar navigation={nav} />
@@ -23,4 +23,4 @@ const ApplicantPortal = () => {
   )
 }
 
-export default ApplicantPortal
+export default PortalApplicant

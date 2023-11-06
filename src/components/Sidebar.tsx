@@ -119,8 +119,8 @@ const Sidebar = ({ navigation }: SidebarProps) => {
                                   to={item.href}
                                   className={classNames(
                                     location.pathname === item.href
-                                      ? "bg-blue-royal text-blue-button"
-                                      : "hover:bg-blue-royal hover:text-blue-button",
+                                      ? "bg-blue-royal/60 text-pink"
+                                      : "hover:bg-blue-royal/60 hover:text-pink",
                                     "group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6"
                                   )}
                                 >
@@ -191,8 +191,8 @@ const Sidebar = ({ navigation }: SidebarProps) => {
                           to={item.href}
                           className={classNames(
                             location.pathname === item.href
-                              ? "bg-blue-royal text-blue-button"
-                              : "hover:bg-blue-royal hover:text-blue-button",
+                              ? "bg-blue-royal/60 text-pink"
+                              : "hover:bg-blue-royal/60 hover:text-pink",
                             "group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6"
                           )}
                         >
