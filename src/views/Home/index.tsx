@@ -1,123 +1,65 @@
-import React, { useEffect, useState } from "react"
-import { collection, addDoc, Timestamp, onSnapshot } from "firebase/firestore"
-import { db } from "../../utils/firebaseapp"
+import React from "react"
+import CruzHacksLogo from "../../assets/logos/CruzHacks.svg"
+import { Link } from "react-router-dom"
 import { useAuth } from "../../contexts/auth"
-import { checkRoleSynced } from "../../utils/functionsApi"
-import Navbar from "../../components/Navbar"
-import Footer from "../../components/Footer"
+import { auth } from "../../utils/firebaseapp"
 
-const ENV_VAR = import.meta.env.VITE_EXAMPLE_ENV_VAR || ""
-
-type TestDoc = {
-  name: string
-  time: Timestamp
-}
-
-const createDocument = async () => {
-  console.log("Creating document...")
-
-  return await addDoc(collection(db, "Test"), {
-    name: "New Document",
-    time: Timestamp.fromDate(new Date()),
-  })
-}
-
-const Document = ({ name, time }: TestDoc) => {
-  const time_str =
-    time && time.seconds && time.nanoseconds
-      ? time.toDate().toLocaleString()
-      : "Invalid date"
-
-  return (
-    <p>
-      {name} <i>posted at {time_str}</i>
-    </p>
-  )
+const logout = async () => {
+  await auth
+    .signOut()
+    .then(() => {
+      console.log("User signed out")
+    })
+    .catch(error => {
+      console.error(error)
+    })
 }
 
 const Home = () => {
-  const [documents, setDocuments] = useState<TestDoc[]>([])
-  const [loading, setLoading] = useState<boolean>(true)
-  const [roleCheck, setRoleCheck] = useState<string>("")
-
-  const {
-    auth: { user },
-  } = useAuth()
-
-  useEffect(() => {
-    const unsubscribe = onSnapshot(collection(db, "Test"), snapshot => {
-      setDocuments(
-        snapshot.docs.map(doc => ({ ...(doc.data() as TestDoc), id: doc.id }))
-      )
-    })
-    setLoading(false)
-    return unsubscribe
-  }, [])
-
-  useEffect(() => {
-    const loadRole = async () => {
-      if (!user) return
-
-      const rolesData = await checkRoleSynced(user)
-
-      if ("message" in rolesData) {
-        console.error(rolesData)
-        return
-      }
-
-      if (rolesData.synced) {
-        setRoleCheck("Synced!")
-        return
-      }
-
-      setRoleCheck(JSON.stringify(rolesData))
-    }
-
-    if (user) loadRole()
-  }, [user])
+  const { isAuthenticated } = useAuth()
 
   return (
-    <>
-      <Navbar />
-      <div className='flex min-h-screen flex-col gap-10 p-10'>
-        <h1 className='text-center font-title text-4xl font-bold uppercase'>
-          This is the Home Page
-        </h1>
-        <div>
-          <p className='py-5'>Example env variable (VITE_EXAMPLE_ENV):</p>
-          <p>&quot;{ENV_VAR}&quot;</p>
-        </div>
-        <div>
-          <h1 className='py-5 text-lg font-bold'>Firebase Firestore Test</h1>
-          <button
-            className='bg-emerald-500 rounded-xl p-3 text-white'
-            onClick={createDocument}
-          >
-            Create Document
-          </button>
-
-          <p className='pt-5'>Documents:</p>
-          <ul className='list-disc space-y-2 pl-6 pt-4'>
-            {loading
-              ? [...Array(5).keys()].map(i => (
-                  <li key={i}>
-                    <span className='bg-slate-200 inline-block h-4 w-60 animate-pulse rounded'></span>
-                  </li>
-                ))
-              : documents.map((doc, i) => (
-                  <li key={i}>
-                    <Document {...doc} />
-                  </li>
-                ))}
-          </ul>
-        </div>
-        <div>
-          <p>User Role Sync Check:</p>
-          <p>{roleCheck}</p>
-        </div>
+    <div className='flex min-h-screen flex-col items-center justify-center gap-5'>
+      <img src={CruzHacksLogo} alt='' className='w-32' />
+      <div>
+        <h1 className='font-title text-6xl uppercase'>Cruz</h1>
+        <h1 className='font-title text-5xl uppercase'>Hacks</h1>
       </div>
-      <Footer />
-    </>
+
+      <div className='space-y-5'>
+        {isAuthenticated ? (
+          <>
+            <Link
+              to='/portal'
+              className='flex h-12 w-64 items-center justify-center rounded-md bg-pink font-subtext text-xl leading-6 text-blue-imperial shadow-sm hover:bg-pink/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white disabled:bg-pink/50'
+            >
+              Portal
+            </Link>
+            <button
+              onClick={logout}
+              className='flex h-12 w-64 items-center justify-center rounded-md border-2 border-white font-subtext text-xl leading-6 text-white shadow-sm hover:border-white/80 hover:text-white/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-royal disabled:bg-white/50'
+            >
+              Logout
+            </button>
+          </>
+        ) : (
+          <>
+            <Link
+              to='/login'
+              className='flex h-12 w-64 items-center justify-center rounded-md bg-white font-subtext text-xl leading-6 text-blue-imperial shadow-sm transition-colors hover:bg-white/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-royal disabled:bg-white/50'
+            >
+              Login
+            </Link>
+            <Link
+              to='/signup'
+              className='flex h-12 w-64 items-center justify-center rounded-md border-2 border-white font-subtext text-xl leading-6 text-white shadow-sm hover:bg-white/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-royal disabled:bg-white/50'
+            >
+              Sign Up
+            </Link>
+          </>
+        )}
+      </div>
+    </div>
   )
 }
 
