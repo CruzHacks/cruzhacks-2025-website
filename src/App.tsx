@@ -12,6 +12,7 @@ import PortalRedirectRoute from "./components/protectedRoutes/PortalRedirectRout
 import ApplicantPortal from "./views/ApplicantPortal"
 import Dashboard from "./views/ApplicantPortal/Dashboard"
 import Application from "./views/ApplicantPortal/Application"
+import NotFound from "./views/NotFound"
 
 const App: React.FC = () => {
   return (
@@ -46,7 +47,7 @@ const App: React.FC = () => {
           </Route>
         </Route>
 
-        <Route path='*' element={<div>Not Found</div>} />
+        <Route path='*' element={<NotFound />} />
       </Routes>
     </AuthContextProvider>
   )
