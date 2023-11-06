@@ -3,7 +3,6 @@ import { Route, Routes } from "react-router-dom"
 import RoleProtectedRoute from "./components/protectedRoutes/RoleProtectedRoute"
 import PortalRedirectRoute from "./components/protectedRoutes/PortalRedirectRoute"
 import UnauthenticatedRoute from "./components/protectedRoutes/UnauthenticatedRoute"
-import { AuthContextProvider } from "./contexts/auth"
 import Home from "./views/home"
 import Login from "./views/Login"
 import Signup from "./views/Signup"
@@ -17,49 +16,51 @@ import TeamsAdmin from "./views/portal/admin/teams"
 import ApplicationApplicant from "./views/portal/applicant/ApplicationApplicant"
 import PortalApplicant from "./views/portal/applicant"
 import DashboardApplicant from "./views/portal/applicant/DashboardApplicant"
-import ReactQueryProvider from "./contexts/reactQuery"
+import useAuth from "./hooks/useAuth"
 
 const App: React.FC = () => {
+  const {
+    auth: { loading },
+  } = useAuth()
+
+  if (loading) return
+
   return (
-    <AuthContextProvider>
-      <ReactQueryProvider>
-        <Routes>
-          <Route index element={<Home />} />
+    <Routes>
+      <Route index element={<Home />} />
 
-          {/* You cannot be logged in to access these routes*/}
-          <Route element={<UnauthenticatedRoute />}>
-            <Route path='login' element={<Login />} />
-            <Route path='signup' element={<Signup />} />
-          </Route>
+      {/* You cannot be logged in to access these routes*/}
+      <Route element={<UnauthenticatedRoute />}>
+        <Route path='login' element={<Login />} />
+        <Route path='signup' element={<Signup />} />
+      </Route>
 
-          {/* You must be logged in to access these routes*/}
-          <Route path='portal' element={<PortalRedirectRoute />} />
+      {/* You must be logged in to access these routes*/}
+      <Route path='portal' element={<PortalRedirectRoute />} />
 
-          <Route element={<RoleProtectedRoute allowedRole='applicant' />}>
-            <Route path='portal/applicant' element={<PortalApplicant />}>
-              <Route index element={<DashboardApplicant />} />
-              <Route path='application' element={<ApplicationApplicant />} />
-            </Route>
-          </Route>
+      <Route element={<RoleProtectedRoute allowedRole='applicant' />}>
+        <Route path='portal/applicant' element={<PortalApplicant />}>
+          <Route index element={<DashboardApplicant />} />
+          <Route path='application' element={<ApplicationApplicant />} />
+        </Route>
+      </Route>
 
-          <Route element={<RoleProtectedRoute allowedRole='hacker' />}>
-            <Route path='portal/hacker' element={<HackerPortal />}>
-              {/* Hacker Portal sub-routes go here*/}
-            </Route>
-          </Route>
-          <Route element={<RoleProtectedRoute allowedRole='admin' />}>
-            <Route path='portal/admin' element={<AdminPortal />}>
-              <Route index element={<DashboardAdmin />} />
-              <Route path='applications' element={<ApplicationsAdmin />} />
-              <Route path='teams' element={<TeamsAdmin />} />
-              <Route path='users' element={<UsersAdmin />} />
-            </Route>
-          </Route>
+      <Route element={<RoleProtectedRoute allowedRole='hacker' />}>
+        <Route path='portal/hacker' element={<HackerPortal />}>
+          {/* Hacker Portal sub-routes go here*/}
+        </Route>
+      </Route>
+      <Route element={<RoleProtectedRoute allowedRole='admin' />}>
+        <Route path='portal/admin' element={<AdminPortal />}>
+          <Route index element={<DashboardAdmin />} />
+          <Route path='applications' element={<ApplicationsAdmin />} />
+          <Route path='teams' element={<TeamsAdmin />} />
+          <Route path='users' element={<UsersAdmin />} />
+        </Route>
+      </Route>
 
-          <Route path='*' element={<NotFound />} />
-        </Routes>
-      </ReactQueryProvider>
-    </AuthContextProvider>
+      <Route path='*' element={<NotFound />} />
+    </Routes>
   )
 }
 

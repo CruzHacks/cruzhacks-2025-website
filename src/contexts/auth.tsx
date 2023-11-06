@@ -19,15 +19,18 @@ export const AuthContext = createContext<{
   user: User | null
   role: string | null
   error: Error | null
+  loading: boolean
 }>({
   user: null,
   role: null,
   error: null,
+  loading: true,
 })
 
 export const AuthContextProvider = (props: any) => {
   const [user, setUser] = useState<User | null>(null)
   const [role, setRole] = useState<UserRole | null>(null)
+  const [loading, setLoading] = useState(true)
   const [error, setError] = useState<Error | null>(null)
 
   useEffect(() => {
@@ -57,10 +60,12 @@ export const AuthContextProvider = (props: any) => {
             })
             .finally(() => {
               setUser(_user)
+              setLoading(false)
             })
         } else {
           setUser(null)
           setRole(null)
+          setLoading(false)
         }
       },
       setError
@@ -69,5 +74,7 @@ export const AuthContextProvider = (props: any) => {
     return () => unsubscribe()
   }, [])
 
-  return <AuthContext.Provider value={{ user, role, error }} {...props} />
+  return (
+    <AuthContext.Provider value={{ user, role, error, loading }} {...props} />
+  )
 }
