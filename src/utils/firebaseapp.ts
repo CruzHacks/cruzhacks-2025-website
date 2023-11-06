@@ -21,7 +21,6 @@ const funcs = getFunctions(app)
 
 // Start emulators only in development
 if (import.meta.env.DEV) {
-  alert("Remember to start the Firebase emulators!")
   connectAuthEmulator(auth, "http://localhost:9099")
   connectFirestoreEmulator(db, "localhost", 8080)
   connectFunctionsEmulator(funcs, "localhost", 5001)

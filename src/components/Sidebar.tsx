@@ -99,7 +99,7 @@ const Sidebar = ({ navigation }: SidebarProps) => {
                     </div>
                   </Transition.Child>
                   {/* Sidebar component, swap this element with another sidebar if you like */}
-                  <div className='flex grow flex-col gap-y-5 overflow-y-auto bg-blue-royal px-6 pb-2 ring-1 ring-white/10'>
+                  <div className='flex grow flex-col gap-y-5 overflow-y-auto bg-blue-imperial px-6 pb-2 ring-1 ring-white/10'>
                     <div className='flex h-16 shrink-0 items-center'>
                       <Link to='/'>
                         <img
@@ -119,8 +119,8 @@ const Sidebar = ({ navigation }: SidebarProps) => {
                                   to={item.href}
                                   className={classNames(
                                     location.pathname === item.href
-                                      ? "bg-blue-chinese text-white"
-                                      : "bg-blue-imperial hover:bg-blue-chinese hover:text-white",
+                                      ? "bg-blue-royal text-blue-button"
+                                      : "hover:bg-blue-royal hover:text-blue-button",
                                     "group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6"
                                   )}
                                 >
@@ -191,8 +191,8 @@ const Sidebar = ({ navigation }: SidebarProps) => {
                           to={item.href}
                           className={classNames(
                             location.pathname === item.href
-                              ? "bg-blue-chinese text-white"
-                              : "bg-blue-imperial hover:bg-blue-chinese hover:text-white",
+                              ? "bg-blue-royal text-blue-button"
+                              : "hover:bg-blue-royal hover:text-blue-button",
                             "group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6"
                           )}
                         >
