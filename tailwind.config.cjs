@@ -19,6 +19,7 @@ module.exports = {
         han: "#5B1FED",
       },
       white: "#D3DAF4",
+      error: "#de3535",
     },
     fontFamily: {
       title: ["StretchPro"],

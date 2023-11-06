@@ -9,6 +9,8 @@ const UsersAdmin = () => {
     auth: { user: currentUser },
   } = useAuth()
   const [users, setUsers] = useState<UserBasics[]>([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<string>()
 
   useEffect(() => {
     if (!currentUser) return
@@ -16,12 +18,23 @@ const UsersAdmin = () => {
     getUsers(currentUser).then(res => {
       if ("message" in res) {
         console.error(res.message)
+        setError(res.message)
         return
       }
 
+      setError(undefined)
+      setLoading(false)
       setUsers(res.users)
     })
   }, [])
+
+  const handleNewUser = () => {
+    alert("This feature is not yet implemented.")
+  }
+
+  const handleEditUser = () => {
+    alert("This feature is not yet implemented.")
+  }
 
   return (
     <div className='px-4 sm:px-6 lg:px-8'>
@@ -36,7 +49,8 @@ const UsersAdmin = () => {
         <div className='mt-4 sm:ml-16 sm:mt-0 sm:flex-none'>
           <button
             type='button'
-            className='block rounded-md bg-pink px-3 py-2 text-center font-subtext text-sm font-semibold text-white shadow-sm hover:bg-pink/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white'
+            className='block cursor-not-allowed rounded-md bg-pink px-3 py-2 text-center font-subtext text-sm font-semibold text-white shadow-sm hover:bg-pink/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white'
+            onClick={handleNewUser}
           >
             Add user
           </button>
@@ -68,7 +82,7 @@ const UsersAdmin = () => {
                   </th>
                   <th
                     scope='col'
-                    className='sticky top-0 z-10 border-b border-white/20 bg-blue-imperial/50 px-3 py-3.5 text-left text-sm font-semibold backdrop-blur'
+                    className='sticky top-0 z-10 hidden border-b border-white/20 bg-blue-imperial/50 px-3 py-3.5 text-left text-sm font-semibold backdrop-blur sm:table-cell'
                   >
                     UID
                   </th>
@@ -81,69 +95,118 @@ const UsersAdmin = () => {
                 </tr>
               </thead>
               <tbody>
-                {users.map((user, userIdx) => (
-                  <tr key={user.email}>
-                    <td
-                      className={classNames(
-                        userIdx !== users.length - 1
-                          ? "border-b border-white/20"
-                          : "",
-                        user.displayName ? "" : "text-white/50",
-                        "whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium sm:pl-6 lg:pl-8"
-                      )}
-                    >
-                      {user.displayName || "—"}
-                    </td>
-                    <td
-                      className={classNames(
-                        userIdx !== users.length - 1
-                          ? "border-b border-white/20"
-                          : "",
-                        user.email === currentUser?.email ? "text-orange" : "",
-                        "hidden whitespace-nowrap px-3 py-4 text-sm sm:table-cell"
-                      )}
-                    >
-                      {user.email}
-                    </td>
-                    <td
-                      className={classNames(
-                        userIdx !== users.length - 1
-                          ? "border-b border-white/20"
-                          : "",
-                        user.email === currentUser?.email ? "text-orange" : "",
-                        "whitespace-nowrap px-3 py-4 text-sm"
-                      )}
-                    >
-                      {user.role}
-                    </td>
-                    <td
-                      className={classNames(
-                        userIdx !== users.length - 1
-                          ? "border-b border-white/20"
-                          : "",
-                        user.email === currentUser?.email ? "text-orange" : "",
-                        "whitespace-nowrap px-3 py-4 text-sm"
-                      )}
-                    >
-                      {user.uid}
-                    </td>
-                    <td
-                      className={classNames(
-                        userIdx !== users.length - 1
-                          ? "border-b border-white/20"
-                          : "",
-                        "relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-8 lg:pr-8"
-                      )}
-                    >
-                      <p className='hover:text-indigo-900 cursor-not-allowed text-pink/50'>
-                        Edit
-                        <span className='sr-only'>, {user.displayName}</span>
-                      </p>
-                    </td>
-                  </tr>
-                ))}
+                {!error &&
+                  (!loading
+                    ? users.map((user, userIdx) => (
+                        <tr key={user.email}>
+                          <td
+                            className={classNames(
+                              userIdx !== users.length - 1
+                                ? "border-b border-white/20"
+                                : "",
+                              user.displayName ? "" : "text-white/50",
+                              "hidden whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium sm:table-cell sm:pl-6 lg:pl-8"
+                            )}
+                          >
+                            {user.displayName || "—"}
+                          </td>
+                          <td
+                            className={classNames(
+                              userIdx !== users.length - 1
+                                ? "border-b border-white/20"
+                                : "",
+                              user.email === currentUser?.email
+                                ? "text-orange"
+                                : "",
+                              "whitespace-nowrap px-3 py-4 text-sm"
+                            )}
+                          >
+                            {user.email}
+                          </td>
+                          <td
+                            className={classNames(
+                              userIdx !== users.length - 1
+                                ? "border-b border-white/20"
+                                : "",
+                              user.email === currentUser?.email
+                                ? "text-orange"
+                                : "",
+                              "whitespace-nowrap px-3 py-4 text-sm"
+                            )}
+                          >
+                            {user.role}
+                          </td>
+                          <td
+                            className={classNames(
+                              userIdx !== users.length - 1
+                                ? "border-b border-white/20"
+                                : "",
+                              user.email === currentUser?.email
+                                ? "text-orange"
+                                : "",
+                              "hidden whitespace-nowrap px-3 py-4 text-sm sm:table-cell"
+                            )}
+                          >
+                            {user.uid}
+                          </td>
+                          <td
+                            className={classNames(
+                              userIdx !== users.length - 1
+                                ? "border-b border-white/20"
+                                : "",
+                              "relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-8 lg:pr-8"
+                            )}
+                          >
+                            <p className='cursor-not-allowed text-pink/50'>
+                              Edit
+                              <span className='sr-only'>
+                                , {user.displayName}
+                              </span>
+                            </p>
+                          </td>
+                        </tr>
+                      ))
+                    : // Loading State
+                      [...Array(5).keys()].map(i => (
+                        <tr key={i}>
+                          <td
+                            key={i + 100}
+                            className='hidden py-4 pl-4 pr-3 text-sm font-medium sm:table-cell sm:pl-6 lg:pl-8'
+                          >
+                            <div className='h-6 w-40 animate-pulse rounded bg-white/30 '></div>
+                          </td>
+                          <td key={i + 200} className='px-3 py-4'>
+                            <div className='h-6 w-40 animate-pulse rounded bg-white/30 '></div>
+                          </td>
+                          <td key={i + 300} className='px-3 py-4'>
+                            <div className='h-6 w-16 animate-pulse rounded bg-white/30 '></div>
+                          </td>
+                          <td
+                            key={i + 400}
+                            className='hidden px-3 py-4 sm:table-cell'
+                          >
+                            <div className='h-6 w-60 animate-pulse rounded bg-white/30 '></div>
+                          </td>
+                          <td className='relative py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-8 lg:pr-8'>
+                            <button
+                              onClick={handleEditUser}
+                              className='cursor-not-allowed text-pink/50'
+                            >
+                              Edit
+                            </button>
+                          </td>
+                        </tr>
+                      )))}
               </tbody>
             </table>
+            {error && (
+              <div className='flex h-40 w-full flex-col items-center justify-center bg-error/10'>
+                <p className='font-subtext leading-8 text-error'>
+                  Error while fetching users:
+                </p>
+                <p className='font-subtext leading-8 text-error'>{error}</p>
+              </div>
+            )}
           </div>
         </div>
       </div>
