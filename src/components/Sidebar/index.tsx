@@ -220,7 +220,7 @@ const Sidebar = ({ navigation }: SidebarProps) => {
                     ))}
                   </ul>
                 </li> */}
-                <li className='-mx-6 mt-auto'>
+                <li className='-mx-3 mb-5 mt-auto'>
                   <AvatarButton email={user?.email || ""} direction={"left"} />
                 </li>
               </ul>

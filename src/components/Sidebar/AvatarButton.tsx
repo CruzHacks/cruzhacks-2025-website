@@ -60,7 +60,7 @@ const AvatarButton = ({ email, direction }: AvatarButtonProps) => {
         <Menu.Items
           className={classNames(
             direction === "down" && "mt-2 origin-top-right",
-            direction === "left" && "left-16 -mt-20 origin-bottom-left",
+            direction === "left" && "left-12 -mt-20 origin-bottom-left",
             "absolute right-0 z-10 w-48 rounded-md bg-blue-imperial py-1 shadow-lg ring-4 ring-white/5 focus:outline-none"
           )}
         >
