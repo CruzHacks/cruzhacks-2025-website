@@ -23,7 +23,9 @@ const App: React.FC = () => {
     auth: { loading },
   } = useAuth()
 
-  if (loading) return
+  if (loading) {
+    return <div className='sr-only'>loading</div>
+  }
 
   return (
     <Routes>
