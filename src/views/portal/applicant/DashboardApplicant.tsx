@@ -1,5 +1,5 @@
 import React from "react"
-import { useAuth } from "../../../contexts/auth"
+import useAuth from "../../../hooks/useAuth"
 
 const DashboardApplicant = () => {
   const {

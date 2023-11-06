@@ -1,6 +1,6 @@
 import React from "react"
 import { Navigate } from "react-router-dom"
-import { useAuth } from "../../contexts/auth"
+import useAuth from "../../hooks/useAuth"
 
 const PortalRedirectRoute = () => {
   const { auth, isAuthenticated } = useAuth()

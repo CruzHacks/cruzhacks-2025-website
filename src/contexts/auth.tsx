@@ -1,5 +1,5 @@
 import { onAuthStateChanged } from "@firebase/auth"
-import React, { createContext, useContext, useEffect, useState } from "react"
+import React, { createContext, useEffect, useState } from "react"
 import { auth } from "../utils/firebaseapp"
 import type { User } from "@firebase/auth"
 import userRoles, { UserRole } from "../utils/roles"
@@ -70,14 +70,4 @@ export const AuthContextProvider = (props: any) => {
   }, [])
 
   return <AuthContext.Provider value={{ user, role, error }} {...props} />
-}
-
-// Auth Hook
-export const useAuth = () => {
-  const authentication = useContext(AuthContext)
-
-  return {
-    auth: { ...authentication },
-    isAuthenticated: authentication.user != null,
-  }
 }

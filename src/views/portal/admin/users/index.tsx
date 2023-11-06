@@ -1,32 +1,16 @@
-import React, { useEffect, useState } from "react"
+import React from "react"
 import { classNames } from "../../../../utils/string"
-import { getUsers } from "../../../../utils/functionsApi"
-import { useAuth } from "../../../../contexts/auth"
-import { UserBasics } from "../../../../utils/types"
+import useUsers from "../../../../hooks/useUsers"
+import useAuth from "../../../../hooks/useAuth"
 
 const UsersAdmin = () => {
   const {
     auth: { user: currentUser },
   } = useAuth()
-  const [users, setUsers] = useState<UserBasics[]>([])
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState<string>()
+  // TODO: Pagination
+  const { data: users, error, isLoading, isError } = useUsers(currentUser)
 
-  useEffect(() => {
-    if (!currentUser) return
-
-    getUsers(currentUser).then(res => {
-      if ("message" in res) {
-        console.error(res.message)
-        setError(res.message)
-        return
-      }
-
-      setError(undefined)
-      setLoading(false)
-      setUsers(res.users)
-    })
-  }, [])
+  console.log(users)
 
   const handleNewUser = () => {
     alert("This feature is not yet implemented.")
@@ -95,9 +79,10 @@ const UsersAdmin = () => {
                 </tr>
               </thead>
               <tbody>
-                {!error &&
-                  (!loading
-                    ? users.map((user, userIdx) => (
+                {!isError &&
+                  (!isLoading
+                    ? users &&
+                      users.map((user, userIdx) => (
                         <tr key={user.email}>
                           <td
                             className={classNames(
@@ -199,12 +184,14 @@ const UsersAdmin = () => {
                       )))}
               </tbody>
             </table>
-            {error && (
-              <div className='flex h-40 w-full flex-col items-center justify-center bg-error/10'>
+            {isError && (
+              <div className='flex min-h-full w-full flex-col items-center justify-center bg-error/10 p-10'>
                 <p className='font-subtext leading-8 text-error'>
                   Error while fetching users:
                 </p>
-                <p className='font-subtext leading-8 text-error'>{error}</p>
+                <p className='break-all font-subtext leading-8 text-error'>
+                  {JSON.stringify(error)}
+                </p>
               </div>
             )}
           </div>

@@ -1,8 +1,8 @@
 import React from "react"
 import CruzHacksLogo from "../../assets/logos/CruzHacks.svg"
 import { Link } from "react-router-dom"
-import { useAuth } from "../../contexts/auth"
 import { auth } from "../../utils/firebaseapp"
+import useAuth from "../../hooks/useAuth"
 
 const logout = async () => {
   await auth

@@ -4,8 +4,8 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline"
 import { classNames } from "../utils/string"
 import { Link, Outlet, useLocation } from "react-router-dom"
 import CruzHacksLogo from "../assets/logos/CruzHacks.svg"
-import { useAuth } from "../contexts/auth"
 import Avatar from "boring-avatars"
+import useAuth from "../hooks/useAuth"
 
 type NavigationItem = {
   name: string

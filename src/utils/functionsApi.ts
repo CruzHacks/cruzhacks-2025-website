@@ -1,12 +1,11 @@
 import type { User } from "@firebase/auth"
-import { ApplicationSchema } from "../views/portal/applicant/ApplicationApplicant"
-import { CheckRoleSynced, ErrorResponse, UserBasics } from "./types"
+import { ApplicationSchema, CheckRoleSynced, ErrorResponse } from "./types"
 
 // This URL resolve to the Firebase Functions emulator in development is hacky
 // but works, prefer to have static URLs at build
 // TODO: Find a better way to do this
-const PROJECT_ID = import.meta.env.VITE_FIREBASE_PROJECT_ID
-const API_URL = import.meta.env.DEV
+export const PROJECT_ID = import.meta.env.VITE_FIREBASE_PROJECT_ID
+export const API_URL = import.meta.env.DEV
   ? `http://localhost:5001/${PROJECT_ID}/us-central1`
   : `https://us-central1-${PROJECT_ID}.cloudfunctions.net`
 
@@ -30,36 +29,6 @@ export const checkRoleSynced = async (user: User) => {
       },
     })
     const data: CheckRoleSynced | ErrorResponse = await response.json()
-    if ("message" in data) throw new Error(data.message)
-    return data
-  } catch (err) {
-    console.error(err)
-    return err as Error
-  }
-}
-
-/**
- * CruzHacks-2024-Backend API endpoint for retrieving a list of users
- * @param user Firebase User
- * @param pageToken OPTIONAL - The page token (used for pagination)
- * @returns The list of users if successful, otherwise an error message
- */
-export const getUsers = async (user: User, pageToken?: string) => {
-  try {
-    if (!user) throw new Error("No user provided")
-
-    const idToken = await user.getIdToken(false)
-    const response = await fetch(
-      `${API_URL}/auth/users?pageToken=${pageToken}`,
-      {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${idToken}`,
-        },
-      }
-    )
-    const data: { users: UserBasics[] } | ErrorResponse = await response.json()
     if ("message" in data) throw new Error(data.message)
     return data
   } catch (err) {
