@@ -56,7 +56,7 @@ jobs:
       - name: Deploy to Firebase
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
-          target: sponsorship-website
+          target: development
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
           firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_CRUZHACKS_2024_DEVELOPME_D58C3 }}"
-          projectId: cruzhacks-developme-d58c3
+          projectId: cruzhacks-2024-developme-d58c3
