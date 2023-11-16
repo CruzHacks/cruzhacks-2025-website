@@ -24,6 +24,7 @@ const Home = () => {
       <div>
         <h1 className='font-title text-6xl uppercase'>Cruz</h1>
         <h1 className='font-title text-5xl uppercase'>Hacks</h1>
+        <p className='text-center font-subtext'>January 19th - 21st, 2024</p>
       </div>
       <Link
         to='/apply'
