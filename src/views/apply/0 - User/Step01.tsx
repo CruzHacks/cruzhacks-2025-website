@@ -28,8 +28,8 @@ const Step01Schema = z.object({
     .string()
     .min(1, "Phone number is required")
     .refine(
-      value => /^(\([0-9]{3}\) |[0-9]{3}-)[0-9]{3}-[0-9]{4}$/.test(value),
-      "Please format digits as 000-000-0000"
+      value => /^\d{10}$/.test(value),
+      "Please format digits as 1231231234"
     ),
 })
 
@@ -112,7 +112,7 @@ const Step01 = ({
             inputProps={{
               ...register("phone_number"),
               type: "tel",
-              placeholder: "000-000-0000",
+              placeholder: "1231231234",
             }}
             error={
               errors.phone_number ? errors.phone_number.message : undefined

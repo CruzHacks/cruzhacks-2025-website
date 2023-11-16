@@ -45,8 +45,8 @@ export const AppUserSchema = z.object({
     .string()
     .min(1, "Phone number is required")
     .refine(
-      value => /^(\([0-9]{3}\) |[0-9]{3}-)[0-9]{3}-[0-9]{4}$/.test(value),
-      "Please format digits as 000-000-0000"
+      value => /^\d{10}$/.test(value),
+      "Please format digits as 1231231234"
     ),
   password: z.string().min(1, "Please include a password"),
 })
