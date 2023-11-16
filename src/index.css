@@ -6,6 +6,31 @@
   html {
     @apply text-white;
   }
+
+  /* Remove number spin buttons */
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Autofill background*/
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus,
+    textarea:-webkit-autofill,
+    textarea:-webkit-autofill:hover,
+    textarea:-webkit-autofill:focus,
+    select:-webkit-autofill,
+    select:-webkit-autofill:hover,
+    select:-webkit-autofill:focus {
+      -webkit-text-fill-color: #E558F4;
+      /* -webkit-box-shadow: 0 0 0px 1000px #1b1b6c inset; */
+      background-color: #000;
+      transition: background-color 5000s ease-in-out 0s;
+    }
+
+  /* Font imports */
   @font-face {
     font-family: Andaleo Mono;
     src: url("./assets/fonts/Andaleo Mono.woff") format("woff");
@@ -22,4 +47,11 @@
     font-weight: 400;
     src: url("./assets/fonts/Stretch Pro.woff") format("woff");
   }
+}
+
+/* making firebase emulator warning less intrusive */
+.firebase-emulator-warning {
+  background-color: transparent !important;
+  border: none !important;
+  color: rgba(245, 66, 66, 0.3) !important;
 }

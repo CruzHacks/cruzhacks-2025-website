@@ -32,6 +32,15 @@ const Sidebar = ({ navigation }: SidebarProps) => {
   const location = useLocation()
   const email = user?.email || ""
 
+  // Higlight when in subnavigation
+  const isActive = (item: NavigationItem) => {
+    if (item.name === "Dashboard") {
+      return location.pathname === item.href
+    }
+
+    return location.pathname.includes(item.href)
+  }
+
   return (
     <>
       <div>
@@ -107,7 +116,7 @@ const Sidebar = ({ navigation }: SidebarProps) => {
                                 <Link
                                   to={item.href}
                                   className={classNames(
-                                    location.pathname === item.href
+                                    isActive(item)
                                       ? "bg-blue-royal/60 text-pink"
                                       : "hover:bg-blue-royal/60 hover:text-pink",
                                     "group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6"
@@ -179,7 +188,7 @@ const Sidebar = ({ navigation }: SidebarProps) => {
                         <Link
                           to={item.href}
                           className={classNames(
-                            location.pathname === item.href
+                            isActive(item)
                               ? "bg-blue-royal/60 text-pink"
                               : "hover:bg-blue-royal/60 hover:text-pink",
                             "group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6"

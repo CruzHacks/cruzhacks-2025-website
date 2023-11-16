@@ -20,10 +20,10 @@ const NotFound = () => {
             Go back home
           </Link>
           <a
-            href='mailto:contact@cruzhacks.com'
+            href='https://discord.gg/tBHmBbBX7C'
             className='font-subtext text-sm font-semibold'
           >
-            Email support <span aria-hidden='true'>&rarr;</span>
+            Ask the CruzHacks Discord <span aria-hidden='true'>&rarr;</span>
           </a>
         </div>
       </div>

@@ -51,7 +51,6 @@ export default function Login() {
   return (
     <div className='min-w-screen flex min-h-screen flex-1 items-center justify-center'>
       <Link to='/' className='fixed left-5 top-5'>
-        {/* <image className='h-10 w-auto' src={logo} alt='StudentStay' /> */}
         <ArrowLeftIcon className='h-8 w-auto' />
       </Link>
       <div className='w-full max-w-sm lg:w-96'>

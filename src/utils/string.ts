@@ -1,5 +1,5 @@
 /**
- * @description This function takes in a list of classes and returns a string of classes
+ * This function takes in a list of classes and returns a string of classes
  * @param {string[]} classes
  * @returns {string}
  */

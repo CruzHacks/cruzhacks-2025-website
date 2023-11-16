@@ -1,22 +1,22 @@
 import React from "react"
 import CruzHacksLogo from "../../assets/logos/CruzHacks.svg"
 import { Link } from "react-router-dom"
-import { auth } from "../../utils/firebaseapp"
-import useAuth from "../../hooks/useAuth"
+// import { auth } from "../../utils/firebaseapp"
+// import useAuth from "../../hooks/useAuth"
 
-const logout = async () => {
-  await auth
-    .signOut()
-    .then(() => {
-      console.log("User signed out")
-    })
-    .catch(error => {
-      console.error(error)
-    })
-}
+// const logout = async () => {
+//   await auth
+//     .signOut()
+//     .then(() => {
+//       console.log("User signed out")
+//     })
+//     .catch(error => {
+//       console.error(error)
+//     })
+// }
 
 const Home = () => {
-  const { isAuthenticated } = useAuth()
+  // const { isAuthenticated } = useAuth()
 
   return (
     <div className='flex min-h-screen flex-col items-center justify-center gap-5'>
@@ -25,8 +25,13 @@ const Home = () => {
         <h1 className='font-title text-6xl uppercase'>Cruz</h1>
         <h1 className='font-title text-5xl uppercase'>Hacks</h1>
       </div>
-
-      <div className='space-y-5'>
+      <Link
+        to='/apply'
+        className='flex h-12 w-64 items-center justify-center rounded-md bg-pink font-subtext text-xl leading-6 text-blue-imperial shadow-sm hover:bg-pink/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white disabled:bg-pink/50'
+      >
+        Apply
+      </Link>
+      {/* <div className='space-y-5'>
         {isAuthenticated ? (
           <>
             <Link
@@ -58,7 +63,7 @@ const Home = () => {
             </Link>
           </>
         )}
-      </div>
+      </div> */}
     </div>
   )
 }
