@@ -287,7 +287,7 @@ export const demographicSteps: FormTemplate[] = [
         options: [
           "Less than Secondary/High School",
           "Secondary/High School",
-          "Undergarduate",
+          "Undergraduate",
           "Graduate",
           "Code School/Bootcamp",
           "Other Vocational/Trade Program or Apprenticeship",

@@ -4,8 +4,8 @@ import RoleProtectedRoute from "./components/protectedRoutes/RoleProtectedRoute"
 import PortalRedirectRoute from "./components/protectedRoutes/PortalRedirectRoute"
 import UnauthenticatedRoute from "./components/protectedRoutes/UnauthenticatedRoute"
 import Home from "./views/home"
-// import Login from "./views/Login"
-// import Signup from "./views/Signup"
+import Login from "./views/Login"
+import Signup from "./views/Signup"
 import NotFound from "./views/NotFound"
 import HackerPortal from "./views/portal/hacker"
 import AdminPortal from "./views/portal/admin"
@@ -57,8 +57,8 @@ const App: React.FC = () => {
 
         {/* You cannot be logged in to access these routes*/}
         <Route element={<UnauthenticatedRoute />}>
-          {/* <Route path='login' element={<Login />} />
-          <Route path='signup' element={<Signup />} /> */}
+          <Route path='login' element={<Login />} />
+          <Route path='signup' element={<Signup />} />
           <Route path='apply' element={<Apply />}>
             <Route index element={<Navigate replace to='/apply/user' />} />
             <Route path='user' element={<UserSection />} />

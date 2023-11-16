@@ -8,11 +8,11 @@ const nav = [
     href: "/portal/applicant",
     icon: HomeIcon,
   },
-  {
-    name: "Application",
-    href: "/portal/applicant/application",
-    icon: UsersIcon,
-  },
+  // {
+  //   name: "Application",
+  //   href: "/portal/applicant/application",
+  //   icon: UsersIcon,
+  // },
 ]
 
 const PortalApplicant = () => {

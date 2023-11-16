@@ -38,7 +38,14 @@ const ApplicationApplicant = () => {
   return (
     <div className='space-y-10'>
       <h1 className='font-title text-xl'>My Application</h1>
-      {isApplicationSubmitted && <Submitted />}
+      {isApplicationSubmitted ? (
+        <Submitted />
+      ) : (
+        <p>
+          Hmm... seems you do not have an application but you have an applicant
+          account. This is strange, please email us at contact@cruzhacks.com
+        </p>
+      )}
     </div>
   )
 }
