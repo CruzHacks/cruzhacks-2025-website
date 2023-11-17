@@ -45,10 +45,16 @@ const App: React.FC = () => {
           className: "font-subtext",
           position: "bottom-right",
           success: {
-            className: "bg-[#4BB543] text-white font-subtext text-md",
+            style: {
+              background: "#4BB543",
+              color: "#FFFFFF",
+            },
           },
           error: {
-            className: "bg-error text-white font-subtext text-md",
+            style: {
+              background: "#de3535",
+              color: "#FFFFFF",
+            },
           },
         }}
       />

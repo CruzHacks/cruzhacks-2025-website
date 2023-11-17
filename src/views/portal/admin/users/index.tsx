@@ -74,7 +74,7 @@ const UsersAdmin = () => {
                   </th>
                   <th
                     scope='col'
-                    className='sticky top-0 z-10 hidden border-b border-white/20 bg-blue-imperial/50 px-3 py-3.5 text-left text-sm font-semibold backdrop-blur sm:table-cell'
+                    className='sticky top-0 z-10 hidden border-b border-white/20 bg-blue-imperial/50 px-3 py-3.5 text-left text-sm font-semibold backdrop-blur md:table-cell'
                   >
                     UID
                   </th>
@@ -82,7 +82,7 @@ const UsersAdmin = () => {
                     scope='col'
                     className='sticky top-0 z-10 border-b border-white/20 bg-blue-imperial/50 py-3.5 pl-3 pr-4 backdrop-blur sm:pr-6 lg:pr-8'
                   >
-                    <span className='sr-only'>Password Reset</span>
+                    <span className='sr-only'>Send Password Reset</span>
                   </th>
                 </tr>
               </thead>
@@ -140,7 +140,7 @@ const UsersAdmin = () => {
                               user.email === currentUser?.email
                                 ? "text-orange"
                                 : "",
-                              "hidden whitespace-nowrap px-3 py-4 font-subtext text-sm sm:table-cell"
+                              "hidden whitespace-nowrap px-3 py-4 font-subtext text-sm md:table-cell"
                             )}
                           >
                             {user.uid}
@@ -158,7 +158,7 @@ const UsersAdmin = () => {
                               onClick={() => sendPasswordReset(user.email)}
                               className='text-pink'
                             >
-                              send password reset
+                              Send Password Reset
                               <span className='sr-only'>, {user.email}</span>
                             </button>
                           </td>
@@ -181,13 +181,13 @@ const UsersAdmin = () => {
                           </td>
                           <td
                             key={i + 400}
-                            className='hidden px-3 py-4 sm:table-cell'
+                            className='hidden px-3 py-4 md:table-cell'
                           >
                             <div className='h-6 w-60 animate-pulse rounded bg-white/30 '></div>
                           </td>
                           <td className='relative py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-8 lg:pr-8'>
                             <button className='cursor-not-allowed text-pink/50'>
-                              Edit
+                              Send Password Reset
                             </button>
                           </td>
                         </tr>

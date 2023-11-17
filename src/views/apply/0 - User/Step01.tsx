@@ -7,21 +7,18 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { StepButtons } from "../../../components/StepButtons"
 import { useAppState } from "../../../hooks/useAppState"
 import { StepProps } from "."
-import { checkEmailTaken } from "../../../utils/apis/cloudFunctions"
+// import { checkEmailTaken } from "../../../utils/apis/cloudFunctions"
 
 const Step01Schema = z.object({
-  email: z
-    .string()
-    .email("Invalid email address")
-    .min(1, "Email is required")
-    .refine(async email => {
-      try {
-        return !(await checkEmailTaken(email))
-      } catch (err) {
-        console.error(err)
-        return false
-      }
-    }, "Sorry! That email is already taken"),
+  email: z.string().email("Invalid email address").min(1, "Email is required"),
+  // .refine(async email => {
+  //   try {
+  //     return !(await checkEmailTaken(email))
+  //   } catch (err) {
+  //     console.error(err)
+  //     return false
+  //   }
+  // }, "Sorry! That email is already taken"),
   first_name: z.string().min(1, "First name is required"),
   last_name: z.string().min(1, "Last name is required"),
   phone_number: z
