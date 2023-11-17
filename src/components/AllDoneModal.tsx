@@ -1,6 +1,7 @@
 import React, { Dispatch, Fragment, SetStateAction } from "react"
 import { Dialog, Transition } from "@headlessui/react"
 import { FaceSmileIcon } from "@heroicons/react/24/solid"
+import { Link } from "react-router-dom"
 
 interface AllDoneModalProps {
   open: boolean
@@ -52,20 +53,19 @@ export default function AllDoneModal({ open, setOpen }: AllDoneModalProps) {
                     <div className='mt-2'>
                       <p className='text-sm text-white/70'>
                         Keep a look out for application decisions in your email.
-                        In the meantime, please join our Discord server to stay
-                        up to date on all things CruzHacks!
+                        Or check your application status in the portal.
                       </p>
                     </div>
                   </div>
                 </div>
                 <div className='mt-5 sm:mt-6'>
-                  <a
-                    href='https://discord.gg/tBHmBbBX7C'
+                  <Link
+                    to='/portal'
                     className='inline-flex w-full justify-center rounded-md bg-blue-button/50 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-button/60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-button'
                     onClick={() => setOpen(false)}
                   >
-                    Join Discord Server
-                  </a>
+                    Login to Portal
+                  </Link>
                 </div>
               </Dialog.Panel>
             </Transition.Child>

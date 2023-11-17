@@ -2,6 +2,9 @@ import React from "react"
 import { classNames } from "../../../../utils/string"
 import useUsers from "../../../../hooks/useUsers"
 import useAuth from "../../../../hooks/useAuth"
+import { auth } from "../../../../utils/firebaseapp"
+import { sendPasswordResetEmail } from "firebase/auth"
+import toast from "react-hot-toast"
 
 const UsersAdmin = () => {
   const {
@@ -12,6 +15,17 @@ const UsersAdmin = () => {
 
   const handleNewUser = () => {
     alert("This feature is not yet implemented.")
+  }
+
+  const sendPasswordReset = (email: string) => {
+    sendPasswordResetEmail(auth, email)
+      .then(() => {
+        toast.success("Password reset email sent")
+      })
+      .catch(err => {
+        console.error(err)
+        toast.error(err.message)
+      })
   }
 
   return (
@@ -68,7 +82,7 @@ const UsersAdmin = () => {
                     scope='col'
                     className='sticky top-0 z-10 border-b border-white/20 bg-blue-imperial/50 py-3.5 pl-3 pr-4 backdrop-blur sm:pr-6 lg:pr-8'
                   >
-                    <span className='sr-only'>Edit</span>
+                    <span className='sr-only'>Password Reset</span>
                   </th>
                 </tr>
               </thead>
@@ -139,17 +153,19 @@ const UsersAdmin = () => {
                               "relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-8 lg:pr-8"
                             )}
                           >
-                            <p className='cursor-not-allowed text-pink/50'>
-                              Edit
-                              <span className='sr-only'>
-                                , {user.displayName}
-                              </span>
-                            </p>
+                            <button
+                              type='button'
+                              onClick={() => sendPasswordReset(user.email)}
+                              className='text-pink'
+                            >
+                              send password reset
+                              <span className='sr-only'>, {user.email}</span>
+                            </button>
                           </td>
                         </tr>
                       ))
                     : // Loading State
-                      [...Array(5).keys()].map(i => (
+                      [...Array(20).keys()].map(i => (
                         <tr key={i}>
                           <td
                             key={i + 100}

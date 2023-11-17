@@ -24,6 +24,8 @@ export const checkApplicationSubmitted = async (user: User) => {
   const docRef = doc(db, `users/${user.email}/user_items/application`)
   const docSnap = await getDoc(docRef)
 
+  console.log("docSnap.exists(): ", docSnap.exists())
+
   return docSnap.exists()
 }
 

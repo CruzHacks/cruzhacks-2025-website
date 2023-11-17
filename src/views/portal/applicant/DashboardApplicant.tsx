@@ -7,7 +7,7 @@ const DashboardApplicant = () => {
     auth: { user },
   } = useAuth()
 
-  const fullName = user?.displayName || "Hacker"
+  const fullName = user?.displayName || user?.email || "Hacker"
 
   const [loading, setLoading] = useState(true)
   const [isApplicationSubmitted, setIsApplicationSubmitted] = useState(false)
