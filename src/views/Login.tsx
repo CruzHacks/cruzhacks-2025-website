@@ -48,7 +48,7 @@ export default function Login() {
   }
 
   return (
-    <div className='min-w-screen flex min-h-screen flex-1 items-center justify-center'>
+    <div className='min-w-screen flex min-h-screen flex-1 items-center justify-center px-6'>
       <Link to='/' className='fixed left-5 top-5'>
         <ArrowLeftIcon className='h-8 w-auto' />
       </Link>
