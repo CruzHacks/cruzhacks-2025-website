@@ -74,6 +74,8 @@ export const getApplicationShortResponses = async (email: string) => {
  * Function using Firebase sdk to retrieve information about all applications
  */
 export const getApplications = async () => {
+  // NOTE: This query requires a Firestore index
+  // https://firebase.google.com/docs/firestore/query-data/queries#collection-group-query
   const q = query(collectionGroup(db, "user_items"), orderBy("email"))
   const querySnapshot = await getDocs(q)
 

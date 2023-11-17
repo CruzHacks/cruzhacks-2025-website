@@ -54,6 +54,11 @@ const ApplicationsAdmin = () => {
             Hacker applications for this years hackathon.
           </p>
         </div>
+        <div className='mt-4 sm:ml-16 sm:mt-0 sm:flex-none'>
+          <p className='block rounded-md bg-blue-button/10 px-3 py-2 text-center font-subtext text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white'>
+            {applications && applications?.length} Submissions
+          </p>
+        </div>
       </div>
       <div className='mt-8 flow-root'>
         <div className='-mx-4 -my-2 sm:-mx-6 lg:-mx-8'>
