@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+const defaultTheme = require("tailwindcss/defaultTheme")
+
 module.exports = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
@@ -25,10 +27,9 @@ module.exports = {
     },
     fontFamily: {
       title: ["StretchPro"],
-      body: ["Proxima Nova"],
-      sans: ["Proxima Nova"],
-      subtext: ["Andale Mono", "Roboto"],
-      roboto: ["Roboto"],
+      body: ["Proxima Nova", "Montserrat", ...defaultTheme.fontFamily.sans],
+      sans: ["Proxima Nova", "Montserrat", ...defaultTheme.fontFamily.sans],
+      subtext: ["Andale Mono", "Roboto Mono", ...defaultTheme.fontFamily.mono],
     },
   },
   plugins: [require("@tailwindcss/forms")],

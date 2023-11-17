@@ -38,6 +38,9 @@
         ],
         "tailwindcss/no-custom-classname": "off"
     },
+    "ignorePatterns": [
+        "tailwind.config.cjs"
+    ],
     "settings": {
         "react": {
             "version": "detect"
