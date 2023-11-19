@@ -64,7 +64,7 @@ const App: React.FC = () => {
         {/* You cannot be logged in to access these routes*/}
         <Route element={<UnauthenticatedRoute />}>
           <Route path='login' element={<Login />} />
-          {/* <Route path='signup' element={<Signup />} /> */}
+          <Route path='organizers-only/signup' element={<Signup />} />
           <Route path='apply' element={<Apply />}>
             <Route index element={<Navigate replace to='/apply/user' />} />
             <Route path='user' element={<UserSection />} />

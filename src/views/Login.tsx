@@ -10,7 +10,7 @@ import TextInput from "../components/inputs/TextInput"
 import { EnvelopeIcon, LockClosedIcon } from "@heroicons/react/24/outline"
 import toast from "react-hot-toast"
 
-// This component uses react-hook-form to handle data validation and input
+// HELP: This component uses react-hook-form to handle data validation and input
 // specific errors. Follow this tutorial to learn more about how Zod is used in
 // react-hook-form to validate the schema:
 // https://react-hook-form.com/get-started#SchemaValidation
