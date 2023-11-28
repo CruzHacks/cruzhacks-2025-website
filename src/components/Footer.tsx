@@ -1,10 +1,49 @@
 import React from "react"
+import { socials } from "../utils/socials"
 
-const Footer = () => {
+const Footer: React.FC = () => {
   return (
-    <div className='-mt-20 flex h-20 w-full items-center justify-center bg-blue-royal'>
-      <p>Footer</p>
-    </div>
+    <footer className='flex items-center justify-between p-5 px-8 text-white backdrop-blur-md'>
+      {/* Quick Looks hidden on Medium Screen Size*/}
+      <div className='hidden grow gap-3 lg:flex'>
+        <a
+          target='_blank'
+          rel='noopener noreferrer'
+          href='mailto:contact@cruzhacks.com'
+        >
+          Contact Us
+        </a>
+        <span>|</span>
+        <a
+          target='_blank'
+          rel='noopener noreferrer'
+          href='https://static.mlh.io/docs/mlh-code-of-conduct.pdf'
+        >
+          Code of Conduct
+        </a>
+        <span>|</span>
+        <a
+          target='_blank'
+          href='https://docs.google.com/document/d/1298VyEqrSIvbzM3U8nvLQsLtY78Vi2mbndr3d5w0UKk/edit?usp=sharing'
+          rel='noopener noreferrer'
+        >
+          Participant Agreement
+        </a>
+      </div>
+
+      <div className='flex grow flex-col items-center justify-between gap-5 md:flex-row'>
+        <div className='flex transition-all xl:-translate-x-1/2'>
+          <p>CRUZHACKS © 2024</p>
+        </div>
+        <div className='flex justify-end gap-5'>
+          {socials.map(({ name, url, icon }) => (
+            <a key={name} target='_blank' rel='noopener noreferrer' href={url}>
+              <img src={icon} alt={`${name} Icon`} className='h-8 w-auto' />
+            </a>
+          ))}
+        </div>
+      </div>
+    </footer>
   )
 }
 

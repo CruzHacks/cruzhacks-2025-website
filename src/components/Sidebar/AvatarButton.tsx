@@ -4,8 +4,7 @@ import React, { Fragment } from "react"
 import { classNames } from "../../utils/string"
 import { Link, useNavigate } from "react-router-dom"
 import { auth } from "../../utils/firebaseapp"
-
-const profileNavigation = [{ name: "Home", href: "/" }]
+import { ArrowLeftOnRectangleIcon } from "@heroicons/react/24/outline"
 
 const colors = [
   "#190CA6",
@@ -18,11 +17,16 @@ const colors = [
 ]
 
 interface AvatarButtonProps {
+  nav?: { name: string; href: string }[]
   email: string
   direction: "left" | "down"
 }
 
-const AvatarButton = ({ email, direction }: AvatarButtonProps) => {
+const AvatarButton = ({
+  nav = [{ name: "Home", href: "/" }],
+  email,
+  direction,
+}: AvatarButtonProps) => {
   const navigate = useNavigate()
 
   const handleLogout = async () => {
@@ -42,7 +46,7 @@ const AvatarButton = ({ email, direction }: AvatarButtonProps) => {
   return (
     <Menu as='div' className='relative ml-3'>
       <div>
-        <Menu.Button className='relative flex max-w-xs items-center rounded-full bg-white text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2'>
+        <Menu.Button className='relative flex max-w-xs items-center rounded-full bg-white text-sm hover:outline-none hover:ring-2 hover:ring-turquoise focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2'>
           <span className='absolute -inset-1.5' />
           <span className='sr-only'>Open profile menu</span>
           <Avatar size={30} name={email} variant='beam' colors={colors} />
@@ -64,7 +68,7 @@ const AvatarButton = ({ email, direction }: AvatarButtonProps) => {
             "absolute right-0 z-10 w-48 rounded-md bg-blue-imperial py-1 shadow-lg ring-4 ring-white/5 focus:outline-none"
           )}
         >
-          {profileNavigation.map(item => (
+          {nav.map(item => (
             <Menu.Item key={item.name}>
               {/* TODO: Change <a> to Next/Link without breaking Headless UI Menu */}
               {({ active }) => (
@@ -72,7 +76,7 @@ const AvatarButton = ({ email, direction }: AvatarButtonProps) => {
                   to={item.href}
                   className={classNames(
                     active ? "bg-blue-royal/60" : "",
-                    "block px-4 py-2 text-sm text-white"
+                    "block border-b-2 border-white/5 px-4 py-2 text-sm capitalize text-white"
                   )}
                 >
                   {item.name}
@@ -85,10 +89,11 @@ const AvatarButton = ({ email, direction }: AvatarButtonProps) => {
               <button
                 className={classNames(
                   active ? "bg-blue-royal/60" : "",
-                  "block w-full px-4 py-2 text-left text-sm text-pink"
+                  "flex w-full items-center px-4 py-2 text-left text-sm text-pink"
                 )}
                 onClick={handleLogout}
               >
+                <ArrowLeftOnRectangleIcon className='inline h-4 w-auto pr-2' />
                 Log out
               </button>
             )}

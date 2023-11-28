@@ -124,10 +124,13 @@ export default function SignUp() {
                     className='flex h-16 w-full items-center justify-center rounded-md bg-white px-3 py-1.5 font-subtext text-2xl leading-6 text-blue-imperial shadow-sm transition-colors hover:bg-white/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-royal disabled:bg-white/50'
                   >
                     {loading ? (
-                      <div role='status'>
+                      <div
+                        role='status'
+                        className='flex w-full items-center justify-center'
+                      >
                         <svg
                           aria-hidden='true'
-                          className='fill-gray-200 text-gray-200 dark:text-green-800 mr-2 h-6 w-6 animate-spin'
+                          className='h-6 w-6 animate-spin fill-white text-white/20'
                           viewBox='0 0 100 101'
                           fill='none'
                           xmlns='http://www.w3.org/2000/svg'
