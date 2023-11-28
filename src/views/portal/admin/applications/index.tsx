@@ -39,7 +39,7 @@ const ApplicationsAdmin = () => {
   const { data: applications, error, isLoading, isError } = useApplications()
 
   const handleReviewApplication = (email: string) => {
-    const email_friendly = encodeURIComponent(email)
+    const email_friendly = encodeURIComponent(email.replace(/\./g, " "))
     navigate(`/portal/admin/applications/review/${email_friendly}`)
   }
 
@@ -61,14 +61,20 @@ const ApplicationsAdmin = () => {
         </div>
       </div>
       <div className='mt-8 flow-root'>
-        <div className='-mx-4 -my-2 sm:-mx-6 lg:-mx-8'>
+        <div className='-mx-4 -my-2 overflow-scroll sm:-mx-6 lg:-mx-8'>
           <div className='inline-block min-w-full py-2 align-middle'>
             <table className='min-w-full border-separate border-spacing-0'>
               <thead>
                 <tr>
                   <th
                     scope='col'
-                    className='sticky top-0 z-10 hidden border-b border-white/20 bg-blue-imperial/50 py-3.5 pl-4 pr-3 text-left text-sm font-semibold backdrop-blur sm:table-cell'
+                    className='sticky top-0 z-10 hidden border-b border-white/20 bg-blue-imperial/50 py-3.5 pl-8 pr-3 text-left text-sm font-semibold backdrop-blur sm:table-cell'
+                  >
+                    Id
+                  </th>
+                  <th
+                    scope='col'
+                    className='sticky top-0 z-10 border-b border-white/20 bg-blue-imperial/50 py-3.5 pl-4 text-left text-sm font-semibold text-white backdrop-blur sm:px-3'
                   >
                     Email
                   </th>
@@ -103,7 +109,17 @@ const ApplicationsAdmin = () => {
                               applicationIdx !== applications.length - 1
                                 ? "border-b border-white/20"
                                 : "",
-                              "hidden whitespace-nowrap py-4 pl-4 pr-3 font-subtext text-sm md:table-cell"
+                              "hidden whitespace-nowrap py-4 pl-8 pr-3 font-subtext text-sm sm:table-cell"
+                            )}
+                          >
+                            {applicationIdx + 1}
+                          </td>
+                          <td
+                            className={classNames(
+                              applicationIdx !== applications.length - 1
+                                ? "border-b border-white/20"
+                                : "",
+                              "whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium sm:pl-3"
                             )}
                           >
                             {application.email}
@@ -163,17 +179,20 @@ const ApplicationsAdmin = () => {
                             <div className='h-6 w-40 animate-pulse rounded bg-white/30 '></div>
                           </td>
                           <td key={i + 300} className='px-3 py-4'>
+                            <div className='h-6 w-40 animate-pulse rounded bg-white/30 '></div>
+                          </td>
+                          <td key={i + 400} className='px-3 py-4'>
                             <div className='h-6 w-16 animate-pulse rounded bg-white/30 '></div>
                           </td>
                           <td
-                            key={i + 400}
+                            key={i + 500}
                             className='hidden px-3 py-4 sm:table-cell'
                           >
                             <div className='h-6 w-60 animate-pulse rounded bg-white/30 '></div>
                           </td>
                           <td className='relative py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-8 lg:pr-8'>
                             <button className='cursor-not-allowed text-pink/50'>
-                              Edit
+                              Review Application
                             </button>
                           </td>
                         </tr>

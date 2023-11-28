@@ -1,5 +1,5 @@
 import React from "react"
-import Sidebar from "../../../components/Sidebar"
+import Sidebar from "../Sidebar"
 import { HomeIcon, UsersIcon } from "@heroicons/react/24/outline"
 
 const nav = [

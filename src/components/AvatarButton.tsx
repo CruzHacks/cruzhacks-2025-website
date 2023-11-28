@@ -1,9 +1,9 @@
 import { Menu, Transition } from "@headlessui/react"
 import Avatar from "boring-avatars"
 import React, { Fragment } from "react"
-import { classNames } from "../../utils/string"
+import { classNames } from "../utils/string"
 import { Link, useNavigate } from "react-router-dom"
-import { auth } from "../../utils/firebaseapp"
+import { auth } from "../utils/firebaseapp"
 import { ArrowLeftOnRectangleIcon } from "@heroicons/react/24/outline"
 
 const colors = [

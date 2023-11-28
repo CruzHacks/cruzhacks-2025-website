@@ -9,6 +9,8 @@ const useUsers = (user?: User | null, pageToken?: string) => {
   return useQuery({
     queryKey: ["users", { email: user.email }],
     queryFn: () => getUsers(user, pageToken),
+    // sort by role
+    select: data => data.sort((a, b) => a.role.localeCompare(b.role)),
   })
 }
 

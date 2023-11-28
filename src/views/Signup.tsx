@@ -130,7 +130,7 @@ export default function SignUp() {
                       >
                         <svg
                           aria-hidden='true'
-                          className='h-6 w-6 animate-spin fill-white text-white/20'
+                          className='h-6 w-6 animate-spin fill-white text-blue-imperial/30'
                           viewBox='0 0 100 101'
                           fill='none'
                           xmlns='http://www.w3.org/2000/svg'

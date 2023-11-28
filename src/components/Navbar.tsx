@@ -1,23 +1,10 @@
 import React from "react"
-import { auth } from "../utils/firebaseapp"
 import { Link } from "react-router-dom"
 import useAuth from "../hooks/useAuth"
 import CruzHacksLogo from "../assets/logos/CruzHacks.svg"
 import { ArrowRightOnRectangleIcon } from "@heroicons/react/24/solid"
 import { classNames } from "../utils/string"
-import { ArrowLeftOnRectangleIcon } from "@heroicons/react/24/outline"
-import AvatarButton from "./Sidebar/AvatarButton"
-
-const logout = async () => {
-  await auth
-    .signOut()
-    .then(() => {
-      console.log("User signed out")
-    })
-    .catch(error => {
-      console.error(error)
-    })
-}
+import AvatarButton from "./AvatarButton"
 
 const authButtonStyle =
   "z-10 flex items-center justify-center gap-2 shadow-lg px-3 md:w-36 py-1 rounded-full"

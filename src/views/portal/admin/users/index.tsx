@@ -5,6 +5,7 @@ import useAuth from "../../../../hooks/useAuth"
 import { auth } from "../../../../utils/firebaseapp"
 import { sendPasswordResetEmail } from "firebase/auth"
 import toast from "react-hot-toast"
+import Avatar from "../../../../components/Avatar"
 
 const UsersAdmin = () => {
   const {
@@ -49,22 +50,16 @@ const UsersAdmin = () => {
         </div> */}
       </div>
       <div className='mt-8 flow-root'>
-        <div className='-mx-4 -my-2 sm:-mx-6 lg:-mx-8'>
+        <div className='-mx-4 -my-2 overflow-scroll sm:-mx-6 lg:-mx-8'>
           <div className='inline-block min-w-full py-2 align-middle'>
             <table className='min-w-full border-separate border-spacing-0'>
               <thead>
                 <tr>
                   <th
                     scope='col'
-                    className='sticky top-0 z-10 hidden border-b border-white/20 bg-blue-imperial/50 py-3.5 pl-4 pr-3 text-left text-sm font-semibold backdrop-blur sm:table-cell sm:pl-6 lg:pl-8'
+                    className='sticky top-0 z-10 border-b border-white/20 bg-blue-imperial/50 py-3.5 pl-4 pr-3 text-left text-sm font-semibold backdrop-blur sm:pl-6 lg:pl-8'
                   >
                     Name
-                  </th>
-                  <th
-                    scope='col'
-                    className='sticky top-0 z-10 border-b border-white/20 bg-blue-imperial/50 px-3 py-3.5 text-left text-sm font-semibold text-white backdrop-blur'
-                  >
-                    Email
                   </th>
                   <th
                     scope='col'
@@ -97,14 +92,51 @@ const UsersAdmin = () => {
                               userIdx !== users.length - 1
                                 ? "border-b border-white/20"
                                 : "",
-                              user.displayName
-                                ? user.email === currentUser?.email &&
-                                    "text-orange"
-                                : "text-white/50",
-                              "hidden whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium sm:table-cell sm:pl-6 lg:pl-8"
+                              "whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium sm:pl-6 lg:pl-8"
                             )}
                           >
-                            {user.displayName || "—"}
+                            <div className='flex items-center'>
+                              <Avatar size={40} email={user.email} />
+                              <div className='ml-4'>
+                                <div
+                                  className={classNames(
+                                    user.displayName
+                                      ? user.email === currentUser?.email &&
+                                          "text-orange"
+                                      : "text-white/50",
+                                    "font-bold"
+                                  )}
+                                >
+                                  {user.displayName || "—"}{" "}
+                                  {user.pronouns && (
+                                    <span
+                                      className={classNames(
+                                        user.email === currentUser?.email
+                                          ? "text-orange/70"
+                                          : "text-white/70",
+                                        "truncate"
+                                      )}
+                                    >
+                                      (
+                                      {user.pronouns
+                                        .toLowerCase()
+                                        .replace(/ /g, "")}
+                                      )
+                                    </span>
+                                  )}
+                                </div>
+                                <div
+                                  className={classNames(
+                                    user.email === currentUser?.email
+                                      ? "text-orange/50"
+                                      : "text-white/50",
+                                    "mt-1"
+                                  )}
+                                >
+                                  {user.email || "—"}
+                                </div>
+                              </div>
+                            </div>
                           </td>
                           <td
                             className={classNames(
@@ -114,20 +146,7 @@ const UsersAdmin = () => {
                               user.email === currentUser?.email
                                 ? "text-orange"
                                 : "",
-                              "whitespace-nowrap px-3 py-4 text-sm"
-                            )}
-                          >
-                            {user.email}
-                          </td>
-                          <td
-                            className={classNames(
-                              userIdx !== users.length - 1
-                                ? "border-b border-white/20"
-                                : "",
-                              user.email === currentUser?.email
-                                ? "text-orange"
-                                : "",
-                              "whitespace-nowrap py-4 pl-3 pr-4 text-sm sm:px-3"
+                              "whitespace-nowrap py-4 pl-3 pr-4 text-sm capitalize sm:px-3"
                             )}
                           >
                             {user.role}
