@@ -73,17 +73,21 @@ const QA = ({ id }: { id?: string }) => {
             {faqSection.map(faq => (
               <FAQItem key={faq.question} {...faq} />
             ))}
+            {j == 1 && (
+              <div className='relative'>
+                <Star
+                  i={5}
+                  className='right-16 mt-16 h-8 md:right-20 md:mt-10 md:h-8 lg:h-10'
+                />
+                <Star
+                  i={7}
+                  className='right-28 mt-10 h-4 md:right-32 md:mt-16 md:h-4 lg:right-40 lg:mt-20 lg:h-6'
+                />
+              </div>
+            )}
           </div>
         ))}
       </div>
-      <Star
-        i={5}
-        className='right-16 mt-16 h-8 md:right-20 md:mt-10 md:h-8 lg:h-10'
-      />
-      <Star
-        i={7}
-        className='right-28 mt-10 h-4 md:right-32 md:mt-16 md:h-4 lg:right-40 lg:mt-20 lg:h-6'
-      />
     </div>
   )
 }
