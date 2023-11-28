@@ -60,10 +60,10 @@ export const CategoryTracks: PrizeTrack[] = [
   },
   {
     Icon: BeakerIcon,
-    title: "New Technologies",
+    title: "AI",
     color: "hover:bg-purple-han/50",
     blurb:
-      "Create a project using some of the newest technologies, such as AI/ML, AR/VR, or decentralized technology.",
+      "We're looking for projects that use AI/ML to solve a problem in a unique way!",
   },
   {
     Icon: RectangleGroupIcon,

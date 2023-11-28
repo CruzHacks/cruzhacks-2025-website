@@ -115,21 +115,6 @@ const faqs = [
         </>
       ),
     },
-    {
-      question: "What are the prize tracks?",
-      answer: (
-        <>
-          CruzHacks 2024 offers 4 main prize tracks (Health Hacks, Justice
-          Hacks, Sustainability Hacks, and Fintech Hacks). Hackers can submit
-          their project to one of these 4 main prize tracks. We also offer 4
-          category prizes (Best Beginner, Best UI/UX, New Technologies, and Best
-          Slug Hack). Hackers can submit their project to any number of these 4
-          categories. There will also be sponsors hosting some of their own
-          prize tracks. Hackers can submit their project to any number of
-          sponsored prize tracks.
-        </>
-      ),
-    },
   ],
   // Right -------------------------------------------------->
   [
@@ -152,6 +137,24 @@ const faqs = [
             join our discord
           </a>
           .
+        </>
+      ),
+    },
+    {
+      question: "What are the prize tracks?",
+      answer: (
+        <>
+          CruzHacks 2024 offers 4 main prize tracks: Health Hacks, Justice
+          Hacks, Sustainability Hacks, and Education Hacks. Hackers can submit
+          their project to one of these 4 main prize tracks. We also offer 4
+          category prizes: Best Beginner, Best AI Hack, Best UI/UX Hack, and
+          Best Slug Hack. Hackers are judged on category prizes based on
+          eledgebility. There will also be sponsors hosting some of their own
+          prize tracks (as well as some secret prizes). Hackers can submit their
+          project to any number of sponsored prize tracks.{" "}
+          <Link className='text-blue-button' to='/#prize-tracks'>
+            See the Prize Track descriptions Here.
+          </Link>
         </>
       ),
     },
