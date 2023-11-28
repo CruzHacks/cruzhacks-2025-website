@@ -47,9 +47,10 @@ const FAQItem = ({ question, answer }: FAQItemProps) => {
 const QA = ({ id }: { id?: string }) => {
   return (
     <div
-      className='-z-20 bg-repeat py-40'
+      className='-z-20 bg-top bg-repeat-y md:py-40'
       style={{
         backgroundImage: `url(${Grid})`,
+        backgroundSize: "100% auto",
       }}
     >
       {/* Scroll Anchor*/}
