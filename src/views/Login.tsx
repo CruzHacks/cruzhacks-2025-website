@@ -58,7 +58,7 @@ export default function Login() {
           <p className='font-subtext'>
             Don&apos;t have an account?{" "}
             <Link
-              to='/apply'
+              to='/apply/user'
               className='font-semibold text-blue-button hover:text-blue-chinese'
             >
               Apply

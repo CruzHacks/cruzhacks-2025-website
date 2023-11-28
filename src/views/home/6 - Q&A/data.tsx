@@ -33,10 +33,14 @@ const faqs = [
       answer: (
         <>
           All students studying at a high school, college/university, and other
-          alternative schools (such as bootcamps) can apply! CruzHacks is open
-          to designers, project managers, artists, and anyone else interested in
-          creating! Mentors will be available to help you through any technical
-          difficulties. No coding or technical experience is necessary!
+          alternative schools (such as bootcamps) can{" "}
+          <Link to='/apply/user' className='text-blue-button'>
+            apply!
+          </Link>{" "}
+          CruzHacks is open to designers, project managers, artists, and anyone
+          else interested in creating! Mentors will be available to help you
+          through any technical difficulties. No coding or technical experience
+          is necessary!
         </>
       ),
     },
@@ -123,7 +127,7 @@ const faqs = [
       answer: (
         <>
           Applications are open now{" "}
-          <Link className='text-blue-button' to='/apply'>
+          <Link className='text-blue-button' to='/apply/user'>
             here
           </Link>{" "}
           and close on December 15th. To stay updated, follow us on Instagram
