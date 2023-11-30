@@ -14,7 +14,7 @@ const faqs = [
           There are hundreds of students, mentors, sponsors, and judges that can
           help push your vision forward. The event also includes workshops
           geared towards students of all levels to learn and improve their
-          technical skills
+          technical skills.
         </>
       ),
     },
@@ -22,9 +22,9 @@ const faqs = [
       question: "When does the hackathon take place? How long is it?",
       answer: (
         <>
-          CruzHacks 2024 will take place in CruzHacks is a 3 day event that
-          starts Friday night and ends Sunday afternoon. This year, it will take
-          place on January 19-21, 2024.
+          CruzHacks 2024 is a 3 day event that starts Friday night and ends
+          Sunday afternoon. This year, it will take place on January 19-21,
+          2024.
         </>
       ),
     },
@@ -35,12 +35,12 @@ const faqs = [
           All students studying at a high school, college/university, and other
           alternative schools (such as bootcamps) can{" "}
           <Link to='/apply/user' className='text-blue-button'>
-            apply!
-          </Link>{" "}
-          CruzHacks is open to designers, project managers, artists, and anyone
-          else interested in creating! Mentors will be available to help you
-          through any technical difficulties. No coding or technical experience
-          is necessary!
+            apply
+          </Link>
+          ! CruzHacks is open to designers, project managers, artists, and
+          anyone else interested in creating! Mentors will be available to help
+          you through any technical difficulties. No coding or technical
+          experience is necessary!
         </>
       ),
     },
@@ -149,7 +149,7 @@ const faqs = [
             here
           </Link>{" "}
           and close on December 15th. To stay updated, follow us on Instagram
-          and Twitter @cruzhacks and
+          and Twitter @cruzhacks and{" "}
           <a
             target='_blank'
             rel='noreferrer'
@@ -237,8 +237,9 @@ const faqs = [
             href='https://docs.google.com/forms/d/e/1FAIpQLSdlg_PvCJG2b2tfJZ6W5uriE6Ip2Nlhw0wESbaTqG8jtCXY2A/viewform?usp=sf_link'
             className='text-blue-button'
           >
-            Click here to apply.
+            Click here to apply
           </a>
+          .
         </>
       ),
     },
