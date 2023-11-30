@@ -14,10 +14,6 @@ const UsersAdmin = () => {
   // TODO: Pagination
   const { data: users, error, isLoading, isError } = useUsers(currentUser)
 
-  const handleNewUser = () => {
-    alert("This feature is not yet implemented.")
-  }
-
   const sendPasswordReset = (email: string) => {
     sendPasswordResetEmail(auth, email)
       .then(() => {
@@ -39,15 +35,6 @@ const UsersAdmin = () => {
             email and role.
           </p>
         </div>
-        {/* <div className='mt-4 sm:ml-16 sm:mt-0 sm:flex-none'>
-          <button
-            type='button'
-            className='block cursor-not-allowed rounded-md bg-pink px-3 py-2 text-center font-subtext text-sm font-semibold text-white shadow-sm hover:bg-pink/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white'
-            onClick={handleNewUser}
-          >
-            Add user
-          </button>
-        </div> */}
       </div>
       <div className='mt-8 flow-root'>
         <div className='-mx-4 -my-2 overflow-scroll sm:-mx-6 lg:-mx-8'>

@@ -1,7 +1,7 @@
 import React from "react"
 import { CategoryTracks, PrizeTrack, TechCaresTracks } from "./data"
 import Star from "../../../components/Star"
-import { Cloud1, CloudTrack1, CloudTrack2 } from "../../../components/Cloud"
+import { CloudTrack1, CloudTrack2 } from "../../../components/Cloud"
 
 const PrizeTrackCard = ({ icon, title, blurb }: PrizeTrack) => {
   return (
