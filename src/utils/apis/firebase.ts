@@ -10,7 +10,11 @@ import {
   updateDoc,
 } from "firebase/firestore"
 import { db } from "../firebaseapp"
-import { AppShortResponseSchema, ApplicationSchema, ApplicationStatus } from "../types"
+import {
+  AppShortResponseSchema,
+  ApplicationSchema,
+  ApplicationStatus,
+} from "../types"
 
 /**
  * Function using Firebase sdk for checking if an application is
@@ -101,23 +105,22 @@ export const getApplications = async () => {
  */
 export const approveApplication = async (email: string) => {
   try {
+    if (!email) throw new Error("No user provided")
 
-  if (!email) throw new Error("No user provided")
+    const status: ApplicationStatus = "accepted"
 
-  const status: ApplicationStatus = "accepted"
+    const docRef = doc(db, `users/${email}/user_items/application`)
+    await updateDoc(docRef, {
+      status: status,
+    })
 
-  const docRef = doc(db, `users/${email}/user_items/application`)
-  await updateDoc(docRef, {
-    'status': status
-  })
+    console.log("docRef updated: ", docRef)
 
-  console.log("docRef updated: ", docRef)
-
-  return docRef
-} catch (error) {
-  console.error('application', error)
-  throw error as Error
-}
+    return docRef
+  } catch (error) {
+    console.error("application", error)
+    throw error as Error
+  }
 }
 
 /**
@@ -129,24 +132,22 @@ export const approveApplication = async (email: string) => {
  */
 export const denyApplication = async (email: string) => {
   try {
+    if (!email) throw new Error("No user provided")
 
-  if (!email) throw new Error("No user provided")
+    const status: ApplicationStatus = "rejected"
 
-  const status: ApplicationStatus = "rejected"
+    const docRef = doc(db, `users/${email}/user_items/application`)
+    await updateDoc(docRef, {
+      status: status,
+    })
 
+    console.log("docRef updated: ", docRef)
 
-  const docRef = doc(db, `users/${email}/user_items/application`)
-  await updateDoc(docRef, {
-    'status': status
-  })
-
-  console.log("docRef updated: ", docRef)
-
-  return docRef
-} catch (error) {
-  console.error('application', error)
-  throw error as Error
-}
+    return docRef
+  } catch (error) {
+    console.error("application", error)
+    throw error as Error
+  }
 }
 
 /**
@@ -154,7 +155,7 @@ export const denyApplication = async (email: string) => {
  * accepted.
  * @param email Firebase User's Email
  * @returns True if application is accepted, false if not, otherwise not reviewed
- * 
+ *
  */
 export const checkStatus = async (email: string) => {
   try {
@@ -164,7 +165,6 @@ export const checkStatus = async (email: string) => {
     const docSnap = await getDoc(docRef)
 
     const status = docSnap.data()?.status
-
 
     console.log("docSnap status: ", status)
 

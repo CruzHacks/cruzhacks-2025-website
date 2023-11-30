@@ -1,10 +1,11 @@
 import React, { useState } from "react"
-import { ChevronRightIcon } from "@heroicons/react/24/solid"
+import { ChevronRightIcon, FaceSmileIcon } from "@heroicons/react/24/solid"
 import { useAppState } from "../../../hooks/useAppState"
 import ConfettiExplosion from "react-confetti-explosion"
 import toast from "react-hot-toast"
 import { submitApplicationUnauthed } from "../../../utils/apis/cloudFunctions"
-import AllDoneModal from "../../../components/AllDoneModal"
+import Modal from "../../../components/Modal"
+import { useNavigate } from "react-router-dom"
 
 // TODO: printout responses
 const ReviewSection = () => {
@@ -13,6 +14,7 @@ const ReviewSection = () => {
   const [isLoading, setIsLoading] = useState(false)
 
   const [openModal, setOpenModal] = useState(false)
+  const navigate = useNavigate()
 
   const submitApplication = async () => {
     try {
@@ -32,7 +34,17 @@ const ReviewSection = () => {
   return (
     // ApplicationSection
     <>
-      <AllDoneModal open={openModal} setOpen={setOpenModal} />
+      <Modal
+        Icon={FaceSmileIcon}
+        iconStyling='text-gold'
+        title='You did it!'
+        description='Keep a look out for application decisions in your email. Or check your application status in the portal.'
+        actionText='Login to Portal'
+        actionFunc={() => navigate("/login")}
+        open={openModal}
+        setOpen={setOpenModal}
+      />
+
       <div className='flex h-full grow flex-col md:gap-5'>
         <p className='mb-2 font-subtext uppercase text-white/50'>REVIEW</p>
         <div className='flex h-full grow flex-col pb-10'>

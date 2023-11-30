@@ -15,7 +15,8 @@ import { shortResponseSteps } from "./sectionForms/shortResponse"
 import { logisticsStep } from "./sectionForms/logistics"
 import { socialsSteps } from "./sectionForms/socials"
 import { waiversSteps } from "./sectionForms/waivers"
-import WillLoseProgressModal from "../../components/WillLoseProgressModal"
+import Modal from "../../components/Modal"
+import { ExclamationCircleIcon } from "@heroicons/react/24/outline"
 
 const WillLoseProgress = () => {
   const [open, setOpen] = useState(false)
@@ -36,7 +37,17 @@ const WillLoseProgress = () => {
     }
   }, [])
 
-  return <WillLoseProgressModal open={open} setOpen={setOpen} />
+  return (
+    <Modal
+      Icon={ExclamationCircleIcon}
+      iconStyling='text-error'
+      title='Submit Application Before Leaving'
+      description='If you leave this page, you will lose all progress on your hacker application'
+      actionText='Dismiss'
+      open={open}
+      setOpen={setOpen}
+    />
+  )
 }
 
 // Apply routes wrapper
