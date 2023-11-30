@@ -59,7 +59,7 @@ const EmailRegister = () => {
               errors.email
                 ? "text-error placeholder:text-error/75"
                 : "text-white placeholder:text-white/75",
-              "active:ring-none focuse:outline-none truncate border-0 border-transparent bg-transparent font-subtext uppercase focus:border-transparent focus:ring-0"
+              "active:ring-none focuse:outline-none w-full truncate border-0 border-transparent bg-transparent font-subtext uppercase focus:border-transparent focus:ring-0"
             )}
             type='email'
             {...register("email")}

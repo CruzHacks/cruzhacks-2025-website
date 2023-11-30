@@ -13,32 +13,38 @@ const BounceCloud = ({
   className?: string
   children: React.ReactNode
 }) => {
-  return (
+  const child = (
     <div
       className={classNames(
         className,
-        "absolute -z-10 flex w-1/3 animate-bounce-slow md:w-fit"
+        "absolute -z-10 flex w-1/3 animate-bounce-slow opacity-90 md:w-fit"
       )}
       style={{ animationDelay: `-${i * 2}s` }}
     >
-      {leftSide !== undefined ? (
-        <Transition
-          appear={true}
-          show={true}
-          enter='transition-all duration-[3s] ease-out'
-          enterFrom={classNames(
-            leftSide ? "-translate-x-full" : "translate-x-40",
-            "opacity-0 scale-[140%]"
-          )}
-          enterTo='opacity-100 scale-100'
-        >
-          {children}
-        </Transition>
-      ) : (
-        children
-      )}
+      {children}
     </div>
   )
+
+  // Transition if side defined
+  if (leftSide !== undefined) {
+    return (
+      <Transition
+        appear={true}
+        show={true}
+        enter='transition-all duration-[3s] ease-out'
+        enterFrom={classNames(
+          leftSide ? "-translate-x-40" : "translate-x-40",
+          "opacity-0 scale-[140%]"
+        )}
+        enterTo='opacity-100 scale-100'
+        className='w-full'
+      >
+        {child}
+      </Transition>
+    )
+  }
+
+  return child
 }
 
 // Top Left Cloud
@@ -46,13 +52,13 @@ export const Cloud1 = ({ className }: { className?: string }) => (
   <BounceCloud i={1} leftSide={true} className={className}>
     <svg
       xmlns='http://www.w3.org/2000/svg'
-      width='258'
-      height='86'
-      viewBox='0 0 258 86'
+      width='363'
+      height='97'
+      viewBox='0 0 363 97'
       fill='none'
     >
       <path
-        d='M150 28.458C128.735 13.7358 104.5 -13.5424 50 7.95766C-16.5 62.9577 26.2106 36.6538 9.97298 50.9576C-33.1644 88.9576 80.3356 85.4576 112.473 78.4576C144.953 71.383 143.5 70.7909 171.5 78.4576C213.5 89.9576 254.5 86.9576 257 67.9576C259.5 48.9576 169.5 41.958 150 28.458Z'
+        d='M229.749 32.3966C203.279 15.6368 173.112 -15.4167 105.274 9.059C48.0152 39.227 15.0293 18.1666 1.33711 50.0418C-12.3551 81.917 82.6967 85.3317 122.7 77.3629C163.13 69.3093 221.658 80.5883 256.511 89.3161C308.79 102.408 359.825 98.9925 362.936 77.3629C366.048 55.7333 254.021 47.765 229.749 32.3966Z'
         fill='#1A0CA7'
       />
     </svg>
@@ -64,22 +70,22 @@ export const Cloud2 = ({ className }: { className?: string }) => (
   <BounceCloud i={2} leftSide={false} className={className}>
     <svg
       xmlns='http://www.w3.org/2000/svg'
-      width='301'
-      height='76'
-      viewBox='0 0 301 76'
+      width='407'
+      height='90'
+      viewBox='0 0 407 90'
       fill='none'
     >
       <path
-        d='M179.243 9.28375C202.443 22.0838 228.577 12.2838 238.743 5.78375C295.244 0.759415 300.243 17.7835 300.243 29.2835C300.243 40.7835 243.243 58.2835 209.243 72.2835C175.243 86.2835 136.743 47.7835 131.743 44.2835L131.657 44.223C126.713 40.7609 124.009 38.8674 83.7434 53.2835C43.2434 67.7835 23.7435 59.2835 11.7435 58.2835C-0.256521 57.2835 -18.2565 23.7835 46.7435 29.2835C111.743 34.7835 116 21.958 139.5 5.78362C142.47 3.73942 150.243 -6.71625 179.243 9.28375Z'
-        fill='url(#paint0_linear_742_4)'
+        d='M242.977 10.5206C274.426 25.9226 309.851 14.1304 323.633 6.30907C400.222 0.263384 407 20.7482 407 34.5859C407 48.4237 329.733 69.4811 283.643 86.327C237.554 103.173 185.365 56.8466 178.587 52.6351L178.47 52.5623C171.768 48.3965 168.103 46.118 113.52 63.4647C58.6193 80.9122 32.1859 70.6843 15.9191 69.4811C-0.347732 68.2778 -24.7479 27.9679 63.3639 34.5859C151.476 41.204 157.246 25.7712 189.102 6.30892C193.128 3.84917 203.665 -8.73194 242.977 10.5206Z'
+        fill='url(#paint0_linear_823_116)'
       />
       <defs>
         <linearGradient
-          id='paint0_linear_742_4'
-          x1='-1.84777e-06'
-          y1='38.458'
-          x2='256.5'
-          y2='38.458'
+          id='paint0_linear_823_116'
+          x1='-2.50477e-06'
+          y1='45.6254'
+          x2='347.703'
+          y2='45.6254'
           gradientUnits='userSpaceOnUse'
         >
           <stop stopColor='#190CA6' />
@@ -94,13 +100,13 @@ export const Cloud3 = ({ className }: { className?: string }) => (
   <BounceCloud i={3} leftSide={false} className={className}>
     <svg
       xmlns='http://www.w3.org/2000/svg'
-      width='203'
-      height='60'
-      viewBox='0 0 203 60'
+      width='373'
+      height='61'
+      viewBox='0 0 373 61'
       fill='none'
     >
       <path
-        d='M133.537 8.40899C159.937 -5.99101 190.537 2.40899 202.537 8.40899V59.4092H23.5371C-26.4629 59.4092 11.5371 33.4092 60.0371 27.4092C108.537 21.4092 100.537 26.409 133.537 8.40899Z'
+        d='M168.304 4.88279C201.577 -10.6725 232.535 15.1978 265.305 23.2996C298.074 31.4013 394.491 37.3953 368.654 51.3855C342.816 65.3758 255.268 59.9747 255.268 59.9747H29.6651C-33.3527 59.9747 14.5408 31.8887 75.668 25.4073C136.795 18.926 126.712 24.3269 168.304 4.88279Z'
         fill='#1A0CA7'
       />
     </svg>
@@ -112,22 +118,22 @@ export const Cloud4 = ({ className }: { className?: string }) => (
   <BounceCloud i={4} className={className}>
     <svg
       xmlns='http://www.w3.org/2000/svg'
-      width='413'
-      height='76'
-      viewBox='0 0 413 76'
+      width='551'
+      height='123'
+      viewBox='0 0 551 123'
       fill='none'
     >
       <path
-        d='M166.442 9.22514C134.529 22.0601 98.581 12.2333 84.5963 5.71557C6.87753 0.677494 0 17.7482 0 29.2796C0 40.8111 78.4064 58.3589 125.175 72.3972C171.944 86.4355 224.903 47.8302 231.78 44.3206L231.899 44.2599C238.7 40.7884 242.419 38.8896 297.807 53.3452C353.517 67.8849 380.34 59.3616 396.846 58.3589C413.353 57.3562 438.113 23.7646 348.702 29.2796C259.291 34.7946 253.436 21.934 221.111 5.71544C217.025 3.66565 206.332 -6.81861 166.442 9.22514Z'
-        fill='url(#paint0_linear_742_6)'
+        d='M267.22 31.4647C230.489 49.203 190.172 0 143.558 0C35.943 0 -8.78503 42.0481 1.41406 59.1804C18.0156 87.0674 86.4218 60.082 116.511 71.8652C143.655 82.4955 194.193 109.568 219.724 118.77C273.553 138.171 334.506 84.8177 342.422 79.9674L342.559 79.8835C350.386 75.0858 354.667 72.4617 418.417 92.4396C482.537 112.534 513.409 100.754 532.408 99.3687C551.406 97.9828 579.904 51.5585 476.995 59.1804C374.086 66.8023 367.348 49.0287 330.142 26.6142C325.44 23.7814 313.133 9.29187 267.22 31.4647Z'
+        fill='url(#paint0_linear_823_118)'
       />
       <defs>
         <linearGradient
-          id='paint0_linear_742_6'
-          x1='413'
-          y1='38.4792'
-          x2='60.1713'
-          y2='38.4792'
+          id='paint0_linear_823_118'
+          x1='551'
+          y1='71.8944'
+          x2='144.907'
+          y2='71.8944'
           gradientUnits='userSpaceOnUse'
         >
           <stop stopColor='#190CA6' />
@@ -143,15 +149,65 @@ export const Cloud5 = ({ className }: { className?: string }) => (
   <BounceCloud i={5} className={className}>
     <svg
       xmlns='http://www.w3.org/2000/svg'
-      width='278'
-      height='60'
-      viewBox='0 0 278 60'
+      width='528'
+      height='87'
+      viewBox='0 0 528 87'
       fill='none'
     >
       <path
-        d='M183.291 8.41558C219.528 -5.99635 261.529 2.41061 278 8.41558V59.458H32.3067C-36.3227 59.458 15.8357 33.4365 82.4062 27.4315C148.977 21.4265 137.996 26.4305 183.291 8.41558Z'
+        d='M209.548 11.7297C250.975 -9.51394 298.992 2.8782 317.823 11.7297C317.823 11.7297 346.589 17.8045 364.696 23.5845C392.996 32.6184 536.441 33.4557 527.609 69.2796C522.861 88.5366 405.003 86.9719 404.71 86.968C404.701 86.9679 404.705 86.968 404.696 86.968H317.823H36.9346C-41.5259 86.968 18.1041 48.6114 94.2107 39.7598C170.317 30.9083 157.764 38.2843 209.548 11.7297Z'
         fill='#1A0CA7'
       />
+    </svg>
+  </BounceCloud>
+)
+
+// Tech Track Clouds
+export const CloudTrack1 = ({ className }: { className?: string }) => (
+  <BounceCloud i={5} className={className}>
+    <svg
+      xmlns='http://www.w3.org/2000/svg'
+      width='526'
+      height='97'
+      viewBox='0 0 526 97'
+      fill='none'
+    >
+      <path
+        opacity='0.6'
+        d='M332.914 32.3966C294.558 15.6368 250.846 -15.4167 152.545 9.059C69.5758 39.227 21.778 18.1666 1.93751 50.0418C-17.903 81.917 119.831 85.3317 177.797 77.3629C236.381 69.3093 321.19 80.5883 371.693 89.3161C447.448 102.408 521.399 98.9925 525.908 77.3629C530.417 55.7333 368.086 47.765 332.914 32.3966Z'
+        fill='#1A0CA7'
+      />
+    </svg>
+  </BounceCloud>
+)
+
+export const CloudTrack2 = ({ className }: { className?: string }) => (
+  <BounceCloud i={6} className={className}>
+    <svg
+      xmlns='http://www.w3.org/2000/svg'
+      width='407'
+      height='90'
+      viewBox='0 0 407 90'
+      fill='none'
+    >
+      <path
+        opacity='0.6'
+        d='M242.977 10.5206C274.426 25.9226 309.851 14.1304 323.633 6.30907C400.222 0.263384 407 20.7482 407 34.5859C407 48.4237 329.733 69.4811 283.643 86.327C237.554 103.173 185.365 56.8466 178.587 52.6351L178.47 52.5623C171.768 48.3965 168.103 46.118 113.52 63.4647C58.6193 80.9122 32.1859 70.6843 15.9191 69.4811C-0.347732 68.2778 -24.7479 27.9679 63.3639 34.5859C151.476 41.204 157.246 25.7712 189.102 6.30892C193.128 3.84917 203.665 -8.73194 242.977 10.5206Z'
+        fill='url(#paint0_linear_830_792)'
+      />
+      <defs>
+        <linearGradient
+          id='paint0_linear_830_792'
+          x1='-2.50477e-06'
+          y1='45.6254'
+          x2='347.703'
+          y2='45.6254'
+          gradientUnits='userSpaceOnUse'
+        >
+          <stop stopColor='#190CA6' />
+          <stop offset='1' stopColor='#190CA6' />
+        </linearGradient>
+      </defs>
     </svg>
   </BounceCloud>
 )

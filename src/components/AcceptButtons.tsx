@@ -30,7 +30,7 @@ export const AcceptButtons = ({ email, onClick }: AcceptButtonsProps) => {
     <div className='bg-red flex w-full flex-row justify-between md:justify-center md:gap-10'>
         <button
             type='button'
-            className="font-subtext flex h-10 w-24 items-center justify-evenly rounded-2xl border-2 border-[#F03A47] bg-[#F03A47] px-4 text-[#FFF]"
+            className="flex h-10 w-24 items-center justify-evenly rounded-2xl border-2 border-[#F03A47] bg-[#F03A47] px-4 font-subtext text-[#FFF]"
             onClick={() => {
                 onClick()
                 handleSubmit(false)
@@ -40,7 +40,7 @@ export const AcceptButtons = ({ email, onClick }: AcceptButtonsProps) => {
         </button>
         <button
             type='button'
-            className='font-subtext flex h-10 w-24 items-center justify-evenly rounded-2xl border-2 border-[#A1E887] bg-[#A1E887] px-4 text-[#000]'
+            className='flex h-10 w-24 items-center justify-evenly rounded-2xl border-2 border-[#A1E887] bg-[#A1E887] px-4 font-subtext text-[#000]'
             onClick={() => {
                 onClick()
                 handleSubmit(true)

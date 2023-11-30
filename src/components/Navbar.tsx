@@ -1,13 +1,9 @@
 import React from "react"
 import { Link } from "react-router-dom"
 import useAuth from "../hooks/useAuth"
-import CruzHacksLogo from "../assets/logos/CruzHacks.svg"
+import CruzHacksLogo from "../assets/logos/CruzHacks - Blue.svg"
 import { ArrowRightOnRectangleIcon } from "@heroicons/react/24/solid"
-import { classNames } from "../utils/string"
 import AvatarButton from "./AvatarButton"
-
-const authButtonStyle =
-  "z-10 flex items-center justify-center gap-2 shadow-lg px-3 md:w-36 py-1 rounded-full"
 
 const Navbar = () => {
   const {
@@ -17,53 +13,51 @@ const Navbar = () => {
 
   return (
     <div className='fixed z-[300] flex w-screen justify-center bg-blue-imperial/80 backdrop-blur-md'>
-      <div className='flex h-10 w-full max-w-7xl items-center justify-between px-10 py-8 pt-10 font-subtext lowercase md:text-xl'>
-        <Link to='/#landing'>
+      <div className='relative flex h-10 w-full max-w-7xl items-center justify-between px-10 py-8 pt-10 font-subtext lowercase md:text-xl lg:justify-center'>
+        <Link to='/#landing' className='left-10 lg:absolute'>
           <img
             className='hidden h-8 w-auto md:block'
             src={CruzHacksLogo}
-            alt='Your Company'
+            alt='CruzHacks logo'
           />
         </Link>
-        <div className='flex grow items-center justify-evenly uppercase md:grow-0 md:gap-10'>
-          <Link to='/#about' className='transition-all hover:text-pink'>
+        <div className='flex grow items-center justify-evenly font-light uppercase md:grow-0 md:gap-10'>
+          <Link
+            to='/#about'
+            className='transition-all hover:font-bold hover:text-pink'
+          >
             ABOUT
           </Link>
-          <Link to='/#prize-tracks' className='transition-all hover:text-pink'>
+          <Link
+            to='/#prize-tracks'
+            className='transition-all hover:font-bold hover:text-pink'
+          >
             Prize Tracks
           </Link>
-          <Link to='/#qa' className='transition-all hover:text-pink'>
+          <Link
+            to='/#qa'
+            className='transition-all hover:font-bold hover:text-pink '
+          >
             Q&A
           </Link>
         </div>
-        {!isAuthenticated ? (
-          <Link
-            to='/login'
-            className={classNames(
-              authButtonStyle,
-              "font-title text-sm text-gold md:bg-gold md:text-base md:text-blue-imperial"
-            )}
-          >
-            <span className='hidden md:block'>Login</span>
-            <ArrowRightOnRectangleIcon className='inline h-5 w-auto' />
-          </Link>
-        ) : (
-          <AvatarButton
-            nav={[{ name: "Portal", href: "/portal" }]}
-            email={user?.email || ""}
-            direction='down'
-          />
-          // <button
-          //   onClick={logout}
-          //   className={classNames(
-          //     authButtonStyle,
-          //     "font-title text-sm lowercase text-pink md:bg-pink md:text-base md:text-white"
-          //   )}
-          // >
-          //   <span className='hidden md:block'>logout</span>
-          //   <ArrowLeftOnRectangleIcon className='inline h-5 w-auto' />
-          // </button>
-        )}
+        <div className='right-10 lg:absolute'>
+          {!isAuthenticated ? (
+            <Link
+              to='/login'
+              className='md:text-blue-white z-10 flex items-center justify-center gap-2 rounded-full px-3 py-1 font-title text-sm text-white shadow-lg md:w-36 md:bg-[#3d30cb] md:text-gold'
+            >
+              <span className='hidden md:block'>Login</span>
+              <ArrowRightOnRectangleIcon className='inline h-5 w-auto' />
+            </Link>
+          ) : (
+            <AvatarButton
+              nav={[{ name: "Portal", href: "/portal" }]}
+              email={user?.email || ""}
+              direction='down'
+            />
+          )}
+        </div>
       </div>
     </div>
   )

@@ -1,19 +1,14 @@
-/* eslint-disable max-len */
-import { HeroIcon } from "../../../utils/types"
-import {
-  AcademicCapIcon,
-  ArrowTrendingUpIcon,
-  BeakerIcon,
-  GlobeAmericasIcon,
-  HeartIcon,
-  HomeIcon,
-  RectangleGroupIcon,
-  ScaleIcon,
-} from "@heroicons/react/24/outline"
+import Sustainability from "../../../assets/tracks/Sustainability.svg"
+import Health from "../../../assets/tracks/Health.svg"
+import Justice from "../../../assets/tracks/Justice.svg"
+import Education from "../../../assets/tracks/Education.svg"
+import Beginner from "../../../assets/tracks/Beginner.svg"
+import AI from "../../../assets/tracks/AI.svg"
+import UIUX from "../../../assets/tracks/UIUX.svg"
+import Slug from "../../../assets/tracks/Slug.svg"
 
 export type PrizeTrack = {
-  Icon: HeroIcon
-  color: string
+  icon: string
   title: string
   blurb: string
 }
@@ -21,61 +16,53 @@ export type PrizeTrack = {
 // NOTE: Due to tailwindcss's JIT mode, we can't use dynamic classes for background hover colors
 export const TechCaresTracks: PrizeTrack[] = [
   {
-    Icon: GlobeAmericasIcon,
-    color: "hover:bg-blue-button/80",
+    icon: Sustainability,
     title: "SUSTAINABILITY",
     blurb:
       "This category is dedicated to supporting sustainability and conservation efforts. How can we live harmoniously with our planet?",
   },
   {
-    Icon: HeartIcon,
-    color: "hover:bg-pink/80",
+    icon: Health,
     title: "Health",
     blurb:
       "This category aspires to address healthcare disparities. How do we support mental & physical well-being with accessible services?",
   },
   {
-    Icon: ScaleIcon,
-    color: "hover:bg-orange/80",
+    icon: Justice,
     title: "Justice",
     blurb:
       "This category aims to drive innovation for civil liberty and social justice. How can we uphold truth & order in a (mis)information age?",
   },
   {
-    Icon: AcademicCapIcon,
-    color: "hover:bg-purple/80",
+    icon: Education,
     title: "Education",
     blurb:
-      "This track encourages students to create apps that have a substantial impact on fostering a more effective and stimulating learning environment, or that look to connect with people from the worlds of education, technology, and the fusion of the two.",
+      "This track encourages students to create apps that have a substantial impact on fostering a more effective and stimulating learning environment.",
   },
 ]
 
 export const CategoryTracks: PrizeTrack[] = [
   {
-    Icon: ArrowTrendingUpIcon,
+    icon: Beginner,
     title: "Beginner",
-    color: "hover:bg-turquoise/50",
     blurb:
       "Hackathons are meant for everyone, especially our first-timers! We've created a prize category to reward teams composed of all first-time hackers.",
   },
   {
-    Icon: BeakerIcon,
+    icon: AI,
     title: "AI",
-    color: "hover:bg-purple-han/50",
     blurb:
       "We're looking for projects that use AI/ML to solve a problem in a unique way!",
   },
   {
-    Icon: RectangleGroupIcon,
+    icon: UIUX,
     title: "UI/UX",
-    color: "hover:bg-blue-chinese/80",
     blurb:
       "Have a new paradigm for interaction design? Create a project that has an awesome user experience!",
   },
   {
-    Icon: HomeIcon,
+    icon: Slug,
     title: "SlugHacks",
-    color: "hover:bg-orange/70",
     blurb: "Create something that benefits the UC Santa Cruz campus community!",
   },
 ]

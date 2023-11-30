@@ -3,7 +3,7 @@ import { Dialog, Transition } from "@headlessui/react"
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline"
 import { classNames } from "../../utils/string"
 import { Link, Outlet, useLocation } from "react-router-dom"
-import CruzHacksLogo from "../../assets/logos/CruzHacks.svg"
+import CruzHacksLogo from "../../assets/logos/CruzHacks - Orange.svg"
 import useAuth from "../../hooks/useAuth"
 import AvatarButton from "../../components/AvatarButton"
 
@@ -98,12 +98,12 @@ const Sidebar = ({ navigation }: SidebarProps) => {
                   </Transition.Child>
                   {/* Sidebar component, swap this element with another sidebar if you like */}
                   <div className='flex grow flex-col gap-y-5 overflow-y-auto bg-blue-imperial px-6 pb-2 ring-1 ring-white/10'>
-                    <div className='flex h-16 shrink-0 items-center'>
+                    <div className='mt-2 flex h-16 shrink-0 items-center'>
                       <Link to='/'>
                         <img
                           className='h-8 w-auto'
                           src={CruzHacksLogo}
-                          alt='Your Company'
+                          alt='CruzHacks logo'
                         />
                       </Link>
                     </div>
@@ -117,7 +117,7 @@ const Sidebar = ({ navigation }: SidebarProps) => {
                                   to={item.href}
                                   className={classNames(
                                     isActive(item)
-                                      ? "bg-blue-royal/60 text-pink"
+                                      ? "bg-blue-royal/60 font-semibold text-pink"
                                       : "hover:bg-blue-royal/60 hover:text-pink",
                                     "group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6"
                                   )}
@@ -170,12 +170,12 @@ const Sidebar = ({ navigation }: SidebarProps) => {
         <div className='hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-72 lg:flex-col'>
           {/* Sidebar component, swap this element with another sidebar if you like */}
           <div className='flex grow flex-col gap-y-5 overflow-y-auto bg-blue-imperial px-6'>
-            <div className='flex h-16 shrink-0 items-center'>
+            <div className='mt-2 flex h-16 shrink-0 items-center'>
               <Link to='/'>
                 <img
                   className='h-8 w-auto'
                   src={CruzHacksLogo}
-                  alt='Your Company'
+                  alt='CruzHacks logo'
                 />
               </Link>
             </div>
@@ -189,9 +189,9 @@ const Sidebar = ({ navigation }: SidebarProps) => {
                           to={item.href}
                           className={classNames(
                             isActive(item)
-                              ? "bg-blue-royal/60 text-pink"
+                              ? "bg-blue-royal/60 font-semibold text-pink"
                               : "hover:bg-blue-royal/60 hover:text-pink",
-                            "group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6"
+                            "group flex gap-x-3 rounded-md p-2 text-sm leading-6"
                           )}
                         >
                           <item.icon

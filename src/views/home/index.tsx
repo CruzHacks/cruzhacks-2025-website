@@ -5,7 +5,7 @@ import HeroBlurb from "./2 - Hero Blurb"
 import Milestones from "./4 - Milestones"
 // import Speakers from "./5 - Speakers"
 import QA from "./6 - Q&A"
-// import Sponsors from "./7 - Sponsors"
+import Sponsors from "./7 - Sponsors"
 import Footer from "../../components/Footer"
 
 import Binary from "../../assets/Binary.jpg"
@@ -28,7 +28,7 @@ const Home = () => {
       >
         <Navbar />
         <Landing />
-        <div className='-mx-40 flex h-10 items-center'>
+        <div className='-z-30 -mx-40 flex h-10 items-center'>
           <img
             src={TreesBackgroundSmall}
             alt=''
@@ -40,7 +40,7 @@ const Home = () => {
         <Milestones id='milestones' />
         {/* <Speakers id='speakers' /> */}
         <QA id='qa' />
-        {/* <Sponsors id='sponsors' /> */}
+        <Sponsors id='sponsors' />
         <div className='h-40' />
       </div>
       <img src={Lake} alt='' className='m-auto w-full' />

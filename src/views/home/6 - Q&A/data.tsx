@@ -119,6 +119,24 @@ const faqs = [
         </>
       ),
     },
+    {
+      question: "What are the prize tracks?",
+      answer: (
+        <>
+          CruzHacks 2024 offers 4 main prize tracks: Health Hacks, Justice
+          Hacks, Sustainability Hacks, and Education Hacks. Hackers can submit
+          their project to one of these 4 main prize tracks. We also offer 4
+          category prizes: Best Beginner, Best AI Hack, Best UI/UX Hack, and
+          Best Slug Hack. Hackers are judged on category prizes based on
+          eledgebility. There will also be sponsors hosting some of their own
+          prize tracks (as well as some secret prizes). Hackers can submit their
+          project to any number of sponsored prize tracks.{" "}
+          <Link className='text-blue-button' to='/#prize-tracks'>
+            See the Prize Track descriptions Here.
+          </Link>
+        </>
+      ),
+    },
   ],
   // Right -------------------------------------------------->
   [
@@ -141,24 +159,6 @@ const faqs = [
             join our discord
           </a>
           .
-        </>
-      ),
-    },
-    {
-      question: "What are the prize tracks?",
-      answer: (
-        <>
-          CruzHacks 2024 offers 4 main prize tracks: Health Hacks, Justice
-          Hacks, Sustainability Hacks, and Education Hacks. Hackers can submit
-          their project to one of these 4 main prize tracks. We also offer 4
-          category prizes: Best Beginner, Best AI Hack, Best UI/UX Hack, and
-          Best Slug Hack. Hackers are judged on category prizes based on
-          eledgebility. There will also be sponsors hosting some of their own
-          prize tracks (as well as some secret prizes). Hackers can submit their
-          project to any number of sponsored prize tracks.{" "}
-          <Link className='text-blue-button' to='/#prize-tracks'>
-            See the Prize Track descriptions Here.
-          </Link>
         </>
       ),
     },
@@ -223,25 +223,25 @@ const faqs = [
         </>
       ),
     },
-    // {
-    //   question:
-    //     "Can I help out another way if I don't want to be a Hacker, but am not eligible to be a judge or mentor?",
-    //   answer: (
-    //     <>
-    //       If you are a current UCSC student, you&apos;re welcome to volunteer
-    //       with us! Volunteers are invaluable in helping us set up, clean up, and
-    //       everything in between!{" "}
-    //       <a
-    //         target='_blank'
-    //         rel='noreferrer'
-    //         href='https://forms.gle/R9KtP8VMGGbfVTBx9'
-    //         className='text-blue-button'
-    //       >
-    //         Click here to apply.
-    //       </a>
-    //     </>
-    //   ),
-    // },
+    {
+      question:
+        "Can I help out another way if I don't want to be a Hacker, but am not eligible to be a judge or mentor?",
+      answer: (
+        <>
+          If you are a current UCSC student, you&apos;re welcome to volunteer
+          with us! Volunteers are invaluable in helping us set up, clean up, and
+          everything in between!{" "}
+          <a
+            target='_blank'
+            rel='noreferrer'
+            href='https://docs.google.com/forms/d/e/1FAIpQLSdlg_PvCJG2b2tfJZ6W5uriE6Ip2Nlhw0wESbaTqG8jtCXY2A/viewform?usp=sf_link'
+            className='text-blue-button'
+          >
+            Click here to apply.
+          </a>
+        </>
+      ),
+    },
   ],
 ]
 export default faqs

@@ -6,6 +6,17 @@ import Binary from "../../assets/Binary.jpg"
 import Lake from "../../assets/illustrations/Lake.svg"
 import ScrollToTop from "../../components/scrollControl/ScrollToTop"
 
+const boardOfDirectors = [
+  "Doug Erickson",
+  "Nathan Westrup",
+  "Amanda Rotella",
+  "Suz Howells",
+  "Mansi Saini",
+  "Nada Miljkovic",
+]
+
+const advisors = ["Alexi Sevastopoulos", "Dr. Ebonée Williams", "Mark Adams"]
+
 const Team = () => {
   return (
     <div className='overflow-x-hidden bg-[#0A1351]' id='landing'>
@@ -33,17 +44,29 @@ const Team = () => {
             companies.
           </p>
         </div>
-        <div className='flex flex-col items-center gap-6'>
-          <h2 className='text-center font-title text-3xl uppercase md:text-5xl'>
-            Board of directors
-          </h2>
-          <ul className='space-y-1 text-center font-subtext'>
-            <li>Doug Erickson</li>
-            <li>Nathan Westrup</li>
-            <li>Amanda Rotella</li>
-            <li>Nada Miljkovic</li>
-            <li>Drew Meyer</li>
-          </ul>
+
+        <div className='flex flex-col items-center gap-10 md:flex-row md:items-start'>
+          <div className='flex max-w-sm flex-1 flex-col items-center gap-6'>
+            <h3 className='text-center font-title text-2xl uppercase md:text-4xl'>
+              Board of directors
+            </h3>
+            <ul className='space-y-1 text-center font-subtext'>
+              {boardOfDirectors.map(name => (
+                <li key={name}>{name}</li>
+              ))}
+            </ul>
+          </div>
+
+          <div className='flex max-w-sm flex-1 flex-col items-center gap-6'>
+            <h3 className='text-center font-title text-2xl uppercase md:text-4xl'>
+              Advisers
+            </h3>
+            <ul className='space-y-1 text-center font-subtext'>
+              {advisors.map(name => (
+                <li key={name}>{name}</li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
       <div className='h-10' />

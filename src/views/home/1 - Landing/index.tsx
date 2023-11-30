@@ -13,20 +13,28 @@ const Landing = () => {
 
   return (
     <div className='flex w-full flex-col items-center'>
-      <Cloud1 className='left-0 top-28' />
-      <Star className='left-5 top-48 h-5 md:left-28 md:top-56 md:h-10' />
+      <Cloud1 className='-left-10 top-10 md:top-16' />
+
       <Star
         i={2}
         className='right-10 top-28 h-5 md:right-16 md:top-32 md:h-10'
       />
-      <Star i={3} className='left-10 top-52 h-2 md:left-40 md:top-72 md:h-3' />
-      <Cloud2 className='right-0 top-40' />
+      <Star className='left-5 top-48 h-5 md:left-10 md:top-56 md:h-10 lg:left-28' />
+      <Star
+        i={3}
+        className='left-10 top-52 h-2 md:left-20 md:top-72 md:h-3 lg:left-40'
+      />
+
+      <Cloud2 className='-right-6 top-16 md:-right-20 md:top-44' />
+
       <Star i={3} className='right-4 top-96 h-6 md:right-32 md:top-80 md:h-7' />
       <Star
         i={6}
         className='right-10 top-[23rem] h-3 md:right-28 md:top-[19.5rem] md:h-3'
       />
-      <Cloud3 className='-right-20 top-60' />
+
+      <Cloud3 className='-right-24 top-28 md:-right-52 md:top-[22rem]' />
+
       <Transition
         appear={true}
         show={true}
@@ -34,7 +42,7 @@ const Landing = () => {
         enterFrom='opacity-0 scale-[90%]'
         enterTo='opacity-100 scale-100'
       >
-        <div className='z-10 -mb-24 flex h-[40rem] w-fit flex-col items-center justify-center pb-20 md:h-[60rem] md:items-start'>
+        <div className='-mb-24 flex h-[48rem] w-fit flex-col items-center justify-center pb-20 md:h-[62rem] md:items-start lg:h-[55rem]'>
           <h1 className='z-10 font-title text-6xl uppercase md:text-8xl lg:text-9xl'>
             Cruz
           </h1>
@@ -50,14 +58,14 @@ const Landing = () => {
           {!isAuthenticated ? (
             <Link
               to='/apply/user'
-              className='z-10 mt-6 flex h-12 w-64 items-center justify-center self-center rounded-full bg-gradient-to-r from-[#02D4BF] via-[#5156E4] to-[#7F37E2]  font-title text-xl leading-6 text-white shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white md:ml-20 md:self-start'
+              className='z-30 mt-6 flex h-12 w-64 items-center justify-center self-center rounded-full bg-gradient-to-r from-[#02D4BF] via-[#5156E4] to-[#7F37E2]  font-title text-xl leading-6 text-white shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white md:ml-20 md:self-start'
             >
               apply
             </Link>
           ) : (
             <Link
               to='/portal'
-              className='z-10 mt-6 flex h-12 w-64 items-center justify-center self-center rounded-full bg-gradient-to-r from-[#02D4BF] via-[#5156E4] to-[#7F37E2]  font-title text-xl leading-6 text-white shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white md:ml-20 md:self-start'
+              className='z-30 mt-6 flex h-12 w-64 items-center justify-center self-center rounded-full bg-gradient-to-r from-[#02D4BF] via-[#5156E4] to-[#7F37E2]  font-title text-xl leading-6 text-white shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white md:ml-20 md:self-start'
             >
               portal
             </Link>
@@ -65,16 +73,16 @@ const Landing = () => {
         </div>
       </Transition>
 
-      <div className='flex h-10 w-full justify-between'>
+      <div className='-z-10 flex h-10 w-full justify-between'>
         <img
           src={HackersOnLog}
           alt='Hackers on Log'
-          className='z-0 -ml-16 -mt-40 w-40 md:-ml-32 md:-mt-96 md:w-96'
+          className='z-0 -ml-20 -mt-52 h-[20rem] w-auto md:-ml-28 md:mt-[-28rem] md:h-[34rem] lg:mt-[-27rem] lg:h-[40rem]'
         />
         <img
           src={Fire}
           alt='Fire'
-          className='z-0 -mr-8 -mt-36 w-20 md:-mt-80 md:mr-0 md:w-48'
+          className='z-0 -mr-5 -mt-12 h-[8rem] w-auto md:mr-0 md:mt-[-12rem] md:h-[14rem] lg:h-[20rem]'
         />
       </div>
     </div>
