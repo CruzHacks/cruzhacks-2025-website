@@ -17,7 +17,7 @@ const BounceCloud = ({
     <div
       className={classNames(
         className,
-        "absolute -z-10 flex w-1/3 animate-bounce-slow opacity-90 md:w-fit"
+        "absolute -z-10 flex w-1/3 animate-bounce-slow opacity-80 md:w-fit"
       )}
       style={{ animationDelay: `-${i * 2}s` }}
     >
@@ -36,7 +36,7 @@ const BounceCloud = ({
           leftSide ? "-translate-x-40" : "translate-x-40",
           "opacity-0 scale-[140%]"
         )}
-        enterTo='opacity-100 scale-100'
+        enterTo='opacity-80 scale-100'
         className='w-full'
       >
         {child}
@@ -173,7 +173,6 @@ export const CloudTrack1 = ({ className }: { className?: string }) => (
       fill='none'
     >
       <path
-        opacity='0.6'
         d='M332.914 32.3966C294.558 15.6368 250.846 -15.4167 152.545 9.059C69.5758 39.227 21.778 18.1666 1.93751 50.0418C-17.903 81.917 119.831 85.3317 177.797 77.3629C236.381 69.3093 321.19 80.5883 371.693 89.3161C447.448 102.408 521.399 98.9925 525.908 77.3629C530.417 55.7333 368.086 47.765 332.914 32.3966Z'
         fill='#1A0CA7'
       />
@@ -191,9 +190,8 @@ export const CloudTrack2 = ({ className }: { className?: string }) => (
       fill='none'
     >
       <path
-        opacity='0.6'
         d='M242.977 10.5206C274.426 25.9226 309.851 14.1304 323.633 6.30907C400.222 0.263384 407 20.7482 407 34.5859C407 48.4237 329.733 69.4811 283.643 86.327C237.554 103.173 185.365 56.8466 178.587 52.6351L178.47 52.5623C171.768 48.3965 168.103 46.118 113.52 63.4647C58.6193 80.9122 32.1859 70.6843 15.9191 69.4811C-0.347732 68.2778 -24.7479 27.9679 63.3639 34.5859C151.476 41.204 157.246 25.7712 189.102 6.30892C193.128 3.84917 203.665 -8.73194 242.977 10.5206Z'
-        fill='url(#paint0_linear_830_792)'
+        fill='#1A0CA7'
       />
       <defs>
         <linearGradient
