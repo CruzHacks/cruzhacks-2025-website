@@ -12,6 +12,7 @@ import JuliaYsabel from "../../assets/organizers/Julia Ysabel.jpg"
 import LiaFung from "../../assets/organizers/Lia Fung.jpg"
 import MaddisonLobo from "../../assets/organizers/Maddison Lobo.jpg"
 import MiaGallardo from "../../assets/organizers/Mia Gallardo.jpg"
+import OliverPearce from "../../assets/organizers/Oliver Pearce.jpg"
 import RiaChockalingam from "../../assets/organizers/Ria Chockalingam.jpg"
 import RussellElliot from "../../assets/organizers/Russell Elliot.jpg"
 import SohineeSaha from "../../assets/organizers/Sohinee Saha.jpg"
@@ -168,6 +169,7 @@ export const organizers: Organizer[] = [
   {
     name: "Oliver Pearce",
     role: "Sponsorship",
+    image: OliverPearce,
     linkedIn: "https://www.linkedin.com/in/oliverjpearce/",
   },
 ]

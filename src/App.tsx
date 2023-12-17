@@ -1,5 +1,5 @@
 import React from "react"
-import { Navigate, Route, Routes } from "react-router-dom"
+import { Outlet, Route, Routes } from "react-router-dom"
 import RoleProtectedRoute from "./components/protectedRoutes/RoleProtectedRoute"
 import PortalRedirectRoute from "./components/protectedRoutes/PortalRedirectRoute"
 import UnauthenticatedRoute from "./components/protectedRoutes/UnauthenticatedRoute"
@@ -17,19 +17,20 @@ import ApplicationApplicant from "./views/portal/applicant/Application"
 import PortalApplicant from "./views/portal/applicant"
 import DashboardApplicant from "./views/portal/applicant/DashboardApplicant"
 import useAuth from "./hooks/useAuth"
-import Apply, {
-  DemographicsSection,
-  LogisticsSection,
-  ShortResponseSection,
-  SocialsSection,
-  WaviersSection,
-} from "./views/apply"
+// import UserSection from "./views/apply/0 - User"
+// import Apply, {
+//   DemographicsSection,
+//   LogisticsSection,
+//   ShortResponseSection,
+//   SocialsSection,
+//   WaviersSection,
+// } from "./views/apply"
+// import ReviewSection from "./views/apply/6 - Review"
 import { Toaster } from "react-hot-toast"
-import UserSection from "./views/apply/0 - User"
 import ApplicationsReviewAdmin from "./views/portal/admin/applications/Review"
-import ReviewSection from "./views/apply/6 - Review"
 import ScrollToAnchor from "./components/scrollControl/ScrollToAnchor"
 import Team from "./views/team"
+import ApplicationClosed from "./views/ApplicationClosed"
 
 const App: React.FC = () => {
   const {
@@ -71,15 +72,17 @@ const App: React.FC = () => {
         <Route element={<UnauthenticatedRoute />}>
           <Route path='login' element={<Login />} />
           <Route path='organizers-only/signup' element={<Signup />} />
-          <Route path='apply' element={<Apply />}>
-            <Route index element={<Navigate replace to='/apply/user' />} />
+          <Route path='apply' element={<Outlet />}>
+            <Route index element={<ApplicationClosed />} />
+            <Route path='*' element={<ApplicationClosed />} />
+            {/* <Route index element={<Navigate replace to='/apply/user' />} />
             <Route path='user' element={<UserSection />} />
             <Route path='demographics' element={<DemographicsSection />} />
             <Route path='short_response' element={<ShortResponseSection />} />
             <Route path='logistics' element={<LogisticsSection />} />
             <Route path='socials' element={<SocialsSection />} />
             <Route path='waivers' element={<WaviersSection />} />
-            <Route path='review' element={<ReviewSection />} />
+            <Route path='review' element={<ReviewSection />} /> */}
           </Route>
         </Route>
 

@@ -57,10 +57,10 @@ const Landing = () => {
           </p>
           {!isAuthenticated ? (
             <Link
-              to='/apply/user'
+              to='/login'
               className='z-30 mt-6 flex h-12 w-64 items-center justify-center self-center rounded-full bg-gradient-to-r from-[#02D4BF] via-[#5156E4] to-[#7F37E2]  font-title text-xl leading-6 text-white shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white md:ml-20 md:self-start'
             >
-              apply
+              login
             </Link>
           ) : (
             <Link

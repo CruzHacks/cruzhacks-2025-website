@@ -55,15 +55,7 @@ export default function Login() {
       <div className='w-full max-w-sm space-y-10 lg:w-96'>
         <div className='space-y-4'>
           <h2 className='mt-8 font-title text-5xl leading-10'>Log In</h2>
-          <p className='font-subtext'>
-            Don&apos;t have an account?{" "}
-            <Link
-              to='/apply/user'
-              className='font-semibold text-blue-button hover:text-blue-chinese'
-            >
-              Apply
-            </Link>
-          </p>
+          <p className='font-subtext'>Please sign in to continue</p>
         </div>
 
         <form onSubmit={handleSubmit(handleLogin)} className='space-y-10'>

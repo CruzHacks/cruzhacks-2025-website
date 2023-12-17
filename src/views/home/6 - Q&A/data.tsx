@@ -34,7 +34,7 @@ const faqs = [
         <>
           All students studying at a high school, college/university, and other
           alternative schools (such as bootcamps) can{" "}
-          <Link to='/apply/user' className='text-blue-button'>
+          <Link to='/apply' className='text-blue-button'>
             apply
           </Link>
           ! CruzHacks is open to designers, project managers, artists, and
