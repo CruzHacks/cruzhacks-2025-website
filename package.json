@@ -32,6 +32,7 @@
     "eslint-plugin-react": "^7.31.11",
     "firebase": "^10.5.0",
     "firebase-tools": "^11.22.0",
+    "loadable-image": "^3.0.6",
     "prettier": "^2.8.2",
     "react": "^18.2.0",
     "react-confetti-explosion": "^2.1.2",
