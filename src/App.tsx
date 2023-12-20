@@ -1,5 +1,5 @@
 import React from "react"
-import { Outlet, Route, Routes } from "react-router-dom"
+import { Navigate, Outlet, Route, Routes } from "react-router-dom"
 import RoleProtectedRoute from "./components/protectedRoutes/RoleProtectedRoute"
 import PortalRedirectRoute from "./components/protectedRoutes/PortalRedirectRoute"
 import UnauthenticatedRoute from "./components/protectedRoutes/UnauthenticatedRoute"
@@ -17,15 +17,15 @@ import ApplicationApplicant from "./views/portal/applicant/Application"
 import PortalApplicant from "./views/portal/applicant"
 import DashboardApplicant from "./views/portal/applicant/DashboardApplicant"
 import useAuth from "./hooks/useAuth"
-// import UserSection from "./views/apply/0 - User"
-// import Apply, {
-//   DemographicsSection,
-//   LogisticsSection,
-//   ShortResponseSection,
-//   SocialsSection,
-//   WaviersSection,
-// } from "./views/apply"
-// import ReviewSection from "./views/apply/6 - Review"
+import UserSection from "./views/apply/0 - User"
+import Apply, {
+  DemographicsSection,
+  LogisticsSection,
+  ShortResponseSection,
+  SocialsSection,
+  WaviersSection,
+} from "./views/apply"
+import ReviewSection from "./views/apply/6 - Review"
 import { Toaster } from "react-hot-toast"
 import ApplicationsReviewAdmin from "./views/portal/admin/applications/Review"
 import ScrollToAnchor from "./components/scrollControl/ScrollToAnchor"
@@ -75,14 +75,20 @@ const App: React.FC = () => {
           <Route path='apply' element={<Outlet />}>
             <Route index element={<ApplicationClosed />} />
             <Route path='*' element={<ApplicationClosed />} />
-            {/* <Route index element={<Navigate replace to='/apply/user' />} />
+          </Route>
+
+          <Route path='j7hxc5p6ri/apply' element={<Apply />}>
+            <Route
+              index
+              element={<Navigate replace to='/j7hxc5p6ri/apply/user' />}
+            />
             <Route path='user' element={<UserSection />} />
             <Route path='demographics' element={<DemographicsSection />} />
             <Route path='short_response' element={<ShortResponseSection />} />
             <Route path='logistics' element={<LogisticsSection />} />
             <Route path='socials' element={<SocialsSection />} />
             <Route path='waivers' element={<WaviersSection />} />
-            <Route path='review' element={<ReviewSection />} /> */}
+            <Route path='review' element={<ReviewSection />} />
           </Route>
         </Route>
 
