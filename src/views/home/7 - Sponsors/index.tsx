@@ -26,7 +26,7 @@ const Sponsors = ({ id }: { id?: string }) => {
           return (
             <div
               key={"tier" + i}
-              className='flex flex-col items-center justify-between gap-10 md:flex-row'
+              className='flex w-full flex-col items-center justify-between gap-5 md:flex-row'
             >
               {tier.map(({ name, url, icon }) => (
                 <a
