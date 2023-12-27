@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom"
 import useApplications from "../../../../hooks/useApplications"
 import type { ApplicationStatus } from "../../../../utils/types"
 
+const LOADING_ENTRIES = 50
+
 const formatTime = (time: any) => {
   const d = time.toDate()
 
@@ -34,6 +36,11 @@ const AppStatus = ({ status }: { status: ApplicationStatus }) => {
   )
 }
 
+// TODO: Pagination
+
+// TODO: Compose generic table component: tables are reused; loading styling
+// should be same as data styling (bug prone to require manual updates)
+
 const ApplicationsAdmin = () => {
   const navigate = useNavigate()
   const { data: applications, error, isLoading, isError } = useApplications()
@@ -44,7 +51,7 @@ const ApplicationsAdmin = () => {
   }
 
   return (
-    <div className='px-4 sm:px-6 lg:px-8'>
+    <div className='overflow-x-clip px-4 sm:px-6 lg:px-8'>
       <div className='sm:flex sm:items-center'>
         <div className='sm:flex-auto'>
           <h1 className='font-title text-2xl font-semibold leading-6'>
@@ -61,38 +68,38 @@ const ApplicationsAdmin = () => {
         </div>
       </div>
       <div className='mt-8 flow-root'>
-        <div className='-mx-4 -my-2 overflow-scroll sm:-mx-6 lg:-mx-8'>
+        <div className='-mx-4 -my-2 sm:-mx-6 lg:-mx-8'>
           <div className='inline-block min-w-full py-2 align-middle'>
-            <table className='min-w-full border-separate border-spacing-0'>
+            <table className='min-w-full border-separate border-spacing-0 overflow-x-scroll'>
               <thead>
                 <tr>
                   <th
                     scope='col'
-                    className='sticky top-0 z-10 hidden border-b border-white/20 bg-blue-imperial/50 py-3.5 pl-8 pr-3 text-left text-sm font-semibold backdrop-blur sm:table-cell'
+                    className='sticky top-[3.8rem] z-10 hidden border-b border-white/20 bg-blue-imperial/50 py-3.5 pl-8 pr-3 text-left text-sm font-semibold backdrop-blur sm:table-cell lg:top-0'
                   >
                     Id
                   </th>
                   <th
                     scope='col'
-                    className='sticky top-0 z-10 border-b border-white/20 bg-blue-imperial/50 py-3.5 pl-4 text-left text-sm font-semibold text-white backdrop-blur sm:px-3'
+                    className='sticky top-[3.8rem] z-10 border-b border-white/20 bg-blue-imperial/50 py-3.5 pl-4 text-left text-sm font-semibold text-white backdrop-blur sm:px-3 lg:top-0'
                   >
                     Email
                   </th>
                   <th
                     scope='col'
-                    className='sticky top-0 z-10 border-b border-white/20 bg-blue-imperial/50 px-3 py-3.5 text-left text-sm font-semibold text-white backdrop-blur'
+                    className='sticky top-[3.8rem] z-10 border-b border-white/20 bg-blue-imperial/50 px-3 py-3.5 text-left text-sm font-semibold text-white backdrop-blur lg:top-0'
                   >
                     Status
                   </th>
                   <th
                     scope='col'
-                    className='sticky top-0 z-10 hidden border-b border-white/20 bg-blue-imperial/50 px-3 py-3.5 text-left text-sm font-semibold text-white backdrop-blur sm:table-cell'
+                    className='sticky top-[3.8rem] z-10 hidden border-b border-white/20 bg-blue-imperial/50 px-3 py-3.5 text-left text-sm font-semibold text-white backdrop-blur sm:table-cell lg:top-0'
                   >
                     Time Submitted
                   </th>
                   <th
                     scope='col'
-                    className='sticky top-0 z-10 border-b border-white/20 bg-blue-imperial/50 py-3.5 pl-3 pr-4 backdrop-blur sm:pr-6 lg:pr-8'
+                    className='sticky top-[3.8rem] z-10 border-b border-white/20 bg-blue-imperial/50 py-3.5 pl-3 pr-4 backdrop-blur sm:pr-6 lg:top-0 lg:pr-8'
                   >
                     <span className='sr-only'>Review Application</span>
                   </th>
@@ -104,6 +111,7 @@ const ApplicationsAdmin = () => {
                     ? applications &&
                       applications.map((application, applicationIdx) => (
                         <tr key={application.email}>
+                          {/* Application Id */}
                           <td
                             className={classNames(
                               applicationIdx !== applications.length - 1
@@ -114,16 +122,20 @@ const ApplicationsAdmin = () => {
                           >
                             {applicationIdx + 1}
                           </td>
+
+                          {/* Application Email */}
                           <td
                             className={classNames(
                               applicationIdx !== applications.length - 1
                                 ? "border-b border-white/20"
                                 : "",
-                              "whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium sm:pl-3"
+                              "max-w-[10rem] truncate whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium sm:pl-3"
                             )}
                           >
                             {application.email}
                           </td>
+
+                          {/* Application Status */}
                           <td
                             className={classNames(
                               applicationIdx !== applications.length - 1
@@ -134,6 +146,8 @@ const ApplicationsAdmin = () => {
                           >
                             <AppStatus status={application.status} />
                           </td>
+
+                          {/* Application Time Submitted */}
                           <td
                             className={classNames(
                               applicationIdx !== applications.length - 1
@@ -144,6 +158,8 @@ const ApplicationsAdmin = () => {
                           >
                             {formatTime(application._submitted)}
                           </td>
+
+                          {/* Review Application Button */}
                           <td
                             className={classNames(
                               applicationIdx !== applications.length - 1
@@ -167,29 +183,53 @@ const ApplicationsAdmin = () => {
                         </tr>
                       ))
                     : // Loading State
-                      [...Array(5).keys()].map(i => (
-                        <tr key={i}>
+                      [...Array(LOADING_ENTRIES).keys()].map(loadingIdx => (
+                        <tr key={loadingIdx}>
+                          {/* Application Id */}
                           <td
-                            key={i + 100}
-                            className='hidden py-4 pl-4 pr-3 text-sm font-medium sm:table-cell sm:pl-6 lg:pl-8'
+                            className={classNames(
+                              loadingIdx !== LOADING_ENTRIES - 1 &&
+                                "border-b border-white/20",
+                              "hidden py-4 pl-8 pr-3 text-sm font-medium sm:table-cell"
+                            )}
                           >
-                            <div className='h-6 w-40 animate-pulse rounded bg-white/30 '></div>
+                            <div className='h-6 w-5 animate-pulse rounded bg-white/30 '></div>
                           </td>
-                          <td key={i + 200} className='px-3 py-4'>
-                            <div className='h-6 w-40 animate-pulse rounded bg-white/30 '></div>
-                          </td>
-                          <td key={i + 300} className='px-3 py-4'>
-                            <div className='h-6 w-40 animate-pulse rounded bg-white/30 '></div>
-                          </td>
-                          <td key={i + 400} className='px-3 py-4'>
-                            <div className='h-6 w-16 animate-pulse rounded bg-white/30 '></div>
-                          </td>
+
+                          {/* Application Email */}
                           <td
-                            key={i + 500}
-                            className='hidden px-3 py-4 sm:table-cell'
+                            className={classNames(
+                              loadingIdx !== LOADING_ENTRIES - 1 &&
+                                "border-b border-white/20",
+                              "py-4 pl-4 pr-3 sm:pl-3"
+                            )}
                           >
-                            <div className='h-6 w-60 animate-pulse rounded bg-white/30 '></div>
+                            <div className='h-6 w-[10rem] animate-pulse rounded bg-white/30 '></div>
                           </td>
+
+                          {/* Application Status */}
+                          <td
+                            className={classNames(
+                              loadingIdx !== LOADING_ENTRIES - 1 &&
+                                "border-b border-white/20",
+                              "px-3 py-4"
+                            )}
+                          >
+                            <div className='h-6 w-24 animate-pulse rounded bg-white/30 '></div>
+                          </td>
+
+                          {/* Application Time Submitted */}
+                          <td
+                            className={classNames(
+                              loadingIdx !== LOADING_ENTRIES - 1 &&
+                                "border-b border-white/20",
+                              "hidden px-3 py-4 md:table-cell"
+                            )}
+                          >
+                            <div className='h-6 w-44 animate-pulse rounded bg-white/30 '></div>
+                          </td>
+
+                          {/* Review Application Button */}
                           <td className='relative py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-8 lg:pr-8'>
                             <button className='cursor-not-allowed text-pink/50'>
                               Review Application
