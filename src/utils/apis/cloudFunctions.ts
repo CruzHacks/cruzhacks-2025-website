@@ -1,3 +1,4 @@
+import { trace } from "@firebase/performance"
 import type { User } from "@firebase/auth"
 import {
   ApplicationSchemaDto,
@@ -6,6 +7,7 @@ import {
   UserBasics,
 } from "../types"
 import axios, { isAxiosError } from "axios"
+import { perf } from "../firebaseapp"
 
 // This URL resolve to the Firebase Functions emulator in development is hacky
 // but works, prefer to have static URLs at build
@@ -142,8 +144,12 @@ export const mailchimpSubscribe = async (email: string) => {
  * @param pageToken OPTIONAL - The page token (used for pagination)
  * @returns The list of users if successful, otherwise an error message
  */
+
+const getUsersTrace = trace(perf, "getUsers") // Firebase performance trace
 export const getUsers = async (user: User, pageToken?: string) => {
   try {
+    getUsersTrace.start()
+
     const idToken = await user.getIdToken(false)
 
     const response = await axios.get(`${API_URL}/auth/users`, {
@@ -161,8 +167,10 @@ export const getUsers = async (user: User, pageToken?: string) => {
       throw new Error(error)
     }
 
+    getUsersTrace.stop()
     return data.users as UserBasics[]
   } catch (err) {
+    getUsersTrace.stop()
     if (isAxiosError(err)) {
       throw new Error(err.message)
     }

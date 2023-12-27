@@ -1,4 +1,5 @@
 import { initializeApp } from "firebase/app"
+import { getPerformance } from "@firebase/performance"
 import { getFirestore, connectFirestoreEmulator } from "@firebase/firestore"
 import { getAuth, connectAuthEmulator } from "@firebase/auth"
 import { getFunctions, connectFunctionsEmulator } from "@firebase/functions"
@@ -18,6 +19,7 @@ const app = initializeApp(firebaseConfig)
 const auth = getAuth(app)
 const db = getFirestore(app)
 const funcs = getFunctions(app)
+const perf = getPerformance(app)
 
 // Start emulators only in development
 if (import.meta.env.DEV) {
@@ -26,5 +28,5 @@ if (import.meta.env.DEV) {
   connectFunctionsEmulator(funcs, "localhost", 5001)
 }
 
-export { auth, db, funcs }
+export { auth, db, funcs, perf }
 export default app

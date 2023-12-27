@@ -1,4 +1,5 @@
 import type { User } from "@firebase/auth"
+import { trace } from "@firebase/performance"
 import {
   collection,
   collectionGroup,
@@ -9,7 +10,7 @@ import {
   query,
   updateDoc,
 } from "firebase/firestore"
-import { db } from "../firebaseapp"
+import { db, perf } from "../firebaseapp"
 import {
   AppShortResponseSchema,
   ApplicationSchema,
@@ -78,10 +79,12 @@ export const getApplicationShortResponses = async (email: string) => {
 /**
  * Function using Firebase sdk to retrieve information about all applications
  */
+const getApplicationTrace = trace(perf, "getApplications") // Firebase performance trace
+
 export const getApplications = async () => {
-  // NOTE: using try catch to insure error is console logged, this is important
-  // for geting the index creation link for the query
   try {
+    getApplicationTrace.start()
+
     // NOTE: This query requires a Firestore index
     // https://firebase.google.com/docs/firestore/query-data/queries#collection-group-query
     const q = query(collectionGroup(db, "user_items"), orderBy("_submitted"))
@@ -89,8 +92,10 @@ export const getApplications = async () => {
 
     const applications = querySnapshot.docs.map(doc => doc.data())
 
+    getApplicationTrace.stop()
     return applications as ApplicationSchema[]
   } catch (error) {
+    getApplicationTrace.stop()
     console.error(error)
     throw error
   }
