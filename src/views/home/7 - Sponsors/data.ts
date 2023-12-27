@@ -25,11 +25,24 @@ import RapidRobots from "../../../assets/sponsors/RapidRobots.svg"
 import SCEDH from "../../../assets/sponsors/SCEDH.svg"
 
 // Tier 6
-import ChooseSC from "../../../assets/sponsors/ChooseSC.svg"
 import InspiritAi from "../../../assets/sponsors/InspiritAi.svg"
 import TeachingLearningCenter from "../../../assets/sponsors/TeachingLearningCenter.svg"
 import ArtsResearchInstitute from "../../../assets/sponsors/ArtsResearchInstitute.svg"
 import StandOutSticekrs from "../../../assets/sponsors/StandOutStickers.svg"
+
+// Tier 7
+import Backbone from "../../../assets/sponsors/Backbone.svg"
+import Wolfram from "../../../assets/sponsors/Wolfram.svg"
+import Balsamiq from "../../../assets/sponsors/Balsamiq.svg"
+import Echo3d from "../../../assets/sponsors/Echo3d.svg"
+import Vectara from "../../../assets/sponsors/Vectara.svg"
+import Verbwire from "../../../assets/sponsors/Verbwire.svg"
+import Axure from "../../../assets/sponsors/Axure.svg"
+import GoogleCloud from "../../../assets/sponsors/GoogleCloud.svg"
+
+// Special Thanks
+import BreretonLawOffice from "../../../assets/sponsors/BreretonLawOffice.svg"
+import SeghettiWaxler from "../../../assets/sponsors/SeghettiWaxler.svg"
 
 // NOTE: these are last years sponsors, please update with this years sponsors
 export const sponsors = [
@@ -141,11 +154,6 @@ export const sponsors = [
       url: "https://www.inspiritai.com/",
     },
     {
-      name: "Choose Santa Cruz",
-      icon: ChooseSC,
-      url: "https://www.choosesantacruz.com/",
-    },
-    {
       name: "Teaching and Learning Center",
       icon: TeachingLearningCenter,
       url: "https://tlc.ucsc.edu/",
@@ -156,4 +164,61 @@ export const sponsors = [
       url: "https://ari.ucsc.edu/",
     },
   ],
+
+  // Tier 7
+  [
+    {
+      name: "Wolfram",
+      icon: Wolfram,
+      url: "https://www.wolfram.com/",
+    },
+    {
+      name: "Balsamiq",
+      icon: Balsamiq,
+      url: "https://balsamiq.com/",
+    },
+    {
+      name: "Backbone",
+      icon: Backbone,
+      url: "https://playbackbone.com/",
+    },
+    {
+      name: "Echo3D",
+      icon: Echo3d,
+      url: "https://www.echo3d.com/",
+    },
+    {
+      name: "Vectara",
+      icon: Vectara,
+      url: "https://vectara.com/",
+    },
+    {
+      name: "Verbwire",
+      icon: Verbwire,
+      url: "https://www.verbwire.com/",
+    },
+    {
+      name: "Axure",
+      icon: Axure,
+      url: "https://www.axure.com/",
+    },
+    {
+      name: "Google Cloud",
+      icon: GoogleCloud,
+      url: "https://cloud.google.com/",
+    },
+  ],
+]
+
+export const specialThanks = [
+  {
+    name: "Brereton Law Office",
+    icon: BreretonLawOffice,
+    url: "https://breretonlawoffice.com/",
+  },
+  {
+    name: "Seghetti Waxler",
+    icon: SeghettiWaxler,
+    url: "https://www.seghettiwaxler.com/",
+  },
 ]
