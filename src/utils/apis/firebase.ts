@@ -79,8 +79,6 @@ export const getApplicationShortResponses = async (email: string) => {
  * Function using Firebase sdk to retrieve information about all applications
  */
 export const getApplications = async () => {
-  // NOTE: using try catch to insure error is console logged, this is important
-  // for geting the index creation link for the query
   try {
     // NOTE: This query requires a Firestore index
     // https://firebase.google.com/docs/firestore/query-data/queries#collection-group-query

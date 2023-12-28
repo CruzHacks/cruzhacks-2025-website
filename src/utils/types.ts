@@ -32,6 +32,7 @@ export type UserRole = (typeof UserRoles)[number]
 export const ApplicationSchema = z.object({
   status: z.enum(ApplicationStatuses),
   email: z.string().email("Invalid email address."),
+  fullname: z.string(),
   _submitted: z.any(),
   _last_committed: z.any(),
 })

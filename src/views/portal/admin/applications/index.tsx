@@ -1,8 +1,14 @@
 import React from "react"
-import { classNames } from "../../../../utils/string"
+import {
+  classNames,
+  objectToCSV,
+  timestampFilename,
+} from "../../../../utils/string"
 import { useNavigate } from "react-router-dom"
 import useApplications from "../../../../hooks/useApplications"
-import type { ApplicationStatus } from "../../../../utils/types"
+import { ApplicationStatus } from "../../../../utils/types"
+import { ArrowDownTrayIcon } from "@heroicons/react/24/outline"
+import toast from "react-hot-toast"
 
 const LOADING_ENTRIES = 50
 
@@ -45,6 +51,27 @@ const ApplicationsAdmin = () => {
   const navigate = useNavigate()
   const { data: applications, error, isLoading, isError } = useApplications()
 
+  const downloadApplicationsCsv = () => {
+    if (!applications) {
+      toast.error("No applications to download")
+      return
+    }
+
+    const filename = timestampFilename("hacker_applications", "csv")
+    const csvData = objectToCSV(applications)
+
+    const blob = new Blob([csvData], { type: "text/csv" })
+    const url = window.URL.createObjectURL(blob)
+    const a = document.createElement("a")
+
+    a.setAttribute("hidden", "")
+    a.setAttribute("href", url)
+    a.setAttribute("download", filename)
+    document.body.appendChild(a)
+    a.click()
+    document.body.removeChild(a)
+  }
+
   const handleReviewApplication = (email: string) => {
     const email_friendly = encodeURIComponent(email.replace(/\./g, " "))
     navigate(`/portal/admin/applications/review/${email_friendly}`)
@@ -61,10 +88,17 @@ const ApplicationsAdmin = () => {
             Hacker applications for this years hackathon.
           </p>
         </div>
-        <div className='mt-4 sm:ml-16 sm:mt-0 sm:flex-none'>
+        <div className='mt-4 flex gap-2 sm:ml-16 sm:mt-0 sm:flex-none'>
           <p className='block rounded-md bg-blue-button/10 px-3 py-2 text-center font-subtext text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white'>
             {applications && applications?.length} Submissions
           </p>
+
+          <button
+            onClick={downloadApplicationsCsv}
+            className='block rounded-md bg-blue-button/10 px-3 py-2 text-center font-subtext text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white'
+          >
+            <ArrowDownTrayIcon className='h-4 w-4 text-pink' />
+          </button>
         </div>
       </div>
       <div className='mt-8 flow-root'>
@@ -114,9 +148,8 @@ const ApplicationsAdmin = () => {
                           {/* Application Id */}
                           <td
                             className={classNames(
-                              applicationIdx !== applications.length - 1
-                                ? "border-b border-white/20"
-                                : "",
+                              applicationIdx !== applications.length - 1 &&
+                                "border-b border-white/20",
                               "hidden whitespace-nowrap py-4 pl-8 pr-3 font-subtext text-sm sm:table-cell"
                             )}
                           >
@@ -126,9 +159,8 @@ const ApplicationsAdmin = () => {
                           {/* Application Email */}
                           <td
                             className={classNames(
-                              applicationIdx !== applications.length - 1
-                                ? "border-b border-white/20"
-                                : "",
+                              applicationIdx !== applications.length - 1 &&
+                                "border-b border-white/20",
                               "max-w-[10rem] truncate whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium sm:pl-3"
                             )}
                           >
@@ -138,9 +170,8 @@ const ApplicationsAdmin = () => {
                           {/* Application Status */}
                           <td
                             className={classNames(
-                              applicationIdx !== applications.length - 1
-                                ? "border-b border-white/20"
-                                : "",
+                              applicationIdx !== applications.length - 1 &&
+                                "border-b border-white/20",
                               "whitespace-nowrap px-3 py-4 text-sm font-medium"
                             )}
                           >
@@ -150,9 +181,8 @@ const ApplicationsAdmin = () => {
                           {/* Application Time Submitted */}
                           <td
                             className={classNames(
-                              applicationIdx !== applications.length - 1
-                                ? "border-b border-white/20"
-                                : "",
+                              applicationIdx !== applications.length - 1 &&
+                                "border-b border-white/20",
                               "hidden whitespace-nowrap px-3 py-4 text-sm md:table-cell"
                             )}
                           >
@@ -162,9 +192,8 @@ const ApplicationsAdmin = () => {
                           {/* Review Application Button */}
                           <td
                             className={classNames(
-                              applicationIdx !== applications.length - 1
-                                ? "border-b border-white/20"
-                                : "",
+                              applicationIdx !== applications.length - 1 &&
+                                "border-b border-white/20",
                               "relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-8 lg:pr-8"
                             )}
                           >
@@ -230,7 +259,13 @@ const ApplicationsAdmin = () => {
                           </td>
 
                           {/* Review Application Button */}
-                          <td className='relative py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-8 lg:pr-8'>
+                          <td
+                            className={classNames(
+                              loadingIdx !== LOADING_ENTRIES - 1 &&
+                                "border-b border-white/20",
+                              "relative py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-8 lg:pr-8"
+                            )}
+                          >
                             <button className='cursor-not-allowed text-pink/50'>
                               Review Application
                             </button>
