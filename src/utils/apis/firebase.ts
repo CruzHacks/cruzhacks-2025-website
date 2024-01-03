@@ -2,6 +2,7 @@ import type { User } from "@firebase/auth"
 import {
   collection,
   collectionGroup,
+  deleteField,
   doc,
   getDoc,
   getDocs,
@@ -169,6 +170,35 @@ export const checkStatus = async (email: string) => {
     console.log("docSnap status: ", status)
 
     return status as any as ApplicationStatus
+  } catch (error) {
+    console.error(error)
+    throw error
+  }
+}
+
+/**
+ * Function using Firebase sdk for checking if an application is
+ * accepted.
+ * @param email Firebase User's Email
+ * @returns True if application is accepted, false if not, otherwise not reviewed
+ *
+ */
+export const fixDB = async (email: string) => {
+  try {
+    if (!email) throw new Error("No user provided")
+
+    const docRef = doc(db, `users/${email}/`)
+
+    const docSnap = await getDoc(docRef)
+    const pronouns = docSnap.data()?.pronouons
+
+    await updateDoc(docRef, {
+      pronouns: pronouns,
+      pronouons: deleteField(),
+      checkedIn: false,
+    })
+
+    return pronouns as any as ApplicationStatus
   } catch (error) {
     console.error(error)
     throw error
