@@ -4,7 +4,6 @@ import AnnaJansson from "../../assets/organizers/Anna Jansson.jpg"
 import AudreyOstrom from "../../assets/organizers/Audrey Ostrom.jpg"
 import CarmenPadilla from "../../assets/organizers/Carmen Padilla.jpg"
 import ChrisHein from "../../assets/organizers/Chris Hein.jpg"
-import DebiMajumdar from "../../assets/organizers/Debi Majumdar.jpg"
 import EdmunXu from "../../assets/organizers/Edmund Xu.jpg"
 import FrannyTrinidad from "../../assets/organizers/Franny Trinidad.jpg"
 import GloRamos from "../../assets/organizers/Glo Ramos.jpg"
@@ -159,12 +158,6 @@ export const organizers: Organizer[] = [
     role: "Sponsorship Director",
     image: SohineeSaha,
     linkedIn: "http://www.linkedin.com/in/%20sohinee-tiffany-saha",
-  },
-  {
-    name: "Debi Majumdar",
-    role: "Sponsorship",
-    image: DebiMajumdar,
-    linkedIn: "https://www.linkedin.com/in/debi-majumdar/",
   },
   {
     name: "Oliver Pearce",
