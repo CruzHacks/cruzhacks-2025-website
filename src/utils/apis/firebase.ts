@@ -1,4 +1,3 @@
-import type { User } from "@firebase/auth"
 import {
   collection,
   collectionGroup,
@@ -23,10 +22,10 @@ import {
  * @returns True if application is submitted, false if not, otherwise an error
  * message
  */
-export const checkApplicationSubmitted = async (user: User) => {
-  if (!user) throw new Error("No user provided")
+export const checkApplicationSubmitted = async (email: string) => {
+  if (!email) throw new Error("No email provided")
 
-  const docRef = doc(db, `users/${user.email}/user_items/application`)
+  const docRef = doc(db, `users/${email}/user_items/application`)
   const docSnap = await getDoc(docRef)
 
   console.log("docSnap.exists(): ", docSnap.exists())
@@ -98,8 +97,7 @@ export const getApplications = async () => {
  * Function using Firebase sdk for checking if an application is
  * submitted.
  * @param user Firebase User
- * @returns True if application is submitted, false if not, otherwise an error
- * message
+ * @returns updated application if successful
  */
 export const approveApplication = async (email: string) => {
   try {
@@ -125,8 +123,7 @@ export const approveApplication = async (email: string) => {
  * Function using Firebase sdk for checking if an application is
  * accepted.
  * @param email Firebase User's Email
- * @returns True if application is submitted, false if not, otherwise an error
- * message
+ * @returns updated application if successful
  */
 export const denyApplication = async (email: string) => {
   try {
@@ -152,23 +149,51 @@ export const denyApplication = async (email: string) => {
  * Function using Firebase sdk for checking if an application is
  * accepted.
  * @param email Firebase User's Email
- * @returns True if application is accepted, false if not, otherwise not reviewed
- *
+ * @returns updated application if successful
  */
-export const checkStatus = async (email: string) => {
+export const getApplicationStatus = async (email: string) => {
   try {
     if (!email) throw new Error("No user provided")
 
     const docRef = doc(db, `users/${email}/user_items/application`)
     const docSnap = await getDoc(docRef)
 
-    const status = docSnap.data()?.status
+    if (!docSnap.exists()) throw new Error("No application found")
+    if (!docSnap.data()?.status)
+      throw new Error("Application found but no status field")
 
-    console.log("docSnap status: ", status)
+    const status = {
+      status: docSnap.data()?.status,
+      rsvp: docSnap.data()?.rsvp,
+    }
 
-    return status as any as ApplicationStatus
+    return status as { status: ApplicationStatus; rsvp?: boolean }
   } catch (error) {
     console.error(error)
-    throw error
+    throw error as Error
+  }
+}
+
+/**
+ * Function using Firebase sdk to update an application rsvp
+ * @param email Firebase User's Email
+ * @param rsvp Boolean
+ * @returns updated application if successful
+ */
+export const updateApplicationRsvp = async (email: string, rsvp: boolean) => {
+  try {
+    if (!email) throw new Error("No user provided")
+
+    const docRef = doc(db, `users/${email}/user_items/application`)
+    await updateDoc(docRef, {
+      rsvp: rsvp,
+    })
+
+    console.log("docRef updated: ", docRef)
+
+    return rsvp
+  } catch (error) {
+    console.error("application", error)
+    throw error as Error
   }
 }

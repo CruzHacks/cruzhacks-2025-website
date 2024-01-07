@@ -27,17 +27,22 @@ export const objectToCSV = (applications: ApplicationSchema[]) => {
     "email",
     "fullname",
     "status",
+    "rsvp",
     "_submitted",
   ] as (keyof ApplicationSchema)[]
 
   const csvRows = []
-  csvRows.push("Email,Full Name,Status,Time Submitted")
+  csvRows.push("Email,Full Name,Status,Attending,Time Submitted")
 
   for (const row of applications) {
     const values = headers.map(header => {
       let val = row[header] ?? ""
       if (header === "_submitted") {
         val = val.toDate().toLocaleString()
+      }
+      if ((header === "status" || header === "rsvp") && isString(val)) {
+        val = val.toUpperCase()
+        console.log(val)
       }
 
       const escaped = ("" + val).replace(/"/g, '\\"')

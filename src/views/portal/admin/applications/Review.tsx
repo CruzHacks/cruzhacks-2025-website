@@ -8,7 +8,7 @@ import {
 import { z } from "zod"
 import { ArrowLeftIcon } from "@heroicons/react/24/outline"
 import { AcceptButtons } from "../../../../components/AcceptButtons"
-import { checkStatus } from "../../../../utils/apis/firebase"
+import { getApplicationStatus } from "../../../../utils/apis/firebase"
 
 const ApplicationsReviewAdmin = () => {
   let { email } = useParams()
@@ -20,7 +20,7 @@ const ApplicationsReviewAdmin = () => {
 
   useEffect(() => {
     const checkStatusSub = async () => {
-      const _status = await checkStatus(email as string)
+      const { status: _status } = await getApplicationStatus(email as string)
       setStatus(_status)
     }
     checkStatusSub()

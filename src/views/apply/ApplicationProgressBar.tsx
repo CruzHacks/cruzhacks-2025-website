@@ -63,13 +63,13 @@ const ProgressBarWrapper = () => {
 
     if (section == currentSection) return
 
-    navigate(`/apply/${section}`)
+    navigate(`/j7hxc5p6ri/apply/${section}`)
   }
 
   // Navigate to beginning of form if section is empty on first render
   useEffect(() => {
     if (currentSection != sections[0] && isSectionEmpty(currentSection)) {
-      navigate(`/apply/${sections[0]}`)
+      navigate(`/j7hxc5p6ri/apply/${sections[0]}`)
     }
   }, [])
 

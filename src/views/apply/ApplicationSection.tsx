@@ -38,7 +38,7 @@ const ApplicationSection = ({
     if (isLastStep) {
       try {
         sectionSchema.parse(_appState[section])
-        navigate(`/apply/${nextSection}`)
+        navigate(`/j7hxc5p6ri/apply/${nextSection}`)
       } catch (err) {
         notifyValidationErrors(err)
       }
