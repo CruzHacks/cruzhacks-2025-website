@@ -22,7 +22,7 @@ export const isString = (value: any): value is string =>
  * @param {ApplicationSchema} applications array of application submissions
  * @returns csv string
  */
-export const objectToCSV = (applications: ApplicationSchema[]) => {
+export const applicationToCSV = (applications: ApplicationSchema[]) => {
   const headers = [
     "email",
     "fullname",
@@ -40,9 +40,11 @@ export const objectToCSV = (applications: ApplicationSchema[]) => {
       if (header === "_submitted") {
         val = val.toDate().toLocaleString()
       }
-      if ((header === "status" || header === "rsvp") && isString(val)) {
+      if (header === "status" && isString(val)) {
         val = val.toUpperCase()
-        console.log(val)
+      }
+      if (header === "rsvp" && val !== "") {
+        val = val ? "YES" : "NO"
       }
 
       const escaped = ("" + val).replace(/"/g, '\\"')

@@ -1,7 +1,7 @@
 import React from "react"
 import {
   classNames,
-  objectToCSV,
+  applicationToCSV,
   timestampFilename,
 } from "../../../../utils/string"
 import { useNavigate } from "react-router-dom"
@@ -62,7 +62,7 @@ const ApplicationsAdmin = () => {
     }
 
     const filename = timestampFilename("hacker_applications", "csv")
-    const csvData = objectToCSV(applications)
+    const csvData = applicationToCSV(applications)
 
     const blob = new Blob([csvData], { type: "text/csv" })
     const url = window.URL.createObjectURL(blob)
@@ -197,7 +197,9 @@ const ApplicationsAdmin = () => {
                             )}
                           >
                             {application.rsvp === undefined ? (
-                              <span className='text-white/50'>N/A</span>
+                              <span className='text-white/50'>
+                                {application.status === "accepted" ? "TBD" : ""}
+                              </span>
                             ) : (
                               <span
                                 className={classNames(
