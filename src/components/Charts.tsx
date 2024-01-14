@@ -83,6 +83,24 @@ const rechartsArrayToPieChartData = (
 }
 
 /**
+ * Add numerical date field to recharts array for correct x-axis plotting
+ * @param rechartsArray array of recharts objects for plotting
+ * @returns array with date added for correct x-axis plotting
+ */
+export const rechartsArrayAddDate = (rechartsArray: ReChartsArray) => {
+  return rechartsArray.map(rechartsObject => {
+    return {
+      name: rechartsObject.name,
+      value: rechartsObject.value,
+      date: new Date(rechartsObject.name).getTime(),
+      date_to_string: new Date(
+        new Date(rechartsObject.name).getTime()
+      ).toLocaleString(),
+    }
+  })
+}
+
+/**
  * Format date ticks
  * @param tick tick to format
  * @returns formatted tick
@@ -90,6 +108,38 @@ const rechartsArrayToPieChartData = (
 const dateTickFormatter = (tick: string) => {
   const date = new Date(tick)
   return `${date.getMonth() + 1}/${date.getDate()}`
+}
+
+/**
+ * Get date ticks
+ * @param startDate start date
+ * @param endDate end date
+ * @param intervalDays days between ticks
+ * @returns array of date ticks evenly spaced
+ */
+const getDateTicks = (
+  startDate: Date,
+  endDate: Date,
+  intervalDays: number
+): number[] => {
+  const DAY_LENGTH = 86400000
+  const nextSundayAfterStartDate = new Date(startDate.getTime())
+  nextSundayAfterStartDate.setDate(
+    startDate.getDate() + ((7 - startDate.getDay()) % 7)
+  )
+
+  const endDateTime = new Date(endDate.getTime()).getTime()
+  const intervalLength = DAY_LENGTH * intervalDays
+
+  const dateTicks = []
+  let currDateTime = nextSundayAfterStartDate.getTime()
+
+  while (currDateTime < endDateTime) {
+    dateTicks.push(currDateTime)
+    currDateTime += intervalLength
+  }
+
+  return dateTicks
 }
 
 // Components
@@ -245,12 +295,13 @@ const LineCustomTooltip = ({ active, payload, label }: any) => {
       <p className='font-subtext text-white'>
         {payload[0].value}
         {label ? " " + label : ""}
+        {" on " + payload[0].payload.name}
       </p>
     </div>
   )
 }
 
-export const LineChart = ({
+export const DateLineChart = ({
   data,
   title,
   label,
@@ -261,14 +312,35 @@ export const LineChart = ({
   label?: string
   data: ReChartsArray
 }) => {
+  if (!data) {
+    return (
+      <div className='flex h-[30rem] w-full min-w-0 items-center justify-center bg-error/10'>
+        <p className='text-center text-error'>No Data provided for {title}</p>
+      </div>
+    )
+  }
+
+  const lineChartData = rechartsArrayAddDate(data)
+
+  const domain: [(dataMin: number) => number, (dataMin: number) => number] = [
+    dataMin => dataMin,
+    dataMax => dataMax,
+  ]
+
+  const ticks = getDateTicks(
+    new Date(lineChartData[0].name),
+    new Date(lineChartData[data.length - 1].name),
+    7
+  )
+
   return (
-    <div className='text-md hidden h-[30rem] w-full min-w-full flex-col items-center gap-5 md:flex'>
+    <div className='text-md hidden h-[30rem] w-full min-w-0 flex-col items-center gap-5 self-stretch md:flex'>
       {title && <h3 className='font-title capitalize'>{title}</h3>}
       <ResponsiveContainer width='100%' height='100%'>
         <RechartsLineChart
           width={700}
           height={400}
-          data={data}
+          data={lineChartData}
           className='font-subtext text-xs '
         >
           <Tooltip
@@ -276,9 +348,13 @@ export const LineChart = ({
           />
           <CartesianGrid strokeDasharray='3 3' stroke='#D3DAF4' opacity={0.2} />
           <XAxis
-            dataKey='name'
+            dataKey='date'
+            scale='time'
+            type='number'
             stroke='#D3DAF4'
             tickFormatter={dateTickFormatter}
+            ticks={ticks}
+            domain={domain}
           />
           <YAxis dataKey='value' stroke='#D3DAF4' />
           <Line
@@ -305,6 +381,14 @@ export const SimpleTable = ({
   data: { [key: string]: number }
   otherData: ReChartsArray
 }) => {
+  if (!data) {
+    return (
+      <div className='flex h-[400px] w-full max-w-xs items-center justify-center bg-error/10'>
+        <p className='text-center text-error'>No Data provided for {title}</p>
+      </div>
+    )
+  }
+
   return (
     <div className='flex w-full max-w-xs grow flex-col items-center rounded-lg bg-blue-imperial px-10 py-5 ring-2 ring-inset ring-white/10'>
       <div className='flex w-full max-w-xs flex-col gap-2'>

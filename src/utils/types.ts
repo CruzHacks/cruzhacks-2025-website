@@ -224,9 +224,13 @@ export type Statistics = {
     attendence_possible_wo_reimbursement: ReChartsArray
 
     tshirt_size: { [key: string]: number }
+    rsvpd_tshirt_size: { [key: string]: number }
     other_tshirt_size: ReChartsArray
+    rsvpd_other_tshirt_size: ReChartsArray
     dietary_restrictions: { [key: string]: number }
+    rsvpd_dietary_restrictions: { [key: string]: number }
     other_dietary_restrictions: ReChartsArray
+    rsvpd_other_dietary_restrictions: ReChartsArray
   }
   referral: {
     cruzhacks_referral: ReChartsArray

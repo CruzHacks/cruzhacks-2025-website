@@ -2,8 +2,8 @@ import React from "react"
 import { ReChartsArray, Statistics } from "../../../../utils/types"
 import useStatistics from "../../../../hooks/useStatistics"
 import {
-  LineChart,
   BarChart,
+  DateLineChart,
   PieChart,
   SimpleTable,
 } from "../../../../components/Charts"
@@ -62,6 +62,7 @@ const DashboardAdmin = () => {
           <DemographicsEducationBreakdown
             demographics={statistics.demographics}
           />
+          <LogisticsRSVPBreakdown logistics={statistics.logistics} />
           <LogisticsBreakdown logistics={statistics.logistics} />
           <ReferalBreakdown referral={statistics.referral} />
         </div>
@@ -84,7 +85,6 @@ const SubmissionsBreakdown = ({
   if (!submissions) return null
 
   let total_submissions = 0
-
   const total_submissions_over_time = submissions.per_day.map(entry => {
     return {
       name: entry.name,
@@ -96,14 +96,14 @@ const SubmissionsBreakdown = ({
     <div className='rounded-3xl bg-[#4659FF]/10 p-10 md:space-y-10'>
       <h2 className='font-title text-xl uppercase underline'>Submissions</h2>
 
-      <div className='flex items-center justify-center'>
-        <div className='flex w-full max-w-5xl flex-col items-center justify-center lg:flex-row'>
-          <LineChart
+      <div className='flex w-full items-center justify-center'>
+        <div className='flex w-full flex-col items-center justify-center xl:flex-row'>
+          <DateLineChart
             data={total_submissions_over_time}
             title='Total Applications Over Time'
-            label='total apps'
+            label='total applications'
           />
-          <div className='flex flex-col items-center gap-2 p-10'>
+          <div className='flex shrink-0 flex-col items-center gap-2 p-10'>
             <p className='w-full rounded-lg bg-blue-imperial px-10 py-5 text-center font-subtext text-xl font-bold text-gold ring-2 ring-inset ring-white/10'>
               {submissions.total} Total Submissions
             </p>
@@ -239,6 +239,47 @@ const DemographicsEducationBreakdown = ({
     </div>
   )
 }
+
+const LogisticsRSVPBreakdown = ({
+  logistics,
+}: {
+  logistics: Statistics["logistics"]
+}) => {
+  if (!logistics) return null
+
+  return (
+    <div className='space-y-10 rounded-3xl bg-[#4659FF]/10 p-10'>
+      <h2 className='font-title text-xl uppercase underline'>
+        Logistics - Attending Hackers
+      </h2>
+
+      <div className='flex flex-col items-start justify-center gap-10 md:flex-row'>
+        <SimpleTable
+          title='T-Shirt Sizes'
+          fields={["XS", "S", "M", "L", "XL", "XXL", "XXXL"]}
+          data={logistics.rsvpd_tshirt_size}
+          otherData={logistics.rsvpd_other_tshirt_size}
+        />
+        <SimpleTable
+          title='Dietary Restrictions'
+          fields={[
+            "Gluten-Free",
+            "Vegan",
+            "Vegetarian",
+            "No Beef",
+            "No Pork",
+            "Peanut Allergies",
+            "Lactose Intolerant",
+            "None",
+          ]}
+          data={logistics.rsvpd_dietary_restrictions}
+          otherData={logistics.rsvpd_other_dietary_restrictions}
+        />
+      </div>
+    </div>
+  )
+}
+
 const LogisticsBreakdown = ({
   logistics,
 }: {
@@ -248,7 +289,9 @@ const LogisticsBreakdown = ({
 
   return (
     <div className='space-y-10 rounded-3xl bg-[#4659FF]/10 p-10'>
-      <h2 className='font-title text-xl uppercase underline'>Logistics</h2>
+      <h2 className='font-title text-xl uppercase underline'>
+        Logistics - all applicants
+      </h2>
 
       <div className='flex flex-col items-start justify-center gap-10 md:flex-row'>
         <SimpleTable
