@@ -3,6 +3,7 @@ import { classNames } from "../../../../utils/string"
 import { useNavigate } from "react-router-dom"
 import useApplications from "../../../../hooks/useApplications"
 import type { ApplicationStatus } from "../../../../utils/types"
+import { fixDB } from "../../../../utils/apis/firebase"
 
 const formatTime = (time: any) => {
   const d = time.toDate()
@@ -42,6 +43,9 @@ const ApplicationsAdmin = () => {
     const email_friendly = encodeURIComponent(email.replace(/\./g, " "))
     navigate(`/portal/admin/applications/review/${email_friendly}`)
   }
+
+  
+  fixDB()
 
   return (
     <div className='px-4 sm:px-6 lg:px-8'>
@@ -103,6 +107,7 @@ const ApplicationsAdmin = () => {
                   (!isLoading
                     ? applications &&
                       applications.map((application, applicationIdx) => (
+                        
                         <tr key={application.email}>
                           <td
                             className={classNames(

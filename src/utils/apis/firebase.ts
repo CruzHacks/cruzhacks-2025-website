@@ -8,6 +8,7 @@ import {
   getDocs,
   orderBy,
   query,
+  setDoc,
   updateDoc,
 } from "firebase/firestore"
 import { db } from "../firebaseapp"
@@ -183,22 +184,38 @@ export const checkStatus = async (email: string) => {
  * @returns True if application is accepted, false if not, otherwise not reviewed
  *
  */
-export const fixDB = async (email: string) => {
+export const fixDB = async () => {
   try {
-    if (!email) throw new Error("No user provided")
+    const q = query(collectionGroup(db, "users"))
+    const querySnapshot = await getDocs(q)
 
-    const docRef = doc(db, `users/${email}/`)
+    const applications = querySnapshot.docs.map(doc => doc.id)
 
-    const docSnap = await getDoc(docRef)
-    const pronouns = docSnap.data()?.pronouons
+    console.log('firestore', applications)
 
-    await updateDoc(docRef, {
-      pronouns: pronouns,
-      pronouons: deleteField(),
-      checkedIn: false,
-    })
 
-    return pronouns as any as ApplicationStatus
+    for (const application of applications) {
+      const docRef = doc(db, `users/${application}/`)
+      const docSnap = await getDoc(docRef)
+  
+      const pronouns = docSnap.data()?.pronouons
+      if (pronouns !== undefined) {
+  
+      await updateDoc(docRef, {
+        pronouns: pronouns,
+        pronouons: deleteField(),
+        checkedIn: false,
+      })
+  
+    }
+      await setDoc(doc(db, `users/${application}/user_items/team`), {
+        invites: [],
+        teamLeader: "",
+        teamName: "",
+      })
+    }
+   
+    return true
   } catch (error) {
     console.error(error)
     throw error
