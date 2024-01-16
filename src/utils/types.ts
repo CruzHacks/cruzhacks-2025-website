@@ -1,3 +1,4 @@
+import { Dispatch } from "react"
 import { z } from "zod"
 
 export type ErrorResponse = { message: string }
@@ -209,6 +210,59 @@ export type HeroIcon = React.ForwardRefExoticComponent<
     titleId?: string | undefined
   } & React.RefAttributes<SVGSVGElement>
 >
+
+// Team Creation
+export type InvitationMode = "JOIN" | "CREATE" | "INTEAM"
+
+export interface TeamProps {
+  teamName: string
+  teamLeader: string
+  invites: Array<InvitationProps>
+}
+
+export interface TeamMemberProps {
+  memberName: string
+  memberEmail: string
+}
+
+export interface InvitationProps {
+  teamName: string
+}
+
+export interface TeamFormationProps {
+  teamName: string
+  teamMembers: Array<TeamMemberProps>
+  invitedTeamMembers: Array<TeamMemberProps>
+  teamLeader: string
+  lockedIn: boolean
+  invites: Array<InvitationProps>
+}
+
+export interface TeamDisplayProps {
+  teamPage: TeamFormationProps
+  setTeamPage: Dispatch<TeamFormationProps>
+  setTeamStatus: Dispatch<InvitationMode>
+}
+
+export interface TeamBuilderProps {
+  teamPage: TeamFormationProps
+  teamStatus: InvitationMode
+  setTeamPage: Dispatch<TeamFormationProps>
+  setTeamStatus: Dispatch<InvitationMode>
+}
+
+export interface TeamInviteProps {
+  teamPage: TeamFormationProps
+  setTeamPage: Dispatch<TeamFormationProps>
+}
+
+export interface TeamMemberTagProps {
+  name: string
+  email: string
+  type: "INVITED" | "ACCEPTED"
+  teamLeader: string
+  setTeamPage: Dispatch<TeamFormationProps>
+}
 
 // Statistics Types
 export type ReChartsArray = { name: string; value: number }[]
