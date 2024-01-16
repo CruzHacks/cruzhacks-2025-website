@@ -179,6 +179,29 @@ export const ApplicationSchemaDto = z.object({
 })
 export type ApplicationSchemaDto = z.infer<typeof ApplicationSchemaDto>
 
+// Application Download Schema, used for downloading application data from the
+// database
+export const ApplicationSchemaDownload = z.object({
+  user: z.object({
+    email: z.string(),
+    phone_number: z.string(),
+    display_name: z.string(),
+    checked_in: z.boolean().optional(),
+  }),
+  submission: z.object({
+    status: z.enum(ApplicationStatuses),
+    rsvp: z.boolean().optional(),
+    _submitted: z.any(),
+  }),
+  demographics: AppDemographicsSchema,
+  short_response: AppShortResponseSchema,
+  logistics: AppLogisticsSchema,
+  socials: AppSocialsSchema,
+})
+export type ApplicationSchemaDownload = z.infer<
+  typeof ApplicationSchemaDownload
+>
+
 // Tailwindcss Heroicon
 export type HeroIcon = React.ForwardRefExoticComponent<
   Omit<React.SVGProps<SVGSVGElement>, "ref"> & {

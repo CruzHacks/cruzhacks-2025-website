@@ -1,5 +1,6 @@
 import type { User } from "@firebase/auth"
 import {
+  ApplicationSchemaDownload,
   ApplicationSchemaDto,
   CheckRoleSynced,
   ErrorResponse,
@@ -200,6 +201,35 @@ export const submitApplicationUnauthed = async (
     if (error) throw new Error(error)
 
     return data.message as string
+  } catch (err) {
+    if (isAxiosError(err)) {
+      if (err.response?.data?.data?.message) {
+        throw new Error(err.response.data.data.message)
+      }
+      console.error(err)
+      throw new Error(err.message)
+    }
+    throw err as Error
+  }
+}
+
+/**
+ * CruzHacks-2024-Backend API endpoint for getting full hacker export
+ */
+export const getFullHackerExport = async (user: User) => {
+  try {
+    const idToken = await user.getIdToken(false)
+
+    const response = await axios.get(`${API_URL}/application/export`, {
+      headers: {
+        Authorization: `Bearer ${idToken}`,
+      },
+    })
+    const { data, error } = response.data
+
+    if (error) throw new Error(error)
+
+    return data.applications as ApplicationSchemaDownload[]
   } catch (err) {
     if (isAxiosError(err)) {
       if (err.response?.data?.data?.message) {
