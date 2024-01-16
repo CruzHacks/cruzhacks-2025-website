@@ -14,9 +14,9 @@ jobs:
       VITE_FIREBASE_APP_ID: "${{ secrets.APP_ID }}"
       VITE_FIREBASE_MEASUREMENT_ID: "${{ secrets.MEASUREMENT_ID }}"
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Setup Node.js
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v4
         with:
           node-version: 16
       - name: Install Dependencies
@@ -24,7 +24,7 @@ jobs:
       - name: Create Production Build
         run: yarn build
       - name: Archive Production Artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: preview
           path: build
@@ -32,9 +32,9 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Setup Node.js
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v4
         with:
           node-version: 16
       - name: Install Dependencies
@@ -47,9 +47,9 @@ jobs:
     needs: [build, lint]
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Download Artifact
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4
         with:
           name: preview
           path: build
