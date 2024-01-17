@@ -6,6 +6,7 @@ import useAuth from "../../../../hooks/useAuth"
 import { TeamBuilder } from "../../../../components/teams/TeamBuilder"
 import { TeamInvite } from "../../../../components/teams/TeamInvite"
 import { classNames } from "../../../../utils/string"
+import { TeamSubmit } from "../../../../components/teams/TeamSubmit"
 
 const TeamHacker = () => {
   const {
@@ -19,6 +20,7 @@ const TeamHacker = () => {
     teamLeader: "",
     lockedIn: false,
     invites: [],
+    devPostLink: "",
   }
 
   // reducer for teamPage to set all non-set fields in teamPage to initial fields
@@ -94,22 +96,29 @@ const TeamHacker = () => {
 
       <div className='flex min-w-0 items-center justify-center'>
         {teamStatus == "INTEAM" ? (
-          <div
-            className={classNames(
-              teamPage.teamLeader !== user?.email ? "max-w-2xl" : "",
-              "flex w-full min-w-0 flex-col gap-10 xl:flex-row"
-            )}
-          >
-            <div className='w-full min-w-0 rounded-3xl bg-[#4659FF]/10 p-5 md:p-10'>
-              <TeamDisplay
-                teamPage={teamPage}
-                setTeamPage={setTeamPage}
-                setTeamStatus={setTeamStatus}
-              />
+          <div className='flex w-full flex-col place-content-center gap-10'>
+            <div
+              className={classNames(
+                teamPage.teamLeader !== user?.email ? "max-w-2xl" : "",
+                "flex w-full min-w-0 flex-col gap-10 xl:flex-row"
+              )}
+            >
+              <div className='w-full min-w-0 rounded-3xl bg-[#4659FF]/10 p-5 md:p-10'>
+                <TeamDisplay
+                  teamPage={teamPage}
+                  setTeamPage={setTeamPage}
+                  setTeamStatus={setTeamStatus}
+                />
+              </div>
+              {teamPage.teamLeader === user?.email && (
+                <div className='w-full min-w-fit rounded-3xl bg-[#4659FF]/10 p-5 md:p-10 xl:flex-1'>
+                  <TeamInvite teamPage={teamPage} setTeamPage={setTeamPage} />
+                </div>
+              )}
             </div>
-            {teamPage.teamLeader === user?.email && (
+            {teamPage.teamLeader === user?.email && teamPage.lockedIn && (
               <div className='w-full min-w-fit rounded-3xl bg-[#4659FF]/10 p-5 md:p-10 xl:flex-1'>
-                <TeamInvite teamPage={teamPage} setTeamPage={setTeamPage} />
+                <TeamSubmit teamPage={teamPage} setTeamPage={setTeamPage} />
               </div>
             )}
           </div>

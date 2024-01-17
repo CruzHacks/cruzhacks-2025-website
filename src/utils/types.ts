@@ -236,6 +236,7 @@ export interface TeamFormationProps {
   teamLeader: string
   lockedIn: boolean
   invites: Array<InvitationProps>
+  devPostLink: string | undefined
 }
 
 export interface TeamDisplayProps {
@@ -252,6 +253,11 @@ export interface TeamBuilderProps {
 }
 
 export interface TeamInviteProps {
+  teamPage: TeamFormationProps
+  setTeamPage: Dispatch<TeamFormationProps>
+}
+
+export interface TeamSubmitProps {
   teamPage: TeamFormationProps
   setTeamPage: Dispatch<TeamFormationProps>
 }

@@ -74,6 +74,12 @@ export const TeamAdminDisplay = (props: {
           <div className='text-center text-lg text-[#192F6F]'>
             {props.teamPage.teamName || "<- No Team ->"}
           </div>
+          <div className='text-center text-sm text-[#192F6F]'>
+            <React.Fragment>
+              <a href={props.teamPage.devPostLink || ""}>{props.teamPage.devPostLink ?  props.teamPage.devPostLink : "<- No DevPost Link ->"}</a>
+
+            </React.Fragment>
+          </div>
         </div>
         <div className='flex flex-col gap-2 px-5 pb-3'>
           {props.teamPage.teamMembers.map((member: TeamMemberProps) => {

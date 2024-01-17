@@ -386,6 +386,7 @@ export const deleteTeam = async (user: User, teamName: string) => {
       teamLeader: "",
       lockedIn: false,
       invites: [],
+      devPostLink: ""
     } as TeamFormationProps
   } catch (error) {
     console.error(error)
@@ -822,6 +823,43 @@ export const deleteTeamAdmin = async (teamName: string) => {
     await deleteDoc(doc(db, `teams/${teamName}`))
 
     return {} as TeamFormationProps
+  } catch (error) {
+    console.error(error)
+    throw error
+  }
+}
+
+/**
+ * Function using Firebase sdk for updating a team with a new link
+ * @param user User submitting the team's devpost link
+ * @param link Link to team's devpost project
+ * @returns updated team profile if successful, otherwise an error is thrown
+ *
+ */
+export const submitLink = async (user: User, link: string | undefined) => {
+  try {
+    if (!user) throw new Error("No team name provided")
+    if (!link) throw new Error("No link provided")
+
+    const userDocRef = doc(db, `users/${user.email}/user_items/team`)
+    const userDocSnap = await getDoc(userDocRef)
+    const userTeamName = userDocSnap.data()?.teamName
+
+    let teamDocRef = doc(db, `teams/${userTeamName}`)
+    let teamDocSnap = await getDoc(teamDocRef)
+
+    const teamLeader = teamDocSnap.data()?.teamLeader
+
+    if (user.email != teamLeader) throw new Error("User is not team leader")
+
+    await updateDoc(teamDocRef, {
+      devPostLink: link,
+    }) 
+
+    teamDocRef = doc(db, `teams/${userTeamName}`)
+    teamDocSnap = await getDoc(teamDocRef)
+
+    return teamDocSnap.data() as any as TeamFormationProps
   } catch (error) {
     console.error(error)
     throw error
