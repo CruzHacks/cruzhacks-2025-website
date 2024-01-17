@@ -32,6 +32,10 @@ import ScrollToAnchor from "./components/scrollControl/ScrollToAnchor"
 import Team from "./views/team"
 import ApplicationClosed from "./views/ApplicationClosed"
 
+import QRCheckIn from "./views/portal/admin/QRCheckIn"
+import DashbaordHacker from "./views/portal/hacker/dashboard"
+import QRCodeHacker from "./views/portal/hacker/QRCode"
+
 const App: React.FC = () => {
   const {
     auth: { loading },
@@ -107,7 +111,9 @@ const App: React.FC = () => {
 
         <Route element={<RoleProtectedRoute allowedRole='hacker' />}>
           <Route path='portal/hacker' element={<HackerPortal />}>
+            <Route index element={<DashbaordHacker />} />
             {/* Hacker Portal sub-routes go here*/}
+            <Route path='check-in' element={<QRCodeHacker />} />
             <Route path='teams' element={<TeamsHacker />} />
           </Route>
         </Route>
@@ -121,6 +127,7 @@ const App: React.FC = () => {
             />
             <Route path='teams' element={<TeamAdmin />} />
             <Route path='users' element={<UsersAdmin />} />
+            <Route path='check-in' element={<QRCheckIn />} />
           </Route>
         </Route>
 

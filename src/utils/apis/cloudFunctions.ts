@@ -290,3 +290,37 @@ export const getStatistics = async () => {
     throw err as Error
   }
 }
+
+/**
+ * CruzHacks-2024-Backend API endpoint for checking in a user
+ */
+export const checkInUser = async (userSession: User, uid: string) => {
+  try {
+    const idToken = await userSession.getIdToken(false)
+
+    const response = await axios.post(`${API_URL}/auth/checkIn`, null, {
+      params: {
+        uid,
+      },
+      headers: {
+        Authorization: `Bearer ${idToken}`,
+      },
+    })
+
+    const { data, error } = response.data
+
+    if (error) throw new Error(error)
+
+    return data.userRecord as User
+  } catch (err) {
+    if (isAxiosError(err)) {
+      if (err.response?.data?.error) {
+        console.error(err.response.data.error)
+        throw new Error(err.response.data.error)
+      }
+      console.error(err)
+      throw new Error(err.message)
+    }
+    throw err as Error
+  }
+}

@@ -1,7 +1,6 @@
 import React from "react"
 import Sidebar from "../Sidebar"
-import { HomeIcon } from "@heroicons/react/24/solid"
-import { UserGroupIcon } from "@heroicons/react/24/outline"
+import { CameraIcon, HomeIcon , UserGroupIcon } from "@heroicons/react/24/outline"
 
 const nav = [
   {
@@ -9,16 +8,11 @@ const nav = [
     href: "/portal/hacker",
     icon: HomeIcon,
   },
-  // {
-  //   name: "Applications",
-  //   href: "/portal/admin/applications",
-  //   icon: NewspaperIcon,
-  // },
-  // {
-  //   name: "Users",
-  //   href: "/portal/admin/users",
-  //   icon: UsersIcon,
-  // },
+  {
+    name: "Check In",
+    href: "/portal/hacker/check-in",
+    icon: CameraIcon,
+  },
   {
     name: "Teams",
     href: "/portal/hacker/teams",
