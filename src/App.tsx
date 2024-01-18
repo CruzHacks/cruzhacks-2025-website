@@ -3,7 +3,7 @@ import { Navigate, Outlet, Route, Routes } from "react-router-dom"
 import RoleProtectedRoute from "./components/protectedRoutes/RoleProtectedRoute"
 import PortalRedirectRoute from "./components/protectedRoutes/PortalRedirectRoute"
 import UnauthenticatedRoute from "./components/protectedRoutes/UnauthenticatedRoute"
-import Home from "./views/home"
+import Home from "./views/(static)/home"
 import Login from "./views/Login"
 import Signup from "./views/Signup"
 import NotFound from "./views/NotFound"
@@ -12,7 +12,7 @@ import AdminPortal from "./views/portal/admin"
 import DashboardAdmin from "./views/portal/admin/dashboard"
 import ApplicationsAdmin from "./views/portal/admin/applications"
 import UsersAdmin from "./views/portal/admin/users"
-import TeamsHacker from "./views/portal/hacker/teams"
+import TeamsHacker from "./views/portal/hacker/team"
 import TeamAdmin from "./views/portal/admin/teams"
 import PortalApplicant from "./views/portal/applicant"
 import DashboardApplicant from "./views/portal/applicant/DashboardApplicant"
@@ -29,8 +29,13 @@ import ReviewSection from "./views/apply/6 - Review"
 import { Toaster } from "react-hot-toast"
 import ApplicationsReviewAdmin from "./views/portal/admin/applications/Review"
 import ScrollToAnchor from "./components/scrollControl/ScrollToAnchor"
-import Team from "./views/team"
-import ApplicationClosed from "./views/ApplicationClosed"
+import Team from "./views/(static)/team"
+import ApplicationClosed from "./views/apply/ApplicationClosed"
+import Map from "./views/(static)/support/map"
+import Resources from "./views/(static)/support/resources"
+import FAQ from "./views/(static)/support/faq"
+import Support from "./views/(static)/support/home"
+import StaticWrapper from "./views/(static)"
 
 import QRCheckIn from "./views/portal/admin/QRCheckIn"
 import DashbaordHacker from "./views/portal/hacker/dashboard"
@@ -73,8 +78,17 @@ const App: React.FC = () => {
 
       <Routes>
         {/* These routes are accessible to everyone*/}
-        <Route index element={<Home />} />
-        <Route path='team' element={<Team />} />
+        <Route element={<StaticWrapper />}>
+          <Route index element={<Home />} />
+          <Route path='team' element={<Team />} />
+
+          <Route path='support' element={<Outlet />}>
+            <Route index element={<Support />} />
+            <Route path='maps' element={<Map />} />
+            <Route path='resources' element={<Resources />} />
+            <Route path='faq-and-rules' element={<FAQ />} />
+          </Route>
+        </Route>
 
         {/* You cannot be logged in to access these routes*/}
         <Route element={<UnauthenticatedRoute />}>
@@ -112,9 +126,8 @@ const App: React.FC = () => {
         <Route element={<RoleProtectedRoute allowedRole='hacker' />}>
           <Route path='portal/hacker' element={<HackerPortal />}>
             <Route index element={<DashbaordHacker />} />
-            {/* Hacker Portal sub-routes go here*/}
             <Route path='check-in' element={<QRCodeHacker />} />
-            <Route path='teams' element={<TeamsHacker />} />
+            <Route path='team' element={<TeamsHacker />} />
           </Route>
         </Route>
         <Route element={<RoleProtectedRoute allowedRole='admin' />}>

@@ -45,13 +45,11 @@ const AvatarButton = ({
 
   return (
     <Menu as='div' className='relative ml-3'>
-      <div>
-        <Menu.Button className='relative flex max-w-xs items-center rounded-full bg-white text-sm hover:outline-none hover:ring-2 hover:ring-turquoise focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2'>
-          <span className='absolute -inset-1.5' />
-          <span className='sr-only'>Open profile menu</span>
-          <Avatar size={30} name={email} variant='beam' colors={colors} />
-        </Menu.Button>
-      </div>
+      <Menu.Button className='relative flex max-w-xs items-center rounded-full bg-white text-sm hover:outline-none hover:ring-2 hover:ring-turquoise focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2'>
+        <span className='absolute -inset-1.5' />
+        <span className='sr-only'>Open profile menu</span>
+        <Avatar size={30} name={email} variant='beam' colors={colors} />
+      </Menu.Button>
       <Transition
         as={Fragment}
         enter='transition ease-out duration-200'
@@ -70,7 +68,6 @@ const AvatarButton = ({
         >
           {nav.map(item => (
             <Menu.Item key={item.name}>
-              {/* TODO: Change <a> to Next/Link without breaking Headless UI Menu */}
               {({ active }) => (
                 <Link
                   to={item.href}

@@ -1,10 +1,10 @@
 import React from "react"
-import Sidebar from "../Sidebar"
 import {
   CameraIcon,
   HomeIcon,
   UserGroupIcon,
 } from "@heroicons/react/24/outline"
+import Sidebar from ".."
 
 const nav = [
   {
@@ -18,8 +18,8 @@ const nav = [
     icon: CameraIcon,
   },
   {
-    name: "Teams",
-    href: "/portal/hacker/teams",
+    name: "Team",
+    href: "/portal/hacker/team",
     icon: UserGroupIcon,
   },
 ]
