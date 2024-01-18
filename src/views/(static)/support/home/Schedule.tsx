@@ -4,7 +4,7 @@ import Card from "../../../../components/Card"
 
 const scheduleInfo = [
   {
-    date: "Friday, Febuary 3rd",
+    date: "Friday, January 19th",
     events: [
       ["Hacker Registration/ Dinner", "5:00 pm"],
       ["Opening Ceremony", "7:00 pm"],
@@ -12,7 +12,7 @@ const scheduleInfo = [
     ],
   },
   {
-    date: "Saturday, Febuary 4th",
+    date: "Saturday, January 20th",
     events: [
       ["Breakfast", "8:00 am"],
       ["Workshops Continue", "9:00 am"],
@@ -22,7 +22,7 @@ const scheduleInfo = [
     ],
   },
   {
-    date: "Sunday, Febuary 5th",
+    date: "Sunday, January 21st",
     events: [
       ["Breakfast", "9:00 am"],
       ["Code Freeze/ Submit Project", "9:00 am"],

@@ -1,23 +1,9 @@
 import React, { useState } from "react"
-import { Dietary, foodInfo } from "./foodInfo"
+import { foodInfo } from "./foodInfo"
 import { workshopInfo } from "./workshopInfo"
 
-import GlutenFreeLogo from "../../../../assets/icons/Gluten Free.svg"
-import VegetairanLogo from "../../../../assets/icons/Vegetarian.svg"
-import VeganLogo from "../../../../assets/icons/Vegan.svg"
 import { classNames } from "../../../../utils/string"
 import Card from "../../../../components/Card"
-
-const matchLogo = (symb: Dietary) => {
-  switch (symb) {
-    case Dietary.GlutenFree:
-      return GlutenFreeLogo
-    case Dietary.Vegetarian:
-      return VegetairanLogo
-    case Dietary.Vegan:
-      return VeganLogo
-  }
-}
 
 const WorkshopsFood: React.FC = () => {
   const [slider, setSlider] = useState(true)

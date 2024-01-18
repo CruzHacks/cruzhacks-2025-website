@@ -1,6 +1,6 @@
 export const workshopInfo = [
   {
-    date: "Friday, Febuary 3rd",
+    date: "Friday, January 19th",
     events: [
       {
         title: "Team Mixer - Network with other hackers and form a team!",
@@ -12,7 +12,7 @@ export const workshopInfo = [
     ],
   },
   {
-    date: "Saturday, February 4th",
+    date: "Saturday, January 21st",
     events: [
       {
         title: "GitHub Copilot",

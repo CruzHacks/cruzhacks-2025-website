@@ -1,12 +1,6 @@
-export enum Dietary {
-  GlutenFree,
-  Vegetarian,
-  Vegan,
-}
-
 export const foodInfo = [
   {
-    date: "Friday, Febuary 3rd",
+    date: "Friday, January 19th",
     events: [
       {
         title: "Dinner",
@@ -21,7 +15,7 @@ export const foodInfo = [
     ],
   },
   {
-    date: "Saturday, Febuary 4th",
+    date: "Saturday, January 20th",
     events: [
       {
         title: "Breakfast",
@@ -46,7 +40,7 @@ export const foodInfo = [
     ],
   },
   {
-    date: "Sunday, Febuary 5th",
+    date: "Sunday, January 21st",
     events: [
       {
         title: "Breakfast",
