@@ -30,7 +30,6 @@ const TextareaInput = ({
       >
         <textarea
           rows={rows}
-          {...inputProps}
           className={classNames(
             error
               ? "text-error placeholder:text-error/60"
@@ -38,6 +37,7 @@ const TextareaInput = ({
             "block w-full resize-none border-0 bg-transparent font-subtext shadow-sm focus:ring-0 sm:text-sm sm:leading-6"
           )}
           placeholder='Your answer'
+          {...inputProps}
         />
         {showCount && (
           <p

@@ -1,6 +1,10 @@
 import React from "react"
 import Sidebar from "../Sidebar"
-import { CameraIcon, HomeIcon , UserGroupIcon } from "@heroicons/react/24/outline"
+import {
+  CameraIcon,
+  HomeIcon,
+  UserGroupIcon,
+} from "@heroicons/react/24/outline"
 
 const nav = [
   {

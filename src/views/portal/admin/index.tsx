@@ -15,14 +15,9 @@ const nav = [
     icon: HomeIcon,
   },
   {
-    name: "Applications",
-    href: "/portal/admin/applications",
-    icon: NewspaperIcon,
-  },
-  {
-    name: "Users",
-    href: "/portal/admin/users",
-    icon: UsersIcon,
+    name: "QR Check-In",
+    href: "/portal/admin/check-in",
+    icon: CameraIcon,
   },
   {
     name: "Teams",
@@ -30,9 +25,14 @@ const nav = [
     icon: UserGroupIcon,
   },
   {
-    name: "QR Check-In",
-    href: "/portal/admin/check-in",
-    icon: CameraIcon,
+    name: "Users",
+    href: "/portal/admin/users",
+    icon: UsersIcon,
+  },
+  {
+    name: "Applications",
+    href: "/portal/admin/applications",
+    icon: NewspaperIcon,
   },
 ]
 
