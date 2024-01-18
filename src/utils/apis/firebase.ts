@@ -386,7 +386,7 @@ export const deleteTeam = async (user: User, teamName: string) => {
       teamLeader: "",
       lockedIn: false,
       invites: [],
-      devPostLink: ""
+      devPostLink: "",
     } as TeamFormationProps
   } catch (error) {
     console.error(error)
@@ -854,7 +854,7 @@ export const submitLink = async (user: User, link: string | undefined) => {
 
     await updateDoc(teamDocRef, {
       devPostLink: link,
-    }) 
+    })
 
     teamDocRef = doc(db, `teams/${userTeamName}`)
     teamDocSnap = await getDoc(teamDocRef)

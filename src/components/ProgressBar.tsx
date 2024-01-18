@@ -32,7 +32,7 @@ const BubbleSegment = ({
           : current
           ? "border-[#06F] bg-[#31375E]"
           : "border-[#676D84] bg-[#31375E]",
-        "text-black h-5 w-5  rounded-full border-2"
+        "h-5 w-5 rounded-full  border-2 text-black"
       )}
     >
       {valid == undefined ? (

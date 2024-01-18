@@ -76,8 +76,11 @@ export const TeamAdminDisplay = (props: {
           </div>
           <div className='text-center text-sm text-[#192F6F]'>
             <React.Fragment>
-              <a href={props.teamPage.devPostLink || ""}>{props.teamPage.devPostLink ?  props.teamPage.devPostLink : "<- No DevPost Link ->"}</a>
-
+              <a href={props.teamPage.devPostLink || ""}>
+                {props.teamPage.devPostLink
+                  ? props.teamPage.devPostLink
+                  : "<- No DevPost Link ->"}
+              </a>
             </React.Fragment>
           </div>
         </div>
