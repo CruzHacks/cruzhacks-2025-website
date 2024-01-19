@@ -12,7 +12,7 @@ const Landing = ({ id }: { id?: string }) => {
   const { isAuthenticated } = useAuth()
 
   return (
-    <div className='flex w-full flex-col items-center'>
+    <div className='relative flex w-full flex-col items-center'>
       {/* Scroll Anchor*/}
       <div className='absolute -mt-28' id={id}></div>
 

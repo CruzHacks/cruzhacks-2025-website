@@ -14,7 +14,7 @@ const scheduleInfo = [
   {
     date: "Saturday, January 20th",
     events: [
-      ["Breakfast", "8:00 am"],
+      ["Breakfast", "9:00 am"],
       ["Workshops Continue", "9:00 am"],
       ["Lunch", "1:00 pm"],
       ["Dinner", "6:00 pm"],
