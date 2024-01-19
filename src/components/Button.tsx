@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "react-router-dom"
 
 interface ButtonProps {
   text: string
@@ -12,10 +13,10 @@ const Button: React.FC<ButtonProps> = ({ text, override, link, type }) => {
     type === "clear" ? "text-blue-chinese" : "bg-blue-chinese text-[#FFF]"
 
   return (
-    <a
+    <Link
       target='_blank'
       rel='noopener noreferrer'
-      href={link}
+      to={link}
       className={
         "rounded-md border-2 border-blue-chinese p-3 text-center " +
         typeStyling +
@@ -24,7 +25,7 @@ const Button: React.FC<ButtonProps> = ({ text, override, link, type }) => {
       }
     >
       {text}
-    </a>
+    </Link>
   )
 }
 

@@ -1,5 +1,6 @@
 import React from "react"
 import Card from "../../../../components/Card"
+import { Link } from "react-router-dom"
 
 const EventInfo: React.FC = () => {
   return (
@@ -20,13 +21,13 @@ const EventInfo: React.FC = () => {
           <p className='font-bold'>Discord</p>
           <p>Discord will be used for communication during the event.</p>
           <p>
-            Join our Discord{" "}
-            <a
+            Join our 2024 Discord{" "}
+            <Link
               className='text-blue-button hover:underline'
-              href='https://discord.gg/rGjDTCk3Nx'
+              to='/portal/hacker'
             >
-              here
-            </a>
+              in your dashboard
+            </Link>
             .
           </p>
         </div>
