@@ -20,8 +20,7 @@ import {
   TeamMemberProps,
   TeamProps,
 } from "../types"
-// eslint-disable-next-line import/named
-import { User } from "firebase/auth"
+import type { User } from "firebase/auth"
 
 /**
  * Function using Firebase sdk for checking if an application is
@@ -387,6 +386,7 @@ export const deleteTeam = async (user: User, teamName: string) => {
       lockedIn: false,
       invites: [],
       devPostLink: "",
+      prizeTrack: "",
     } as TeamFormationProps
   } catch (error) {
     console.error(error)
@@ -836,10 +836,15 @@ export const deleteTeamAdmin = async (teamName: string) => {
  * @returns updated team profile if successful, otherwise an error is thrown
  *
  */
-export const submitLink = async (user: User, link: string | undefined) => {
+export const submitLink = async (
+  user: User,
+  link: string | undefined,
+  prizeTrack: string | undefined
+) => {
   try {
     if (!user) throw new Error("No team name provided")
     if (!link) throw new Error("No link provided")
+    if (!prizeTrack) throw new Error("No prize track provided")
 
     const userDocRef = doc(db, `users/${user.email}/user_items/team`)
     const userDocSnap = await getDoc(userDocRef)
@@ -854,6 +859,7 @@ export const submitLink = async (user: User, link: string | undefined) => {
 
     await updateDoc(teamDocRef, {
       devPostLink: link,
+      prizeTrack: prizeTrack,
     })
 
     teamDocRef = doc(db, `teams/${userTeamName}`)

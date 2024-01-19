@@ -83,6 +83,11 @@ export const TeamAdminDisplay = (props: {
               </a>
             </React.Fragment>
           </div>
+          <div>
+            <p className='text-center text-xs text-[#192F6F]'>
+              {props.teamPage.prizeTrack || "<- No Prize Track ->"}
+            </p>
+          </div>
         </div>
         <div className='flex flex-col gap-2 px-5 pb-3'>
           {props.teamPage.teamMembers.map((member: TeamMemberProps) => {

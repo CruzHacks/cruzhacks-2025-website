@@ -2,6 +2,7 @@ import React from "react"
 import {
   CameraIcon,
   HomeIcon,
+  InboxArrowDownIcon,
   UserGroupIcon,
 } from "@heroicons/react/24/outline"
 import Sidebar from ".."
@@ -21,6 +22,11 @@ const nav = [
     name: "Team",
     href: "/portal/hacker/team",
     icon: UserGroupIcon,
+  },
+  {
+    name: "Submit",
+    href: "/portal/hacker/submit",
+    icon: InboxArrowDownIcon,
   },
 ]
 

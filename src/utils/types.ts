@@ -237,6 +237,7 @@ export interface TeamFormationProps {
   lockedIn: boolean
   invites: Array<InvitationProps>
   devPostLink: string | undefined
+  prizeTrack: string | undefined
 }
 
 export interface TeamDisplayProps {

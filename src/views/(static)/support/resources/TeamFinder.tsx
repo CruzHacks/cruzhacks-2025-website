@@ -9,7 +9,7 @@ const TeamFinder: React.FC = () => {
       introTitle="Don't Have a Team Yet?"
       title='Find a Team to Join and Submit'
     >
-      <ol className='font-nunito m-auto flex flex-col gap-5 md:w-5/6'>
+      <ol className='m-auto flex flex-col gap-5 md:w-5/6'>
         <li>
           1. Join our Discord channel{" "}
           <a

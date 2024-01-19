@@ -40,6 +40,7 @@ import StaticWrapper from "./views/(static)"
 import QRCheckIn from "./views/portal/admin/QRCheckIn"
 import DashbaordHacker from "./views/portal/hacker/dashboard"
 import QRCodeHacker from "./views/portal/hacker/QRCode"
+import SubmitHacker from "./views/portal/hacker/submit"
 
 const App: React.FC = () => {
   const {
@@ -128,8 +129,10 @@ const App: React.FC = () => {
             <Route index element={<DashbaordHacker />} />
             <Route path='check-in' element={<QRCodeHacker />} />
             <Route path='team' element={<TeamsHacker />} />
+            <Route path='submit' element={<SubmitHacker />} />
           </Route>
         </Route>
+
         <Route element={<RoleProtectedRoute allowedRole='admin' />}>
           <Route path='portal/admin' element={<AdminPortal />}>
             <Route index element={<DashboardAdmin />} />
