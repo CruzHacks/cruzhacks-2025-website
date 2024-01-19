@@ -3,72 +3,105 @@ import React from "react"
 import Mushrroms from "../../../../assets/illustrations/Mushrooms.png"
 import TreesBackgroundBig from "../../../../assets/illustrations/Trees Background - Big.png"
 
-import MichaelLopp from "../../../../assets/speakers/MichaelLopp.jpg"
-import RaghavJandhyala from "../../../../assets/speakers/RaghavJandhyala.jpg"
-import MarkAdams from "../../../../assets/speakers/MarkAdams.jpg"
-import BrentHaddad from "../../../../assets/speakers/BrentHaddad.jpg"
-import NadaMiljkovic from "../../../../assets/speakers/NadaMilkovic.jpg"
-import GregorVebleMikic from "../../../../assets/speakers/GregorVebleMikie.jpg"
-import AlexanderWolf from "../../../../assets/speakers/AlexanderWolf.jpg"
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "../../../../components/Carousel"
 import Star from "../../../../components/Star"
+
+import LinkedIn from "../../../../assets/icons/LinkedIn.svg"
+
+import AlexanderWolf from "../../../../assets/speakers/Alexander Wolf.jpg"
+import DougErickson from "../../../../assets/speakers/Doug Erickson.jpg"
+import MarkAdams from "../../../../assets/speakers/Mark Adams.jpg"
+import JohnathonChu from "../../../../assets/speakers/Johnathon Chu.jpg"
+import LilaTretikov from "../../../../assets/speakers/Lila Tretikov.jpg"
+import CooperNewby from "../../../../assets/speakers/Cooper Newby.jpg"
+import GuyKawasaki from "../../../../assets/speakers/Guy Kawasaki.jpg"
+import KarenMiga from "../../../../assets/speakers/Karen Miga.jpg"
+import { Link } from "react-router-dom"
 
 type Speaker = {
   image: string
   name: string
   blurb: string
+  linkedIn: string
 }
 
 const speakerData: Speaker[] = [
   {
-    image: MichaelLopp,
-    name: "Micheal Lopp",
-    blurb: "Senior Director of Engineering @ Apple; UCSC Alumni",
+    image: LilaTretikov,
+    name: "Lila Tretikov",
+    blurb:
+      "Deputy Chief Technology Officer @ Microsoft, Founder of GrokDigital ",
+    linkedIn: "https://www.linkedin.com/in/lilatretikov",
   },
   {
-    image: RaghavJandhyala,
-    name: "Raghav Jandhyala",
-    blurb: "Chief Product Officer, Microsoft Dynamics 365",
+    image: GuyKawasaki,
+    name: "Guy Kawasaki",
+    blurb:
+      "Chief Evangelist of Canva, Creator of Remarkable People Podcast, Adjunct Professor of University of New South Wales, Chief Evangelist of Apple ",
+    linkedIn: "https://www.linkedin.com/in/guykawasaki",
+  },
+  {
+    image: CooperNewby,
+    name: "Cooper Newby",
+    blurb: "Co-Founder of Classet, Co-founder of BlueCrew",
+    linkedIn: "https://www.linkedin.com/in/coopernewby/",
+  },
+  {
+    image: DougErickson,
+    name: "Doug Erickson",
+    blurb: "Executive Director @ Santa Cruz Works",
+    linkedIn: "https://www.linkedin.com/in/ericksondoug/",
   },
   {
     image: MarkAdams,
     name: "Mark Adams",
-    blurb: `Co-founder of CruzHacks / OnePlus Amazon Account Manager`,
+    blurb: "E-Commerce P&L Management",
+    linkedIn: "https://www.linkedin.com/in/adamsmarkrichard/",
   },
   {
-    image: BrentHaddad,
-    name: "Brent Haddad",
-    blurb: `Brent Haddad, MBA, Ph.D.
-    Professor of Environmental Studies, UCSC
-    Co-founder, HackUCSC`,
+    image: JohnathonChu,
+    name: "Johnathon Chu",
+    blurb: "Director of Engineering  @ Rapid Robotics, Inc",
+    linkedIn: "https://www.linkedin.com/in/jmchuster/",
   },
   {
-    image: NadaMiljkovic,
-    name: "Nada Miljkovic",
-    blurb: `Co-Founder @ GetVirtual; Project Manager for UCSC’s 
-    Center for Innovation and Entrepreneurial Development`,
-  },
-  {
-    image: GregorVebleMikic,
-    name: "Gregor Veble Mikić",
-    blurb: "Chief Aerodynamicist at Joby Aviation",
+    image: KarenMiga,
+    name: "Karen Miga",
+    blurb:
+      "Assistant Professor Biomolecular Engineering Department, Principal Investigator @ Miga Lab",
+    linkedIn: "https://www.linkedin.com/in/karen-miga-77335625",
   },
   {
     image: AlexanderWolf,
     name: "Alexander Wolf",
     blurb: "Dean of the Baskin School of Engineering at UC Santa Cruz",
+    linkedIn: "https://www.linkedin.com/in/alexanderlwolf/",
   },
 ]
 
-const SpeakerCard = ({ image, name, blurb }: Speaker) => {
+const SpeakerCard = ({ image, name, blurb, linkedIn }: Speaker) => {
   return (
     <div className='flex w-80 flex-col items-center justify-center gap-3 rounded-xl bg-blue-royal p-5 ring-2 ring-inset ring-white/20'>
       <img
         src={image}
-        alt=''
+        alt={`${name} Headshot`}
         className='h-[15rem] w-[15rem] border border-turquoise object-cover'
       />
       <p className='text-center font-title text-2xl'>{name}</p>
       <p className='text-center font-subtext'>{blurb}</p>
+      <Link
+        to={linkedIn}
+        target='_blank'
+        className='flex items-center gap-2 rounded-full bg-blue-imperial p-3'
+      >
+        <img src={LinkedIn} alt='LinkedIn' className='h-6 w-6' />
+      </Link>
     </div>
   )
 }
@@ -90,19 +123,31 @@ const Speakers = ({ id }: { id?: string }) => {
         <img
           src={Mushrroms}
           alt=''
-          className='w-30 invisible absolute -right-5 overflow-hidden md:visible'
+          className='w-30 invisible absolute -right-5 z-[200] overflow-hidden md:visible'
         />
-        <div className='flex flex-wrap items-stretch justify-center gap-10 py-20'>
-          {speakerData.map(speaker => (
-            <SpeakerCard key={speaker.name} {...speaker} />
-          ))}
+        <div className='h-10' />
+        <div className='flex w-full items-center justify-center'>
+          <Carousel className='w-[21rem] md:w-[45rem] xl:w-[65rem]'>
+            <CarouselContent className='md:-ml-1'>
+              {speakerData.map(speaker => (
+                <CarouselItem
+                  key={speaker.name}
+                  className='pl-5 md:basis-1/2 xl:basis-1/3'
+                >
+                  <SpeakerCard {...speaker} />
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className='text-pink' />
+            <CarouselNext className='text-pink' />
+          </Carousel>
         </div>
       </div>
       <div className='-mx-40 flex h-full items-center'>
         <img
           src={TreesBackgroundBig}
           alt=''
-          className='mt-[-20rem] h-auto w-screen md:mt-[-80rem]'
+          className='mt-[-40rem] h-auto max-h-[50rem] w-screen md:mt-[-60rem] lg:mt-[-50rem]'
         />
       </div>
     </>
