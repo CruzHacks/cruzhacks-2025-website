@@ -1,5 +1,4 @@
 import { push, ref, set } from "firebase/database"
-import { serverTimestamp } from "firebase/firestore"
 import React, { useState } from "react"
 import toast from "react-hot-toast"
 import { rtdb } from "../../../../utils/firebaseapp"
@@ -22,7 +21,7 @@ const MakeAnnoucements = () => {
     const newData = {
       title: "",
       body: notifyBody,
-      date: serverTimestamp(),
+      date: Date(),
     }
 
     const announcementsRef = ref(rtdb, "announcements")

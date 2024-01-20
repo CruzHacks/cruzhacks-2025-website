@@ -82,19 +82,21 @@ const Announcements: React.FC = () => {
 
       {announcements && announcements.length > 0 ? (
         <ul className='flex h-80 grow flex-col gap-5 overflow-y-scroll rounded py-5 md:bg-[#D9D9D91A] md:p-10'>
-          {announcements.map((announcement: Announcement, key: number) => {
-            return (
-              <li className='border-b border-[#D7D7D7]' key={key}>
-                <p className='text-[#61A564]'>
-                  {convertTime(announcement.date)}
-                </p>
-                <p className='py-2 md:p-5 md:px-10'>{announcement.body}</p>
-                <p className='float-right text-[#A1A1A1]'>
-                  {convertDate(announcement.date)}
-                </p>
-              </li>
-            )
-          })}
+          {announcements
+            .toReversed()
+            .map((announcement: Announcement, key: number) => {
+              return (
+                <li className='border-b border-[#D7D7D7]' key={key}>
+                  <p className='text-[#61A564]'>
+                    {convertTime(announcement.date)}
+                  </p>
+                  <p className='py-2 md:p-5 md:px-10'>{announcement.body}</p>
+                  <p className='float-right text-[#A1A1A1]'>
+                    {convertDate(announcement.date)}
+                  </p>
+                </li>
+              )
+            })}
         </ul>
       ) : (
         <div className='flex h-80 flex-col items-center justify-center rounded py-5 md:bg-[#D9D9D91A] md:p-10'>
