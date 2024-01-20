@@ -83,7 +83,8 @@ const Announcements: React.FC = () => {
       {announcements && announcements.length > 0 ? (
         <ul className='flex h-80 grow flex-col gap-5 overflow-y-scroll rounded py-5 md:bg-[#D9D9D91A] md:p-10'>
           {announcements
-            .toReversed()
+            .slice()
+            .reverse()
             .map((announcement: Announcement, key: number) => {
               return (
                 <li className='border-b border-[#D7D7D7]' key={key}>
