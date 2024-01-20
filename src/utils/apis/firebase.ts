@@ -537,7 +537,6 @@ export const inviteTeamMember = async (user: User, email: string) => {
         teamName: "",
       }, {merge:true})
 
-
        otherUserDocRef = doc(db, `users/${email}/user_items/team`)
        otherUserDocSnap = await getDoc(otherUserDocRef)
     }
@@ -595,7 +594,7 @@ export const inviteTeamMember = async (user: User, email: string) => {
     await updateDoc(teamDocRef, {
       invitedTeamMembers: [
         ...invitedTeamMembers,
-        { memberName: fullName, memberEmail: email },
+        { memberName: fullName || email, memberEmail: email },
       ],
     })
 
