@@ -659,7 +659,7 @@ export const rsvpInvite = async (
       await updateDoc(teamDocRef, {
         teamMembers: [
           ...teamMembers,
-          { memberName: fullName, memberEmail: user.email },
+          { memberName: fullName || user.email, memberEmail: user.email },
         ],
         invitedTeamMembers: newInvitedTeamMembers,
       })
