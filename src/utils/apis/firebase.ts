@@ -518,21 +518,35 @@ export const inviteTeamMember = async (user: User, email: string) => {
     if (email == user.email)
       throw new Error("Cannot invite yourself to the team")
 
-    const otherUserDocRef = doc(db, `users/${email}/user_items/team`)
-    const otherUserDocSnap = await getDoc(otherUserDocRef)
+
+
+    let otherUserDocRef = doc(db, `users/${email}/user_items/team`)
+    let otherUserDocSnap = await getDoc(otherUserDocRef)
 
     const otherUserRoleDocRef = doc(db, `users/${email}/user_items/role`)
     const otherUserRoleDocSnap = await getDoc(otherUserRoleDocRef)
     const role = otherUserRoleDocSnap.data()?.role.toLowerCase()
 
-    if (!otherUserDocSnap.exists())
-      throw new Error("Invited user does not exist")
+    if (!otherUserRoleDocSnap.exists())
+    {throw new Error("Invited user does not exist")
+    }
+    if (!otherUserDocSnap.exists()) {
+      await setDoc(otherUserDocRef, {
+        invites: [],
+        teamLeader: "",
+        teamName: "",
+      }, {merge:true})
+
+
+       otherUserDocRef = doc(db, `users/${email}/user_items/team`)
+       otherUserDocSnap = await getDoc(otherUserDocRef)
+    }
     if (otherUserDocSnap.data()?.teamName === userTeamName)
-      throw new Error("User is already on the team")
+      {throw new Error("User is already on the team")}
     if (otherUserDocSnap.data()?.teamName !== "")
-      throw new Error("Invited user is already on a team")
+     { throw new Error("Invited user is already on a team")}
     if (role !== "hacker")
-      throw new Error("Invited user is not a participant of the hackathon")
+      {throw new Error("Invited user is not a participant of the hackathon")}
 
     const teamName = userDocSnap.data()?.teamName
 
