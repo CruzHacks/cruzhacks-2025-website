@@ -121,6 +121,7 @@ const App: React.FC = () => {
         <Route element={<RoleProtectedRoute allowedRole='applicant' />}>
           <Route path='portal/applicant' element={<PortalApplicant />}>
             <Route index element={<DashboardApplicant />} />
+            <Route path='check-in' element={<QRCodeHacker />} />
           </Route>
         </Route>
 
