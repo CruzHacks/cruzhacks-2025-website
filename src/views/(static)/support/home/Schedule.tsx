@@ -27,7 +27,7 @@ const scheduleInfo = [
       ["Breakfast", "9:00 am"],
       ["Code Freeze/ Submit Project", "9:00 am"],
       ["Judging Begins", "11:30 am"],
-      ["Lunch", "12:00 pm"],
+      ["Lunch", "2:00 pm"],
       ["Closing Ceremony", "2:30 pm"],
       ["CruzHacks 2024 Concludes", "4:00 pm"],
     ],

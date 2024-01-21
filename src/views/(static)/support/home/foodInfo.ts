@@ -50,7 +50,7 @@ export const foodInfo = [
       {
         title: "Lunch",
         provider: "Achilles by the Sea",
-        time: "12:00 pm",
+        time: "2:00 pm",
       },
     ],
   },
