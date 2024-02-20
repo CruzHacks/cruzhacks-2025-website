@@ -1,0 +1,82 @@
+[
+  {
+    "name": "help wanted",
+    "description": "is likely non-trival and help is wanted",
+    "color": "b60205"
+  },
+  {
+    "name": "pr: blocked",
+    "description": "is blocked by another issue or pr",
+    "color": "111111"
+  },
+  {
+    "name": "priority: critical",
+    "description": "is time sensitive",
+    "color": "ae1fa2"
+  },
+  {
+    "name": "priority: medium",
+    "description": "is needed soon",
+    "color": "fef2c0"
+  },
+  {
+    "name": "priority: low",
+    "description": "is nice to have",
+    "color": "2b5952"
+  },
+  {
+    "name": "status: blocked",
+    "description": "is blocked by another issue or pr",
+    "color": "111111"
+  },
+  {
+    "name": "status: needs discussion",
+    "description": "triage needs further discussion",
+    "color": "0023ee"
+  },
+  {
+    "name": "status: needs investigation",
+    "description": "triage needs further investigation",
+    "color": "CD4404"
+  },
+  {
+    "name": "type: bug",
+    "description": "a problem with a feature or rule",
+    "color": "f9d0c4"
+  },
+  {
+    "name": "type: documentation",
+    "description": "an improvement to the documentation",
+    "color": "c5def5"
+  },
+  {
+    "name": "type: enhancement",
+    "description": "a new feature that isn't related to rules",
+    "color": "d4c5f9"
+  },
+  {
+    "name": "type: infrastructure",
+    "description": "an improvement to devops",
+    "color": "bfdadc"
+  },
+  {
+    "name": "type: refactor",
+    "description": "an improvement to the code structure",
+    "color": "C5EDF5"
+  },
+  {
+    "name": "type: tests",
+    "description": "an improvement to testing",
+    "color": "F5C5EC"
+  },
+  {
+    "name": "type: umbrella",
+    "description": "a group of related issues",
+    "color": "ccea72"
+  },
+  {
+    "name": "type: security",
+    "description": "a security problem",
+    "color": "B8A8A5"
+  }
+]
