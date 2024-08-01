@@ -1,4 +1,4 @@
-# CruzHacks 2024 Website
+#  CruzHacks 2024 Website
 
 CruzHacks 2024 website built with React, Typescript, Tailwind, and hosted with
 firebase. Website depends on firestore rules, indexes, and functions defined in
