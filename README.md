@@ -1,6 +1,6 @@
-#  CruzHacks 2024 Website
+#  CruzHacks 2025 Website
 
-CruzHacks 2024 website built with React, Typescript, Tailwind, and hosted with
+CruzHacks 2025 website built with React, Typescript, Tailwind, and hosted with
 firebase. Website depends on firestore rules, indexes, and functions defined in
 [CruzHacks 2024 backend](https://github.com/CruzHacks/cruzhacks-2024-backend).
 
@@ -58,6 +58,6 @@ Site Map, Feature List, UI Mockups, Style Guide, etc.
 
 ## Contact
 
-Reach out to 2024 CruzHacks Engineering Director
-[Zack Traczyk](https://github.com/zacktraczyk) regarding any questions about the
+Reach out to 2025 CruzHacks Engineering Directors
+[Neo Sud](https://github.com/aneokin12) or [Anirudh Krishna](https://github.com/anikrish05) regarding any questions about the
 codebase.
