@@ -19,7 +19,7 @@ const HeroBlurb = ({ id }: { id?: string }) => {
         </h2>
         <div className='space-y-5'>
           <p className='max-w-2xl text-lg lg:text-2xl'>
-            CruzHacks is the largest hackathon in Santa Cruz. Each year, we
+            CruzHacks 2025 is the largest hackathon in Santa Cruz. Each year, we
             invite hundreds of students to develop solutions to real-world
             problems, pursue inclusion in tech, and kindle the spirit of
             innovation.
