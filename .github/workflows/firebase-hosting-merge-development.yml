@@ -8,7 +8,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    environment: development
+    environment: dev
     env:
       VITE_FIREBASE_API_KEY: "${{ secrets.API_KEY }}"
       VITE_FIREBASE_AUTH_DOMAIN: "${{ secrets.AUTH_DOMAIN }}"
