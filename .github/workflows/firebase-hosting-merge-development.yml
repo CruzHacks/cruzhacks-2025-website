@@ -27,4 +27,5 @@ jobs:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
         run: |
           npm install -g firebase-tools
+          firebase use dev
           firebase deploy --only hosting:dev
