@@ -31,7 +31,7 @@ jobs:
       - name: Archive Production Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: development
+          name: dev
           path: build
   deploy_development:
     needs: [build]
@@ -41,11 +41,11 @@ jobs:
       - name: Download Artifact
         uses: actions/download-artifact@v4
         with:
-          name: development
+          name: dev
           path: build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
-          target: development
+          target: dev
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
           firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_CRUZHACKS_2025_DEVELOPMENT}}"
           channelId: live
