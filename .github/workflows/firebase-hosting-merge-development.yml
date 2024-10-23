@@ -47,6 +47,6 @@ jobs:
         with:
           target: development
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
-          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_CRUZHACKS_2024_DEVELOPME_D58C3 }}"
+          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_CRUZHACKS_2025_DEVELOPMENT}}"
           channelId: live
           projectId: cruzhacks-2025-development
