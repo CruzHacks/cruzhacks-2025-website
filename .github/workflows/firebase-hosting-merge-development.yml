@@ -33,13 +33,20 @@ jobs:
         with:
           name: development
           path: build
-  deploy:
+  deploy_development:
+    needs: [build, lint]
     runs-on: ubuntu-latest
     steps:
-      - name: Deploy to Firebase
-        env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-        run: |
-          npm install -g firebase-tools
-          firebase use dev
-          firebase deploy --only hosting:dev
+      - uses: actions/checkout@v4
+      - name: Download Artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: development
+          path: build
+      - uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          target: development
+          repoToken: "${{ secrets.GITHUB_TOKEN }}"
+          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_CRUZHACKS_2024_DEVELOPME_D58C3 }}"
+          channelId: live
+          projectId: cruzhacks-2025-development
