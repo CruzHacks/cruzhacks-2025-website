@@ -58,6 +58,6 @@ Site Map, Feature List, UI Mockups, Style Guide, etc.
 
 ## Contact
 
-Reach out to 2025 CruzHacks Engineering Directors
-[Neo Sud](https://github.com/aneokin12) or [Anirudh Krishna](https://github.com/anikrish05) regarding any questions about the
+Reach out to 2025 CruzHacks Engineering Director
+Sophie Han regarding any questions about the
 codebase.
