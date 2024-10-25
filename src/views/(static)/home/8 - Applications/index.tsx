@@ -27,13 +27,13 @@ const ApplicationBlurb = ({ id }: { id?: string }) => {
           and stay tuned to our social media (linked at the BOTTOM!) for updates on upcoming workshops, resources,
           and more!
           </p>
-          <Link
+          {/* <Link
             to='/team'
             className='mt-2 flex w-fit items-center gap-2 rounded-lg border-4 border-blue-button px-5 py-2 font-bold text-blue-button hover:bg-blue-button/10 hover:underline'
           >
             Meet the CruzHacks team
             <ChevronRightIcon className='h-5' />
-          </Link>
+          </Link> */}
         </div>
         <div className='max-w-md'>
           <EmailRegister />
