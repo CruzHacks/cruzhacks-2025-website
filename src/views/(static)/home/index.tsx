@@ -22,10 +22,12 @@ const Home = () => {
           className='mt-[-16rem] w-screen md:mt-[-36rem]'
         />
       </div>
+      
       <ApplicationBlurb id='about' />
-      <PrizeTracks id='prize-tracks' />
+      {/* <PrizeTracks id='prize-tracks' /> */}
+        
       <Milestones id='milestones' />
-      <Speakers id='speakers' />
+      {/* <Speakers id='speakers' /> */}
       <QA id='qa' />
       <Sponsors id='sponsors' />
       <div className='relative h-40 w-full'>

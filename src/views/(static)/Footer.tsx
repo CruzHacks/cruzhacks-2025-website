@@ -34,7 +34,7 @@ const Footer: React.FC = () => {
 
         <div className='flex grow flex-col items-center justify-between gap-5 md:flex-row'>
           <div className='flex transition-all'>
-            <p>CRUZHACKS © 2024</p>
+            <p>CRUZHACKS © 2025</p>
           </div>
           <div className='flex justify-end gap-5'>
             {socials.map(({ name, url, icon }) => (
