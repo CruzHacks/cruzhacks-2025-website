@@ -1,6 +1,6 @@
 {
   "projects": {
-    "prod": "cruzhacks-4a899",
+    "production": "cruzhacks-4a899",
     "dev": "cruzhacks-2025-development"
   },
   "targets": {
