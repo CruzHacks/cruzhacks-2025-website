@@ -6,7 +6,7 @@ import { socials } from "../../../../utils/socials"
 import { ChevronRightIcon } from "@heroicons/react/24/outline"
 import { Link } from "react-router-dom"
 
-const HeroBlurb = ({ id }: { id?: string }) => {
+const ApplicationBlurb = ({ id }: { id?: string }) => {
   return (
     <div className='flex w-full justify-between gap-10'>
       {/* Scroll Anchor*/}
@@ -15,14 +15,17 @@ const HeroBlurb = ({ id }: { id?: string }) => {
       <div className='w-full space-y-6 pt-10'>
         <div className='mb-10 w-20 border-2 text-white'></div>
         <h2 className='font-title text-3xl uppercase md:text-5xl'>
-          Social Good
+          Interested in Applying?
         </h2>
         <div className='space-y-5'>
           <p className='max-w-2xl text-lg lg:text-2xl'>
-            CruzHacks 2025 is the largest hackathon in Santa Cruz. Each year, we
-            invite hundreds of students to develop solutions to real-world
-            problems, pursue inclusion in tech, and kindle the spirit of
-            innovation.
+          CruzHacks, the largest hackathon in Santa Cruz, is a vibrant community
+          that fosters growth, innovation, and inclusion in tech. Join students of
+          all backgrounds as we solve real-world problems and learn together. Whether
+          you are a beginner or experienced, CruzHacks is your space to grow. 
+          Sign up for our mailing list to be the first to know when applications open, 
+          and stay tuned to our social media (linked at the BOTTOM!) for updates on upcoming workshops, resources,
+          and more!
           </p>
           {/* <Link
             to='/team'
@@ -52,4 +55,4 @@ const HeroBlurb = ({ id }: { id?: string }) => {
   )
 }
 
-export default HeroBlurb
+export default ApplicationBlurb

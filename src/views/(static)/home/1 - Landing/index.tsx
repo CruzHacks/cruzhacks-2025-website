@@ -53,12 +53,12 @@ const Landing = ({ id }: { id?: string }) => {
             Hacks
           </h1>
           <p className='z-10 font-title text-lg uppercase md:self-end md:text-2xl lg:text-3xl'>
-            2024 HACKATHON
+            2025 HACKATHON
           </p>
           <p className='z-10 w-2/3 self-center text-center font-subtext text-sm uppercase md:w-1/2 md:self-end md:text-right lg:w-full'>
-            JAN 19-22 • UC SANTA CRUZ, STEVENSON EVENT CENTER
+            JAN 31-FEB 2 • UC SANTA CRUZ
           </p>
-          {!isAuthenticated ? (
+          {/* {!isAuthenticated ? (
             <Link
               to='/login'
               className='z-30 mt-6 flex h-12 w-64 items-center justify-center self-center rounded-full bg-gradient-to-r from-[#02D4BF] via-[#5156E4] to-[#7F37E2]  font-title text-xl leading-6 text-white shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white md:ml-20 md:self-start'
@@ -72,7 +72,7 @@ const Landing = ({ id }: { id?: string }) => {
             >
               portal
             </Link>
-          )}
+          )} */}
         </div>
       </Transition>
 

@@ -1,10 +1,11 @@
 import React from "react"
 import Landing from "./1 - Landing"
-import HeroBlurb from "./2 - Hero Blurb"
+// import HeroBlurb from "./2 - Hero Blurb"
 import Milestones from "./4 - Milestones"
 import Speakers from "./5 - Speakers"
 import QA from "./6 - Q&A"
 import Sponsors from "./7 - Sponsors"
+import ApplicationBlurb from "./8 - Applications"
 
 import TreesBackgroundSmall from "../../../assets/illustrations/Trees Background - Small.png"
 import PrizeTracks from "./3 - Prize Tracks"
@@ -21,10 +22,12 @@ const Home = () => {
           className='mt-[-16rem] w-screen md:mt-[-36rem]'
         />
       </div>
-      <HeroBlurb id='about' />
-      <PrizeTracks id='prize-tracks' />
+      
+      <ApplicationBlurb id='about' />
+      {/* <PrizeTracks id='prize-tracks' /> */}
+        
       <Milestones id='milestones' />
-      <Speakers id='speakers' />
+      {/* <Speakers id='speakers' /> */}
       <QA id='qa' />
       <Sponsors id='sponsors' />
       <div className='relative h-40 w-full'>

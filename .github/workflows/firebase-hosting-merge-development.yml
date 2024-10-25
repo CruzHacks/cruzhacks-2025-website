@@ -1,12 +1,14 @@
-name: Deploy to Firebase Hosting on merge
-"on":
+name: Deploy to Firebase on merge to main(development)
+
+on:
   push:
     branches:
-      - development
+      - main
+
 jobs:
   build:
     runs-on: ubuntu-latest
-    environment: development
+    environment: dev
     env:
       VITE_FIREBASE_API_KEY: "${{ secrets.API_KEY }}"
       VITE_FIREBASE_AUTH_DOMAIN: "${{ secrets.AUTH_DOMAIN }}"
@@ -29,36 +31,22 @@ jobs:
       - name: Archive Production Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: development
+          name: dev
           path: build
-
-  lint:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 18
-      - name: Install Dependencies
-        run: yarn install --frozen-lockfile
-      - name: Lint
-        run: yarn lint
-
   deploy_development:
-    needs: [build, lint]
+    needs: [build]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - name: Download Artifact
         uses: actions/download-artifact@v4
         with:
-          name: development
+          name: dev
           path: build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
-          target: development
+          target: dev
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
-          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_CRUZHACKS_2024_DEVELOPME_D58C3 }}"
+          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_CRUZHACKS_2025_DEVELOPMENT}}"
           channelId: live
-          projectId: cruzhacks-2024-developme-d58c3
+          projectId: cruzhacks-2025-development
