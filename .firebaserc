@@ -6,7 +6,8 @@
   "targets": {
     "cruzhacks-4a899": {
       "hosting": {
-        "prod": [
+
+        "production": [
           "cruzhacks-2025-website"
         ]
       }
@@ -15,9 +16,6 @@
       "hosting": {
         "dev": [
           "cruzhacks-2025-development"
-        ],
-        "prod": [
-          "cruzhacks-2025-website"
         ]
       }
     }
