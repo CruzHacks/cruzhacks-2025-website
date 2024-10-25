@@ -16,37 +16,37 @@ import { Popover, Transition } from "@headlessui/react"
 
 const navigation = [
   { name: "About", href: "/#about" },
-  { name: "Prize Tracks", href: "/#prize-tracks" },
+  // { name: "Prize Tracks", href: "/#prize-tracks" },
   // { name: "The Team", href: "/team" },
-  {
-    name: "Support",
-    sub_menu: [
-      {
-        name: "Support Hub",
-        description: "Support links, schedules, and more",
-        href: "/support",
-        icon: InformationCircleIcon,
-      },
-      {
-        name: "Resources",
-        description: "Resources for hackers",
-        href: "/support/resources",
-        icon: ArchiveBoxIcon,
-      },
-      {
-        name: "Maps",
-        description: "Venue and parking maps",
-        href: "/support/maps",
-        icon: MapIcon,
-      },
-      {
-        name: "FAQs",
-        description: "Frequently asked questions",
-        href: "/support/faq-and-rules",
-        icon: QuestionMarkCircleIcon,
-      },
-    ],
-  },
+  // {
+  //   name: "Support",
+  //   sub_menu: [
+  //     {
+  //       name: "Support Hub",
+  //       description: "Support links, schedules, and more",
+  //       href: "/support",
+  //       icon: InformationCircleIcon,
+  //     },
+  //     {
+  //       name: "Resources",
+  //       description: "Resources for hackers",
+  //       href: "/support/resources",
+  //       icon: ArchiveBoxIcon,
+  //     },
+  //     {
+  //       name: "Maps",
+  //       description: "Venue and parking maps",
+  //       href: "/support/maps",
+  //       icon: MapIcon,
+  //     },
+  //     {
+  //       name: "FAQs",
+  //       description: "Frequently asked questions",
+  //       href: "/support/faq-and-rules",
+  //       icon: QuestionMarkCircleIcon,
+  //     },
+  //   ],
+  // },
 ]
 
 const Navbar = () => {
@@ -66,7 +66,7 @@ const Navbar = () => {
               alt='CruzHacks logo'
             />
           </Link>
-          <div className='flex grow items-center justify-evenly font-light uppercase md:grow-0 md:gap-10 lg:gap-16'>
+          {/* <div className='flex grow items-center justify-evenly font-light uppercase md:grow-0 md:gap-10 lg:gap-16'>
             {navigation.map(item => (
               <div key={item.name}>
                 {!item.sub_menu ? (
@@ -144,7 +144,7 @@ const Navbar = () => {
                 )}
               </div>
             ))}
-          </div>
+          </div> */}
 
           {/* Desktop MLH Trust Badge */}
           <a
@@ -158,13 +158,14 @@ const Navbar = () => {
             rel='noreferrer'
           >
             <img
-              src='https://s3.amazonaws.com/logged-assets/trust-badge/2024/mlh-trust-badge-2024-blue.svg'
+              src='https://s3.amazonaws.com/logged-assets/trust-badge/2025/mlh-trust-badge-2025-blue.svg'
               alt='Major League Hacking 2024 Hackathon Season'
               className='w-full'
             />
           </a>
 
-          <div className='right-10 lg:absolute'>
+           {/* Login commented out for now  */}
+          {/* <div className='right-10 lg:absolute'>
             {!isAuthenticated ? (
               <Link
                 to='/login'
@@ -180,7 +181,7 @@ const Navbar = () => {
                 direction='down'
               />
             )}
-          </div>
+          </div> */}
         </div>
       </div>
 

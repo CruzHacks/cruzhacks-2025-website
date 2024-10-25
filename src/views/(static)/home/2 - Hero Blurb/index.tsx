@@ -24,13 +24,13 @@ const HeroBlurb = ({ id }: { id?: string }) => {
             problems, pursue inclusion in tech, and kindle the spirit of
             innovation.
           </p>
-          <Link
+          {/* <Link
             to='/team'
             className='mt-2 flex w-fit items-center gap-2 rounded-lg border-4 border-blue-button px-5 py-2 font-bold text-blue-button hover:bg-blue-button/10 hover:underline'
           >
             Meet the CruzHacks team
             <ChevronRightIcon className='h-5' />
-          </Link>
+          </Link> */}
         </div>
         <div className='max-w-md'>
           <EmailRegister />
