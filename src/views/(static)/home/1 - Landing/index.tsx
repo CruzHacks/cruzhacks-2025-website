@@ -56,7 +56,7 @@ const Landing = ({ id }: { id?: string }) => {
             2025 HACKATHON
           </p>
           <p className='z-10 w-2/3 self-center text-center font-subtext text-sm uppercase md:w-1/2 md:self-end md:text-right lg:w-full'>
-            JAN 31-FEB 2 • UC SANTA CRUZ
+            JAN 18-20 • UC SANTA CRUZ
           </p>
           {/* {!isAuthenticated ? (
             <Link
