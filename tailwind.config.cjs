@@ -6,6 +6,13 @@ module.exports = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     colors: {
+
+      //ADD NEW THEME COLORS HERE ====================
+
+
+      //==============================================
+
+
       blue: {
         royal: "#190CA6",
         imperial: "#071162",
@@ -34,6 +41,11 @@ module.exports = {
       body: ["Montserrat", ...defaultTheme.fontFamily.sans],
       sans: ["Montserrat", ...defaultTheme.fontFamily.sans],
       subtext: ["Roboto Mono", ...defaultTheme.fontFamily.mono],
+
+      //NEW THEME FONTS =================================
+      heading: ["Madimi One", ...defaultTheme.fontFamily.sans],
+      subtext: ["Monda", ...defaultTheme.fontFamily.sans],
+      //=================================================
     },
     extend: {
       animation: {
@@ -44,6 +56,11 @@ module.exports = {
       backgroundImage: {
         "milestones-gradient":
           "radial-gradient(60.38% 60.38% at 50% 50%, #04106C 39.06%, #080B94 100%)",
+        'sunset-gradient': 
+          'linear-gradient(to bottom, #E9603A, #F3903F, #FDC70C)',
+        // NEW THEME GRADIENTS =================================
+
+        //======================================================
       },
       keyframes: {
         "bounce-sideways": {
