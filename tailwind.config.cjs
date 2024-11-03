@@ -8,7 +8,12 @@ module.exports = {
     colors: {
 
       //ADD NEW THEME COLORS HERE ====================
+      deep_orange: "#E9603A",
+      medium_orange: "#F3903F",
+      medium_yellow: "#FDCA0F",
+      bright_yellow: "#FFF33B",
 
+      off_white: "#FFEDE0",
 
       //==============================================
 
