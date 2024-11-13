@@ -1,6 +1,6 @@
 import React from "react";
-import { classNames } from "../../utils/string";
-import VectorSVG from "../../assets/ocean/SponsorshipRect.svg";
+import { classNames } from "../../../utils/string";
+import VectorSVG from "../../../assets/ocean/SponsorshipRect.svg";
 
 const WhiteRect = ({ className, children }: { className?: string; children?: React.ReactNode }) => {
   return (

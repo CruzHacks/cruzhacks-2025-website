@@ -1,6 +1,6 @@
 import React from "react";
-import { classNames } from "../../utils/string";
-import CheckImg from "../../assets/ocean/SponsorCheckList.svg";
+import { classNames } from "../../../utils/string";
+import CheckImg from "../../../assets/ocean/SponsorCheckList.svg";
 
 const CheckList = ({ className }: { className?: string }) => {
   return (

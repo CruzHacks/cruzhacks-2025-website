@@ -1,6 +1,6 @@
 import React from "react";
-import { classNames } from "../../utils/string";
-import packages from "../../assets/ocean/SPONSORSHIPPACKAGES.png";
+import { classNames } from "../../../utils/string";
+import packages from "../../../assets/ocean/SPONSORSHIPPACKAGES.png";
 
 const Package = ({ className }: { className?: string }) => {
   return (

@@ -1,6 +1,6 @@
 import React from "react";
-import { classNames } from "../../utils/string";
-import InterestSVG from "../../assets/ocean/interested.svg";
+import { classNames } from "../../../utils/string";
+import InterestSVG from "../../../assets/ocean/interested.svg";
 
 const Interested = ({ className }: { className?: string }) => {
   return (

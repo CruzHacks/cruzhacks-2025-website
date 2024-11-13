@@ -1,6 +1,6 @@
 import React from "react";
-import { classNames } from "../../utils/string";
-import NextStepsSVG from "../../assets/ocean/NEXTSTEPS.svg";
+import { classNames } from "../../../utils/string";
+import NextStepsSVG from "../../../assets/ocean/NEXTSTEPS.svg";
 
 const NextSteps = ({ className }: { className?: string }) => {
   return (
