@@ -3,6 +3,9 @@ import React from "react"
 import Star from "../../../../components/Star"
 import { Transition } from "@headlessui/react"
 import CruzHacksLogo from "../../../../assets/PageDividers/CruzHacksLogo.svg"
+import cloud1 from "../../../../assets/PageDividers/cloud.svg"
+import cloud2 from "../../../../assets/PageDividers/cloud2.svg"
+import cloud3 from "../../../../assets/PageDividers/cloud3.svg"
 
 const Sunset = () => {
 
