@@ -15,6 +15,10 @@ module.exports = {
 
       off_white: "#FFEDE0",
 
+      sponsor_dark_orange: "#F38D3F",
+      sponsor_medium_orange: "#F2873F",
+      sponsor_light_orange: "#F9B047",
+
       //==============================================
 
 
@@ -64,7 +68,7 @@ module.exports = {
         'sunset-gradient': 
           'linear-gradient(to bottom, #E9603A, #F3903F, #FDC70C)',
         // NEW THEME GRADIENTS =================================
-
+          'yellow-gradient': 'linear-gradient(180deg, #F7F3B0 71%, #F0C776 100%)',
         //======================================================
       },
       keyframes: {
@@ -103,6 +107,11 @@ module.exports = {
         sm: "0 1px 2px #000",
         DEFAULT: "0 2px 4px #000",
         lg: "0 8px 16px #000",
+      },
+      fontSize: {
+        '7xl': '5rem',
+        '5.5xl': '3.5rem',
+
       },
     },
   },
