@@ -3,6 +3,7 @@ import React from "react"
 import Star from "../../../../components/Star"
 import { Transition } from "@headlessui/react"
 import CruzHacksLogo from "../../../../assets/PageDividers/CruzHacksLogo.svg"
+import Sandcastle from "../../../../assets/PageDividers/sandcastle-divider.svg"
 import cloud1 from "../../../../assets/PageDividers/cloud.svg"
 import cloud2 from "../../../../assets/PageDividers/cloud2.svg"
 import cloud3 from "../../../../assets/PageDividers/cloud3.svg"
@@ -38,6 +39,9 @@ const Sunset = () => {
           <img src= {CruzHacksLogo} width="350"></img>
         </div>
         
+      </div>
+      <div>
+        <img src= {Sandcastle}></img>
       </div>
       
     </div>
