@@ -66,7 +66,7 @@ module.exports = {
         "milestones-gradient":
           "radial-gradient(60.38% 60.38% at 50% 50%, #04106C 39.06%, #080B94 100%)",
         'sunset-gradient': 
-          'linear-gradient(to bottom, #E9603A, #F3903F, #FDC70C)',
+          'linear-gradient(to bottom, #E9603A, #ED683C, #F3903F, #FEE62D, #FFF33B)',
         // NEW THEME GRADIENTS =================================
           'yellow-gradient': 'linear-gradient(180deg, #F7F3B0 71%, #F0C776 100%)',
         //======================================================

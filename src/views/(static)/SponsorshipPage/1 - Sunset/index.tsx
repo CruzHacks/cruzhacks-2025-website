@@ -11,8 +11,24 @@ import cloud3 from "../../../../assets/PageDividers/cloud3.svg"
 const Sunset = () => {
 
   return (
-    <div className='relative flex w-full flex-col items-center bg-sunset-gradient'>
-      <div className = 'flex gap-8 '>
+    // wrapper
+    <div className='relative flex w-full flex-col items-center bg-sunset-gradient'> 
+
+      <div className="absolute left-0 top-0 w-60">
+        <img src= {cloud1}></img>
+      </div>
+
+      <div className="absolute right-7 top-16 w-3/5">
+        <img src= {cloud2}></img>
+      </div>
+
+      <div className = "absolute left-2 bottom-80 w-1/3">
+        <img src= {cloud3}></img>
+      </div>
+
+      <Star i={2}/>
+      {/* center text area */}
+      <div className = 'flex gap-8'>
         <div className='-mb-24 flex h-[35.5rem] w-fit flex-col items-center justify-center pb-20 md:h-[59.5rem] md:items-start lg:h-[56.5rem] '>
           <div className = 'flex items-end -mt-10 lg:-mt-20'>
             <h1 className='z-10 font-heading text-[50px] uppercase md:text-8xl lg:text-[150px] text-off_white'>
@@ -40,10 +56,9 @@ const Sunset = () => {
         </div>
         
       </div>
-      <div>
+      <div className="-mt-36">
         <img src= {Sandcastle}></img>
       </div>
-      
     </div>
   )
 }
