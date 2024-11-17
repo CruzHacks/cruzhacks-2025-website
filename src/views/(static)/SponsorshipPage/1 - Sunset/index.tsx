@@ -26,8 +26,19 @@ const Sunset = () => {
         <img src= {cloud3}></img>
       </div>
 
-      <Star i={2}/>
+      <div className="absolute -mt-28">
+        <Star i={2}/>
+        <Star className='left-5 top-48 h-5 md:left-10 md:top-56 md:h-10 lg:left-28' />
+  
+      </div>
       {/* center text area */}
+      <Transition
+          appear={true}
+          show={true}
+          enter='transition-all duration-1000 east-out'
+          enterFrom='opacity-0 scale-[90%]'
+          enterTo='opacity-100 scale-100'
+        >
       <div className = 'flex gap-8'>
         <div className='-mb-24 flex h-[35.5rem] w-fit flex-col items-center justify-center pb-20 md:h-[59.5rem] md:items-start lg:h-[56.5rem] '>
           <div className = 'flex items-end -mt-10 lg:-mt-20'>
@@ -56,6 +67,7 @@ const Sunset = () => {
         </div>
         
       </div>
+      </Transition>
       <div className="-mt-36">
         <img src= {Sandcastle}></img>
       </div>
