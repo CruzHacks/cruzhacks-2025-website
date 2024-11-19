@@ -7,8 +7,9 @@ import Sandcastle from "../../../../assets/PageDividers/sandcastle-divider.svg"
 import cloud1 from "../../../../assets/PageDividers/cloud.svg"
 import cloud2 from "../../../../assets/PageDividers/cloud2.svg"
 import cloud3 from "../../../../assets/PageDividers/cloud3.svg"
+import { classNames } from "../../../../utils/string"
 
-const Sunset = () => {
+const Sunset = ({ id }: { id?: string }) => {
 
   return (
     // wrapper
@@ -26,11 +27,22 @@ const Sunset = () => {
         <img src= {cloud3}></img>
       </div>
 
-      <div className="absolute -mt-28">
-        <Star i={2}/>
-        <Star className='left-5 top-48 h-5 md:left-10 md:top-56 md:h-10 lg:left-28' />
-  
-      </div>
+      <Star
+        i={2}
+        className='right-10 top-28 h-5 md:right-16 md:top-32 md:h-10 lg:right-96'
+      />
+      <Star className='left-5 top-48 h-5 md:left-10 md:top-56 md:h-10 lg:left-28' /> 
+      <Star
+        i={3}
+        className='left-10 top-52 h-2 md:left-20 md:top-72 md:h-3 lg:left-40'
+      />
+
+
+      <Star i={3} className='right-40 top-96 h-6 md:right-32 md:top-80 md:h-7' />
+      <Star
+        i={6}
+        className='right-10 top-[23rem] h-3 md:right-28 md:top-[19.5rem] md:h-3'
+      />
       {/* center text area */}
       <Transition
           appear={true}
