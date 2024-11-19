@@ -18,7 +18,7 @@ const StaticWrapper = () => {
       <ScrollToTop />
 
       <div
-        className='relative z-0 m-auto flex min-h-screen max-w-7xl flex-col items-center space-y-10 bg-repeat-x px-10'
+        className='relative z-0 m-auto flex min-h-screen flex-col items-center'
         style={
           isHomeOrTeam
             ? {
