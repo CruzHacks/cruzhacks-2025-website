@@ -16,7 +16,7 @@ import Waves from '../../../../assets/PageDividers/waves.svg';
 
 const Beach: React.FC = () => {
   return (
-    <div className="relative bg-yellow-gradient text-black font-body py-10">
+    <div className="relative bg-yellow-gradient text-black font-body">
       {/* Sponsor Us Section */}
       <section className="text-center mb-8 max-w-5xl mx-auto px-4">
         <h1 className="text-5xl md:text-7xl font-heading font-bold text-sponsor_dark_orange mb-24">SPONSOR US!</h1>
