@@ -3,6 +3,7 @@ import Footer from "./Footer"
 import Navbar from "./Navbar"
 import { Outlet, useLocation } from "react-router-dom"
 import ScrollToTop from "../../components/scrollControl/ScrollToTop"
+import cloud1 from "../../assets/PageDividers/cloud1.svg"
 
 import Binary from "../../assets/Binary.jpg"
 import Lake from "../../assets/illustrations/Lake.svg"
@@ -16,7 +17,9 @@ const StaticWrapper = () => {
     <div className='overflow-x-hidden bg-[#0A1351]' id='landing'>
       {/* Put scroll at top on navigation */}
       <ScrollToTop />
-
+      <div className="absolute left-0 top-0 w-60 z-[350]">
+        <img src= {cloud1}></img>
+      </div>
       <div
         className='relative z-0 m-auto flex min-h-screen flex-col items-center'
         style={
@@ -28,7 +31,7 @@ const StaticWrapper = () => {
         }
       >
         <Navbar />
-        <div className='h-10' />
+        {/* <div className='h-10' /> */}
         <Outlet />
       </div>
 

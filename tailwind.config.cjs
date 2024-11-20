@@ -19,6 +19,10 @@ module.exports = {
       sponsor_medium_orange: "#F2873F",
       sponsor_light_orange: "#F9B047",
 
+      beach_yellow: "#F7F3B0",
+
+      app_bar_orange: "#CF4F2C",
+
       //==============================================
 
 

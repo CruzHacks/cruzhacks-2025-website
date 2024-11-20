@@ -1,6 +1,6 @@
 import React from "react"
 import EmailRegister from "./EmailRegister"
-
+import BeachDivider from "../../../../assets/PageDividers/beachdivider1.svg"
 import HandAndComputer from "../../../../assets/illustrations/Hand & Computer.svg"
 import { socials } from "../../../../utils/socials"
 import { ChevronRightIcon } from "@heroicons/react/24/outline"
@@ -8,24 +8,17 @@ import { Link } from "react-router-dom"
 
 const ApplicationBlurb = ({ id }: { id?: string }) => {
   return (
-    <div className='flex w-full justify-between gap-10'>
+    <div className='flex w-full justify-between  bg-beach_yellow '>
       {/* Scroll Anchor*/}
       <div className='absolute -mt-28' id={id}></div>
 
-      <div className='w-full space-y-6 pt-10'>
-        <div className='mb-10 w-20 border-2 text-white'></div>
-        <h2 className='font-title text-3xl uppercase md:text-5xl'>
-          Interested in Applying?
-        </h2>
+      <div className='w-full space-y-6 pt-10 mx-20'>
+        <h1 className='font-heading text-3xl uppercase md:text-5xl text-sponsor_dark_orange'>
+          Our Mission
+        </h1>
         <div className='space-y-5'>
-          <p className='max-w-2xl text-lg lg:text-2xl'>
-          CruzHacks, the largest hackathon in Santa Cruz, is a vibrant community
-          that fosters growth, innovation, and inclusion in tech. Join students of
-          all backgrounds as we solve real-world problems and learn together. Whether
-          you are a beginner or experienced, CruzHacks is your space to grow. 
-          Sign up for our mailing list to be the first to know when applications open, 
-          and stay tuned to our social media (linked at the BOTTOM!) for updates on upcoming workshops, resources,
-          and more!
+          <p className=' font-subtext max-w-2xl text-lg lg:text-2xl text-sponsor_light_orange'>
+          CruzHacks is the largest hackathon in Santa Cruz. Each year, we invite  hundreds of students to develop solutions to real-world problems, pursue inclusion in tech, and kindle the spirit of innovation.
           </p>
           {/* <Link
             to='/team'
@@ -44,14 +37,14 @@ const ApplicationBlurb = ({ id }: { id?: string }) => {
               <img
                 src={icon}
                 alt={`${name} Icon`}
-                className='h-7 w-auto md:h-8 lg:h-10'
+                className='h-7 w-auto md:h-8 lg:h-10 text-deep_orange'
               />
             </a>
           ))}
         </div>
       </div>
-      <img src={HandAndComputer} alt='' className='hidden w-1/2 md:flex' />
     </div>
+    
   )
 }
 

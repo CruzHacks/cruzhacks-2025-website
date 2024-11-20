@@ -57,8 +57,8 @@ const Navbar = () => {
 
   return (
     <>
-      <div className='fixed z-[300] flex w-screen justify-center bg-blue-imperial/80 backdrop-blur-md'>
-        <div className='relative flex h-10 w-full max-w-7xl items-center justify-between px-10 py-8 pt-10 font-subtext lowercase md:text-xl lg:justify-center'>
+      <div className='fixed z-[300] flex w-screen justify-center bg-[#0000]/20'>
+        <div className='relative flex h-6 w-full max-w-7xl items-center justify-between px-10 py-8 pt-10 font-subtext lowercase md:text-xl lg:justify-center'>
           <Link to='/#landing' className='left-10 lg:absolute'>
             <img
               className='hidden h-8 w-auto md:block'
@@ -153,12 +153,12 @@ const Navbar = () => {
               isAuthenticated ? "right-24" : "right-[12.3rem]",
               "absolute top-0 hidden w-20 md:block"
             )}
-            href='https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2024-season&utm_content=blue'
+            href='https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2024-season&utm_content=red'
             target='_blank'
             rel='noreferrer'
           >
             <img
-              src='https://s3.amazonaws.com/logged-assets/trust-badge/2025/mlh-trust-badge-2025-blue.svg'
+              src='https://s3.amazonaws.com/logged-assets/trust-badge/2025/mlh-trust-badge-2025-red.svg'
               alt='Major League Hacking 2024 Hackathon Season'
               className='w-full'
             />

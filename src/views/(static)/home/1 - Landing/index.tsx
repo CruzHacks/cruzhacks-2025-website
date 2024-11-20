@@ -7,7 +7,7 @@ import Star from "../../../../components/Star"
 import { Transition } from "@headlessui/react"
 import CruzHacksLogo from "../../../../assets/PageDividers/CruzHacksLogo.svg"
 import Sandcastle from "../../../../assets/PageDividers/sandcastle-divider.svg"
-import cloud1 from "../../../../assets/PageDividers/cloud.svg"
+import cloud1 from "../../../../assets/PageDividers/cloud1.svg"
 import cloud2 from "../../../../assets/PageDividers/cloud2.svg"
 import cloud3 from "../../../../assets/PageDividers/cloud3.svg"
 import { classNames } from "../../../../utils/string"
@@ -19,11 +19,7 @@ const Landing = ({ id }: { id?: string }) => {
     // wrapper
     <div className='relative flex w-full flex-col items-center bg-sunset-gradient'> 
 
-      <div className="absolute left-0 top-0 w-60">
-        <img src= {cloud1}></img>
-      </div>
-
-      <div className="absolute right-7 top-16 w-3/5">
+      <div className="absolute right-7 top-12 w-3/5">
         <img src= {cloud2}></img>
       </div>
 

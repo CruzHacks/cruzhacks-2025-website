@@ -1,4 +1,5 @@
 import TwentyTwentyThree from "../assets/icons/20 23.svg"
+import TwentyTwentyFour from "../assets/icons/20 24.svg"
 import Instagram from "../assets/icons/Instagram.svg"
 import Facebook from "../assets/icons/Facebook.svg"
 import LinkedIn from "../assets/icons/LinkedIn.svg"
@@ -11,9 +12,9 @@ import Discord from "../assets/icons/Discord.svg"
  */
 export const socials = [
   {
-    name: "CruzHacks 2023",
-    icon: TwentyTwentyThree,
-    url: "https://2023.cruzhacks.com/",
+    name: "CruzHacks 2024",
+    icon: TwentyTwentyFour,
+    url: "https://2024.cruzhacks.com/",
   },
   {
     name: "Instagram",

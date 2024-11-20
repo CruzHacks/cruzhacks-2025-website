@@ -6,6 +6,8 @@ import Speakers from "./5 - Speakers"
 import QA from "./6 - Q&A"
 import Sponsors from "./7 - Sponsors"
 import ApplicationBlurb from "./8 - Applications"
+import cloud1 from "../../../assets/PageDividers/cloud.svg"
+import BeachDivider from "../../../assets/PageDividers/beachdivider1.svg"
 
 import TreesBackgroundSmall from "../../../assets/illustrations/Trees Background - Small.png"
 import PrizeTracks from "./3 - Prize Tracks"
@@ -15,16 +17,12 @@ const Home = () => {
   return (
     <>
       <Landing id='landing' />
-      <div className='-z-30 -mx-40 flex h-10 items-center'>
-        <img
-          src={TreesBackgroundSmall}
-          alt=''
-          className='mt-[-16rem] w-screen md:mt-[-36rem]'
-        />
-      </div>
+ 
       
       <ApplicationBlurb id='about' />
       {/* <PrizeTracks id='prize-tracks' /> */}
+      <img src={BeachDivider} alt='' />
+
         
       <Milestones id='milestones' />
       {/* <Speakers id='speakers' /> */}
