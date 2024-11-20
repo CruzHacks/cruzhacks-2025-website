@@ -13,11 +13,11 @@ const ApplicationBlurb = ({ id }: { id?: string }) => {
       <div className='absolute -mt-28' id={id}></div>
 
       <div className='w-full space-y-6 pt-10 mx-20'>
-        <h1 className='font-heading text-3xl uppercase md:text-5xl text-sponsor_dark_orange'>
+        <h1 className='font-heading text-5xl uppercase md:text-7xl text-sponsor_dark_orange'>
           Our Mission
         </h1>
         <div className='space-y-5'>
-          <p className=' font-subtext max-w-2xl text-lg lg:text-2xl text-sponsor_light_orange'>
+          <p className=' font-subtext max-w-2xl text-lg lg:text-3xl text-sponsor_light_orange'>
           CruzHacks is the largest hackathon in Santa Cruz. Each year, we invite  hundreds of students to develop solutions to real-world problems, pursue inclusion in tech, and kindle the spirit of innovation.
           </p>
           {/* <Link

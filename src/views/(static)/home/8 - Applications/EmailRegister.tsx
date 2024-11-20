@@ -39,7 +39,7 @@ const EmailRegister = () => {
   return (
     <div>
       <form
-        className='flex items-center justify-center gap-3 rounded-lg bg-[#FF7300]/25 p-3 md:px-8'
+        className='flex items-center justify-center gap-3 rounded-lg bg-[#FF7300]/25 p-3 md:px-8 border-2 border-sponsor_dark_orange'
         onSubmit={handleSubmit(registerEmail)}
       >
         <div
