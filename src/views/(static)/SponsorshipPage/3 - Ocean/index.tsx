@@ -20,7 +20,7 @@ import BrandAwareness from "./OceanComponents/BrandAwareness"
 const OceanSection = ({ id }: { id?: string }) => {
   return (
     <Vector>
-      <div style={{ display: "flex", flexDirection: "column", alignItems: "center", margin: "0" }}>
+      <div style={{ display: "flex", flexDirection: "column", alignItems: "center", marginBottom: "0px" }}>
          <Support/> 
          <Please/>
           <BlueRect>
