@@ -48,14 +48,14 @@ export default function Login() {
   }
 
   return (
-    <div className='min-w-screen flex min-h-screen flex-1 items-center justify-center px-6'>
+    <div className='min-w-screen flex min-h-screen flex-1 items-center justify-center px-6 bg-sunset-gradient'>
       <Link to='/' className='fixed left-5 top-5'>
         <ArrowLeftIcon className='h-8 w-auto' />
       </Link>
-      <div className='w-full max-w-sm space-y-10 lg:w-96'>
-        <div className='space-y-4'>
-          <h2 className='mt-8 font-title text-5xl leading-10'>Log In</h2>
-          <p className='font-subtext'>Please sign in to continue</p>
+      <div className=' max-w-sm space-y-10 bg-[#EFA370]/30 p-12 border-2 rounded-2xl text-text_white text-center'>
+        <div className='space-y-4 bg-[#EFA370]/24'>
+          <h2 className='mt-2 font-heading text-5xl leading-10 bg-[#EFA370]/24 font-bold'>LOG IN</h2>
+          <p className='font-subtext'>Don't Have an Account? <Link to='/signup' className="hover:font-bold">Sign Up</Link></p>
         </div>
 
         <form onSubmit={handleSubmit(handleLogin)} className='space-y-10'>

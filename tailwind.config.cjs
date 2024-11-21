@@ -23,6 +23,7 @@ module.exports = {
 
       ocean_medium_dark_blue: "#005EA5",
 
+      text_white: "#FFFCE8",
       //==============================================
 
 
