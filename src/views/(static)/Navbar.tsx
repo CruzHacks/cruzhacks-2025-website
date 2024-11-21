@@ -2,20 +2,19 @@ import React, { Fragment } from "react"
 import { Link } from "react-router-dom"
 import useAuth from "../../hooks/useAuth"
 import CruzHacksLogo from "../../assets/logos/CruzHacks - Blue.svg"
-import { ArrowRightOnRectangleIcon } from "@heroicons/react/24/solid"
-import AvatarButton from "../../components/AvatarButton"
+// import AvatarButton fro "../../components/AvatarButton"
 import { classNames } from "../../utils/string"
-import {
-  ArchiveBoxIcon,
-  ChevronDownIcon,
-  InformationCircleIcon,
-  MapIcon,
-  QuestionMarkCircleIcon,
-} from "@heroicons/react/24/outline"
-import { Popover, Transition } from "@headlessui/react"
+// import {
+//   ArchiveBoxIcon,
+//   ChevronDownIcon,
+//   InformationCircleIcon,
+//   MapIcon,
+//   QuestionMarkCircleIcon,
+// } from "@heroicons/react/24/outline"
+// import { Popover, Transition } from "@headlessui/react"
 
-const navigation = [
-  { name: "About", href: "/#about" },
+// const navigation = [
+//   { name: "About", href: "/#about" },
   // { name: "Prize Tracks", href: "/#prize-tracks" },
   // { name: "The Team", href: "/team" },
   // {
@@ -47,7 +46,7 @@ const navigation = [
   //     },
   //   ],
   // },
-]
+// ]
 
 const Navbar = () => {
   const {

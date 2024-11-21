@@ -31,7 +31,7 @@ const Beach: React.FC = () => {
         <p className="text-lg md:text-xl leading-relaxed font-subtext max-w-3xl mx-auto text-sponsor_medium_orange tracking-wide">
           CruzHacks is a non-profit, student-run annual hackathon at UC Santa Cruz. As one of
           the largest collegiate hackathons in California, we welcome hundreds of college and high school students
-          every year. Backed with support from Major League Hacking (MLH), this year's event will take place from
+          every year. Backed with support from Major League Hacking (MLH), this year&apos;s event will take place from
           <span className="font-bold"> January 18th - 20th</span> at UC Santa Cruz!
         </p>
         <p className="text-lg md:text-xl leading-relaxed font-subtext max-w-3xl mx-auto mt-4 text-sponsor_medium_orange tracking-wide">
