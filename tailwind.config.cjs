@@ -65,10 +65,16 @@ module.exports = {
       backgroundImage: {
         "milestones-gradient":
           "radial-gradient(60.38% 60.38% at 50% 50%, #04106C 39.06%, #080B94 100%)",
+      // NEW THEME GRADIENTS =================================
+
         'sunset-gradient': 
           'linear-gradient(to bottom, #E9603A, #ED683C, #F3903F, #FEE62D, #FFF33B)',
-        // NEW THEME GRADIENTS =================================
-          'yellow-gradient': 'linear-gradient(180deg, #F7F3B0 71%, #F0C776 100%)',
+        'yellow-gradient': 
+          'linear-gradient(180deg, #F7F3B0 71%, #F0C776 100%)',
+        'ocean-gradient':
+          'linear-gradient(180deg, #005EA5, #0466AB, #0F7CBC, #219FD9, #27AAE1, #357EAF, #2F5F95)'
+
+
         //======================================================
       },
       keyframes: {

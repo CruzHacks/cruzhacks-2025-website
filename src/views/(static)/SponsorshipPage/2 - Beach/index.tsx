@@ -16,9 +16,9 @@ import Waves from '../../../../assets/PageDividers/waves.svg';
 
 const Beach: React.FC = () => {
   return (
-    <div className="relative bg-yellow-gradient text-black font-body">
+    <div className="relative bg-yellow-gradient text-black font-body -gap-1">
       {/* Sponsor Us Section */}
-      <section className="text-center mb-8 max-w-5xl mx-auto px-4">
+      <div className="text-center mb-8 max-w-5xl mx-auto px-4">
         <h1 className="text-5xl md:text-7xl font-heading font-bold text-sponsor_dark_orange mb-24">SPONSOR US!</h1>
         <h2 className="text-3xl md:text-5xl font-heading text-sponsor_light_orange mb-4">OUR MISSION</h2>
         <p className="text-lg md:text-xl leading-relaxed font-subtext max-w-3xl mx-auto text-sponsor_medium_orange tracking-wide">
@@ -32,10 +32,10 @@ const Beach: React.FC = () => {
           and inclusion, we hope to inspire the next generation of innovators who will drive positive change and make a
           lasting impact.
         </p>
-      </section>
+      </div>
 
       {/* History of CruzHacks Section */}
-      <section className="py-10 text-center">
+      <div className="py-10 text-center">
         <h2 className="text-4xl md:text-5xl font-heading text-sponsor_light_orange mb-4">HISTORY OF CRUZHACKS</h2>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-10 max-w-4xl mx-auto place-items-center">
           <div className="text-center w-36 md:w-52">
@@ -57,10 +57,10 @@ const Beach: React.FC = () => {
             <img src={Shell2025} alt="2025" className="mx-auto" />
           </div>
         </div>
-      </section>
+      </div>
 
       {/* CruzHacks 2024 Statistics Section */}
-      <section className="py-10 text-center max-w-5xl mx-auto px-4">
+      <div className="py-10 text-center max-w-5xl mx-auto px-4">
         <h2 className="text-4xl md:text-5xl font-heading text-sponsor_light_orange mb-10">CRUZHACKS 2024 STATISTICS</h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4 font-subtext font-medium">
           <div className="text-center w-28 md:w-40 mx-auto">
@@ -84,13 +84,8 @@ const Beach: React.FC = () => {
             <p className="text-deep_orange mt-2 text-base md:text-xl">Female/Non-Binary Hackers</p>
           </div>
         </div>
-      </section>
-
-      {/* Waves SVG with Full Width Below */}
-      <div className="relative w-full overflow-hidden">
-        <div className="w-full h-[50vh] absolute top-0 z-0"></div>
-        <img src={Waves} alt="Waves illustration" className="w-full h-auto relative z-10 -mt-1" />
       </div>
+      <img src={Waves} alt="Waves illustration" className='w-scree' />
     </div>
   );
 };

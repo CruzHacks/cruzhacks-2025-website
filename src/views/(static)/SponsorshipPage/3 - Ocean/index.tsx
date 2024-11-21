@@ -19,8 +19,8 @@ import BrandAwareness from "./OceanComponents/BrandAwareness"
 //  with all the subcomponents imported and rendered in order.
 const OceanSection = ({ id }: { id?: string }) => {
   return (
-    <Vector>
-      <div style={{ display: "flex", flexDirection: "column", alignItems: "center", marginBottom: "0px", marginTop: "0px"}}>
+    // <Vector>
+      <div className=" flex flex-col items-center bg-ocean-gradient">
          <Support/> 
          <Please/>
           <BlueRect>
@@ -35,9 +35,8 @@ const OceanSection = ({ id }: { id?: string }) => {
          <Contributions  />
          <NextSteps />
          <Interested  />
+         <Seaweed className="bottom-0" />
       </div>
-      <Seaweed className="bottom-0" />
-    </Vector>
   )
 }
 
