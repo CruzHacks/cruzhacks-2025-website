@@ -4,7 +4,7 @@ import Seaweeded from "../../../../../assets/ocean/Seaweeded.svg";
 
 const Seaweed = ({ className }: { className?: string }) => {
   return (
-      <img src={Seaweeded} alt="" className="-mt-32"/>
+      <img src={Seaweeded} alt="" className="-mt-2"/>
   );
 };
 

@@ -2,7 +2,7 @@ import React from "react";
 
 const Package = () => {
   return (
-      <h1 style={{fontFamily: "Madimi One", width: "1000px", marginTop: '170px', marginBottom: "15px", fontSize: "60px", color: 'white', marginLeft: '350px'}}>
+      <h1 className="text-4xl mx-10 m:mb-7 m:text-6xl lg:text-7xl font-heading text-[#FFFFFF] text-center mt-12 lg:mt-24">
         SPONSORSHIP PACKAGES
       </h1>
 

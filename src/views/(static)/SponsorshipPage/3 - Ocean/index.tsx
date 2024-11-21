@@ -23,9 +23,7 @@ const OceanSection = ({ id }: { id?: string }) => {
       <div className=" flex flex-col items-center bg-ocean-gradient">
          <Support/> 
          <Please/>
-          <BlueRect>
-            <BrandAwareness/>
-          </BlueRect>
+         <BrandAwareness/>
          <Package />
          <WhiteRect>
           <CheckList/>

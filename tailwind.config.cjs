@@ -19,6 +19,8 @@ module.exports = {
       sponsor_medium_orange: "#F2873F",
       sponsor_light_orange: "#F9B047",
 
+      ocean_medium_dark_blue: "#005EA5",
+
       //==============================================
 
 
