@@ -8,6 +8,7 @@ module.exports = {
     colors: {
 
       //ADD NEW THEME COLORS HERE ====================
+      dark_orange: "#C04321",
       deep_orange: "#E9603A",
       medium_orange: "#F3903F",
       medium_yellow: "#FDCA0F",
@@ -18,6 +19,7 @@ module.exports = {
       sponsor_dark_orange: "#F38D3F",
       sponsor_medium_orange: "#F2873F",
       sponsor_light_orange: "#F9B047",
+      beach_light_yellow: "#F0C776",
 
       ocean_medium_dark_blue: "#005EA5",
 
