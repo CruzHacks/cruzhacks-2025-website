@@ -41,6 +41,7 @@ import QRCheckIn from "./views/portal/admin/QRCheckIn"
 import DashbaordHacker from "./views/portal/hacker/dashboard"
 import QRCodeHacker from "./views/portal/hacker/QRCode"
 import SubmitHacker from "./views/portal/hacker/submit"
+import SponsorshipPage from "./views/(static)/SponsorshipPage"
 
 const App: React.FC = () => {
   const {
@@ -79,10 +80,11 @@ const App: React.FC = () => {
 
       <Routes>
         {/* These routes are accessible to everyone*/}
+        <Route path='sponsorship' element = {<SponsorshipPage />} />
+        
         <Route element={<StaticWrapper />}>
           <Route index element={<Home />} />
           <Route path='team' element={<Team />} />
-
           <Route path='support' element={<Outlet />}>
             <Route index element={<Support />} />
             <Route path='maps' element={<Map />} />

@@ -6,6 +6,26 @@ module.exports = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     colors: {
+
+      //ADD NEW THEME COLORS HERE ====================
+      dark_orange: "#C04321",
+      deep_orange: "#E9603A",
+      medium_orange: "#F3903F",
+      medium_yellow: "#FDCA0F",
+      bright_yellow: "#FFF33B",
+
+      off_white: "#FFEDE0",
+
+      sponsor_dark_orange: "#F38D3F",
+      sponsor_medium_orange: "#F2873F",
+      sponsor_light_orange: "#F9B047",
+      beach_light_yellow: "#F0C776",
+
+      ocean_medium_dark_blue: "#005EA5",
+
+      //==============================================
+
+
       blue: {
         royal: "#190CA6",
         imperial: "#071162",
@@ -34,6 +54,11 @@ module.exports = {
       body: ["Montserrat", ...defaultTheme.fontFamily.sans],
       sans: ["Montserrat", ...defaultTheme.fontFamily.sans],
       subtext: ["Roboto Mono", ...defaultTheme.fontFamily.mono],
+
+      //NEW THEME FONTS =================================
+      heading: ["Madimi One", ...defaultTheme.fontFamily.sans],
+      subtext: ["Monda", ...defaultTheme.fontFamily.sans],
+      //=================================================
     },
     extend: {
       animation: {
@@ -44,6 +69,17 @@ module.exports = {
       backgroundImage: {
         "milestones-gradient":
           "radial-gradient(60.38% 60.38% at 50% 50%, #04106C 39.06%, #080B94 100%)",
+      // NEW THEME GRADIENTS =================================
+
+        'sunset-gradient': 
+          'linear-gradient(to bottom, #E9603A, #ED683C, #F3903F, #FEE62D, #FFF33B)',
+        'yellow-gradient': 
+          'linear-gradient(180deg, #F7F3B0 71%, #F0C776 100%)',
+        'ocean-gradient':
+          'linear-gradient(180deg, #005EA5, #0466AB, #0F7CBC, #219FD9, #27AAE1, #357EAF, #2F5F95)'
+
+
+        //======================================================
       },
       keyframes: {
         "bounce-sideways": {
@@ -81,6 +117,11 @@ module.exports = {
         sm: "0 1px 2px #000",
         DEFAULT: "0 2px 4px #000",
         lg: "0 8px 16px #000",
+      },
+      fontSize: {
+        '7xl': '5rem',
+        '5.5xl': '3.5rem',
+
       },
     },
   },
