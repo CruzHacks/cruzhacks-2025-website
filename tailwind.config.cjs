@@ -23,6 +23,7 @@ module.exports = {
 
       ocean_medium_dark_blue: "#005EA5",
 
+      text_white: "#FFFCE8",
       //==============================================
 
 
@@ -46,7 +47,7 @@ module.exports = {
       gray: "#F0F0F0",
       darkgray: "#5F5F5F",
       success: "#10B981",
-      error: "#de3535",
+      error: "#C04321",
       transparent: "transparent",
     },
     fontFamily: {
