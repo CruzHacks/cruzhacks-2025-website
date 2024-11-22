@@ -33,7 +33,7 @@ const TextInput = ({ Icon, error, inputProps }: TextInputProps) => {
           aria-invalid={error ? "true" : "false"}
           className={classNames(
             error
-              ? "border-error/60 text-error placeholder:text-error/60 focus:border-error/80 "
+              ? "border-dark_orange/90 text-dark_orange placeholder:text-error/60 focus:border-error/80 "
               : "border-white/40 text-white placeholder:text-white/60 focus:border-white/80",
             "mr-5 block w-full truncate border-0 border-b-2 bg-transparent p-0 pr-5 font-subtext ring-0 focus:ring-0"
           )}
