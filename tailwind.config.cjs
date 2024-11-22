@@ -53,7 +53,7 @@ module.exports = {
       title: ["StretchPro"],
       body: ["Montserrat", ...defaultTheme.fontFamily.sans],
       sans: ["Montserrat", ...defaultTheme.fontFamily.sans],
-      subtext: ["Roboto Mono", ...defaultTheme.fontFamily.mono],
+      sub: ["Roboto Mono", ...defaultTheme.fontFamily.mono],
 
       //NEW THEME FONTS =================================
       heading: ["Madimi One", ...defaultTheme.fontFamily.sans],

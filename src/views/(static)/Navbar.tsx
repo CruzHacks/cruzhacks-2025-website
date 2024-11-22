@@ -145,6 +145,13 @@ const Navbar = () => {
             ))}
           </div> */}
 
+          <Link
+            to='/sponsorship'
+            className='md:text-blue-white z-10 ml-80 flex items-center justify-center gap-2 rounded-full px-3 py-1 font-title text-md text-white shadow-lg md:w-48 md:text-white'
+          >
+            <span className='hidden md:block'>SPONSOR US</span>
+          </Link>
+
           {/* Desktop MLH Trust Badge */}
           <a
             id='mlh-trust-badge'
