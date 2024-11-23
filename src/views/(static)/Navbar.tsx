@@ -153,7 +153,7 @@ const Navbar = () => {
               isAuthenticated ? "right-24" : "right-[12.3rem]",
               "absolute top-0 hidden w-20 md:block"
             )}
-            href='https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2024-season&utm_content=red'
+            href='https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2025-season&utm_content=red'
             target='_blank'
             rel='noreferrer'
           >
@@ -188,13 +188,13 @@ const Navbar = () => {
       {/* Mobile MLH Trust Badge */}
       <a
         id='mlh-trust-badge'
-        className='absolute right-5 top-8 z-10 block w-20 md:hidden'
+        className='absolute right-5 z-10 block w-20 md:hidden'
         href='https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2024-season&utm_content=blue'
         target='_blank'
         rel='noreferrer'
       >
         <img
-          src='https://s3.amazonaws.com/logged-assets/trust-badge/2024/mlh-trust-badge-2024-blue.svg'
+          src='https://s3.amazonaws.com/logged-assets/trust-badge/2025/mlh-trust-badge-2025-red.svg'
           alt='Major League Hacking 2024 Hackathon Season'
           className='w-full'
         />

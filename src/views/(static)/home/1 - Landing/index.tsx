@@ -7,7 +7,6 @@ import Star from "../../../../components/Star"
 import { Transition } from "@headlessui/react"
 import CruzHacksLogo from "../../../../assets/PageDividers/CruzHacksLogo.svg"
 import Sandcastle from "../../../../assets/PageDividers/sandcastle-divider.svg"
-import cloud1 from "../../../../assets/PageDividers/cloud1.svg"
 import cloud2 from "../../../../assets/PageDividers/cloud2.svg"
 import cloud3 from "../../../../assets/PageDividers/cloud3.svg"
 import { classNames } from "../../../../utils/string"
@@ -23,7 +22,7 @@ const Landing = ({ id }: { id?: string }) => {
         <img src= {cloud2}></img>
       </div>
 
-      <div className = "absolute left-2 bottom-80 w-1/3">
+      <div className = "absolute left-2 bottom-32 md:bottom-80 w-1/3">
         <img src= {cloud3}></img>
       </div>
 
@@ -75,13 +74,13 @@ const Landing = ({ id }: { id?: string }) => {
         </div>
 
         <div className='flex justify-center lg:-mt-20'>
-          <img src= {CruzHacksLogo} width="350"></img>
+          <img src= {CruzHacksLogo} width="350" className="hidden md:flex"></img>
         </div>
         
       </div>
       </Transition>
-      <div className="-mt-36">
-        <img src= {Sandcastle}></img>
+      <div className="-mt-36 w-screen">
+        <img src= {Sandcastle} className="w-screen"></img>
       </div>
     </div>
   )

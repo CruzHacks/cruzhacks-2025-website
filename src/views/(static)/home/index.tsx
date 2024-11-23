@@ -6,11 +6,8 @@ import Speakers from "./5 - Speakers"
 import QA from "./6 - Q&A"
 import Sponsors from "./7 - Sponsors"
 import ApplicationBlurb from "./8 - Applications"
-import cloud1 from "../../../assets/PageDividers/cloud.svg"
 import BeachDivider from "../../../assets/PageDividers/beachdivider1.svg"
 
-import TreesBackgroundSmall from "../../../assets/illustrations/Trees Background - Small.png"
-import PrizeTracks from "./3 - Prize Tracks"
 import Star from "../../../components/Star"
 
 const Home = () => {
@@ -21,7 +18,7 @@ const Home = () => {
       
       <ApplicationBlurb id='about' />
       {/* <PrizeTracks id='prize-tracks' /> */}
-      <img src={BeachDivider} alt='' />
+      <img src={BeachDivider} alt='' className="w-screen"/>
 
         
       <Milestones id='milestones' />
