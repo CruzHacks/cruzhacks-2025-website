@@ -49,3 +49,7 @@
   border: none !important;
   color: rgba(245, 66, 66, 0.3) !important;
 }
+
+img.svgfix {
+  shape-rendering: crispEdges;
+}

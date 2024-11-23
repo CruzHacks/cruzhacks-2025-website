@@ -23,6 +23,8 @@ module.exports = {
 
       app_bar_orange: "#CF4F2C",
 
+      ocean_medium_light_blue: "#4087C6",
+
       //==============================================
 
 
@@ -73,6 +75,8 @@ module.exports = {
           'linear-gradient(to bottom, #E9603A, #ED683C, #F3903F, #FEE62D, #FFF33B)',
         // NEW THEME GRADIENTS =================================
           'yellow-gradient': 'linear-gradient(180deg, #F7F3B0 71%, #F0C776 100%)',
+          'ocean-gradient':
+          'linear-gradient(180deg, #005EA5, #0466AB, #0F7CBC, #219FD9, #27AAE1, #357EAF, #2F5F95)',
         //======================================================
       },
       keyframes: {

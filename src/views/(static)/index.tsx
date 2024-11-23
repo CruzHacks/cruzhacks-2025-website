@@ -34,8 +34,7 @@ const StaticWrapper = () => {
         {/* <div className='h-10' /> */}
         <Outlet />
       </div>
-
-      {isHomeOrTeam && <img src={Lake} alt='' className='m-auto w-full' />}
+      {/* {isHomeOrTeam && <img src={Lake} alt='' className='m-auto w-full' />} */}
       <Footer />
     </div>
   )
