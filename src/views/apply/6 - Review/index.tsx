@@ -66,14 +66,14 @@ const ReviewSection = () => {
                   Decisions will be sent in late December or January to the
                   email address you provided. Make sure to read the email, as it
                   will contain instructions on confirming your spot at CruzHacks
-                  2024.
+                  2025!
                 </p>
               </div>
             </div>
             {/* navButton */}
             <div className='flex w-full flex-col items-center justify-center md:gap-10'>
               <button
-                className='flex h-10 w-32 items-center justify-between gap-1 rounded-2xl border-2 border-none bg-gradient-to-r from-[#00D1FF] to-[#0029FF] px-4 font-subtext text-white'
+                className='flex h-10 w-32 items-center justify-between gap-1 rounded-2xl border-2 border-none bg-light_pink px-4 font-subtext text-white'
                 type='button'
                 onClick={submitApplication}
               >

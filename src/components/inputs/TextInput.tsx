@@ -17,7 +17,7 @@ const TextInput = ({ Icon, error, inputProps }: TextInputProps) => {
         className={classNames(
           error
             ? "bg-error/10 text-error ring-error/10 focus-within:ring-error/50"
-            : "mb-7 bg-text_white/10 text-text_white ring-text_white/20 focus-within:ring-text_white/70",
+            : "mb-7 bg-text_white/30 text-text_white ring-text_white/20 focus-within:ring-text_white/70",
           "relative flex gap-3 rounded-md p-4 shadow-sm ring ring-inset"
         )}
       >

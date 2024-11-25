@@ -6,15 +6,15 @@ export const demographicSteps: FormTemplate[] = [
   // Step 1
   [
     [
-      { text: "Demograhpic Information", type: "title" },
+      { text: "DEMOGRAPHIC INFORMATION", type: "title" },
       <h2
         key={"demographic_note"}
-        className='self-center text-center text-xs md:w-2/3 md:text-sm'
+        className='self-center text-center font-subtext text-xs md:w-2/3 md:text-sm'
       >
         The information collected here will be used for statistical purposes
         only. In accordance with the{" "}
-        <a href='https://mlh.io/privacy' className='text-blue-button'>
-          MLH Privacy Polich
+        <a href='https://mlh.io/privacy' className='text-ocean_medium_dark_blue'>
+          MLH Privacy Policies
         </a>
       </h2>,
     ],
@@ -264,7 +264,7 @@ export const demographicSteps: FormTemplate[] = [
           "Oakes",
           "Rachel Carson",
           "College 9",
-          "College 10",
+          "John R Lewis",
           "Graduate Student",
           "N/A (I do not attend UCSC)",
         ],
