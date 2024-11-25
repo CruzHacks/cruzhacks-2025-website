@@ -19,11 +19,11 @@ const Landing = ({ id }: { id?: string }) => {
     <div className='relative flex w-full flex-col items-center bg-sunset-gradient'> 
 
       <div className="absolute right-7 top-12 w-3/5">
-        <img src= {cloud2}></img>
+        <img src= {cloud2} alt="cloud"></img>
       </div>
 
       <div className = "absolute left-2 bottom-32 md:bottom-80 w-1/3">
-        <img src= {cloud3}></img>
+        <img src= {cloud3} alt="cloud"></img>
       </div>
 
       <Star
@@ -74,13 +74,13 @@ const Landing = ({ id }: { id?: string }) => {
         </div>
 
         <div className='flex justify-center lg:-mt-20'>
-          <img src= {CruzHacksLogo} width="350" className="hidden md:flex"></img>
+          <img src= {CruzHacksLogo} width="350" className="hidden md:flex" alt="logo"></img>
         </div>
         
       </div>
       </Transition>
       <div className="-mt-36 w-screen">
-        <img src= {Sandcastle} className="w-screen"></img>
+        <img src= {Sandcastle} alt= "sandcastle" className="w-screen"></img>
       </div>
     </div>
   )

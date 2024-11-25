@@ -18,7 +18,7 @@ const StaticWrapper = () => {
       {/* Put scroll at top on navigation */}
       <ScrollToTop />
       <div className="absolute left-0 top-0 w-60 z-[350]">
-        <img src= {cloud1} className="hidden md:flex"></img>
+        <img src= {cloud1} className="hidden md:flex" alt="cloud"></img>
       </div>
       <div
         className='relative z-0 m-auto flex min-h-screen flex-col items-center'
