@@ -66,8 +66,8 @@ const Step01 = ({
       <div className='flex h-full grow flex-col items-stretch justify-center gap-10 md:items-center md:justify-start'>
         {/* Block */}
         <div className='flex w-full flex-col items-stretch justify-center sm:items-center'>
-          <h1 className='pb-2 text-center font-title text-xl md:text-4xl'>
-            Welcome!
+          <h1 className='pb-2 text-center font-heading text-xl md:text-6xl'>
+            WELCOME!
           </h1>
           <p className='max-w-xl pb-5 text-center font-subtext'>
             We&apos;re so excited to have you! Let&apos;s get started with

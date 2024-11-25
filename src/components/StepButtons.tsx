@@ -31,7 +31,7 @@ export const StepButtons = ({
       </button>
       {!isLastStep ? (
         <button
-          className='flex h-10 w-24 items-center justify-between gap-1 rounded-2xl border-2 border-none bg-white px-4 font-subtext text-blue-royal'
+          className='flex h-10 w-24 items-center justify-between gap-1 rounded-2xl border-2 border-none bg-white px-4 font-subtext text-ocean_medium_dark_blue'
           type='submit'
         >
           <p>Next</p>
@@ -39,7 +39,7 @@ export const StepButtons = ({
         </button>
       ) : (
         <button
-          className='flex h-10 w-44 items-center justify-between gap-1 rounded-2xl border-2 border-none bg-white px-4 font-subtext text-blue-royal'
+          className='flex h-10 w-44 items-center justify-between gap-1 rounded-2xl border-2 border-none bg-white px-4 font-subtext text-ocean_medium_dark_blue'
           type='submit'
         >
           <p>Next Section</p>

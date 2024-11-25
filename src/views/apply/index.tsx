@@ -17,6 +17,7 @@ import { socialsSteps } from "./sectionForms/socials"
 import { waiversSteps } from "./sectionForms/waivers"
 import Modal from "../../components/Modal"
 import { ExclamationCircleIcon } from "@heroicons/react/24/outline"
+import Corals from "../../assets/ocean/Seaweeded.svg"
 
 const WillLoseProgress = () => {
   const [open, setOpen] = useState(false)
@@ -60,10 +61,12 @@ const Apply = () => {
           <ProgressBarWrapper />
         </div>
 
-        <div className='flex h-full w-full max-w-4xl grow flex-col rounded-t-3xl bg-[#4659FF]/10 px-10 py-5 md:p-10 lg:mb-16 lg:rounded-3xl'>
+        <div className='z-5 flex h-full w-full max-w-4xl grow flex-col rounded-t-3xl bg-teal_blue/40 px-10 py-5 md:p-10 lg:mb-16 lg:rounded-3xl'>
           <Outlet />
         </div>
       </div>
+      <img src={Corals} alt="corals" className=" -mt-96 z-2" />
+
     </AppStateProvider>
   )
 }

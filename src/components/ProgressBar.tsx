@@ -6,7 +6,7 @@ const LineSegment = ({ active }: { active: boolean }) => {
   return (
     <div
       className={classNames(
-        active ? "bg-[#06F]" : "bg-[#676D84]",
+        active ? "bg-medium_yellow" : "bg-dark_orange",
         "flex h-0.5 w-full "
       )}
     />
@@ -26,12 +26,12 @@ const BubbleSegment = ({
         valid !== undefined
           ? valid
             ? current
-              ? "border-white bg-[#06F]"
-              : "border-[#06F] bg-[#06F]"
+              ? "border-white bg-deep_orange"
+              : "border-deep_orange bg-medium_yellow"
             : "border-error bg-error"
           : current
-          ? "border-[#06F] bg-[#31375E]"
-          : "border-[#676D84] bg-[#31375E]",
+          ? "border-deep_orange bg-medium_yellow"
+          : "border-deep_orange bg-deep_orange",
         "h-5 w-5 rounded-full  border-2 text-black"
       )}
     >

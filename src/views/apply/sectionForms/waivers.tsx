@@ -22,7 +22,7 @@ export const waiversSteps: FormTemplate[] = [
             href='https://static.mlh.io/docs/mlh-code-of-conduct.pdf'
             target='_blank'
             rel='noreferrer'
-            className='text-blue-button'
+            className='text-ocean_medium_dark_blue'
           >
             https://static.mlh.io/docs/mlh-code-of-conduct.pdf
           </a>
@@ -53,7 +53,7 @@ export const waiversSteps: FormTemplate[] = [
             href='https://mlh.io/privacy'
             target='_blank'
             rel='noreferrer'
-            className='text-blue-button'
+            className='text-ocean_medium_dark_blue'
           >
             https://mlh.io/privacy
           </a>
@@ -63,7 +63,7 @@ export const waiversSteps: FormTemplate[] = [
             href='https://github.com/MLH/mlh-policies/blob/main/contest-terms.md'
             target='_blank'
             rel='noreferrer'
-            className='text-blue-button'
+            className='text-ocean_medium_dark_blue'
           >
             https://github.com/MLH/mlh-policies/blob/main/contest-terms.md
           </a>
@@ -72,7 +72,7 @@ export const waiversSteps: FormTemplate[] = [
             href='https://mlh.io/privacy'
             target='_blank'
             rel='noreferrer'
-            className='text-blue-button'
+            className='text-ocean_medium_dark_blue'
           >
             https://mlh.io/privacy
           </a>
@@ -87,13 +87,13 @@ export const waiversSteps: FormTemplate[] = [
   [
     [
       {
-        text: "CruzHacks 2024 Participation & Release Agreement",
+        text: "CruzHacks 2025 Participation & Release Agreement",
         type: "title",
       },
     ],
     [
       {
-        text: "To participate in CruzHacks 2024, you must agree to our Participation and Release Agreement",
+        text: "To participate in CruzHacks 2025, you must agree to our Participation and Release Agreement",
       },
       {
         link: "https://docs.google.com/document/d/1298VyEqrSIvbzM3U8nvLQsLtY78Vi2mbndr3d5w0UKk/edit?usp=sharing",
@@ -105,7 +105,7 @@ export const waiversSteps: FormTemplate[] = [
         inputType: "radio",
         field: "cruzhacks_conduct",
         options: [
-          "I have read and agree to the CruzHacks 2024 Participation and Release Agreement",
+          "I have read and agree to the CruzHacks 2025 Participation and Release Agreement",
         ],
       },
     ],
@@ -137,39 +137,39 @@ export const waiversSteps: FormTemplate[] = [
     [{ text: "Communication from CruzHacks", type: "title" }],
     [
       {
-        text: "I authorize the Organizers of CruzHacks 2024 to send me updates and information regarding CruzHacks 2024 and future CruzHacks events.",
+        text: "I authorize the Organizers of CruzHacks 2025 to send me updates and information regarding CruzHacks 2025 and future CruzHacks events.",
       },
       { inputType: "radio", field: "comm_from_cruzhacks", options: ["Yes"] },
     ],
   ],
 
-  // Step 6
-  [
-    [{ text: "CruzHacks 2024 COVID Safety Policy", type: "title" }],
-    [
-      {
-        text: "To participate in CruzHacks 2024, you must agree to our COVID Safety Policy",
-      },
-      {
-        link: "https://docs.google.com/document/d/1aq7xN3c8t8AWS-yDBcvqu4EMYmw0025HAoCFuOVld7c/edit?usp=sharing",
-        name: "COVID Safety Policy",
-      },
-    ],
-    [
-      {
-        inputType: "radio",
-        field: "covid_safety",
-        options: ["I have read and agree to the CruzHacks 2024 Safety Policy"],
-      },
-    ],
-  ],
+  //Step 6
+  // [
+  //   [{ text: "CruzHacks 2025 COVID Safety Policy", type: "title" }],
+  //   [
+  //     {
+  //       text: "To participate in CruzHacks 2025, you must agree to our COVID Safety Policy",
+  //     },
+  //     {
+  //       link: "https://docs.google.com/document/d/1aq7xN3c8t8AWS-yDBcvqu4EMYmw0025HAoCFuOVld7c/edit?usp=sharing",
+  //       name: "COVID Safety Policy",
+  //     },
+  //   ],
+  //   [
+  //     {
+  //       inputType: "radio",
+  //       field: "covid_safety",
+  //       options: ["I have read and agree to the CruzHacks 2025 Safety Policy"],
+  //     },
+  //   ],
+  // ],
 
   // Step 7
   [
     [{ text: "Parent Release and Consent Form", type: "title" }],
     [
       {
-        text: "If you are a minor (under 18), please fill out the CruzHacks 2024 Parental Release and Consent Form.",
+        text: "If you are a minor (under 18), please fill out the CruzHacks 2025 Parental Release and Consent Form.",
       },
       { link: "https://forms.gle/uttfNsfpx2BNpEVs8", name: "Form" },
     ],

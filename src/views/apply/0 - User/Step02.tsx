@@ -58,10 +58,10 @@ const Step02 = ({
       <div className='flex h-full grow flex-col items-stretch justify-center gap-10 md:items-center md:justify-start'>
         {/* Block */}
         <div className='flex w-full flex-col items-stretch justify-center sm:items-center'>
-          <h1 className='mb-2 text-center font-title text-4xl'>Password</h1>
-          <p className='max-w-xl pb-5 text-center font-subtext'>
+          <h1 className='mb-2 text-center font-heading text-6xl'>PASSWORD</h1>
+          <p className='max-w-xl pb-2 text-center font-subtext'>
             Please write down these credentials! You will need them to login
-            later.
+            to your hacker portal.
           </p>
         </div>
 

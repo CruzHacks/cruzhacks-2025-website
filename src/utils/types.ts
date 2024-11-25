@@ -160,9 +160,9 @@ export const AppWaiversSchema = z.object({
   comm_from_cruzhacks: z.string({
     required_error,
   }),
-  covid_safety: z.string({
-    required_error,
-  }),
+  // covid_safety: z.string({
+  //   required_error,
+  // }),
   parental_consent: z.string({
     required_error:
       "Please confirm that you are 18 years or older or get an adult to sign the form",
