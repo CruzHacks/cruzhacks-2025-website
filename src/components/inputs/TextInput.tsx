@@ -17,13 +17,13 @@ const TextInput = ({ Icon, error, inputProps }: TextInputProps) => {
         className={classNames(
           error
             ? "bg-error/10 text-error ring-error/10 focus-within:ring-error/50"
-            : "mb-7 bg-white/10 text-white ring-white/5 focus-within:ring-white/40",
+            : "mb-7 bg-text_white/10 text-text_white ring-text_white/20 focus-within:ring-text_white/70",
           "relative flex gap-3 rounded-md p-4 shadow-sm ring ring-inset"
         )}
       >
         {Icon ? (
           <Icon
-            className={classNames(error ? "text-error" : "text-white", "w-8")}
+            className={classNames(error ? "text-error" : "text-text_white", "w-8")}
           />
         ) : (
           <div className='w-8'></div>
@@ -33,8 +33,8 @@ const TextInput = ({ Icon, error, inputProps }: TextInputProps) => {
           aria-invalid={error ? "true" : "false"}
           className={classNames(
             error
-              ? "border-error/60 text-error placeholder:text-error/60 focus:border-error/80 "
-              : "border-white/40 text-white placeholder:text-white/60 focus:border-white/80",
+              ? "border-dark_orange/90 text-dark_orange placeholder:text-error/60 focus:border-error/80 "
+              : "border-text_white/60 text-text_white placeholder:text-text_white/90 focus:border-text_white/80",
             "mr-5 block w-full truncate border-0 border-b-2 bg-transparent p-0 pr-5 font-subtext ring-0 focus:ring-0"
           )}
         />

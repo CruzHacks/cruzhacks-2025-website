@@ -1,12 +1,12 @@
+//Support.tsx
 import React from "react";
-import { classNames } from "../../../../../utils/string";
-import SupportSVG from "../../../../../assets/ocean/Support.svg";
 
-const Support = ({ className }: { className?: string }) => {
+const Support = () => {
   return (
-  
-      <img src={SupportSVG} alt="" style={{ marginTop: "100px", height: "50px", width: "600px",  marginBottom: "0px" }} />
-   
+      <h1 
+      className=" text-4xl mx-10 m:mb-7 m:text-6xl lg:text-7xl font-heading text-[#FFFFFF] text-center lg:my-8" >
+        WE WANT YOUR SUPPORT!
+      </h1>
   );
 };
 

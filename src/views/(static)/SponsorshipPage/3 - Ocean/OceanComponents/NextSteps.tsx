@@ -1,10 +1,10 @@
 import React from "react";
-import { classNames } from "../../../../../utils/string";
-import NextStepsSVG from "../../../../../assets/ocean/NEXTSTEPS.svg";
 
 const NextSteps = ({ className }: { className?: string }) => {
   return (
-      <img src={NextStepsSVG} alt="" style={{ marginTop: "0px", height: "250px", width: "350px", marginBottom: "0px" }}/>
+      <div className="font-heading text-[#FFFFFF] text-4xl mt-10 mb-5 lg:text-5xl lg:mt-16">
+        NEXT STEPS:
+      </div>
   );
 };
 

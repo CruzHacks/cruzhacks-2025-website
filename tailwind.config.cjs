@@ -8,6 +8,7 @@ module.exports = {
     colors: {
 
       //ADD NEW THEME COLORS HERE ====================
+      dark_orange: "#C04321",
       deep_orange: "#E9603A",
       medium_orange: "#F3903F",
       medium_yellow: "#FDCA0F",
@@ -18,6 +19,7 @@ module.exports = {
       sponsor_dark_orange: "#F38D3F",
       sponsor_medium_orange: "#F2873F",
       sponsor_light_orange: "#F9B047",
+      beach_light_yellow: "#F0C776",
 
       beach_yellow: "#F7F3B0",
       beach_darksand: "#F0C776",
@@ -28,7 +30,8 @@ module.exports = {
 
       dark_pink: "#A92545",
       light_pink: "#DB6783",
-
+      ocean_medium_dark_blue: "#005EA5",
+      text_white: "#FFFCE8",
       //==============================================
 
 
@@ -52,14 +55,14 @@ module.exports = {
       gray: "#F0F0F0",
       darkgray: "#5F5F5F",
       success: "#10B981",
-      error: "#de3535",
+      error: "#C04321",
       transparent: "transparent",
     },
     fontFamily: {
       title: ["StretchPro"],
       body: ["Montserrat", ...defaultTheme.fontFamily.sans],
       sans: ["Montserrat", ...defaultTheme.fontFamily.sans],
-      subtext: ["Roboto Mono", ...defaultTheme.fontFamily.mono],
+      sub: ["Roboto Mono", ...defaultTheme.fontFamily.mono],
 
       //NEW THEME FONTS =================================
       heading: ["Madimi One", ...defaultTheme.fontFamily.sans],

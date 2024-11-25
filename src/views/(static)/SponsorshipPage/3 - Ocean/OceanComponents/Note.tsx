@@ -1,11 +1,9 @@
 import React from "react";
-import { classNames } from "../../../../../utils/string";
-import Note from "../../../../../assets/ocean/NOTE.svg";
 
-const Notes = ({ className }: { className?: string }) => {
+const Notes = () => {
   return (
-    <div className={classNames(className)}>
-      <img src={Note} alt="" style={{ marginTop: "0px", height: "150px", width: "750px" }} />
+    <div className="font-subtext text-center mt-5 mb-10 text-[#FFFFFF] text-m m:text-lg lg:text-2xl">
+      Note: We are open to working out custom packages on a case-by-case basis!
     </div>
   );
 };

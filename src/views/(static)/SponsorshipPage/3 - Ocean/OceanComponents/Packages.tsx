@@ -1,11 +1,10 @@
 import React from "react";
-import { classNames } from "../../../../../utils/string";
-import packages from "../../../../../assets/ocean/SPONSORSHIPPACKAGES.png";
 
-const Package = ({ className }: { className?: string }) => {
+const Package = () => {
   return (
-   
-      <img src={packages} alt="" style={{ marginTop: '170px', marginBottom: "20px", width: '50%' }} />
+      <h1 className="text-4xl mx-10 m:mb-7 m:text-6xl lg:text-7xl font-heading text-[#FFFFFF] text-center mt-12 lg:mt-24">
+        SPONSORSHIP PACKAGES
+      </h1>
 
   );
 };

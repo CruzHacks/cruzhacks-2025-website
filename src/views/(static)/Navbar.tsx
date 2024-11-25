@@ -2,21 +2,19 @@ import React, { Fragment } from "react"
 import { Link } from "react-router-dom"
 import useAuth from "../../hooks/useAuth"
 import CruzHacksLogo from "../../assets/logos/CruzHacks - Blue.svg"
-import { ArrowRightOnRectangleIcon } from "@heroicons/react/24/solid"
-import AvatarButton from "../../components/AvatarButton"
+// import AvatarButton fro "../../components/AvatarButton"
 import { classNames } from "../../utils/string"
-import {
-  ArchiveBoxIcon,
-  ChevronDownIcon,
-  InformationCircleIcon,
-  MapIcon,
-  QuestionMarkCircleIcon,
-} from "@heroicons/react/24/outline"
-import { Popover, Transition } from "@headlessui/react"
-import Button from "../../components/Button"
+// import {
+//   ArchiveBoxIcon,
+//   ChevronDownIcon,
+//   InformationCircleIcon,
+//   MapIcon,
+//   QuestionMarkCircleIcon,
+// } from "@heroicons/react/24/outline"
+// import { Popover, Transition } from "@headlessui/react"
 
-const navigation = [
-  { name: "About", href: "/#about" },
+// const navigation = [
+//   { name: "About", href: "/#about" },
   // { name: "Prize Tracks", href: "/#prize-tracks" },
   // { name: "The Team", href: "/team" },
   // {
@@ -48,7 +46,7 @@ const navigation = [
   //     },
   //   ],
   // },
-]
+// ]
 
 const Navbar = () => {
   const {
@@ -155,6 +153,13 @@ const Navbar = () => {
               </div>
             ))}
           </div> */}
+
+          <Link
+            to='/sponsorship'
+            className='md:text-blue-white z-10 ml-80 flex items-center justify-center gap-2 rounded-full px-3 py-1 font-title text-md text-white shadow-lg md:w-48 md:text-white'
+          >
+            <span className='hidden md:block'>SPONSOR US</span>
+          </Link>
 
           {/* Desktop MLH Trust Badge */}
           <a

@@ -7,7 +7,6 @@ import Sandcastle from "../../../../assets/PageDividers/sandcastle-divider.svg"
 import cloud1 from "../../../../assets/PageDividers/cloud.svg"
 import cloud2 from "../../../../assets/PageDividers/cloud2.svg"
 import cloud3 from "../../../../assets/PageDividers/cloud3.svg"
-import { classNames } from "../../../../utils/string"
 
 const Sunset = ({ id }: { id?: string }) => {
 
@@ -16,15 +15,15 @@ const Sunset = ({ id }: { id?: string }) => {
     <div className='relative flex w-full flex-col items-center bg-sunset-gradient'> 
 
       <div className="absolute left-0 top-0 w-60">
-        <img src= {cloud1}></img>
+        <img src= {cloud1} alt="cloud1"></img>
       </div>
 
       <div className="absolute right-7 top-16 w-3/5">
-        <img src= {cloud2}></img>
+        <img src= {cloud2} alt="cloud2"></img>
       </div>
 
       <div className = "absolute left-2 bottom-80 w-1/3">
-        <img src= {cloud3}></img>
+        <img src= {cloud3} alt="cloud3"></img>
       </div>
 
       <Star
@@ -75,13 +74,13 @@ const Sunset = ({ id }: { id?: string }) => {
         </div>
 
         <div className='flex justify-center lg:-mt-20'>
-          <img src= {CruzHacksLogo} width="350"></img>
+          <img src= {CruzHacksLogo} alt="Logo" width="350"></img>
         </div>
         
       </div>
       </Transition>
       <div className="-mt-36">
-        <img src= {Sandcastle}></img>
+        <img src= {Sandcastle} alt="Sandcastle"></img>
       </div>
     </div>
   )

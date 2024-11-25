@@ -1,10 +1,11 @@
 import React from "react";
-import { classNames } from "../../../../../utils/string";
-import InterestSVG from "../../../../../assets/ocean/interested.svg";
 
-const Interested = ({ className }: { className?: string }) => {
+const Interested = () => {
   return (
-   <img src={InterestSVG} alt="" style={{ marginTop: "0px", height: "160px", width: "700px" }}/>
+   <p className="text-1xl text-[#FFFFFF] font-subtext m:text-3xl lg:text-3xl text-center leading-relaxed mt-3 max-w-6xl mx-5">
+    If you are interested in sponsoring our event, please email us at <b>sponsor@cruzhacks.com</b> and
+    we will be ready to answer any questions and move forward with the onboarding process.
+   </p>
 
   );
 };

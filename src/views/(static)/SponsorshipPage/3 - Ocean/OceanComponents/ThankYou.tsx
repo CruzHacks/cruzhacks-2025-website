@@ -1,11 +1,10 @@
 import React from "react";
-import { classNames } from "../../../../../utils/string";
-import ThanksSVG from "../../../../../assets/ocean/THANKYOU.svg";
 
-const ThankYou = ({ className }: { className?: string }) => {
+
+const ThankYou = () => {
   return (
-    <div className={classNames(className)}>
-      <img src={ThanksSVG} alt="" style={{ height: "200px", width: "600px",  marginTop: "100px" }} />
+    <div className="text-5xl font-heading m:text-7xl lg:text-8xl text-[#FFFFFF] mt-10 mx-5">
+      <strong>THANK YOU!</strong>
     </div>
   );
 };

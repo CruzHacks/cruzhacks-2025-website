@@ -1,12 +1,11 @@
 import React from "react";
-import { classNames } from "../../../../../utils/string";
-import ThanksSVG from "../../../../../assets/ocean/Contributions.svg";
 
-const Contributions = ({ className }: { className?: string }) => {
+const Contributions = () => {
   return (
-    <div className={classNames(className)}>
-      <img src={ThanksSVG} alt="" style={{ marginBottom: "0px", height: "150px", width: "550px" }} />
-    </div>
+    <p
+        className="text-[#FFFFFF] font-subtext m:text-3xl lg:text-3xl text-center leading-relaxed mt-3 min-w-2.5 mx-5">
+      Your Contribution will make a lasting impact for CruzHacks 2025!
+    </p>
   );
 };
 
