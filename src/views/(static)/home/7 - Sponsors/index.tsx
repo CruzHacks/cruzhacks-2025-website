@@ -31,7 +31,7 @@ const Sponsors = ({ id }: { id?: string }) => {
             <b>Click Here!</b>
           </Link>
         </h2>
-        <div className='flex max-w-4xl flex-col items-center justify-between gap-4 rounded-xl bg-ocean_medium_light_blue p-10 ring-2 ring-inset ring-white/10'>
+        <div className='flex max-w-4xl flex-col items-center justify-between gap-4 rounded-xl bg-[#A488DA] p-10 ring-2 ring-inset ring-dark_pink/80'>
           {sponsors.map((tier, i) => {
             return (
               <div
