@@ -66,9 +66,10 @@ const Navbar = () => {
             />
           </Link>
 
+          {/* Announce applications open */}
           <div className="flex items-center gap-2 lg:gap-5">
             <h2 className="font-subtext text-off_white lg:text-2xl" >Applications are OPEN NOW!</h2>
-            <Link to='j7hxc5p6ri/apply'>
+            <Link to='/apply'>
               <div className="bg-medium_yellow/65 px-4 lg:p-2 lg:px-5 rounded-full hover:bg-medium_yellow/85">
                 <b>APPLY HERE</b>
               </div>
