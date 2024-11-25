@@ -94,7 +94,7 @@ const ApplicationRenderStep = ({
                   return (
                     <h1
                       key={"" + i + j}
-                      className='pb-2 text-center font-title text-xl md:text-2xl lg:text-4xl'
+                      className='pb-5 text-center font-title text-xl md:text-3xl lg:text-5xl'
                     >
                       {text}
                     </h1>

@@ -30,6 +30,10 @@ module.exports = {
 
       dark_pink: "#A92545",
       light_pink: "#DB6783",
+
+      teal_blue: "#56B9B7",
+      teal_green: "#3FC28B",
+      
       ocean_medium_dark_blue: "#005EA5",
       text_white: "#FFFCE8",
       //==============================================
@@ -59,7 +63,7 @@ module.exports = {
       transparent: "transparent",
     },
     fontFamily: {
-      title: ["StretchPro"],
+      title: ["Madimi One", ...defaultTheme.fontFamily.sans],
       body: ["Montserrat", ...defaultTheme.fontFamily.sans],
       sans: ["Montserrat", ...defaultTheme.fontFamily.sans],
       sub: ["Roboto Mono", ...defaultTheme.fontFamily.mono],

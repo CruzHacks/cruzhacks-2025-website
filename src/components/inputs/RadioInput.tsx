@@ -58,9 +58,9 @@ const RadioInput = ({
                       classNames(
                         arrange === "vertical" && "w-full",
                         arrange === "vertical-inline" && "w-fit",
-                        active ? "ring-white/5 ring-offset-2" : "",
+                        active ? "ring-dark_pink/5 ring-offset-2" : "",
                         checked
-                          ? "bg-gradient-to-r from-[#00D1FF] to-[#0029FF] text-white"
+                          ? "bg-light_pink text-white"
                           : "bg-white/10 hover:bg-white/20",
                         "flex items-center justify-center rounded-full px-5 py-3 text-center font-subtext text-sm font-semibold ring ring-inset ring-white/5"
                       )
@@ -76,7 +76,7 @@ const RadioInput = ({
                 type='button'
                 className={classNames(
                   otherSelected
-                    ? "bg-gradient-to-r from-[#00D1FF] to-[#0029FF] text-white"
+                    ? "bg-light_pink text-white"
                     : "bg-white/10 hover:bg-white/20",
                   "text-md mt-5 flex w-full items-center justify-center gap-3 rounded-full px-3 py-3 font-subtext font-semibold ring ring-inset ring-white/5 focus-within:ring-white/5 focus-within:ring-offset-2"
                 )}
@@ -87,7 +87,7 @@ const RadioInput = ({
               >
                 <p className='ml-10'>Other: </p>
                 <input
-                  className='mr-10 block w-full border-0 border-b-2 border-white/40 bg-transparent p-0 pr-10 text-white ring-0 placeholder:text-white/60 focus:border-white/80 focus:ring-0'
+                  className='mr-10 block w-full border-0 border-b-2 border-white/40 bg-transparent p-0 pr-10 text-white ring-0 placeholder:text-white/60 focus:border-white/40 focus:ring-0'
                   value={otherValue}
                   placeholder='Type here'
                   onChange={event => {
