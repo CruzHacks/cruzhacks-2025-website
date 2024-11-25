@@ -20,10 +20,14 @@ module.exports = {
       sponsor_light_orange: "#F9B047",
 
       beach_yellow: "#F7F3B0",
+      beach_darksand: "#F0C776",
 
       app_bar_orange: "#CF4F2C",
 
       ocean_medium_light_blue: "#4087C6",
+
+      dark_pink: "#A92545",
+      light_pink: "#DB6783",
 
       //==============================================
 
@@ -43,7 +47,7 @@ module.exports = {
         DEFAULT: "#8924F1",
         han: "#5B1FED",
       },
-      white: "#D3DAF4",
+      white: "#FFEDE0",
       black: "#000000",
       gray: "#F0F0F0",
       darkgray: "#5F5F5F",
@@ -69,8 +73,10 @@ module.exports = {
         "twinkle-slow": "wiggle-slow 2s infinite ease-in-out",
       },
       backgroundImage: {
+        "background-gradient":
+          'linear-gradient(to bottom, #E9603A, #F7F3B0, #4087C6)',
         "milestones-gradient":
-          "radial-gradient(60.38% 60.38% at 50% 50%, #04106C 39.06%, #080B94 100%)",
+          'linear-gradient(to bottom, #56B9B7, #3FC28B)',
         'sunset-gradient': 
           'linear-gradient(to bottom, #E9603A, #ED683C, #F3903F, #FEE62D, #FFF33B)',
         // NEW THEME GRADIENTS =================================

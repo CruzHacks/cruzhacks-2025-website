@@ -5,8 +5,9 @@ import Milestones from "./4 - Milestones"
 import Speakers from "./5 - Speakers"
 import QA from "./6 - Q&A"
 import Sponsors from "./7 - Sponsors"
-import ApplicationBlurb from "./8 - Applications"
+import HeroBlurb from "./8 - OurMission"
 import Corals from "../../../assets/ocean/Seaweeded.svg"
+import ApplicationBlurb from "./2 - Applications"
 
 
 const Home = () => {
@@ -14,8 +15,8 @@ const Home = () => {
     <>
       <Landing id='landing' />
  
-      
-      <ApplicationBlurb id='about' />
+      {/* <ApplicationBlurb id='about' /> */}
+      <HeroBlurb id='about' />
       {/* <PrizeTracks id='prize-tracks' /> */}
 
       <div className="flex flex-col  bg-ocean-gradient">

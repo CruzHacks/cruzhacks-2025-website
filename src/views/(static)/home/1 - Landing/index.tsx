@@ -69,7 +69,7 @@ const Landing = ({ id }: { id?: string }) => {
             UCSC PREMIERE HACKATHON
           </p>
           <p className='z-10 w-2/3 self-center text-center font-subtext text-[10px] uppercase md:w-1/2 md:self-end md:text-right lg:w-full lg:text-xl text-off_white'>
-            1156 High St, Santa Cruz, CA 95064
+            Jan 18-20&nbsp;&nbsp;: &nbsp;&nbsp;<b>STEVENSON EVENT CENTER</b>
           </p>
         </div>
 

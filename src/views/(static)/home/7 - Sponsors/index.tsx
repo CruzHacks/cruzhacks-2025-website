@@ -20,10 +20,10 @@ const Sponsors = ({ id }: { id?: string }) => {
       <div className='absolute -mt-40' id={id}></div>
 
       <div className='relative space-y-10'>
-        <h2 className='text-center font-title text-2xl uppercase md:text-4xl'>
+        <h2 className='text-center font-heading text-2xl uppercase md:text-6xl'>
           thanks to our sponsors!
         </h2>
-        <div className='flex max-w-4xl flex-col items-center justify-between gap-4 rounded-xl bg-blue-royal/50 p-10 ring-2 ring-inset ring-white/10'>
+        <div className='flex max-w-4xl flex-col items-center justify-between gap-4 rounded-xl bg-ocean_medium_light_blue p-10 ring-2 ring-inset ring-white/10'>
           {sponsors.map((tier, i) => {
             return (
               <div
@@ -57,7 +57,7 @@ const Sponsors = ({ id }: { id?: string }) => {
         <Star i={1} className='-top-20 right-10 h-4 md:right-20 md:h-6' />
         <Star i={2} className='-right-16 top-10 h-5 md:-right-20 md:h-7' />
 
-        <h2 className='text-center font-title text-xl uppercase md:text-3xl'>
+        <h2 className='text-center font-heading text-3xl uppercase md:text-6xl'>
           Special Thanks
         </h2>
 

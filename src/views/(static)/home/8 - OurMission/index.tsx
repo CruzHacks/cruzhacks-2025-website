@@ -8,7 +8,7 @@ import { Link } from "react-router-dom"
 import Crab from "../../../../assets/illustrations/Crab.svg"
 import WaveDivider from "../../../../assets/PageDividers/waves2.svg"
 
-const ApplicationBlurb = ({ id }: { id?: string }) => {
+const HeroBlurb = ({ id }: { id?: string }) => {
   return (
     <div>
       <div className='flex w-full justify-between  bg-beach_yellow '>
@@ -57,4 +57,4 @@ const ApplicationBlurb = ({ id }: { id?: string }) => {
   )
 }
 
-export default ApplicationBlurb
+export default HeroBlurb

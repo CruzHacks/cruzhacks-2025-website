@@ -22,15 +22,15 @@ const FAQItem = ({ question, answer }: FAQItemProps) => {
 
   return (
     <button
-      className='rounded-2xl border-2 border-turquoise bg-blue-imperial'
+      className='rounded-2xl border-2 border-dark_pink bg-light_pink'
       onClick={toggleOpen}
     >
       <div className='flex items-center justify-between gap-2 px-5 py-3'>
         <p className='text-left'>{question}</p>
         <StarIcon
           className={classNames(
-            !open ? "rotate-0 fill-none" : "rotate-45 fill-turquoise",
-            "h-6 w-6 shrink-0 text-turquoise transition-all"
+            !open ? "rotate-0 fill-none" : "rotate-45 fill-dark_pink",
+            "h-6 w-6 shrink-0 text-dark_pink transition-all"
           )}
         />
       </div>
