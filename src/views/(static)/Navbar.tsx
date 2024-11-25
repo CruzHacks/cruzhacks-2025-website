@@ -57,10 +57,10 @@ const Navbar = () => {
   return (
     <>
       <div className='fixed z-[300] flex w-screen justify-center bg-[#0000]/20'>
-        <div className='relative flex h-6 w-full max-w-7xl items-center justify-center px-6 py-8 pt-10 font-subtext md:text-xl lg:px-10 lg:justify-center'>
+        <div className='relative flex h-6 w-screen items-center justify-center px-6 py-8 pt-10 font-subtext md:text-xl lg:px-10 lg:justify-center'>
           <Link to='/#landing' className='left-10 lg:absolute'>
             <img
-              className='hidden h-8 w-auto md:block'
+              className='hidden h-8 w-auto md:block lg:ml-48'
               src={CruzHacksLogo}
               alt='CruzHacks logo'
             />
@@ -153,13 +153,6 @@ const Navbar = () => {
               </div>
             ))}
           </div> */}
-
-          <Link
-            to='/sponsorship'
-            className='md:text-blue-white z-10 ml-80 flex items-center justify-center gap-2 rounded-full px-3 py-1 font-title text-md text-white shadow-lg md:w-48 md:text-white'
-          >
-            <span className='hidden md:block'>SPONSOR US</span>
-          </Link>
 
           {/* Desktop MLH Trust Badge */}
           <a

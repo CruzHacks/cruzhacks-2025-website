@@ -1,7 +1,8 @@
 import React from "react"
 import { specialThanks, sponsors } from "./data"
 import Star from "../../../../components/Star"
-
+import {Link} from "react-router-dom"
+import ScrollToTop from "../../../../components/scrollControl/ScrollToTop"
 const maxTierHeight = 10
 const minTierHeight = 8
 
@@ -16,12 +17,19 @@ const calcTierMaxHeight = (tier: number) => {
 const Sponsors = ({ id }: { id?: string }) => {
   return (
     <div className='relative flex flex-col items-center gap-32 py-20'>
+      
       {/* Scroll Anchor*/}
       <div className='absolute -mt-40' id={id}></div>
 
       <div className='relative space-y-10'>
         <h2 className='text-center font-heading text-2xl uppercase md:text-6xl'>
           thanks to our sponsors!
+        </h2>
+        <h2 className="text-center font-subtext text:xl md:text-2xl">
+          Interested in sponsoring us this year? &nbsp;
+          <Link to="/sponsorship">
+            <b>Click Here!</b>
+          </Link>
         </h2>
         <div className='flex max-w-4xl flex-col items-center justify-between gap-4 rounded-xl bg-ocean_medium_light_blue p-10 ring-2 ring-inset ring-white/10'>
           {sponsors.map((tier, i) => {

@@ -80,9 +80,10 @@ const App: React.FC = () => {
 
       <Routes>
         {/* These routes are accessible to everyone*/}
-        <Route path='sponsorship' element = {<SponsorshipPage />} />
+        
         
         <Route element={<StaticWrapper />}>
+          <Route path='sponsorship' element = {<SponsorshipPage />} />
           <Route index element={<Home />} />
           <Route path='team' element={<Team />} />
           <Route path='support' element={<Outlet />}>
