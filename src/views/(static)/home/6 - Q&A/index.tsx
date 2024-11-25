@@ -5,6 +5,8 @@ import faqs from "./data"
 
 import Grid from "../../../../assets/illustrations/Grid.svg"
 import Star from "../../../../components/Star"
+import fish1 from "../../../../assets/illustrations/fish1.svg"
+import fish2 from "../../../../assets/illustrations/fish2.svg"
 
 interface FAQItemProps {
   question: string
@@ -20,15 +22,15 @@ const FAQItem = ({ question, answer }: FAQItemProps) => {
 
   return (
     <button
-      className='rounded-2xl border-2 border-turquoise bg-blue-imperial'
+      className='rounded-2xl border-2 border-dark_pink bg-light_pink'
       onClick={toggleOpen}
     >
       <div className='flex items-center justify-between gap-2 px-5 py-3'>
         <p className='text-left'>{question}</p>
         <StarIcon
           className={classNames(
-            !open ? "rotate-0 fill-none" : "rotate-45 fill-turquoise",
-            "h-6 w-6 shrink-0 text-turquoise transition-all"
+            !open ? "rotate-0 fill-none" : "rotate-45 fill-dark_pink",
+            "h-6 w-6 shrink-0 text-dark_pink transition-all"
           )}
         />
       </div>
@@ -47,7 +49,7 @@ const FAQItem = ({ question, answer }: FAQItemProps) => {
 const QA = ({ id }: { id?: string }) => {
   return (
     <div
-      className='-z-20 bg-top bg-repeat-y md:py-40'
+      className='z-20 bg-top bg-repeat-y md:py-40'
       style={{
         backgroundImage: `url(${Grid})`,
         backgroundSize: "100% auto",
@@ -55,6 +57,8 @@ const QA = ({ id }: { id?: string }) => {
     >
       {/* Scroll Anchor*/}
       <div className='absolute -mt-32' id={id}></div>
+
+      <img src={fish1} alt="fish1" className="w-52 hidden md:flex" />
 
       <Star className='left-24 -mt-4 h-7 md:left-52 md:-mt-10 md:h-8 lg:left-72 lg:h-10' />
       <Star
@@ -65,7 +69,7 @@ const QA = ({ id }: { id?: string }) => {
         i={3}
         className='left-20 mt-16 h-2 md:left-36 md:mt-16 md:h-4 lg:left-52 lg:h-4'
       />
-      <h2 className='py-10 text-center font-title text-3xl uppercase md:text-5xl'>
+      <h2 className='py-10 text-center font-heading text-5xl uppercase md:text-7xl'>
         Q&A
       </h2>
       <div className='flex w-full flex-col items-stretch justify-stretch gap-3 md:flex-row'>
@@ -89,6 +93,7 @@ const QA = ({ id }: { id?: string }) => {
           </div>
         ))}
       </div>
+      <img src={fish2} alt="fish2 " className="w-64 mt-12 ml-auto hidden md:flex" />
     </div>
   )
 }

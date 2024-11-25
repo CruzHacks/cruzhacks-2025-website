@@ -39,18 +39,18 @@ const EmailRegister = () => {
   return (
     <div>
       <form
-        className='flex items-center justify-center gap-3 rounded-lg bg-gradient-to-r from-[#104183] to-[#261F8A] p-3 md:px-8'
+        className='flex items-center justify-center gap-3 rounded-lg bg-[#FF7300]/25 p-3 md:px-8 border-2 border-sponsor_dark_orange'
         onSubmit={handleSubmit(registerEmail)}
       >
         <div
           className={classNames(
-            errors.email ? "border-error" : "border-white",
+            errors.email ? "border-error" : "border-sponsor_dark_orange",
             "flex grow border-b-2"
           )}
         >
           <EnvelopeIconSolid
             className={classNames(
-              errors.email ? "text-error" : "text-white",
+              errors.email ? "text-error" : "text-sponsor_dark_orange",
               "w-5"
             )}
           />
@@ -58,23 +58,23 @@ const EmailRegister = () => {
             className={classNames(
               errors.email
                 ? "text-error placeholder:text-error/75"
-                : "text-white placeholder:text-white/75",
+                : "text-sponsor_dark_orange placeholder:text-sponsor_dark_orange",
               "active:ring-none focuse:outline-none w-full truncate border-0 border-transparent bg-transparent font-subtext uppercase focus:border-transparent focus:ring-0"
             )}
             type='email'
             {...register("email")}
-            placeholder='Email Address'
+            placeholder='Enter Your Email'
           />
         </div>
         <button
           type='submit'
           className={classNames(
-            errors.email ? "bg-error" : "bg-white",
+            errors.email ? "bg-error" : "bg-sponsor_dark_orange",
             "flex h-9 w-9 items-center justify-center rounded-lg"
           )}
         >
           {!loading ? (
-            <ArrowRightIcon className='h-7 w-auto text-blue-imperial' />
+            <ArrowRightIcon className='h-7 w-auto text-[#efdeca]' />
           ) : (
             <div
               role='status'

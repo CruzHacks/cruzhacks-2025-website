@@ -56,8 +56,8 @@ const Navbar = () => {
 
   return (
     <>
-      <div className='fixed z-[300] flex w-screen justify-center bg-blue-imperial/80 backdrop-blur-md'>
-        <div className='relative flex h-10 w-full max-w-7xl items-center justify-between px-10 py-8 pt-10 font-subtext lowercase md:text-xl lg:justify-center'>
+      <div className='fixed z-[300] flex w-screen justify-center bg-[#0000]/20'>
+        <div className='relative flex h-6 w-full max-w-7xl items-center justify-center px-6 py-8 pt-10 font-subtext md:text-xl lg:px-10 lg:justify-center'>
           <Link to='/#landing' className='left-10 lg:absolute'>
             <img
               className='hidden h-8 w-auto md:block'
@@ -65,6 +65,15 @@ const Navbar = () => {
               alt='CruzHacks logo'
             />
           </Link>
+
+          <div className="flex items-center gap-2 lg:gap-5">
+            <h2 className="font-subtext text-off_white lg:text-2xl" >Applications are OPEN NOW!</h2>
+            <Link to='/apply'>
+              <div className="bg-medium_yellow/65 px-4 lg:p-2 lg:px-5 rounded-full hover:bg-medium_yellow/85">
+                <b>APPLY HERE</b>
+              </div>
+            </Link>
+          </div>
           {/* <div className='flex grow items-center justify-evenly font-light uppercase md:grow-0 md:gap-10 lg:gap-16'>
             {navigation.map(item => (
               <div key={item.name}>
@@ -159,7 +168,7 @@ const Navbar = () => {
               isAuthenticated ? "right-24" : "right-[12.3rem]",
               "absolute top-0 hidden w-20 md:block"
             )}
-            href='https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2024-season&utm_content=blue'
+            href='https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2025-season&utm_content=red'
             target='_blank'
             rel='noreferrer'
           >
@@ -194,13 +203,13 @@ const Navbar = () => {
       {/* Mobile MLH Trust Badge */}
       <a
         id='mlh-trust-badge'
-        className='absolute right-5 top-8 z-10 block w-20 md:hidden'
+        className='absolute right-5 z-10 block w-20 md:hidden'
         href='https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2024-season&utm_content=blue'
         target='_blank'
         rel='noreferrer'
       >
         <img
-          src='https://s3.amazonaws.com/logged-assets/trust-badge/2024/mlh-trust-badge-2024-blue.svg'
+          src='https://s3.amazonaws.com/logged-assets/trust-badge/2025/mlh-trust-badge-2025-blue.svg'
           alt='Major League Hacking 2024 Hackathon Season'
           className='w-full'
         />

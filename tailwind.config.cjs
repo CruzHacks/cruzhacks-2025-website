@@ -21,8 +21,16 @@ module.exports = {
       sponsor_light_orange: "#F9B047",
       beach_light_yellow: "#F0C776",
 
-      ocean_medium_dark_blue: "#005EA5",
+      beach_yellow: "#F7F3B0",
+      beach_darksand: "#F0C776",
 
+      app_bar_orange: "#CF4F2C",
+
+      ocean_medium_light_blue: "#4087C6",
+
+      dark_pink: "#A92545",
+      light_pink: "#DB6783",
+      ocean_medium_dark_blue: "#005EA5",
       text_white: "#FFFCE8",
       //==============================================
 
@@ -42,7 +50,7 @@ module.exports = {
         DEFAULT: "#8924F1",
         han: "#5B1FED",
       },
-      white: "#D3DAF4",
+      white: "#FFEDE0",
       black: "#000000",
       gray: "#F0F0F0",
       darkgray: "#5F5F5F",
@@ -68,18 +76,16 @@ module.exports = {
         "twinkle-slow": "wiggle-slow 2s infinite ease-in-out",
       },
       backgroundImage: {
+        "background-gradient":
+          'linear-gradient(to bottom, #E9603A, #F7F3B0, #4087C6)',
         "milestones-gradient":
-          "radial-gradient(60.38% 60.38% at 50% 50%, #04106C 39.06%, #080B94 100%)",
-      // NEW THEME GRADIENTS =================================
-
+          'linear-gradient(to bottom, #56B9B7, #3FC28B)',
         'sunset-gradient': 
           'linear-gradient(to bottom, #E9603A, #ED683C, #F3903F, #FEE62D, #FFF33B)',
-        'yellow-gradient': 
-          'linear-gradient(180deg, #F7F3B0 71%, #F0C776 100%)',
-        'ocean-gradient':
-          'linear-gradient(180deg, #005EA5, #0466AB, #0F7CBC, #219FD9, #27AAE1, #357EAF, #2F5F95)'
-
-
+        // NEW THEME GRADIENTS =================================
+          'yellow-gradient': 'linear-gradient(180deg, #F7F3B0 71%, #F0C776 100%)',
+          'ocean-gradient':
+          'linear-gradient(180deg, #005EA5, #0466AB, #0F7CBC, #219FD9, #27AAE1, #357EAF, #2F5F95)',
         //======================================================
       },
       keyframes: {
