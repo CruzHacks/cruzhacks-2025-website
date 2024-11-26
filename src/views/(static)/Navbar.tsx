@@ -2,15 +2,16 @@ import React, { Fragment } from "react"
 import { Link } from "react-router-dom"
 import useAuth from "../../hooks/useAuth"
 import CruzHacksLogo from "../../assets/logos/CruzHacks - Blue.svg"
-// import AvatarButton fro "../../components/AvatarButton"
+import AvatarButton from "../../components/AvatarButton"
 import { classNames } from "../../utils/string"
-// import {
-//   ArchiveBoxIcon,
-//   ChevronDownIcon,
-//   InformationCircleIcon,
-//   MapIcon,
-//   QuestionMarkCircleIcon,
-// } from "@heroicons/react/24/outline"
+import {
+  ArchiveBoxIcon,
+  ChevronDownIcon,
+  InformationCircleIcon,
+  MapIcon,
+  QuestionMarkCircleIcon,
+  ArrowRightOnRectangleIcon
+} from "@heroicons/react/24/outline"
 // import { Popover, Transition } from "@headlessui/react"
 
 // const navigation = [
@@ -174,13 +175,13 @@ const Navbar = () => {
           </a>
 
            {/* Login commented out for now  */}
-          {/* <div className='right-10 lg:absolute'>
+          <div className='right-10 lg:absolute'>
             {!isAuthenticated ? (
               <Link
                 to='/login'
-                className='md:text-blue-white z-10 flex items-center justify-center gap-2 rounded-full px-3 py-1 font-title text-sm text-white shadow-lg md:w-36 md:bg-[#3d30cb] md:text-gold'
+                className='md:text-blue-white z-10 flex items-center justify-center gap-2 rounded-full px-6 py-3 font-subtext text-sm text-off_white shadow-lg md:bg-sponsor_light_orange/30 md:text-off_white'
               >
-                <span className='hidden md:block'>Login</span>
+                <span className='hidden md:block'><b>LOGIN</b></span>
                 <ArrowRightOnRectangleIcon className='inline h-5 w-auto' />
               </Link>
             ) : (
@@ -190,7 +191,7 @@ const Navbar = () => {
                 direction='down'
               />
             )}
-          </div> */}
+          </div>
         </div>
       </div>
 

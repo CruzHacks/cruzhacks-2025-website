@@ -69,7 +69,7 @@ export default function Login() {
         <img src= {cloud3} alt="cloud3"></img>
       </div>
 
-      <div className=' max-w-sm space-y-10 bg-[#EFA370]/30 p-12 border-2 rounded-2xl text-text_white text-center'>
+      <div className=' max-w-sm space-y-10 bg-[#EFA370]/30 p-12 border-2 rounded-2xl text-text_white text-center z-10'>
         <div className='space-y-4 bg-[#EFA370]/24'>
           <h2 className='mt-2 font-heading text-5xl leading-10 bg-[#EFA370]/24 font-bold'>LOG IN</h2>
         </div>
