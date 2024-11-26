@@ -56,7 +56,7 @@ const Apply = () => {
   return (
     <AppStateProvider>
       <WillLoseProgress />
-      <div className='flex min-h-screen flex-col items-center'>
+      <div className='flex min-h-screen flex-col items-center z-10'>
         <div className='w-full max-w-4xl p-8 md:px-20 md:py-16'>
           <ProgressBarWrapper />
         </div>
