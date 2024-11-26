@@ -22,8 +22,8 @@ const faqs = [
       question: "When does the hackathon take place? How long is it?",
       answer: (
         <>
-          CruzHacks 2025 is a 3 day event that starts Friday night and ends
-          Sunday afternoon. This year, it will take place on January 31-Feb 2,
+          CruzHacks 2025 is a 3 day event that starts Saturday night and ends
+          Monday afternoon. This year, it will take place on January 18-20th,
           2025.
         </>
       ),
@@ -73,7 +73,8 @@ const faqs = [
           Some essential things to bring include a laptop (with charger), an
           empty bag for swag, a change of clothes if you plan on spending the
           night, and a sleeping bag/blanket if you&apos;re not local to Santa
-          Cruz!
+          Cruz! We encourage the use of portable chargers at CruzHacks2025 to 
+          be mindful of power usage.
         </>
       ),
     },
@@ -145,7 +146,9 @@ const faqs = [
         <>
           If you are a current UCSC student, you&apos;re welcome to volunteer
           with us! Volunteers are invaluable in helping us set up, clean up, and
-          everything in between!{" "}
+          everything in between! We will be releasing volunteer application forms
+          closer to the event date!
+          {/* {" "}
           <a
             target='_blank'
             rel='noreferrer'
@@ -153,8 +156,8 @@ const faqs = [
             className='text-blue-button'
           >
             Click here to apply
-          </a>
-          .
+          </a> */}
+          
         </>
       ),
     },
@@ -165,13 +168,13 @@ const faqs = [
       question: "How do I sign up?",
       answer: (
         <>
-          Applications will open in Novemeber and close in December. To stay updated, follow us on Instagram
+          Applications will open November 26th 11:59PM! To stay updated, follow us on Instagram
           and Twitter @cruzhacks and{" "}
           <a
             target='_blank'
             rel='noreferrer'
             href='https://discord.gg/rGjDTCk3Nx'
-            className='text-blue-button'
+            className='text-ocean_medium_dark_blue'
           >
             join our discord
           </a>
@@ -202,7 +205,7 @@ const faqs = [
       answer: (
         <>
           CruzHacks will be in-person this year! It will be located at UC Santa
-          Cruz. (More specific location details to come!)
+          Cruz, Stevenson Event Center.
         </>
       ),
     },
@@ -228,7 +231,9 @@ const faqs = [
           school or undergraduate college student. Mentors that are in the
           industry/working professionally are preferred, but we will still
           evaluate mentor applications from high school or undergraduate college
-          students based on their experience.{" "}
+          students based on their experience. We will release mentor and judge
+          application soon, so stay updated on our socials!
+          {/* {" "}
           <a
             target='_blank'
             rel='noreferrer'
@@ -236,7 +241,7 @@ const faqs = [
             className='text-blue-button'
           >
             Click here to apply.
-          </a>
+          </a> */}
         </>
       ),
     },
