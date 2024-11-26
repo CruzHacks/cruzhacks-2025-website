@@ -53,11 +53,11 @@ export default function Login() {
 
   return (
     <div className='min-w-screen flex min-h-screen flex-1 items-center justify-center px-6 bg-sunset-gradient'>
-      <Link to='/' className='fixed left-5 top-5'>
+      <Link to='/' className='fixed left-5 top-5 z-10'>
         <ArrowLeftIcon className='h-8 w-auto' />
       </Link>
 
-      <div className="absolute left-0 top-0 w-60">
+      <div className="absolute left-0 top-0 w-60 z-2">
         <img src= {cloud1} alt="cloud1"></img>
       </div>
 

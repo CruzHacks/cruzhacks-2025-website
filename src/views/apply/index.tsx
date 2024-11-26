@@ -65,7 +65,7 @@ const Apply = () => {
           <Outlet />
         </div>
       </div>
-      <img src={Corals} alt="corals" className=" -mt-96 z-2" />
+      <img src={Corals} alt="corals" className=" mb-0 md:-mt-96 z-2 " />
 
     </AppStateProvider>
   )
