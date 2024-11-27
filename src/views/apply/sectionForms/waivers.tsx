@@ -96,7 +96,7 @@ export const waiversSteps: FormTemplate[] = [
         text: "To participate in CruzHacks 2025, you must agree to our Participation and Release Agreement",
       },
       {
-        link: "https://docs.google.com/document/d/1298VyEqrSIvbzM3U8nvLQsLtY78Vi2mbndr3d5w0UKk/edit?usp=sharing",
+        link: "https://docs.google.com/document/d/1_NFz3PR3UPUdPlVSm_Y_HuSWoHQaCMa8dM2Oc-EkYPI/edit?usp=sharing",
         name: "Participation and Release Agreement",
       },
     ],
@@ -171,7 +171,7 @@ export const waiversSteps: FormTemplate[] = [
       {
         text: "If you are a minor (under 18), please fill out the CruzHacks 2025 Parental Release and Consent Form.",
       },
-      { link: "https://forms.gle/uttfNsfpx2BNpEVs8", name: "Form" },
+      { link: "https://forms.gle/BQzAkWcZuxq6iiKk9", name: "Form" },
     ],
     [
       {
