@@ -96,7 +96,7 @@ export const logisticsStep: FormTemplate[] = [
   [
     [
       {
-        text: "Will you require an on-campus parking permit if you decide to particiipate?",
+        text: "Will you require an on-campus parking permit if you decide to participate?",
       },
       {
         inputType: "combo",
