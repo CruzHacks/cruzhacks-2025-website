@@ -15,7 +15,7 @@ const HeroBlurb = ({ id }: { id?: string }) => {
         {/* Scroll Anchor*/}
         <div className='absolute -mt-28' id={id}></div>
         
-        <div className='justify-betweenitems-center'>
+        <div className='justify-between items-center'>
           <div className="flex justify-between align-middle w-screen">
             <div className="w-full space-y-6 pt-10 mx-20 lg:ml-32 items-center md:items-start">
               <h1 className='font-heading text-5xl uppercase text-center md:text-start md:text-7xl text-sponsor_dark_orange'>
