@@ -11,7 +11,7 @@ export const socialsSteps: FormTemplate[] = [
       },
       {
         // TODO: Resume Drop Form
-        link: "https://forms.gle/aKYMP4zifmYtWCmH6",
+        link: "https://forms.gle/aPquJyoaEpNF5Epi6",
         name: "Resume Drop Form",
       },
     ],

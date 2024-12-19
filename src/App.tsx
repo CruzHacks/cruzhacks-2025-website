@@ -98,10 +98,10 @@ const App: React.FC = () => {
         <Route element={<UnauthenticatedRoute />}>
           <Route path='login' element={<Login />} />
           <Route path='organizers-only/signup' element={<Signup />} />
-          <Route path='apply' element={<Outlet />}>
+          {/* <Route path='apply' element={<Outlet />}>
             <Route index element={<ApplicationClosed />} />
             <Route path='*' element={<ApplicationClosed />} />
-          </Route>
+          </Route> */}
 
           <Route path='j7hxc5p6ri/apply' element={<Apply />}>
             <Route

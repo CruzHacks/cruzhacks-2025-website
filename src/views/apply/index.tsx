@@ -56,16 +56,16 @@ const Apply = () => {
   return (
     <AppStateProvider>
       <WillLoseProgress />
-      <div className='flex min-h-screen flex-col items-center'>
+      <div className='relative flex min-h-screen flex-col items-center z-10'>
         <div className='w-full max-w-4xl p-8 md:px-20 md:py-16'>
           <ProgressBarWrapper />
         </div>
 
-        <div className='z-5 flex h-full w-full max-w-4xl grow flex-col rounded-t-3xl bg-teal_blue/40 px-10 py-5 md:p-10 lg:mb-16 lg:rounded-3xl'>
+        <div className='flex h-full w-full max-w-4xl grow flex-col rounded-t-3xl bg-teal_blue/40 px-10 py-5 md:p-10 lg:mb-16 lg:rounded-3xl'>
           <Outlet />
         </div>
       </div>
-      <img src={Corals} alt="corals" className=" mb-0 md:-mt-96 z-2 " />
+      <img src={Corals} alt="corals" className="w-screen mb-0 md:-mt-96 z-1 " />
 
     </AppStateProvider>
   )
