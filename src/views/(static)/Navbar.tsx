@@ -67,7 +67,7 @@ const Navbar = () => {
             />
           </Link>
 
-          {/* Announce applications open */}
+          {/* Announce applications open
           <div className="flex items-center gap-2 lg:gap-5">
             <h2 className="font-subtext text-off_white lg:text-2xl" >Applications are OPEN NOW!</h2>
             <Link to='/j7hxc5p6ri/apply'>
@@ -75,7 +75,7 @@ const Navbar = () => {
                 <b>APPLY HERE</b>
               </div>
             </Link>
-          </div>
+          </div> */}
           {/* <div className='flex grow items-center justify-evenly font-light uppercase md:grow-0 md:gap-10 lg:gap-16'>
             {navigation.map(item => (
               <div key={item.name}>

@@ -5,8 +5,8 @@ import HandAndComputer from "../../../../assets/illustrations/Hand & Computer.sv
 import { socials } from "../../../../utils/socials"
 import { ChevronRightIcon } from "@heroicons/react/24/outline"
 import { Link } from "react-router-dom"
-import Crab from "../../../../assets/illustrations/Crab.svg"
-import WaveDivider from "../../../../assets/PageDividers/waves2.svg"
+import Starfish1 from "../../../../assets/illustrations/Starfish1.svg"
+import Starfish2 from "../../../../assets/illustrations/Starfish2.svg"
 
 const ApplicationBlurb = ({ id }: { id?: string }) => {
   return (
@@ -15,41 +15,40 @@ const ApplicationBlurb = ({ id }: { id?: string }) => {
         {/* Scroll Anchor*/}
         <div className='absolute -mt-28' id={id}></div>
         
-        <div className='justify-betweenitems-center'>
+        <div className='justify-between items-center'>
           <div className="flex justify-between align-middle w-screen">
-            <div className="w-full space-y-6 pt-10 mx-20 lg:ml-32 items-center md:items-start">
-              <h1 className='font-heading text-5xl uppercase text-center md:text-start md:text-7xl text-sponsor_dark_orange'>
+            <div className="w-full pt-10 mx-20 items-center">
+              <h1 className='font-heading text-5xl uppercase text-center md:text-center md:text-6xl text-sponsor_dark_orange'>
                 Applications Are Open NOW!
               </h1>
-              <div className='space-y-5'>
-                <p className=' font-subtext max-w-2xl text-lg lg:text-3xl text-sponsor_light_orange'>
-                CruzHacks is the largest hackathon in Santa Cruz. Each year, we invite  hundreds of students to develop solutions to real-world problems, pursue inclusion in tech, and kindle the spirit of innovation.
-                </p>
-                {/* <Link
-                  to='/team'
-                  className='mt-2 flex w-fit items-center gap-2 rounded-lg border-4 border-blue-button px-5 py-2 font-bold text-blue-button hover:bg-blue-button/10 hover:underline'
-                >
-                  Meet the CruzHacks team
-                  <ChevronRightIcon className='h-5' />
-                </Link> */}
+
+              <div className='flex justify-center mt-12 mb-20'>
+                <p className=' font-subtext max-w-3xl text-lg items-center text-center lg:text-2xl text-sponsor_light_orange leading-loose'>
+                Applications are currently OPEN for CruzHacks 2025! Our hackathon is open to hackers regardless of experience. Submit your application now!                </p>
               </div>
-              <div className='max-w-md'>
-                <EmailRegister />
+
+              <div className="flex justify-center w-full gap-12 mb-12 md:mb-0">
+                <img src={Starfish1} alt="Starfish1" className="w-2/5 -mt-40 hidden md:flex"/>
+                <Link to='/j7hxc5p6ri/apply'>
+                  <div className="bg-medium_yellow/65 px-4 rounded-full hover:bg-medium_yellow/85 text-center max-w-3xl">
+                    <p className="text-[#FFFFFF] px-8 py-4 text-lg md:text-3xl md:px-16 md:py-8"><b>APPLY HERE</b></p>
+                  </div>
+                </Link>
+                <img src={Starfish2} alt="Starfish2" className="w-2/5 -mt-40 hidden md:flex"/>
               </div>
-              <div className='flex flex-wrap justify-between gap-5 pb-5 md:justify-start md:gap-5 lg:gap-8'>
-                {socials.map(({ name, url, icon }) => (
-                  <a key={name} target='_blank' rel='noopener noreferrer' href={url}>
-                    <img
-                      src={icon}
-                      alt={`${name} Icon`}
-                      className='h-7 w-auto md:h-8 lg:h-10 text-deep_orange'
-                    />
-                  </a>
-                ))}
+
+              <div className='flex justify-center mb-12'>
+                <p className=' font-subtext max-w-3xl text-lg items-center text-center lg:text-2xl text-dark_pink leading-loose'>
+                  <b>DUE: Applications Close on December 22nd, 2025 at 11:59 PM  </b> </p>
               </div>
+              <div className="flex justify-center mb-12">
+                <p className="font-subtext max-w-3xl text-lg items-center text-center lg:text-2xl text-sponsor_light_orange leading-loose">
+                  if you have any questions about your application, please email <b>contact@cruzhacks.com</b></p>
+              </div>
+        
             </div>
           </div>
-          <img src={BeachDivider} alt='' className="w-screen"/>
+          <img src={BeachDivider} alt='' className="w-screen mb-12"/>
         </div>
       </div>
     </div>
