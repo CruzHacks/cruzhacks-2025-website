@@ -17,7 +17,7 @@ const MentorJudgeVolunteerBlurb = ({ id }: { id?: string }) => {
                 <div className="flex flex-col justify-center align-middle items-center mt-10">
 
                     <p className=' font-subtext max-w-4xl mx-20 text-lg text-center lg:text-xl text-sponsor_light_orange'>
-                    Want to make a lasting impact at CruzHacks? Apply today to be a mentor, judge, or volunteer! Your expertise, feedback, and support are essential in helping us create an unforgettable experience for our hackers. By joining us, you'll play a key role in shaping the next generation of innovators and ensuring that each year’s hackathon is bigger and better than the last. We truly appreciate your contribution to making CruzHacks a success!                            </p>
+                    Want to make a lasting impact at CruzHacks? Apply today to be a mentor, judge, or volunteer! Your expertise, feedback, and support are essential in helping us create an unforgettable experience for our hackers. By joining us, you&apos;ll play a key role in shaping the next generation of innovators and ensuring that each year&apos;s hackathon is bigger and better than the last. We truly appreciate your contribution to making CruzHacks a success!                            </p>
                     
                     
                     <div className="flex flex-col md:flex-row justify-center pt-16 mx-10 md:mx-48 gap-16">
@@ -34,7 +34,7 @@ const MentorJudgeVolunteerBlurb = ({ id }: { id?: string }) => {
                         </div>
                         <div className='flex flex-col gap-4 bg-[#EF9A87] px-8 py-4 rounded-3xl'>
                             <h1 className="font-subtext text-[#FFFFFF] text-lg md:text-2xl "><b>Judge</b></h1>
-                            <p className="text-[#FFFFFF]">Evaluate teams based on functionality, creativity, and impact, and identify projects that best align with this year’s prize tracks. Judges provide constructive feedback, helping hackers grow and learn</p>
+                            <p className="text-[#FFFFFF]">Evaluate teams based on functionality, creativity, and impact, and identify projects that best align with this year&apos;s prize tracks. Judges provide constructive feedback, helping hackers grow and learn</p>
                             
                             <a 
                                 href="https://docs.google.com/forms/d/e/1FAIpQLScH6THyJBAObDLq4eHSpeOXL2I788mbpyE7OYFkpopzXzVwcA/viewform" 
