@@ -67,6 +67,11 @@ const Navbar = () => {
             />
           </Link>
 
+          {/* links to all navbar pages */}
+          {/* <div className="w-full mx-64 bg-orange flex justify-end">
+            BEANS
+          </div> */}
+
           {/* Announce applications open
           <div className="flex items-center gap-2 lg:gap-5">
             <h2 className="font-subtext text-off_white lg:text-2xl" >Applications are OPEN NOW!</h2>
@@ -174,7 +179,6 @@ const Navbar = () => {
             />
           </a>
 
-           {/* Login commented out for now  */}
           <div className='right-10 lg:absolute'>
             {!isAuthenticated ? (
               <Link
@@ -182,7 +186,6 @@ const Navbar = () => {
                 className='md:text-blue-white z-10 flex items-center justify-center gap-2 rounded-full px-6 py-3 font-subtext text-sm text-off_white shadow-lg md:bg-sponsor_light_orange/30 md:text-off_white'
               >
                 <span className='hidden md:block'><b>LOGIN</b></span>
-                <ArrowRightOnRectangleIcon className='inline h-5 w-auto' />
               </Link>
             ) : (
               <AvatarButton

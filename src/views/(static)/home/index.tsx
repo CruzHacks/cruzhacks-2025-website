@@ -8,6 +8,7 @@ import Sponsors from "./7 - Sponsors"
 import HeroBlurb from "./8 - OurMission"
 import Corals from "../../../assets/ocean/Seaweeded.svg"
 import ApplicationBlurb from "./2 - Applications"
+import MentorJudgeVolunteerBlurb from "./9 - MentorJudgingVolunteer"
 
 
 const Home = () => {
@@ -16,6 +17,7 @@ const Home = () => {
       <Landing id='landing' />
  
       <ApplicationBlurb id='about' />
+      <MentorJudgeVolunteerBlurb id='about' />
       <HeroBlurb id='about' />
       {/* <PrizeTracks id='prize-tracks' /> */}
 

@@ -18,11 +18,11 @@ const HeroBlurb = ({ id }: { id?: string }) => {
         <div className='justify-between items-center'>
           <div className="flex justify-between align-middle w-screen">
             <div className="w-full space-y-6 pt-10 mx-20 lg:ml-32 items-center md:items-start">
-              <h1 className='font-heading text-5xl uppercase text-center md:text-start md:text-7xl text-sponsor_dark_orange'>
+              <h1 className='font-heading text-4xl uppercase text-center md:text-start md:text-5xl text-sponsor_dark_orange'>
                 Our Mission
               </h1>
               <div className='space-y-5'>
-                <p className=' font-subtext max-w-2xl text-lg lg:text-3xl text-sponsor_light_orange'>
+                <p className=' font-subtext max-w-xl text-lg lg:text-xl text-sponsor_light_orange'>
                 CruzHacks is the largest hackathon in Santa Cruz. Each year, we invite  hundreds of students to develop solutions to real-world problems, pursue inclusion in tech, and kindle the spirit of innovation.
                 </p>
                 {/* <Link
@@ -48,7 +48,7 @@ const HeroBlurb = ({ id }: { id?: string }) => {
                 ))}
               </div>
             </div>
-            <img src={Crab} alt="Crab" className="mr-32 scale-75 hidden md:flex md:-mt-10"/>
+            <img src={Crab} alt="Crab" className="mr-32 scale-75 hidden md:flex md:-mt-20"/>
           </div>
           <img src={WaveDivider} alt='' className="w-screen -mb-12"/>
         </div>
