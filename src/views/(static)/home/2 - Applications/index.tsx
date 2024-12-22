@@ -18,6 +18,9 @@ const ApplicationBlurb = ({ id }: { id?: string }) => {
         <div className='justify-between items-center'>
           <div className="flex justify-between align-middle w-screen">
             <div className="w-full pt-10 mx-20 items-center">
+              <div className="md:px-16 md:py-8 px-8 py-4 border-dark_pink border-4 text-lg md:text-2xl text-center text-dark_pink  md:mx-40 mb-10 md:mb-20">
+                <b>Event Postponed:</b> We regret to inform you that CruzHacks2025 has been postponed to a later date. Please stay tuned for updates on the rescheduled date and time.
+              </div>
               <h1 className='font-heading text-5xl uppercase text-center md:text-center md:text-6xl text-sponsor_dark_orange'>
                 Applications Are Open NOW!
               </h1>
@@ -39,7 +42,7 @@ const ApplicationBlurb = ({ id }: { id?: string }) => {
 
               <div className='flex justify-center mb-12'>
                 <p className=' font-subtext max-w-3xl text-lg items-center text-center lg:text-2xl text-dark_pink leading-loose'>
-                  <b>DUE: Applications Close on December 22nd, 2025 at 11:59 PM  </b> </p>
+                  <b>UPDATE: Applications will remain open indefinitely until further notice! </b> </p>
               </div>
               <div className="flex justify-center mb-12">
                 <p className="font-subtext max-w-3xl text-lg items-center text-center lg:text-2xl text-sponsor_light_orange leading-loose">
