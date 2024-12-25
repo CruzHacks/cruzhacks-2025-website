@@ -23,10 +23,10 @@ const rtdb = getDatabase(app)
 
 // Start emulators only in development
 if (import.meta.env.DEV) {
-  connectAuthEmulator(auth, "http://localhost:9099")
+  connectAuthEmulator(auth, "http://127.0.0.1:9099")
   connectFirestoreEmulator(db, "localhost", 8080)
-  connectFunctionsEmulator(funcs, "localhost", 5001)
-  connectDatabaseEmulator(rtdb, "localhost", 9000)
+  connectFunctionsEmulator(funcs, "127.0.0.1", 5001)
+  connectDatabaseEmulator(rtdb, "127.0.0.1", 9000)
 }
 
 export { auth, db, funcs, rtdb }

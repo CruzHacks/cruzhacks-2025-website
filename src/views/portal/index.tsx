@@ -95,7 +95,7 @@ const Sidebar = ({ navigation }: SidebarProps) => {
                   </div>
                 </Transition.Child>
                 {/* Sidebar component, swap this element with another sidebar if you like */}
-                <div className='flex grow flex-col gap-y-5 overflow-y-auto bg-blue-imperial px-6 pb-2 ring-1 ring-white/10'>
+                <div className='flex grow flex-col gap-y-5 overflow-y-auto bg-dark_orange px-6 pb-2 ring-1 ring-white/10'>
                   <div className='mt-2 flex h-16 shrink-0 items-center'>
                     <Link to='/' className='flex items-center gap-3'>
                       <img
@@ -121,7 +121,7 @@ const Sidebar = ({ navigation }: SidebarProps) => {
                                   isActive(item)
                                     ? "border-white/5 text-orange"
                                     : "border-transparent hover:text-orange",
-                                  "group flex gap-x-3 border-y-2 p-2 pl-10 text-sm leading-6 hover:bg-blue-royal/60"
+                                  "group flex gap-x-3 border-y-2 p-2 pl-10 text-sm leading-6 hover:bg-dark_orange/60"
                                 )}
                                 onClick={() => setSidebarOpen(false)}
                               >
@@ -157,7 +157,7 @@ const Sidebar = ({ navigation }: SidebarProps) => {
       {/* Static sidebar for desktop */}
       <div className='hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-72 lg:flex-col'>
         {/* Sidebar component, swap this element with another sidebar if you like */}
-        <div className='flex grow flex-col gap-y-5 overflow-y-auto bg-blue-imperial px-6'>
+        <div className='flex grow flex-col gap-y-5 overflow-y-auto bg-app_bar_orange px-6'>
           <div className='mt-2 flex h-16 shrink-0 items-center'>
             <Link to='/' className='flex items-center gap-3'>
               <img
@@ -183,7 +183,7 @@ const Sidebar = ({ navigation }: SidebarProps) => {
                           isActive(item)
                             ? "border-white/5 text-orange"
                             : "border-transparent hover:text-orange",
-                          "group flex gap-x-3 border-y-2 p-2 pl-10 text-sm leading-6 hover:bg-blue-royal/60"
+                          "group flex gap-x-3 border-y-2 p-2 pl-10 text-sm leading-6 hover:bg-dark_orange/60"
                         )}
                       >
                         <item.icon
