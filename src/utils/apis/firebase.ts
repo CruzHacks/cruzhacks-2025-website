@@ -10,7 +10,7 @@ import {
   deleteDoc,
   setDoc,
 } from "firebase/firestore"
-import { db } from "../firebaseapp"
+import { db, auth } from "../firebaseapp"
 import {
   AppShortResponseSchema,
   ApplicationSchema,
@@ -21,6 +21,7 @@ import {
   TeamProps,
 } from "../types"
 import type { User } from "firebase/auth"
+import { deleteUser } from "firebase/auth"
 
 /**
  * Function using Firebase sdk for checking if an application is
@@ -184,7 +185,9 @@ export const getApplicationStatus = async (email: string) => {
     const docRef = doc(db, `users/${email}/user_items/application`)
     const docSnap = await getDoc(docRef)
 
-    if (!docSnap.exists()) throw new Error("No application found")
+    console.log(db)
+
+    if (!docSnap.exists()) throw new Error("No application")
     if (!docSnap.data()?.status)
       throw new Error("Application found but no status field")
 
@@ -196,6 +199,36 @@ export const getApplicationStatus = async (email: string) => {
     return status as { status: ApplicationStatus; rsvp?: boolean }
   } catch (error) {
     console.error(error)
+    throw error as Error
+  }
+}
+
+/**
+ *  Function to delete application (withdrawal application)
+ *  @param 
+ * 
+ */
+
+export const deleteApplication = async(email:string) =>{
+  try{
+    if (!email) throw new Error("No email provided")
+    
+    const docRef = doc(db, `users/${email}`);
+    
+    try{
+      await deleteDoc(docRef)
+      console.log(`Document at path users/${email}`);
+    } catch(error){
+      throw error as Error
+    }
+
+    const user = auth.currentUser // User that is currently logged in
+    if (user?.email !== email){
+      throw new Error("Authenticated user email does not match the provided email");
+    }
+    await(deleteUser(user))
+  }catch (error) {
+    console.error("Error deleting application:", error);
     throw error as Error
   }
 }

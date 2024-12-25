@@ -8,16 +8,11 @@ const nav = [
     href: "/portal/applicant",
     icon: HomeIcon,
   },
-  {
-    name: "Check-in",
-    href: "/portal/applicant/check-in",
-    icon: CameraIcon,
-  },
 ]
 
 const PortalApplicant = () => {
   return (
-    <div className='min-h-screen'>
+    <div className='min-h-screen bg-portal-gradient'>
       <Sidebar navigation={nav} />
     </div>
   )

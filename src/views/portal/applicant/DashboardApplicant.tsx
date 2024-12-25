@@ -17,12 +17,16 @@ const rsvpToText = (rsvp?: boolean) => {
   return "Not confirmed"
 }
 
+import { deleteApplication } from "../../../utils/apis/firebase"
+
+
 const DashboardApplicant = () => {
   const {
     auth: { user },
   } = useAuth()
 
   const [openDeclineModal, setOpenDeclineModal] = React.useState(false)
+  const [openDeleteModal, setOpenDeleteModal] = React.useState(false)
 
   const fullName = user?.displayName || user?.email || "Hacker"
 
@@ -41,6 +45,10 @@ const DashboardApplicant = () => {
 
   const handleDeclineAttendance = () => {
     applicationStatusMutation.mutate({ email: user?.email ?? "", rsvp: false })
+  }
+
+  const handleDeleteApplication = () => {
+    deleteApplication(user?.email || "")
   }
 
   useEffect(() => {
@@ -70,7 +78,18 @@ const DashboardApplicant = () => {
         setOpen={setOpenDeclineModal}
       />
 
-      <div className='h-full w-full max-w-4xl grow space-y-5 rounded-3xl bg-[#4659FF]/10 px-10 py-5 md:p-10 lg:mb-16'>
+      <Modal
+        Icon={ExclamationCircleIcon}
+        iconStyling='text-error'
+        title='Confirm Withdrawal Application'
+        description='Are you sure you want to withdrawal your application? This will delete your account as well and cannot be undone.'
+        actionText='Withdrawal Application'
+        actionFunc={handleDeleteApplication}
+        open={openDeleteModal}
+        setOpen={setOpenDeleteModal}
+      />
+
+      <div className='h-full w-full max-w-4xl grow space-y-5 rounded-3xl bg-off_white/30 px-10 py-5 md:p-10 lg:mb-16 border-2 border-off_white'>
         <h2 className='font-title text-lg'>Application status:</h2>
         <p className='font-subtext'>
           {isFetchLoading && <span className='italic'>loading...</span>}
@@ -87,6 +106,7 @@ const DashboardApplicant = () => {
               )}
             >
               {applicationStatus.status}
+              <div></div>
             </span>
           )}
         </p>
@@ -138,6 +158,21 @@ const DashboardApplicant = () => {
             </>
           )}
       </div>
+
+      {!applicationStatus && (
+        <div className="flex items-center flex-col">
+          <p className=" font-subtext text-lg">We are still in the process of reviewing applications, check back soon!</p>
+          <p className=" font-subtext text-md">To make changes to your application, please email contact@cruzhacks.com</p>
+        
+          <button 
+            className="border-dark_orange bg-dark_orange/30 px-10 py-4 border-2 rounded-2xl mt-8 "
+            onClick={() => setOpenDeleteModal(true)}
+          >
+            <p className=" text-off_white text-lg font-subtext">Withdrawal Application</p>
+          </button>
+        </div>
+      )}
+      
 
       {applicationStatus && applicationStatus.status === "accepted" && (
         <div className='space-y-10 pt-10'>
