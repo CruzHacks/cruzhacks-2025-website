@@ -159,7 +159,7 @@ const DashboardApplicant = () => {
           )}
       </div>
 
-      {!applicationStatus && (
+      {applicationStatus && applicationStatus.status === "submitted" &&(
         <div className="flex items-center flex-col">
           <p className=" font-subtext text-lg">We are still in the process of reviewing applications, check back soon!</p>
           <p className=" font-subtext text-md">To make changes to your application, please email contact@cruzhacks.com</p>
