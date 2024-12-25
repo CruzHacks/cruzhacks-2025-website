@@ -45,7 +45,7 @@ const Modal: React.FC<ModalProps> = ({
           leaveFrom='opacity-90'
           leaveTo='opacity-0'
         >
-          <div className='fixed inset-0 bg-dark_orange/70 transition-opacity' />
+          <div className='fixed inset-0 bg-medium_orange/70 transition-opacity' />
         </Transition.Child>
 
         <div className='fixed inset-0 z-10 overflow-y-auto'>
@@ -61,7 +61,7 @@ const Modal: React.FC<ModalProps> = ({
             >
               <Dialog.Panel className='relative overflow-hidden rounded-lg bg-dark_orange px-4 pb-4 pt-5 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-sm sm:p-6'>
                 <div>
-                  <div className='mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-dark_pink/20'>
+                  <div className='mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-medium_orange/50'>
                     {/* //is the icon formatting supposed to be like this */}
                     <Icon
                       className={classNames("h-8 w-8", iconStyling)}
@@ -71,18 +71,18 @@ const Modal: React.FC<ModalProps> = ({
                   <div className='mt-3 text-center sm:mt-5'>
                     <Dialog.Title
                       as='h3'
-                      className='text-base font-semibold leading-6 text-white'
+                      className='text-base font-semibold leading-6 text-off_white'
                     >
                       {title}
                     </Dialog.Title>
                     <div className='mt-2'>
-                      <p className='text-sm text-white/70'>{description}</p>
+                      <p className='text-sm text-off_white/70'>{description}</p>
                     </div>
                   </div>
                 </div>
                 <div className='mt-5 sm:mt-6'>
                   <button
-                    className='inline-flex w-full justify-center rounded-md bg-deep_orange-button/50 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-deep_orange/60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dark_orange'
+                    className='inline-flex w-full justify-center border-2 border-off_white/50 rounded-md bg-off_white/10 px-3 py-2 text-sm font-semibold text-off_white shadow-sm hover:bg-off_white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dark_orange'
                     onClick={handleDismiss}
                   >
                     {actionText}
