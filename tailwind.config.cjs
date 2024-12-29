@@ -88,6 +88,8 @@ module.exports = {
           'linear-gradient(to bottom, #E9603A, #ED683C, #F3903F, #FEE62D, #FFF33B)',
         'portal-gradient':
           'linear-gradient(to bottom, #F3903F, #F3903F, #FFF33B)',
+        'support-gradient':
+          'linear-gradient(to bottom, #69A3FF, #E9705B)',
         // NEW THEME GRADIENTS =================================
           'yellow-gradient': 'linear-gradient(180deg, #F7F3B0 71%, #F0C776 100%)',
           'ocean-gradient':
