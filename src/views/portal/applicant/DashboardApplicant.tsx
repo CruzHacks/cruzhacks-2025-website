@@ -82,7 +82,7 @@ const DashboardApplicant = () => {
         Icon={ExclamationCircleIcon}
         iconStyling='text-error'
         title='Confirm Withdrawal Application'
-        description='Are you sure you want to withdrawal your application? This will delete your account as well and cannot be undone.'
+        description='Are you sure you want to withdrawal your application? This will delete your account as well and cannot be undone. If nothing happens please relog and try this action again.'
         actionText='Withdrawal Application'
         actionFunc={handleDeleteApplication}
         open={openDeleteModal}
@@ -159,7 +159,7 @@ const DashboardApplicant = () => {
           )}
       </div>
 
-      {!applicationStatus &&(
+      {applicationStatus && applicationStatus.status === "submitted" &&(
         <div className="flex items-center flex-col">
           <p className=" font-subtext text-lg">We are still in the process of reviewing applications, check back soon!</p>
           <p className=" font-subtext text-md">To make changes to your application, please email contact@cruzhacks.com</p>
