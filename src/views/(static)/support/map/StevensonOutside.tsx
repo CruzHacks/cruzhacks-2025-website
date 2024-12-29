@@ -12,7 +12,7 @@ const MapKeyItem: React.FC<MapKeyItemInterface> = ({ color, label }) => {
   return (
     <div className='flex items-center gap-5'>
       <div className={`mt-1 h-2 w-6 shrink-0 rounded-md md:h-6 ${color}`}></div>
-      <p className='font-subtext text-black'>{label}</p>
+      <p className='font-subtext text-off_white'>{label}</p>
     </div>
   )
 }

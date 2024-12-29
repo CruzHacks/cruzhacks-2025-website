@@ -4,14 +4,20 @@ import { Link } from "react-router-dom"
 
 const EventInfo: React.FC = () => {
   return (
-    <Card introTitle='Need Something?' title='Event Info'>
-      <div className='flex flex-col gap-5 md:gap-10 md:px-20'>
+    <Card>
+      <div className='mb-5'>
+        <h2 className='text-center font-title text-2xl font-bold uppercase text-off_white md:text-3xl'>
+          Event Info
+        </h2>
+      </div>
+      <div className='flex flex-col gap-5 md:gap-10 md:px-20 font-subtext text-off_white'>
         <div className='flex flex-col gap-2'>
           <p className='font-bold'>WiFi</p>
           <p>UCSC_Guest</p>
+          <p>eduroam</p>
         </div>
 
-        <div className='flex flex-col gap-2'>
+        {/* <div className='flex flex-col gap-2'>
           <p className='font-bold'>Color Legend</p>
           <p>Organizers: Black Shirt/Black Jackets</p>
           <p>Mentors/Judges: Blue Shirt</p>
@@ -30,7 +36,7 @@ const EventInfo: React.FC = () => {
             </Link>
             .
           </p>
-        </div>
+        </div> */}
 
         <div>
           <p className='font-bold'>Emergency Contacts</p>

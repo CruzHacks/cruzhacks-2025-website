@@ -4,35 +4,40 @@ import Card from "../../../../components/Card"
 
 const Rules: React.FC = () => {
   return (
-    <Card title='Rules and Policies'>
+    <Card>
+      <div className='mb-5'>
+        <h2 className='text-center font-title text-2xl font-bold uppercase text-off_white md:text-3xl'>
+          Rules and Policies
+        </h2>
+      </div>
       <div className='md:px-10'>
-        <p className='mb-10 font-subtext'>
+        <p className='text-center text-off_white mb-10 font-subtext'>
           Cruzhacks values the importance of a safe and all-inclusive space. We
           welcome students from all backgrounds. Review our rules and policies
           below.
         </p>
 
         <div className='flex flex-col items-stretch gap-5'>
-          <Button
-            text='Code of Conduct'
-            link='https://static.mlh.io/docs/mlh-code-of-conduct.pdf'
-            type='full'
-          />
-          <Button
-            text='CruzHacks 2024 Rules'
-            link='https://github.com/CruzHacks/hackathon-rules/blob/master/Rules.md'
-            type='clear'
-          />
-          {/* <Button
-            text='COVID Safety Policy'
-            link='https://docs.google.com/document/u/1/d/1aq7xN3c8t8AWS-yDBcvqu4EMYmw0025HAoCFuOVld7c'
-            type='clear'
-          /> */}
-          <Button
-            text='Participant & Release Agreement'
-            link='https://docs.google.com/document/d/1298VyEqrSIvbzM3U8nvLQsLtY78Vi2mbndr3d5w0UKk'
-            type='clear'
-          />
+          <a
+          className='bg-off_white/25 text-center font-subtext text-off_white p-4 rounded-lg border-off_white/70 border-2 w-full'
+          href='https://static.mlh.io/docs/mlh-code-of-conduct.pdf'
+          >
+            Code of Conduct
+          </a>
+          
+          <a
+          className='bg-off_white/25 text-center font-subtext text-off_white p-4 rounded-lg border-off_white/70 border-2 w-full'
+          href='https://github.com/CruzHacks/hackathon-rules/blob/master/Rules.md'
+          >
+            CruzHacks2025 Rules
+          </a>
+
+          <a 
+          className='bg-off_white/25 text-center font-subtext text-off_white p-4 rounded-lg border-off_white/70 border-2 w-full'
+          href='https://docs.google.com/document/d/e/2PACX-1vRpuRz1HdQNinOPhP45YKZ2byY79aFhZSlbZOwjMuPx7BC4NxL-KWo4Dr1NXrQG-dy66IZMz40yzq8O/pub'
+          >
+            Participant & Release Agreement
+          </a>
         </div>
       </div>
     </Card>

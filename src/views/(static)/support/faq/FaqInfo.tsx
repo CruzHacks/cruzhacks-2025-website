@@ -26,12 +26,12 @@ export const FAQsInfo = [
     question: "What rules do I need to follow?",
     answer: (
       <>
-        All CruzHacks 2024 participants will need to follow the{" "}
+        All CruzHacks 2025 participants will need to follow the{" "}
         <a
           target='_blank'
           rel='noreferrer'
           href='https://static.mlh.io/docs/mlh-code-of-conduct.pdf'
-          className='text-blue-button underline'
+          className='text-dark_orange underline'
         >
           MLH Code of Conduct
         </a>
@@ -39,19 +39,19 @@ export const FAQsInfo = [
         <a
           target='_blank'
           rel='noreferrer'
-          href='https://docs.google.com/document/u/1/d/1298VyEqrSIvbzM3U8nvLQsLtY78Vi2mbndr3d5w0UKk/edit'
-          className='text-blue-button underline'
+          href='https://docs.google.com/document/d/e/2PACX-1vRpuRz1HdQNinOPhP45YKZ2byY79aFhZSlbZOwjMuPx7BC4NxL-KWo4Dr1NXrQG-dy66IZMz40yzq8O/pub'
+          className='text-dark_orange underline'
         >
-          CruzHacks 2024 Participant and Release Agreement
+          CruzHacks 2025 Participant and Release Agreement
         </a>
         , and the{" "}
         <a
           target='_blank'
           rel='noreferrer'
           href='https://github.com/CruzHacks/hackathon-rules/blob/master/Rules.md'
-          className='text-blue-button underline'
+          className='text-dark_orange underline'
         >
-          CruzHacks 2024 Rules
+          CruzHacks 2025 Rules
         </a>
         .
       </>
@@ -67,7 +67,7 @@ export const FAQsInfo = [
       <>
         No experience is required, if you&apos;re stuck reach out to our mentors
         on slack to get some pointers. If you&apos;re looking to get started,
-        we&apos;ve provided some code {starterPack}. Cruzhacks is all about
+        we&apos;ve provided some code <u>{starterPack}</u>. Cruzhacks is all about
         learning and trying something new, be sure to attend some of our
         workshops listed in the schedule!
       </>

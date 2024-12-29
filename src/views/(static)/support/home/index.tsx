@@ -33,11 +33,11 @@ const supportLinks = [
 const Support = () => {
   return (
     <div className='w-screen bg-sunset-gradient bg-fixed relative'>
-      <div className="absolute right-7 top-12 w-3/5 z-0">
+      <div className="fixed right-7 top-12 w-3/5 z-0">
         <img src= {cloud2} alt="cloud"></img>
       </div>
 
-      <div className = "absolute left-2 bottom-32 md:bottom-80 w-1/3 z-0">
+      <div className = "fixed left-2 bottom-32 md:bottom-24 w-1/3 z-0">
         <img src= {cloud3} alt="cloud"></img>
       </div>
 
