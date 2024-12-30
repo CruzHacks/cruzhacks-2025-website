@@ -14,7 +14,7 @@ const StaticWrapper = () => {
   const isHomeOrTeam = pathname === "/team" || pathname === "/"
 
   return (
-    <div className='overflow-x-hidden bg-[#0A1351]' id='landing'>
+    <div className='overflow-x-hidden' id='landing'>
       {/* Put scroll at top on navigation */}
       <ScrollToTop />
       <div className="absolute left-0 top-0 w-60 z-[350]">
