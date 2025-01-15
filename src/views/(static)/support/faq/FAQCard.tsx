@@ -7,7 +7,7 @@ const FAQCard: React.FC = () => {
     <Card>
       <div className='mb-5'>
         <h2 className='text-center font-title text-2xl font-bold uppercase text-off_white md:text-3xl'>
-          FAQ's
+          FAQ&apos;s
         </h2>
       </div>
       <ul className='flex flex-col gap-10 text-off_white font-subtext'>
