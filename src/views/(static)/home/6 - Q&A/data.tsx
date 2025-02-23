@@ -78,49 +78,40 @@ const faqs = [
         </>
       ),
     },
-    // {
-    //   question: "What rules do I need to follow?",
-    //   answer: (
-    //     <>
-    //       All CruzHacks 2025 participants will need to follow the{" "}
-    //       <a
-    //         target='_blank'
-    //         rel='noreferrer'
-    //         href='https://static.mlh.io/docs/mlh-code-of-conduct.pdf'
-    //       >
-    //         MLH Code of Conduct
-    //       </a>
-    //       , the{" "}
-    //       <a
-    //         target='_blank'
-    //         rel='noreferrer'
-    //         href='https://docs.google.com/document/u/1/d/1298VyEqrSIvbzM3U8nvLQsLtY78Vi2mbndr3d5w0UKk/edit'
-    //         className='text-blue-button'
-    //       >
-    //         CruzHacks 2024 Participant and Release Agreement
-    //       </a>
-    //       , the{" "}
-    //       <a
-    //         target='_blank'
-    //         rel='noreferrer'
-    //         href='https://github.com/CruzHacks/hackathon-rules/blob/master/Rules.md'
-    //         className='text-blue-button'
-    //       >
-    //         CruzHacks 2024 Rules
-    //       </a>
-    //       , and the{" "}
-    //       <a
-    //         target='_blank'
-    //         rel='noreferrer'
-    //         href='https://docs.google.com/document/u/1/d/1aq7xN3c8t8AWS-yDBcvqu4EMYmw0025HAoCFuOVld7c/edit'
-    //         className='text-blue-button'
-    //       >
-    //         CruzHacks 2024 COVID Safety Policy
-    //       </a>
-    //       .
-    //     </>
-    //   ),
-    // },
+    {
+      question: "What rules do I need to follow?",
+      answer: (
+        <>
+          All CruzHacks 2025 participants will need to follow the{" "}
+          <a
+            target='_blank'
+            rel='noreferrer'
+            href='https://static.mlh.io/docs/mlh-code-of-conduct.pdf'
+          >
+            MLH Code of Conduct
+          </a>
+          , the{" "}
+          <a
+            target='_blank'
+            rel='noreferrer'
+            href='https://docs.google.com/document/d/e/2PACX-1vRpuRz1HdQNinOPhP45YKZ2byY79aFhZSlbZOwjMuPx7BC4NxL-KWo4Dr1NXrQG-dy66IZMz40yzq8O/pub'
+            className='text-blue-imperial'
+          >
+            CruzHacks 2025 Participant and Release Agreement
+          </a>
+          , the{" "}
+          <a
+            target='_blank'
+            rel='noreferrer'
+            href='https://github.com/CruzHacks/hackathon-rules/blob/master/Rules.md'
+            className='text-blue-imperial'
+          >
+            CruzHacks 2025 Rules
+          </a>
+          .
+        </>
+      ),
+    },
     // {
     //   question: "What are the prize tracks?",
     //   answer: (
