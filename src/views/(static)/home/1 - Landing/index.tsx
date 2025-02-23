@@ -69,7 +69,8 @@ const Landing = ({ id }: { id?: string }) => {
             UCSC PREMIERE HACKATHON
           </p>
           <p className='z-10 w-2/3 self-center text-center font-subtext text-[10px] uppercase md:w-1/2 md:self-end md:text-right lg:w-full lg:text-xl text-off_white'>
-            DATE TBD&nbsp;&nbsp;: &nbsp;&nbsp;<b>STEVENSON EVENT CENTER</b>
+            APRIL 11-13 &nbsp;&nbsp;: &nbsp;&nbsp;<b>
+              <a href="https://maps.app.goo.gl/8n4kSN9dCHqoUToa9">CIVIC AUDITORIUM CENTER</a></b>
           </p>
         </div>
 

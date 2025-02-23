@@ -1,7 +1,7 @@
 import React, { Fragment } from "react"
 import { Link } from "react-router-dom"
 import useAuth from "../../hooks/useAuth"
-import CruzHacksLogo from "../../assets/logos/CruzHacks - Blue.svg"
+import CruzHacksLogo from "../../assets/logos/CruzHacks - Orange.svg"
 import AvatarButton from "../../components/AvatarButton"
 import { classNames } from "../../utils/string"
 import {

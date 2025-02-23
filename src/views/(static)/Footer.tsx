@@ -25,7 +25,7 @@ const Footer: React.FC = () => {
           <span>|</span>
           <a
             target='_blank'
-            href='https://docs.google.com/document/d/1298VyEqrSIvbzM3U8nvLQsLtY78Vi2mbndr3d5w0UKk/edit?usp=sharing'
+            href='https://docs.google.com/document/d/e/2PACX-1vRpuRz1HdQNinOPhP45YKZ2byY79aFhZSlbZOwjMuPx7BC4NxL-KWo4Dr1NXrQG-dy66IZMz40yzq8O/pub'
             rel='noopener noreferrer'
           >
             Participant Agreement
