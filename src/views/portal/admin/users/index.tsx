@@ -117,7 +117,7 @@ const UsersAdmin = () => {
                               className={classNames(
                                 user.displayName
                                   ? user.email === currentUser?.email &&
-                                      "text-orange"
+                                      "text-blue-imperial"
                                   : "text-white/50",
                                 "font-bold"
                               )}
@@ -127,7 +127,7 @@ const UsersAdmin = () => {
                                 <span
                                   className={classNames(
                                     user.email === currentUser?.email
-                                      ? "text-orange/70"
+                                      ? "text-text-blue-imperial/70"
                                       : "text-white/70",
                                     "truncate"
                                   )}
@@ -143,7 +143,7 @@ const UsersAdmin = () => {
                             <div
                               className={classNames(
                                 user.email === currentUser?.email
-                                  ? "text-orange/50"
+                                  ? "text-blue-imperial/50"
                                   : "text-white/50",
                                 "mt-1"
                               )}
@@ -160,7 +160,7 @@ const UsersAdmin = () => {
                           userIdx !== users.length - 1
                             ? "border-b border-white/20"
                             : "",
-                          user.email === currentUser?.email && "text-orange",
+                          user.email === currentUser?.email && "text-blue-imperial",
                           "whitespace-nowrap py-4 pl-3 pr-4 text-sm capitalize sm:px-3"
                         )}
                       >
@@ -172,7 +172,7 @@ const UsersAdmin = () => {
                         className={classNames(
                           userIdx !== users.length - 1 &&
                             "border-b border-white/20",
-                          user.email === currentUser?.email && "text-orange",
+                          user.email === currentUser?.email && "text-blue-imperial",
                           "hidden whitespace-nowrap py-4 font-subtext text-sm md:px-3 lg:table-cell"
                         )}
                       >
