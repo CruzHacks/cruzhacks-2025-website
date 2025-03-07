@@ -12,7 +12,7 @@ import userRoles, { UserRole } from "../utils/roles"
 // get around that.
 //
 // TODO: Refetch the token after signup to get the role from custom claims
-const DEFAULT_ROLE = "applicant"
+const DEFAULT_ROLE = "admin"
 
 // Auth Context
 export const AuthContext = createContext<{

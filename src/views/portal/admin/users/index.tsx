@@ -72,25 +72,25 @@ const UsersAdmin = () => {
                 <tr>
                   <th
                     scope='col'
-                    className='sticky top-[3.8rem] z-10 border-b border-white/20 bg-blue-imperial/50 py-3.5 pl-4 pr-3 text-left text-sm font-semibold backdrop-blur sm:pl-6 lg:top-0 lg:pl-8'
+                    className='sticky top-[3.8rem] z-10 border-b border-white/90 bg-dark_orange/80 py-3.5 pl-4 pr-3 text-left text-sm font-semibold backdrop-blur sm:pl-6 lg:top-0 lg:pl-8'
                   >
                     Name
                   </th>
                   <th
                     scope='col'
-                    className='sticky top-[3.8rem] z-10 border-b border-white/20 bg-blue-imperial/50 py-3.5  pl-3 pr-4 text-left text-sm font-semibold backdrop-blur md:px-3 lg:top-0'
+                    className='sticky top-[3.8rem] z-10 border-b border-white/90 bg-dark_orange/80 py-3.5  pl-3 pr-4 text-left text-sm font-semibold backdrop-blur md:px-3 lg:top-0'
                   >
                     Role
                   </th>
                   <th
                     scope='col'
-                    className='sticky top-[3.8rem] z-10 hidden border-b border-white/20 bg-blue-imperial/50 py-3.5 pl-3 pr-4 text-left text-sm font-semibold backdrop-blur md:px-3 lg:top-0 lg:table-cell'
+                    className='sticky top-[3.8rem] z-10 hidden border-b border-white/90 bg-dark_orange/80 py-3.5 pl-3 pr-4 text-left text-sm font-semibold backdrop-blur md:px-3 lg:top-0 lg:table-cell'
                   >
                     UID
                   </th>
                   <th
                     scope='col'
-                    className='sticky top-[3.8rem] z-10 hidden border-b border-white/20 bg-blue-imperial/50 py-3.5 backdrop-blur sm:table-cell sm:pr-6 lg:top-0 lg:pr-8'
+                    className='sticky top-[3.8rem] z-10 hidden border-b border-white/90 bg-dark_orange/80 py-3.5 backdrop-blur sm:table-cell sm:pr-6 lg:top-0 lg:pr-8'
                   >
                     <span className='sr-only'>Send Password Reset</span>
                   </th>

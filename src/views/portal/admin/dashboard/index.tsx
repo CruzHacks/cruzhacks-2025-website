@@ -18,7 +18,7 @@ const DashboardAdmin = () => {
           Admin Portal Dashboard
         </h1>
       </div>
-      <MakeAnnoucements />
+      {/* <MakeAnnoucements /> */}
 
       <div className='h-5' />
 
