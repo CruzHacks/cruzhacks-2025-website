@@ -28,29 +28,28 @@ const formatTime = (time: any) => {
 }
 
 const AppStatus = ({ status }: { status: ApplicationStatus }) => {
-  if (status === "rejected") {
+    if (status === "rejected") {
+      return (
+        <span className='inline-flex items-center rounded-md bg-[#B92F2F]/10 px-2 py-1 text-xs font-medium text-[#B92F2F] ring-1 ring-inset ring-[#B92F2F]/20'>
+          Rejected
+        </span>
+      )
+    }
+
+    if (status === "accepted") {
+      return (
+        <span className='inline-flex items-center rounded-md bg-[#1D742A]/20 px-2 py-1 text-xs font-medium text-[#1D742A] ring-1 ring-inset ring-[#1D742A]/80'>
+          Accepted
+        </span>
+      )
+    }
+
     return (
-      <span className='inline-flex items-center rounded-md bg-error/10 px-2 py-1 text-xs font-medium text-error ring-1 ring-inset ring-error/20'>
-        Rejected
+      <span className='inline-flex items-center rounded-md bg-dark_orange/40 px-2 py-1 text-xs font-medium text-medium_yellow ring-1 ring-inset ring-dark_orange/20'>
+        Needs Review
       </span>
     )
   }
-
-  if (status === "accepted") {
-    return (
-      <span className='inline-flex items-center rounded-md bg-success/10 px-2 py-1 text-xs font-medium text-success ring-1 ring-inset ring-success/20'>
-        Accepted
-      </span>
-    )
-  }
-
-  return (
-    <span className='inline-flex items-center rounded-md bg-gold/10 px-2 py-1 text-xs font-medium text-gold ring-1 ring-inset ring-gold/20'>
-      Needs Review
-    </span>
-  )
-}
-
 // TODO: Pagination
 
 // TODO: Compose generic table component: tables are reused; loading styling
@@ -321,7 +320,7 @@ const ApplicationsAdmin = () => {
                             )}
                           >
                             <button
-                              className='text-pink'
+                              className='text-dark_pink'
                               onClick={() =>
                                 handleReviewApplication(application.email)
                               }
