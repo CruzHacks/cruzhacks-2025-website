@@ -135,12 +135,12 @@ const ApplicationsAdmin = () => {
           </p>
         </div>
         <div className='mt-4 flex gap-2 sm:ml-16 sm:mt-0 sm:flex-none'>
-          <p className='block rounded-md bg-blue-button/10 px-3 py-2 text-center font-subtext text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white'>
+          <p className='block rounded-md bg-dark_orange/80 px-3 py-2 text-center font-subtext text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white'>
             {applications && applications?.length} Submissions
           </p>
 
           <Menu>
-            <Menu.Button className='block rounded-md bg-blue-button/10 px-3 py-2 text-center font-subtext text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white'>
+            <Menu.Button className='block rounded-md bg-dark_orange/80 px-3 py-2 text-center font-subtext text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white'>
               <ChevronDownIcon className='inline h-4 w-4' />
             </Menu.Button>
 
@@ -198,37 +198,37 @@ const ApplicationsAdmin = () => {
                 <tr>
                   <th
                     scope='col'
-                    className='sticky top-[3.8rem] z-10 hidden border-b border-white/20 bg-blue-imperial/50 py-3.5 pl-8 pr-3 text-left text-sm font-semibold backdrop-blur sm:table-cell lg:top-0'
+                    className='sticky top-[3.8rem] z-10 hidden border-b border-white/90 bg-dark_orange/80 py-3.5 pl-8 pr-3 text-left text-sm font-semibold backdrop-blur sm:table-cell lg:top-0'
                   >
                     Id
                   </th>
                   <th
                     scope='col'
-                    className='sticky top-[3.8rem] z-10 border-b border-white/20 bg-blue-imperial/50 py-3.5 pl-4 text-left text-sm font-semibold text-white backdrop-blur sm:px-3 lg:top-0'
+                    className='sticky top-[3.8rem] z-10 border-b border-white/90 bg-dark_orange/80 py-3.5 pl-4 text-left text-sm font-semibold text-white backdrop-blur sm:px-3 lg:top-0'
                   >
                     Email
                   </th>
                   <th
                     scope='col'
-                    className='sticky top-[3.8rem] z-10 border-b border-white/20 bg-blue-imperial/50 px-3 py-3.5 text-left text-sm font-semibold text-white backdrop-blur lg:top-0'
+                    className='sticky top-[3.8rem] z-10 border-b border-white/90 bg-dark_orange/80 px-3 py-3.5 text-left text-sm font-semibold text-white backdrop-blur lg:top-0'
                   >
                     Status
                   </th>
                   <th
                     scope='col'
-                    className='sticky top-[3.8rem] z-10 hidden border-b border-white/20 bg-blue-imperial/50 px-3 py-3.5 text-left text-sm font-semibold text-white backdrop-blur lg:top-0 lg:table-cell'
+                    className='sticky top-[3.8rem] z-10 hidden border-b border-white/90 bg-dark_orange/80 px-3 py-3.5 text-left text-sm font-semibold text-white backdrop-blur lg:top-0 lg:table-cell'
                   >
                     RSVP
                   </th>
                   <th
                     scope='col'
-                    className='sticky top-[3.8rem] z-10 hidden border-b border-white/20 bg-blue-imperial/50 px-3 py-3.5 text-left text-sm font-semibold text-white backdrop-blur sm:table-cell lg:top-0'
+                    className='sticky top-[3.8rem] z-10 hidden border-b border-white/90 bg-dark_orange/80 px-3 py-3.5 text-left text-sm font-semibold text-white backdrop-blur sm:table-cell lg:top-0'
                   >
                     Time Submitted
                   </th>
                   <th
                     scope='col'
-                    className='sticky top-[3.8rem] z-10 border-b border-white/20 bg-blue-imperial/50 py-3.5 pl-3 pr-4 backdrop-blur sm:pr-6 lg:top-0 lg:pr-8'
+                    className='sticky top-[3.8rem] z-10 border-b border-white/90 bg-dark_orange/80 py-3.5 pl-3 pr-4 backdrop-blur sm:pr-6 lg:top-0 lg:pr-8'
                   >
                     <span className='sr-only'>Review Application</span>
                   </th>
