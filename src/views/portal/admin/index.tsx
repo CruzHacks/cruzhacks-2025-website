@@ -38,7 +38,7 @@ const nav = [
 
 const PortalAdmin = () => {
   return (
-    <div className='min-h-screen bg-sunset-gradient'>
+    <div className='min-h-screen bg-medium_orange'>
       <Sidebar navigation={nav} />
     </div>
   )
