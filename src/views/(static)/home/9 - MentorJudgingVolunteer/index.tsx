@@ -43,7 +43,7 @@ const MentorJudgeVolunteerBlurb = ({ id }: { id?: string }) => {
                                 <p className="text-[#FFFFFF] text-lg"><b>APPLY</b></p>
                             </a>
                         </div>
-                        <div className='flex flex-col gap-4 bg-[#8CB176] px-8 py-4 rounded-3xl'>
+                        <div className='flex flex-col gap-4 bg-[# ] px-8 py-4 rounded-3xl'>
                             <h1 className="font-subtext text-[#FFFFFF] text-lg md:text-2xl"><b>Volunteer</b></h1>
                             <p className="text-[#FFFFFF]">Ensures the event runs smoothly by helping with operations, supplies and supporting participants. Help out day-of and setup to ensure hackers have a seemless experience</p>
                             
