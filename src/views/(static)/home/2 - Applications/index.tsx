@@ -34,7 +34,7 @@ const ApplicationBlurb = ({ id }: { id?: string }) => {
 
               <div className="flex justify-center w-full gap-12 mb-12 md:mb-0">
                 <img src={Starfish1} alt="Starfish1" className="w-1/5 -mt-20 hidden md:flex"/>
-                <Link to='/j7hxc5p6ri/apply'>
+                <Link to='/apply'>
                   <div className="bg-medium_yellow/65 px-4 rounded-full hover:bg-medium_yellow/85 text-center max-w-2xl">
                     <p className="text-[#FFFFFF] px-8 py-4 text-lg md:text-xl md:px-8 md:py-6"><b>APPLY HERE</b></p>
                   </div>

@@ -98,10 +98,13 @@ const App: React.FC = () => {
         <Route element={<UnauthenticatedRoute />}>
           <Route path='login' element={<Login />} />
           <Route path='organizers-only/signup' element={<Signup />} />
-          {/* <Route path='apply' element={<Outlet />}>
+
+          {/* comment this and change route in /home/2-Applications/ To Open applications */}
+          {/* Uncomment to close applications */}
+          <Route path='apply' element={<Outlet />}>
             <Route index element={<ApplicationClosed />} />
             <Route path='*' element={<ApplicationClosed />} />
-          </Route> */}
+          </Route>
 
           <Route path='j7hxc5p6ri/apply' element={<Apply />}>
             <Route
