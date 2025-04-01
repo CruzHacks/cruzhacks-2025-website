@@ -4,6 +4,7 @@ import UniversialAudio from "../../../../assets/sponsors/UniversalAudio.svg"
 // Tier 2
 import BaskinEngineering from "../../../../assets/sponsors/BaskinEngineering.svg"
 import CIED from "../../../../assets/sponsors/CIED.svg"
+import SCWorks from "../../../../assets/sponsors/SCWLogo.svg"
 
 // Tier 3
 import CruzFoam from "../../../../assets/sponsors/CruzFoam.svg"
@@ -47,14 +48,27 @@ import SeghettiWaxler from "../../../../assets/sponsors/SeghettiWaxler.svg"
 // NOTE: these are last years sponsors, please update with this years sponsors
 export const sponsors = [
   // Tier 1
+
+  [
+    {
+      name: "City of Santa Cruz Economic Development",
+      icon: SCEDH,
+      url: "https://www.cityofsantacruz.com/government/city-departments/economic-development",
+    },
+
+    {
+      name: "Santa Cruz Works",
+      icon: SCWorks,
+      url: "https://www.santacruzworks.org/",
+    },
+  ],
+
   [
     {
       name: "Universal Audio",
       icon: UniversialAudio,
       url: "https://www.uaudio.com/",
     },
-    // ],
-
     // // Tier 2
     // [
     {
@@ -135,11 +149,6 @@ export const sponsors = [
       url: "https://genomics.ucsc.edu/",
     },
     { name: "CITRIS", icon: Citris, url: "https://citris-uc.org/" },
-    {
-      name: "City of Santa Cruz Economic Development",
-      icon: SCEDH,
-      url: "https://www.cityofsantacruz.com/government/city-departments/economic-development",
-    },
   ],
   [
     // Tier 6
