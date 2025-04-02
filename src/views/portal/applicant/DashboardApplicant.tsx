@@ -71,7 +71,7 @@ const DashboardApplicant = () => {
         Icon={ExclamationCircleIcon}
         iconStyling='text-error'
         title='Confirm Decline Attendance'
-        description='Are you sure you want to decline your attendance to CruzHacks 2024? This cannot be undone.'
+        description='Are you sure you want to decline your attendance to CruzHacks 2025? This cannot be undone.'
         actionText='I will not be attending'
         actionFunc={handleDeclineAttendance}
         open={openDeclineModal}
@@ -187,7 +187,7 @@ const DashboardApplicant = () => {
               <p className='font-subtext'>
                 Let us know if you will be joining us! Confirm or decline your
                 attendance. We want to make sure we are ready to give you the
-                best experience at CruzHacks 2024.
+                best experience at CruzHacks 2025.
               </p>
             </div>
 
@@ -214,23 +214,23 @@ const DashboardApplicant = () => {
         <div className='mt-10 max-w-4xl space-y-3'>
           <h1 className='font-title text-2xl'>Hope to See You Next Year</h1>
           <p className='font-subtext leading-8'>
-            Thank you for your interest in attending CruzHacks 2024. We had a
+            Thank you for your interest in attending CruzHacks 2025. We had a
             large number of applicants this year, and we appreciate the time and
-            effort you put into your CruzHacks 2024 application. Unfortunately,
-            we are unable to offer you a spot at CruzHacks 2024 at this time.
+            effort you put into your CruzHacks 2025 application. Unfortunately,
+            we are unable to offer you a spot at CruzHacks 2025 at this time.
           </p>
           <p className='font-subtext leading-8'>
             The selection process is one of our most critical processes and we
             carefully review each written response to make our decision
             regarding your application. At this time, we are unable to respond
             to individual inquiries about your application decision. We highly
-            encourage you to apply again to CruzHacks 2024 next year, and attend
+            encourage you to apply again to CruzHacks 2025 next year, and attend
             some of the other MLH-affiliated hackathons in the meantime.
           </p>
           <p className='pt-5 font-subtext leading-8'>
             Sincerely,
             <br />
-            The CruzHacks 2024 Student Organizers
+            The CruzHacks 2025 Student Organizers
           </p>
         </div>
       )}
