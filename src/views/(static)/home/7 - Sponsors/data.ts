@@ -4,13 +4,14 @@ import SCEDH from "../../../../assets/sponsors/SCEDH.svg"
 
 import BaskinEngineering from "../../../../assets/sponsors/BaskinEngineering.svg"
 import CIED from "../../../../assets/sponsors/CIED.svg"
+import EighthWall from "../../../../assets/sponsors/EighthWall.svg"
+
 
 // Tier 3
 import QB3 from "../../../../assets/sponsors/QB3.svg"
 import StudentAffairsDivision from "../../../../assets/sponsors/StudentAffairsDivision.svg"
 import ArtsResearchInstitute from "../../../../assets/sponsors/ArtsResearchInstitute.svg"
 import DMatrix from "../../../../assets/sponsors/DMatrix.svg"
-
 
 import ArtsDivision from "../../../../assets/sponsors/ArtsDivision.svg"
 
@@ -79,15 +80,21 @@ export const sponsors = [
       icon: BaskinEngineering,
       url: "https://www.soe.ucsc.edu/",
     },
+    
     {
-      name: "CIED",
-      icon: CIED,
-      url: "https://cied.ucsc.edu/",
+      name: "8thWall",
+      icon: EighthWall,
+      url: "https://www.8thwall.com/niantic",
     },
   ],
 
   // Tier 3
   [
+    {
+      name: "CIED",
+      icon: CIED,
+      url: "https://cied.ucsc.edu/",
+    },
     {
       name: "qb3",
       icon: QB3,
