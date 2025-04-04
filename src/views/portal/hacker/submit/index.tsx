@@ -158,7 +158,7 @@ const SubmitHacker = () => {
                   rel='noopener noreferrer'
                   className='text-blue-button underline'
                 >
-                  CruzHacks 2024&apos;s DevPost page
+                  CruzHacks 2025&apos;s DevPost page
                 </Link>
                 . If you do not have an account, please create an account with
                 your UCSC or affiliated school account

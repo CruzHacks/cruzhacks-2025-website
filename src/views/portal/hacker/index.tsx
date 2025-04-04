@@ -13,11 +13,11 @@ const nav = [
     href: "/portal/hacker",
     icon: HomeIcon,
   },
-  // {
-  //   name: "Check In",
-  //   href: "/portal/hacker/check-in",
-  //   icon: CameraIcon,
-  // },
+  {
+    name: "Check In",
+    href: "/portal/hacker/check-in",
+    icon: CameraIcon,
+  },
   {
     name: "Team",
     href: "/portal/hacker/team",
@@ -32,7 +32,7 @@ const nav = [
 
 const HackerPortal = () => {
   return (
-    <div className='min-h-screen'>
+    <div className='min-h-screen bg-portal-gradient'>
       <Sidebar navigation={nav} />
     </div>
   )

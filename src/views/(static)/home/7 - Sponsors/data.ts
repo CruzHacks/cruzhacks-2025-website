@@ -1,45 +1,52 @@
-// Tier 1
-import UniversialAudio from "../../../../assets/sponsors/UniversalAudio.svg"
+// Tier 1 + 2
+import SCWorks from "../../../../assets/sponsors/SCWLogo.svg"
+import SCEDH from "../../../../assets/sponsors/SCEDH.svg"
 
-// Tier 2
 import BaskinEngineering from "../../../../assets/sponsors/BaskinEngineering.svg"
 import CIED from "../../../../assets/sponsors/CIED.svg"
-import SCWorks from "../../../../assets/sponsors/SCWLogo.svg"
 
 // Tier 3
-import CruzFoam from "../../../../assets/sponsors/CruzFoam.svg"
 import QB3 from "../../../../assets/sponsors/QB3.svg"
 import StudentAffairsDivision from "../../../../assets/sponsors/StudentAffairsDivision.svg"
-import HumanitiesInsititue from "../../../../assets/sponsors/HumanitiesInstitute.svg"
-import HumanitiesDivision from "../../../../assets/sponsors/HumanitiesDivision.svg"
+import ArtsResearchInstitute from "../../../../assets/sponsors/ArtsResearchInstitute.svg"
+import DMatrix from "../../../../assets/sponsors/DMatrix.svg"
+
+
+import ArtsDivision from "../../../../assets/sponsors/ArtsDivision.svg"
+
 
 // Tier 4
 import SUA from "../../../../assets/sponsors/SUA.svg"
-
-// Tier 5
-import SouthSwell from "../../../../assets/sponsors/SouthSwell.svg"
-import ArtsDivision from "../../../../assets/sponsors/ArtsDivision.svg"
 import GenomicsInstitute from "../../../../assets/sponsors/GenomicsInstitute.svg"
 import Citris from "../../../../assets/sponsors/Citris.svg"
+import SouthSwell from "../../../../assets/sponsors/SouthSwell.svg"
 import Cross from "../../../../assets/sponsors/CROSS.svg"
-import RapidRobots from "../../../../assets/sponsors/RapidRobots.svg"
-import SCEDH from "../../../../assets/sponsors/SCEDH.svg"
+
+
+
+
+
+// Tier 5
 
 // Tier 6
-import InspiritAi from "../../../../assets/sponsors/InspiritAi.svg"
 import TeachingLearningCenter from "../../../../assets/sponsors/TeachingLearningCenter.svg"
-import ArtsResearchInstitute from "../../../../assets/sponsors/ArtsResearchInstitute.svg"
-import StandOutSticekrs from "../../../../assets/sponsors/StandOutStickers.svg"
+import IBE from "../../../../assets/sponsors/IBE.svg"
 
 // Tier 7
 import Backbone from "../../../../assets/sponsors/Backbone.svg"
-import Wolfram from "../../../../assets/sponsors/Wolfram.svg"
 import Balsamiq from "../../../../assets/sponsors/Balsamiq.svg"
-import Echo3d from "../../../../assets/sponsors/Echo3d.svg"
 import Vectara from "../../../../assets/sponsors/Vectara.svg"
 import Verbwire from "../../../../assets/sponsors/Verbwire.svg"
-import Axure from "../../../../assets/sponsors/Axure.svg"
-import GoogleCloud from "../../../../assets/sponsors/GoogleCloud.svg"
+import OReilly from "../../../../assets/sponsors/OReilly.svg"
+
+import InterviewCake from "../../../../assets/sponsors/InterviewCake.svg"
+import CleanShot from "../../../../assets/sponsors/CleanShot.svg"
+import Synty from "../../../../assets/sponsors/Synty.svg"
+import XYZ from "../../../../assets/sponsors/xyz.svg"
+import CodeCrafters from "../../../../assets/sponsors/CodeCrafters.svg"
+import PCBWay from "../../../../assets/sponsors/PCBWay.svg"
+import VueSchool from "../../../../assets/sponsors/VueSchool.svg"
+import AoPS from "../../../../assets/sponsors/AoPS.svg"
 
 // Special Thanks
 import BreretonLawOffice from "../../../../assets/sponsors/BreretonLawOffice.svg"
@@ -64,11 +71,7 @@ export const sponsors = [
   ],
 
   [
-    {
-      name: "Universal Audio",
-      icon: UniversialAudio,
-      url: "https://www.uaudio.com/",
-    },
+    
     // // Tier 2
     // [
     {
@@ -86,41 +89,28 @@ export const sponsors = [
   // Tier 3
   [
     {
-      name: "The Humanities Institute",
-      icon: HumanitiesInsititue,
-      url: "https://thi.ucsc.edu/",
+      name: "qb3",
+      icon: QB3,
+      url: "https://qb3.ucsc.edu/",
     },
-    {
-      name: "Cruz Foam",
-      icon: CruzFoam,
-      url: "https://www.cruzfoam.com/",
-    },
-  ],
-  [
     {
       name: "Division of Student Affairs",
       icon: StudentAffairsDivision,
       url: "https://studentsuccess.ucsc.edu/",
     },
     {
-      name: "The Humanities Division",
-      icon: HumanitiesDivision,
-      url: "https://humanities.ucsc.edu/",
-    },
-    {
-      name: "qb3",
-      icon: QB3,
-      url: "https://qb3.ucsc.edu/",
+      name: "Arts Research Institute",
+      icon: ArtsResearchInstitute,
+      url: "https://ari.ucsc.edu/",
     },
   ],
-
   // Tier 4
   [
-    { name: "SUA", icon: SUA, url: "https://sua.ucsc.edu/" },
     // ],
 
     // Tier 5
     // [
+    { name: "SUA", icon: SUA, url: "https://sua.ucsc.edu/" },
     {
       name: "South Swell Ventures",
       icon: SouthSwell,
@@ -132,9 +122,9 @@ export const sponsors = [
     // },
     { name: "CROSS", icon: Cross, url: "https://cross.ucsc.edu/" },
     {
-      name: "Rapid Robots",
-      icon: RapidRobots,
-      url: "https://www.rapidrobotics.com/",
+      name: "DMatrix",
+      icon: DMatrix,
+      url: "https://www.d-matrix.ai/",
     },
   ],
   [
@@ -153,33 +143,28 @@ export const sponsors = [
   [
     // Tier 6
     {
-      name: "Stand Out Stickers",
-      icon: StandOutSticekrs,
-      url: "http://hackp.ac/mlh-StandOutStickers-hackathons",
-    },
-    {
-      name: "Insprit AI",
-      icon: InspiritAi,
-      url: "https://www.inspiritai.com/",
+      name: "UCSC Innovation and Business Engagement Hub",
+      icon: IBE,
+      url: "https://innovation.ucsc.edu/"
     },
     {
       name: "Teaching and Learning Center",
       icon: TeachingLearningCenter,
       url: "https://tlc.ucsc.edu/",
     },
-    {
-      name: "Arts Research Institute",
-      icon: ArtsResearchInstitute,
-      url: "https://ari.ucsc.edu/",
-    },
   ],
 
   // Tier 7
   [
     {
-      name: "Wolfram",
-      icon: Wolfram,
-      url: "https://www.wolfram.com/",
+      name: "Verbwire",
+      icon: Verbwire,
+      url: "https://www.verbwire.com/",
+    },
+    {
+      name: "Interview Cake",
+      icon: InterviewCake,
+      url: "https://www.interviewcake.com/",
     },
     {
       name: "Balsamiq",
@@ -187,14 +172,9 @@ export const sponsors = [
       url: "https://balsamiq.com/",
     },
     {
-      name: "Backbone",
-      icon: Backbone,
-      url: "https://playbackbone.com/",
-    },
-    {
-      name: "Echo3D",
-      icon: Echo3d,
-      url: "https://www.echo3d.com/",
+      name: "OReilly",
+      icon: OReilly,
+      url: "https://www.oreilly.com/",
     },
     {
       name: "Vectara",
@@ -202,21 +182,49 @@ export const sponsors = [
       url: "https://vectara.com/",
     },
     {
-      name: "Verbwire",
-      icon: Verbwire,
-      url: "https://www.verbwire.com/",
-    },
-    {
-      name: "Axure",
-      icon: Axure,
-      url: "https://www.axure.com/",
-    },
-    {
-      name: "Google Cloud",
-      icon: GoogleCloud,
-      url: "https://cloud.google.com/",
+      name: "Backbone",
+      icon: Backbone,
+      url: "https://playbackbone.com/",
     },
   ],
+
+  [
+    {
+      name: "CleanShot",
+      icon: CleanShot,
+      url: "https://cleanshot.com/",
+    },
+    {
+      name: "Synty",
+      icon: Synty,
+      url: "https://syntystudios.com/",
+    },
+    {
+      name: ".XYZ",
+      icon: XYZ,
+      url: "https://gen.xyz/",
+    },
+    {
+      name: "CodeCrafters",
+      icon: CodeCrafters,
+      url: "https://codecrafters.io/",
+    },
+    {
+      name: "PCBWay",
+      icon: PCBWay,
+      url: "https://www.pcbway.com/",
+    },
+    {
+      name: "VueSchool",
+      icon: VueSchool,
+      url: "https://vueschool.io/",
+    },
+    {
+      name: "AoPS",
+      icon: AoPS,
+      url: "https://artofproblemsolving.com/",
+    },
+  ]
 ]
 
 export const specialThanks = [
