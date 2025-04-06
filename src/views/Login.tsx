@@ -107,7 +107,7 @@ export default function Login() {
               </div> */}
 
           <div>
-            <p className='font-subtext -mt-5 mb-4'>Forgot Password? <Link to='/signup' className="hover:font-bold">Reset Here</Link></p>
+            <p className='font-subtext -mt-5 mb-4'>Forgot Password? <Link to='/password-reset' className="hover:font-bold">Reset Here</Link></p>
 
             <button
               type='submit'

@@ -84,6 +84,8 @@ module.exports = {
           'linear-gradient(to bottom, #E9603A, #F7F3B0, #4087C6)',
         "milestones-gradient":
           'linear-gradient(to bottom, #56B9B7, #3FC28B)',
+        "prizetracks-gradient":
+          'linear-gradient(to bottom, #FF6767, #FFA962)',
         'sunset-gradient': 
           'linear-gradient(to bottom, #E9603A, #ED683C, #F3903F, #FEE62D, #FFF33B)',
         'portal-gradient':

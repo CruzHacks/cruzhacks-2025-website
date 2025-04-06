@@ -23,19 +23,19 @@ export const TechCaresTracks: PrizeTrack[] = [
   },
   {
     icon: Health,
-    title: "Health",
+    title: "HEALTH",
     blurb:
       "This category aspires to address healthcare disparities. How do we support mental & physical well-being with accessible services?",
   },
   {
     icon: Justice,
-    title: "Justice",
+    title: "JUSTICE",
     blurb:
       "This category aims to drive innovation for civil liberty and social justice. How can we uphold truth & order in a (mis)information age?",
   },
   {
     icon: Education,
-    title: "Education",
+    title: "EDUCATION",
     blurb:
       "This track encourages students to create apps that have a substantial impact on fostering a more effective and stimulating learning environment.",
   },

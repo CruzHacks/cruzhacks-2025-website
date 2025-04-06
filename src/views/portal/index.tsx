@@ -214,7 +214,7 @@ const Sidebar = ({ navigation }: SidebarProps) => {
         </div>
       </div>
 
-      <div className='sticky top-0 z-40 flex items-center gap-x-6 bg-blue-royal p-4 shadow-sm sm:px-6 lg:hidden'>
+      <div className='sticky top-0 z-40 flex items-center gap-x-6 bg-app_bar_orange p-4 shadow-sm sm:px-6 lg:hidden'>
         <button
           type='button'
           className='text-gray-400 -m-2.5 p-2.5 lg:hidden'
