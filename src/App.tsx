@@ -42,6 +42,7 @@ import DashbaordHacker from "./views/portal/hacker/dashboard"
 import QRCodeHacker from "./views/portal/hacker/QRCode"
 import SubmitHacker from "./views/portal/hacker/submit"
 import SponsorshipPage from "./views/(static)/SponsorshipPage"
+import PasswordReset from "./views/PasswordReset"
 
 const App: React.FC = () => {
   const {
@@ -97,6 +98,7 @@ const App: React.FC = () => {
         {/* You cannot be logged in to access these routes*/}
         <Route element={<UnauthenticatedRoute />}>
           <Route path='login' element={<Login />} />
+          <Route path="password-reset" element={<PasswordReset />} />
           <Route path='organizers-only/signup' element={<Signup />} />
 
           {/* comment this and change route in /home/2-Applications/ To Open applications */}
