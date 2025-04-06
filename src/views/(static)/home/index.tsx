@@ -2,6 +2,7 @@ import React from "react"
 import Landing from "./1 - Landing"
 // import HeroBlurb from "./2 - Hero Blurb"
 import Milestones from "./4 - Milestones"
+import PrizeTracks from "./3 - Prize Tracks"
 import Speakers from "./5 - Speakers"
 import QA from "./6 - Q&A"
 import Sponsors from "./7 - Sponsors"
@@ -17,9 +18,9 @@ const Home = () => {
       <Landing id='landing' />
  
       <ApplicationBlurb id='about' />
+      <PrizeTracks id='prize-tracks' />
       <MentorJudgeVolunteerBlurb id='about' />
       <HeroBlurb id='about' />
-      {/* <PrizeTracks id='prize-tracks' /> */}
 
       <div className="flex flex-col  bg-ocean-gradient">
         <div className="px-24">

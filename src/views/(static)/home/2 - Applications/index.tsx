@@ -20,21 +20,17 @@ const ApplicationBlurb = ({ id }: { id?: string }) => {
             <div className="w-full pt-10 mx-20 items-center">
 
               {/* Announcement */}
-              <div className=" flex flex-col gap-2 md:px-16 md:py-8 px-8 py-4 border-teal_blue border-4 text-lg md:text-2xl text-center text-sponsor_dark_orange  md:mx-40 mb-10 md:mb-20">
-                <div className="text-3xl"><b>Great News!</b></div>
-                <div className="text-xl"> We have finalized a new date and venue for CruzHacks 2025! CruzHacks 2025 will take place <b>April 11th-13th at the Civic Auditorium Center!</b></div>
-              </div>
+              
 
 
 
               <h1 className='font-heading text-5xl uppercase text-center md:text-center md:text-6xl text-sponsor_dark_orange'>
-                Applications Are Now Closed!
+                CruzHacks2025 Decisons are Out!
               </h1>
 
               <div className='flex justify-center mt-12 mb-20'>
                 <p className=' font-subtext max-w-3xl text-lg items-center text-center lg:text-2xl text-sponsor_light_orange leading-loose'>
-                Thank you for applying to CruzHacks 2025! Please be patient while we review applications. Stay tuned on your applicant portal and on our socials
-                for updates. We are excited to see you all in April!
+                Thank you for applying to CruzHacks 2025! Please check your decision in your portal. <strong>RSVP as soon as possible if you want to keep your spot at our event!</strong>
                  </p>
               </div>
 
