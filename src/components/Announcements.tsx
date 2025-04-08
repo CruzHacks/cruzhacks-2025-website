@@ -62,7 +62,7 @@ const Announcements: React.FC = () => {
   }, [])
 
   return (
-    <div className='w-full max-w-2xl space-y-3 rounded-3xl bg-[#4659FF]/10 p-5 md:p-10'>
+    <div className='w-full max-w-2xl space-y-3 rounded-3xl bg-text_white/10 p-5 md:p-10'>
       <h1 className='flex items-center gap-3 pb-3 pt-10 font-title text-xl font-bold uppercase md:gap-5 md:pt-0 md:text-2xl'>
         <div
           className={
