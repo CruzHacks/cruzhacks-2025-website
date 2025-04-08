@@ -136,10 +136,10 @@ const TeamMemberTag = (props: TeamMemberTagProps) => {
   }, [props.setTeamPage])
 
   return (
-    <div className='flex w-full flex-row items-center justify-between rounded-md bg-blue-imperial p-2 md:px-5'>
+    <div className='flex w-full flex-row items-center justify-between rounded-md bg-off_white/20 p-2 md:px-5'>
       <p
         className={classNames(
-          user?.email === props.email ? "text-orange" : "text-white",
+          user?.email === props.email ? "text-off_white" : "text-white",
           "text-md truncate text-center font-subtext"
         )}
       >
@@ -177,7 +177,7 @@ export interface BadgeProps {
 const TeamMemberBadge = (props: BadgeProps) => {
   if (props.type === "LEADER")
     return (
-      <div className='w-24 rounded-md border-2 border-pink bg-pink px-1.5 py-0.5 text-center text-sm font-bold text-[#FFF]'>
+      <div className='w-24 rounded-md border-2 border-light_pink bg-light_pink px-1.5 py-0.5 text-center text-sm font-bold text-[#FFF]'>
         LEADER
       </div>
     )

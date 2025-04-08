@@ -15,7 +15,7 @@ import { UserGroupIcon } from "@heroicons/react/24/outline"
 export const TeamBuilder = (props: TeamBuilderProps) => {
   return (
     <div className='flex w-full min-w-0 flex-col gap-10'>
-      <div className='text-center font-title text-lg'>
+      <div className='text-center font-subtext font-bold text-lg'>
         Would you like to create or join a team?
       </div>
       <InvitationTypeChooser
@@ -50,8 +50,8 @@ const InvitationTypeChooser = (props: {
           <div
             className={classNames(
               props.teamStatus === "JOIN"
-                ? "bg-blue-chinese"
-                : "text-blue-imperial",
+                ? "bg-light_pink"
+                : "text-dark_pink",
               "rounded-md px-3 py-1 font-bold uppercase"
             )}
           >
@@ -60,8 +60,8 @@ const InvitationTypeChooser = (props: {
           <div
             className={classNames(
               props.teamStatus === "CREATE"
-                ? "bg-blue-chinese"
-                : "text-blue-imperial",
+                ? "bg-light_pink"
+                : "text-dark_pink",
               "rounded-md px-3 py-1 font-bold uppercase"
             )}
           >
@@ -82,7 +82,7 @@ const JoinTeam = (props: {
       <div className='font-bold'>Pending Invitations</div>
       <div className='flex w-full min-w-0 flex-col gap-3'>
         {props.invites.length === 0 ? (
-          <div className='rounded-md bg-blue-imperial px-5 py-2 font-subtext text-sm'>
+          <div className='rounded-md bg-light_pink px-5 py-2 font-subtext text-sm'>
             No Pending Invitations...
           </div>
         ) : (
@@ -181,7 +181,7 @@ const CreateTeam = (props: {
       />
 
       <button
-        className='-mt-5 flex h-16 w-full items-center justify-center rounded-md bg-white px-3 py-1.5 font-subtext text-2xl leading-6 text-blue-imperial shadow-sm transition-colors hover:bg-white/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-royal disabled:bg-white/50'
+        className='-mt-5 flex h-16 w-full items-center justify-center rounded-md bg-white px-3 py-1.5 font-subtext text-2xl leading-6 text-dark_orange shadow-sm transition-colors hover:bg-white/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-royal disabled:bg-white/50'
         onClick={() =>
           createTeam(user, teamNameInput)
             .then(team => {
