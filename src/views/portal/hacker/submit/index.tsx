@@ -153,7 +153,7 @@ const SubmitHacker = () => {
               <p className='font-subtext'>
                 Log into DevPost and go to{" "}
                 <Link
-                  to='https://cruzhacks-2024.devpost.com/'
+                  to='https://cruzhacks-2025.devpost.com/'
                   target='_blank'
                   rel='noopener noreferrer'
                   className='text-medium_yellow underline font-bold'
