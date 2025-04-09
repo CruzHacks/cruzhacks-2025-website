@@ -80,7 +80,7 @@ const TeamHacker = () => {
           Team Formation
         </h1>
 
-        <div>
+        <div className="font-subtext">
           <h2 className='text-l py-3 font-semibold'>Team Guidelines</h2>
           <ul className='list-disc ps-10'>
             <li>Must be comprised of 1-4 hackers</li>
@@ -102,7 +102,7 @@ const TeamHacker = () => {
                 "flex w-full min-w-0 flex-col gap-10 xl:flex-row"
               )}
             >
-              <div className='w-full min-w-0 rounded-3xl bg-[#4659FF]/10 p-5 md:p-10'>
+              <div className='w-full min-w-0 rounded-3xl bg-dark_orange/40 p-5 md:p-10'>
                 <TeamDisplay
                   teamPage={teamPage}
                   setTeamPage={setTeamPage}
@@ -110,7 +110,7 @@ const TeamHacker = () => {
                 />
               </div>
               {teamPage.teamLeader === user?.email && (
-                <div className='w-full min-w-fit rounded-3xl bg-[#4659FF]/10 p-5 md:p-10 xl:flex-1'>
+                <div className='w-full min-w-fit rounded-3xl bg-dark_orange/40 p-5 md:p-10 xl:flex-1'>
                   <TeamInvite teamPage={teamPage} setTeamPage={setTeamPage} />
                 </div>
               )}

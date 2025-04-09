@@ -13,30 +13,41 @@ const EventInfo: React.FC = () => {
       <div className='flex flex-col gap-5 md:gap-10 md:px-20 font-subtext text-off_white'>
         <div className='flex flex-col gap-2'>
           <p className='font-bold'>WiFi</p>
-          <p>UCSC_Guest</p>
-          <p>eduroam</p>
+          <li> CIVICWIFI-A Password: CivicSC19a </li>
+          <li> CIVICWIFI-C Password: CivicSC19c </li>
+
+          <li>  CIVICWIFI-D Password: CivicSC19d </li>
+
+          <li> CIVICWIFI-E Password: CivicSC19e </li>
+
+          <li>CIVICWIFI-F Password: CivicSC19f</li>
+
+          <li> CIVICWIFI-G Password: CivicSC19g </li>
+
+          <li>CIVICWIFI-H Password: CivicSC19f</li>
         </div>
 
-        {/* <div className='flex flex-col gap-2'>
+        <div className='flex flex-col gap-2'>
           <p className='font-bold'>Color Legend</p>
-          <p>Organizers: Black Shirt/Black Jackets</p>
-          <p>Mentors/Judges: Blue Shirt</p>
+          <p>Organizers: Dark Blue Jackets</p>
+          <p>Mentors/Judges: Tan Shirt</p>
+          <p>Volunteers: Black Shirt</p>
         </div>
 
         <div className='flex flex-col gap-2'>
           <p className='font-bold'>Discord</p>
           <p>Discord will be used for communication during the event.</p>
           <p>
-            Join our 2024 Discord{" "}
+            Join our 2025 Hacker Discord{" "}
             <Link
-              className='text-blue-button hover:underline'
+              className='text-dark_orange hover:underline'
               to='/portal/hacker'
             >
               in your dashboard
             </Link>
             .
           </p>
-        </div> */}
+        </div>
 
         <div>
           <p className='font-bold'>Emergency Contacts</p>

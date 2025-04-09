@@ -26,10 +26,11 @@ const QuestionResources: React.FC = () => {
           >
             Join Our General Discord
           </a>
+        
         </div>
         <a
           className='text-off_white font-subtext underline'
-          href='https://docs.google.com/document/d/e/2PACX-1vQMV0TiHt3CiEraUKBhTJ3a0lDoyawcQzLgqOhvDgAzS42WUX1AfDmFlYwgDySs9TmEkh1Cm0110qLx/pub'
+          href='https://docs.google.com/document/d/e/2PACX-1vSNvHG7JsQZ2CQUiaxzXDyOWPDfO20oKOMBFdVv_dEyhm57BYfsAKGxIZeDzdQBmBukDFiy4veeVarP/pub'
         >
           Go to Hack Pack
         </a>

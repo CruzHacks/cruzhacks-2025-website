@@ -133,10 +133,10 @@ const SubmitHacker = () => {
     <div className='space-y-10 overflow-x-clip px-4 sm:px-6 lg:px-8'>
       <div className='sm:flex sm:items-center'>
         <div className='sm:flex-auto'>
-          <h1 className='font-title text-2xl font-semibold leading-6'>
-            Project Submission
+          <h1 className='font-title text-4xl font-semibold leading-6'>
+            PROJECT SUBMISSION
           </h1>
-          <p className='text-gray-700 mt-2 text-sm'>
+          <p className='text-gray-700 mt-2 text-md font-subtext'>
             When you are ready to submit your project, please fill out this
             form.
           </p>
@@ -146,17 +146,17 @@ const SubmitHacker = () => {
       {isTeamLeader(team, user) && isLockedIn(team) ? (
         <div className='flex min-w-0 flex-col items-start gap-10 xl:flex-row'>
           <div className='max-w-2xl space-y-10'>
-            <div className='h-full w-full space-y-5 rounded-3xl bg-[#4659FF]/10 px-10 py-5 md:p-10'>
-              <h3 className='font-title text-lg'>
+            <div className='h-full w-full space-y-5 rounded-3xl bg-dark_orange/40 px-10 py-5 md:p-10'>
+              <h3 className='font-title text-xl'>
                 1. Log In to DevPost account
               </h3>
               <p className='font-subtext'>
                 Log into DevPost and go to{" "}
                 <Link
-                  to='https://cruzhacks-2024.devpost.com/'
+                  to='https://cruzhacks-2025.devpost.com/'
                   target='_blank'
                   rel='noopener noreferrer'
-                  className='text-blue-button underline'
+                  className='text-medium_yellow underline font-bold'
                 >
                   CruzHacks 2025&apos;s DevPost page
                 </Link>
@@ -165,17 +165,17 @@ const SubmitHacker = () => {
               </p>
             </div>
 
-            <div className='h-full w-full rounded-3xl bg-[#4659FF]/10'>
+            <div className='h-full w-full rounded-3xl bg-dark_orange/40'>
               <div className='max-w-xs space-y-10 px-10 py-5 sm:max-w-none md:p-10'>
                 <div className='space-y-5'>
-                  <h3 className='font-title text-lg'>2. Submit Project</h3>
+                  <h3 className='font-title text-xl'>2. Submit Project</h3>
                   <p className='font-subtext'>
-                    <span className='font-bold text-pink'>
+                    <span className='font-bold text-medium_yellow'>
                       Click on submit project
                     </span>{" "}
                     and follow steps to complete project submission process on
                     DevPost. Once you have finished,{" "}
-                    <span className='font-bold text-pink'>
+                    <span className='font-bold text-medium_yellow'>
                       please copy your project link and paste here.
                     </span>
                   </p>
@@ -184,8 +184,8 @@ const SubmitHacker = () => {
               </div>
             </div>
 
-            <div className='h-full w-full space-y-5 rounded-3xl bg-[#4659FF]/10 px-10 py-5 md:p-10'>
-              <h3 className='font-title text-lg'>
+            <div className='h-full w-full space-y-5 rounded-3xl bg-dark_orange/40 px-10 py-5 md:p-10'>
+              <h3 className='font-title text-xl'>
                 3. Get ready to deliever your live pitch!
               </h3>
               <p className='font-subtext'>
@@ -199,7 +199,7 @@ const SubmitHacker = () => {
                     to='https://uxdesign.cc/a-quick-checklist-for-hackathon-idea-presentation-2053b781ee24'
                     target='_blank'
                     rel='noopener noreferrer'
-                    className='text-blue-button underline'
+                    className='text-medium_yellow font-bold underline'
                   >
                     Beginners Hackathon Presentation
                   </Link>
@@ -210,7 +210,7 @@ const SubmitHacker = () => {
                     to='https://www.linkedin.com/pulse/how-win-hackathon-pitch-david-beckett/'
                     target='_blank'
                     rel='noopener noreferrer'
-                    className='text-blue-button underline'
+                    className='text-medium_yellow font-bold underline'
                   >
                     How to Win a Hackathon Pitch
                   </Link>
@@ -219,7 +219,7 @@ const SubmitHacker = () => {
             </div>
           </div>
 
-          <div className='h-full w-full max-w-2xl grow space-y-5 rounded-3xl bg-[#4659FF]/10 px-10 py-5 md:p-10'>
+          <div className='h-full w-full max-w-2xl grow space-y-5 rounded-3xl bg-dark_orange/40 px-10 py-5 md:p-10'>
             <h3 className='font-title text-lg'>Submission Status</h3>
             <h2
               className={classNames(

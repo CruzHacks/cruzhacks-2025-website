@@ -67,7 +67,7 @@ const ComboboxInput = ({
               </Combobox.Button>
 
               {filteredoptions.length > 0 && (
-                <Combobox.Options className='absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-ocean_medium_dark_blue py-1 shadow-lg ring-1 ring-white/5 focus:outline-none sm:text-sm'>
+                <Combobox.Options className='absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-dark_orange py-1 shadow-lg ring-1 ring-white/5 focus:outline-none sm:text-sm'>
                   {filteredoptions.map(person => (
                     <Combobox.Option
                       key={person}
@@ -76,7 +76,7 @@ const ComboboxInput = ({
                         classNames(
                           "relative cursor-default select-none py-2 pl-3 pr-9",
                           active
-                            ? "bg-ocean_medium_light_blue/60 text-white"
+                            ? "bg-deep_orange text-white"
                             : "text-white/80"
                         )
                       }
