@@ -25,6 +25,8 @@ const StevensonOutside: React.FC = () => {
         <div className='grow-1 flex justify-evenly gap-2 md:gap-5'>
           <MapKeyItem color='bg-[#AD1E1E]' label='ABC Room (workshops)' />
           <MapKeyItem color='bg-[#25287B]' label='Restrooms' />
+          <MapKeyItem color='bg-[#3696B7]' label='Gender Neutral Restrooms' />
+          <MapKeyItem color='bg-[#E2DA3C]' label='Food Service' />
         </div>
         <img
           className=' '
