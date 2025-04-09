@@ -30,7 +30,7 @@ const QuestionResources: React.FC = () => {
         </div>
         <a
           className='text-off_white font-subtext underline'
-          href=''
+          href='https://docs.google.com/document/d/e/2PACX-1vSNvHG7JsQZ2CQUiaxzXDyOWPDfO20oKOMBFdVv_dEyhm57BYfsAKGxIZeDzdQBmBukDFiy4veeVarP/pub'
         >
           Go to Hack Pack
         </a>
