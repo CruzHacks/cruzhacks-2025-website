@@ -21,9 +21,9 @@ const Hackerpack: React.FC = () => {
         
         <a
           className='bg-off_white/25 text-center font-subtext text-off_white p-4 rounded-lg border-off_white/70 border-2 w-full md:w-1/2'
-          href='https://docs.google.com/document/d/e/2PACX-1vQMV0TiHt3CiEraUKBhTJ3a0lDoyawcQzLgqOhvDgAzS42WUX1AfDmFlYwgDySs9TmEkh1Cm0110qLx/pub'
+          href=''
         >
-          View Hacker Packet
+          2025 Hacker Packet Coming Soon!
         </a>
         <a
           className='bg-off_white/25 text-center font-subtext text-off_white p-4 rounded-lg border-off_white/70 border-2 w-full md:w-1/2'
