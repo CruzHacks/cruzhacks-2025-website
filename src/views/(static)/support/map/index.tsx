@@ -19,19 +19,15 @@ const maps = [
   // },
   {
     id: 0,
-    title: "General Area - Stevenson College",
+    title: "General Area - Civic Audorium Center",
     map: <StevensonOutside />,
   },
+
   // {
-  //   id: 2,
-  //   title: "Stevenson Event Center Floorplan",
-  //   map: <StevensonFloorPlan />,
+  //   id: 1,
+  //   title: "East Remote Lot to Stevenson Event Center",
+  //   map: <StevensonEastRemoteLot />,
   // },
-  {
-    id: 1,
-    title: "East Remote Lot to Stevenson Event Center",
-    map: <StevensonEastRemoteLot />,
-  },
 ]
 
 const Map: React.FC = () => {

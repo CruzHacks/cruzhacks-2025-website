@@ -1,6 +1,7 @@
 import React from "react"
 
 import StevensonMapImg from "../../../../assets/maps/event_outside.png"
+import CivicAudoriumInside from "../../../../assets/maps/civic_auditorium_floorplan.png"
 import Card from "../../../../components/Card"
 
 interface MapKeyItemInterface {
@@ -20,20 +21,16 @@ const MapKeyItem: React.FC<MapKeyItemInterface> = ({ color, label }) => {
 const StevensonOutside: React.FC = () => {
   return (
     <Card>
-      <div className='flex flex-col gap-5 md:flex-row md:gap-10'>
-        <img
-          className='md:w-2/3'
-          src={StevensonMapImg}
-          alt='UCSC Stevenson College Map'
-        />
-        <div className='h-100 grow-1 flex flex-col justify-evenly gap-2 md:gap-5'>
-          <MapKeyItem color='bg-[#FF1f22]' label='Stevenson Event Center' />
-          <MapKeyItem color='bg-[#FF33EB]' label='Senior Commons Room' />
-          <MapKeyItem color='bg-[#FFB800]' label='Wagstaff Fireside Lounge' />
-          <MapKeyItem color='bg-[#14FFB9]' label='Classroom 175' />
-          <MapKeyItem color='bg-[#4314FF]' label='Classrooms 150, 151, & 152' />
-          <MapKeyItem color='bg-[#FBFF33]' label='Silverman Conference Room' />
+      <div className='flex flex-col gap-5 md:gap-10'>
+        <div className='grow-1 flex justify-evenly gap-2 md:gap-5'>
+          <MapKeyItem color='bg-[#AD1E1E]' label='ABC Room (workshops)' />
+          <MapKeyItem color='bg-[#25287B]' label='Restrooms' />
         </div>
+        <img
+          className=' '
+          src={CivicAudoriumInside}
+          alt='Civic Auditorium Map'
+        />
       </div>
     </Card>
   )

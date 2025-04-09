@@ -8,7 +8,7 @@ const scheduleInfo = [
     events: [
       ["Event Begins. Start of registration/check-in for all participants", "4:00PM"],
       ["Opening Ceremony", "6:00PM - 8:00PM"],
-      ["Hacker Registration/ Dinner", "8:00PM - 9:30PM"],
+      ["Dinner", "8:00PM - 9:30PM"],
       ["Ongoing Workshops", "8:00PM - 9:00PM"],
       ["Hacking Begins!", "9:00 pm"],
     ],

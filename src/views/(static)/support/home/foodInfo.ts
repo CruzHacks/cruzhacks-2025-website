@@ -1,11 +1,11 @@
 export const foodInfo = [
   {
-    date: "Friday, January 19th",
+    date: "Friday, April 11th",
     events: [
       {
         title: "Dinner",
-        provider: "Ike's Love & Sandwiches",
-        time: "5:00 pm",
+        provider: "Panda Express",
+        time: "8:00PM",
       },
       {
         title: "Midnight Snack",
@@ -15,22 +15,22 @@ export const foodInfo = [
     ],
   },
   {
-    date: "Saturday, January 20th",
+    date: "Saturday, April 12th",
     events: [
       {
         title: "Breakfast",
-        provider: "iHOP",
-        time: "9:00 am",
+        provider: "The Bagelry",
+        time: "8:00 am",
       },
       {
         title: "Lunch",
         provider: "Woodstock's Pizza",
-        time: "1:00 pm",
+        time: "12:00 pm",
       },
       {
         title: "Dinner",
-        provider: "Panda Express",
-        time: "5:30 pm",
+        provider: "Costco Wholesale, Pretty Good Advice (Veg.)",
+        time: "6:00 pm",
       },
       {
         title: "Midnight Snack",
@@ -40,7 +40,7 @@ export const foodInfo = [
     ],
   },
   {
-    date: "Sunday, January 21st",
+    date: "Sunday, April 13th",
     events: [
       {
         title: "Breakfast",
@@ -49,8 +49,8 @@ export const foodInfo = [
       },
       {
         title: "Lunch",
-        provider: "Achilles by the Sea",
-        time: "2:00 pm",
+        provider: "Ike's Love & Sandwiches",
+        time: "12:30 pm",
       },
     ],
   },

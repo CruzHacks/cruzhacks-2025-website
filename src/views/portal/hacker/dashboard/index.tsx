@@ -1,6 +1,7 @@
 import React from "react"
 import Announcements from "../../../../components/Announcements"
 import useAuth from "../../../../hooks/useAuth"
+import { Link } from "react-router-dom"
 
 const DashbaordHacker = () => {
   const {
@@ -35,6 +36,14 @@ const DashbaordHacker = () => {
           >
             Join 2025 Discord server
           </a>
+
+        
+          <Link
+            to = '/support'
+            className="flex h-16 w-full items-center justify-center rounded-md bg-white px-3 py-1.5 text-center font-subtext text-lg leading-6 text-dark_orange shadow-sm transition-colors hover:bg-white/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dark_orange disabled:bg-white/50 md:text-xl"
+          >
+            CruzHacks2025 Workshops + Schedule
+          </Link>
         </div>
       </div>
     </div>
