@@ -960,7 +960,7 @@ export const convertAllApplicantsToHackers = async () => {
 
         if (email) {
           // Now, locate the corresponding `roles` document
-          const roleDocRef = doc(db, `users/${email}/user_items/roles`);
+          const roleDocRef = doc(db, `users/${email}/user_items/role`);
 
           // Update the role to "hacker"
           await updateDoc(roleDocRef, {
