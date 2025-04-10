@@ -23,11 +23,11 @@ const maps = [
     map: <StevensonOutside />,
   },
 
-  // {
-  //   id: 1,
-  //   title: "East Remote Lot to Stevenson Event Center",
-  //   map: <StevensonEastRemoteLot />,
-  // },
+  {
+    id: 1,
+    title: "Downtown Santa Cruz Parking",
+    map: <StevensonEastRemoteLot />,
+  },
 ]
 
 const Map: React.FC = () => {
