@@ -948,7 +948,6 @@ export const convertAllApplicantsToHackers = async () => {
     const q = query(
       collectionGroup(db, "user_items"),
       where("status", "==", "accepted"),
-      where("email", "==", "sophiehan2004@gmail.com")
     );
 
     const querySnapshot = await getDocs(q)
