@@ -955,10 +955,21 @@ export const convertAllApplicantsToHackers = async () => {
 
     const updates = querySnapshot.docs.map(async (docSnap) => {
       try {
-        await updateDoc(docSnap.ref, {
-          role: "hacker"
-        });
-        console.log(`Updated role at ${docSnap.ref.path}`);
+        const data = docSnap.data();
+        const email = data.email;
+
+        if (email) {
+          // Now, locate the corresponding `roles` document
+          const roleDocRef = doc(db, `users/${email}/user_items/roles`);
+
+          // Update the role to "hacker"
+          await updateDoc(roleDocRef, {
+            role: "hacker",
+          });
+
+          console.log(`Updated role for ${email} at ${roleDocRef.path}`);
+        }
+
       } catch (err) {
         console.error(`Failed to update ${docSnap.ref.path}`, err);
       }
