@@ -43,13 +43,6 @@ export const workshopInfo = [
         endTime: "2:45 pm",
       },
       {
-        title: "Resume / Cover Letter Workshop",
-        location: "ABC Room",
-        hostedBy: "CruzHacks",
-        startTime: "2:00 pm",
-        endTime: "2:30 pm",
-      },
-      {
         title: "Gamify Your Project!",
         location: "ABC Room",
         hostedBy: "GDA - Game Developers Association",

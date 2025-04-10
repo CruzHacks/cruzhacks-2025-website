@@ -1,6 +1,7 @@
 import React from "react"
 
 import StevensonMapImg from "../../../../assets/maps/east_remote_lot.png"
+import DowntownSCParking from "../../../../assets/maps/DowntownSCParking.png"
 import Card from "../../../../components/Card"
 
 interface MapKeyItemInterface {
@@ -22,15 +23,10 @@ const StevensonEastRemoteLot: React.FC = () => {
     <Card>
       <div className='flex flex-col gap-5 md:flex-row md:gap-10'>
         <img
-          className='md:w-2/3'
-          src={StevensonMapImg}
+          className=''
+          src={DowntownSCParking}
           alt='UCSC Stevenson College Map'
         />
-        <div className='h-100 grow-1 flex flex-col justify-evenly gap-2 md:gap-5'>
-          <MapKeyItem color='bg-[#4484DB]' label='Stevenson Event Center' />
-          <MapKeyItem color='bg-[#DD9F73]' label='East Remote Lot' />
-          <MapKeyItem color='bg-[#FBFF33]' label='Enterance to OPERS Path' />
-        </div>
       </div>
     </Card>
   )
