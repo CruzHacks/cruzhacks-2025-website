@@ -43,8 +43,8 @@ const Support = () => {
 
       <div className='relative z-10 mx-auto w-full max-w-screen-md pt-10 md:pt-0'>
         <div className='mb-20 flex flex-col items-stretch justify-center gap-10 text-black'>
-          <h1 className='font-title text-3xl self-center text-white md:py-10 md:text-4xl lg:text-6xl'>
-            Support
+          <h1 className='font-title text-3xl self-center text-white md:py-10 md:text-4xl lg:text-6xl mt-20'>
+            CruzHacks2025 Logistics
           </h1>
 
           <div className='flex flex-col items-center gap-10 md:h-60 md:flex-row md:items-stretch'>

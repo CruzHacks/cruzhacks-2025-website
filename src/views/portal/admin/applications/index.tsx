@@ -17,6 +17,7 @@ import {
 import toast from "react-hot-toast"
 import { Menu, Transition } from "@headlessui/react"
 import { getFullHackerExport } from "../../../../utils/apis/cloudFunctions"
+import { convertAllApplicantsToHackers } from "../../../../utils/apis/firebase"
 import useAuth from "../../../../hooks/useAuth"
 
 const LOADING_ENTRIES = 50
@@ -84,6 +85,15 @@ const ApplicationsAdmin = () => {
     document.body.removeChild(a)
   }
 
+  const handleGiveHackerPortals = async () => {
+    try {
+      await convertAllApplicantsToHackers();
+      console.log("All accepted applicants have been updated to hackers!");
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
   const downloadApplicationsFullCsv = async () => {
     const getAndConstruct = async () => {
       try {
@@ -137,6 +147,13 @@ const ApplicationsAdmin = () => {
           <p className='block rounded-md bg-dark_orange/80 px-3 py-2 text-center font-subtext text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white'>
             {applications && applications?.length} Submissions
           </p>
+
+          <button
+            onClick={handleGiveHackerPortals}
+            className='block rounded-md bg-dark_orange/80 px-3 py-2 text-center font-subtext text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white'
+          >
+            Hacker Portals
+          </button>
 
           <Menu>
             <Menu.Button className='block rounded-md bg-dark_orange/80 px-3 py-2 text-center font-subtext text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white'>
@@ -311,6 +328,7 @@ const ApplicationsAdmin = () => {
                             {formatTime(application._submitted)}
                           </td>
 
+
                           {/* Review Application Button */}
                           <td
                             className={classNames(
@@ -331,6 +349,8 @@ const ApplicationsAdmin = () => {
                               </span>
                             </button>
                           </td>
+
+                          {/* Check-In */}
                         </tr>
                       ))
                     : // Loading State

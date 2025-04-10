@@ -14,40 +14,40 @@ import {
 } from "@heroicons/react/24/outline"
 // import { Popover, Transition } from "@headlessui/react"
 
-// const navigation = [
-//   { name: "About", href: "/#about" },
-  // { name: "Prize Tracks", href: "/#prize-tracks" },
-  // { name: "The Team", href: "/team" },
-  // {
-  //   name: "Support",
-  //   sub_menu: [
-  //     {
-  //       name: "Support Hub",
-  //       description: "Support links, schedules, and more",
-  //       href: "/support",
-  //       icon: InformationCircleIcon,
-  //     },
-  //     {
-  //       name: "Resources",
-  //       description: "Resources for hackers",
-  //       href: "/support/resources",
-  //       icon: ArchiveBoxIcon,
-  //     },
-  //     {
-  //       name: "Maps",
-  //       description: "Venue and parking maps",
-  //       href: "/support/maps",
-  //       icon: MapIcon,
-  //     },
-  //     {
-  //       name: "FAQs",
-  //       description: "Frequently asked questions",
-  //       href: "/support/faq-and-rules",
-  //       icon: QuestionMarkCircleIcon,
-  //     },
-  //   ],
-  // },
-// ]
+const navigation = [
+  { name: "About", href: "/#about" },
+  { name: "Prize Tracks", href: "/#prize-tracks" },
+  { name: "The Team", href: "/team" },
+  {
+    name: "Support",
+    sub_menu: [
+      {
+        name: "Support Hub",
+        description: "Support links, schedules, and more",
+        href: "/support",
+        icon: InformationCircleIcon,
+      },
+      {
+        name: "Resources",
+        description: "Resources for hackers",
+        href: "/support/resources",
+        icon: ArchiveBoxIcon,
+      },
+      {
+        name: "Maps",
+        description: "Venue and parking maps",
+        href: "/support/maps",
+        icon: MapIcon,
+      },
+      {
+        name: "FAQs",
+        description: "Frequently asked questions",
+        href: "/support/faq-and-rules",
+        icon: QuestionMarkCircleIcon,
+      },
+    ],
+  },
+]
 
 const Navbar = () => {
   const {
@@ -81,16 +81,17 @@ const Navbar = () => {
               </div>
             </Link>
           </div> */}
+          <Link
+            to='/support'
+            className='font-subtext text-xs leading-6 hover:text-yellow-red md:text-lg'
+          >
+            Event Logistics
+          </Link>
           {/* <div className='flex grow items-center justify-evenly font-light uppercase md:grow-0 md:gap-10 lg:gap-16'>
             {navigation.map(item => (
               <div key={item.name}>
                 {!item.sub_menu ? (
-                  <Link
-                    to={item.href}
-                    className='font-subtext text-xs leading-6 hover:text-pink md:text-xl'
-                  >
-                    {item.name}
-                  </Link>
+                  
                 ) : (
                   <>
                     <Link

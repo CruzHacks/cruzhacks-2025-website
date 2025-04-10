@@ -201,7 +201,7 @@ const Sidebar = ({ navigation }: SidebarProps) => {
                 className='flex w-fit gap-2 self-center bg-white/5 px-8 py-4 ring-4 ring-inset ring-white/5 hover:text-orange'
               >
                 <InformationCircleIcon className='h-6 w-6' aria-hidden='true' />
-                Support
+                Logistics
               </Link>
             </ul>
             <div className='-mx-3 mb-5 mt-auto flex items-center gap-5 font-subtext text-sm'>
