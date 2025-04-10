@@ -227,6 +227,12 @@ const ApplicationsAdmin = () => {
                   </th>
                   <th
                     scope='col'
+                    className='sticky top-[3.8rem] z-10 hidden border-b border-white/90 bg-dark_orange/80 px-3 py-3.5 text-left text-sm font-semibold text-white backdrop-blur sm:table-cell lg:top-0'
+                  >
+                    To Hacker
+                  </th>
+                  <th
+                    scope='col'
                     className='sticky top-[3.8rem] z-10 border-b border-white/90 bg-dark_orange/80 py-3.5 pl-3 pr-4 backdrop-blur sm:pr-6 lg:top-0 lg:pr-8'
                   >
                     <span className='sr-only'>Review Application</span>
@@ -310,6 +316,17 @@ const ApplicationsAdmin = () => {
                           >
                             {formatTime(application._submitted)}
                           </td>
+                          {/* To Hacker Toggle */}
+                          <td
+                            className={classNames(
+                              applicationIdx !== applications.length - 1 &&
+                                "border-b border-white/20",
+                              "hidden whitespace-nowrap px-3 py-4 text-sm md:table-cell"
+                            )}
+                          >
+                            Hello World
+                          </td>
+
 
                           {/* Review Application Button */}
                           <td
@@ -331,6 +348,8 @@ const ApplicationsAdmin = () => {
                               </span>
                             </button>
                           </td>
+
+                          {/* Check-In */}
                         </tr>
                       ))
                     : // Loading State

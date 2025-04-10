@@ -9,6 +9,7 @@ import {
   updateDoc,
   deleteDoc,
   setDoc,
+  where,
 } from "firebase/firestore"
 import { db, auth } from "../firebaseapp"
 import {
@@ -22,6 +23,7 @@ import {
 } from "../types"
 import type { User } from "firebase/auth"
 import { deleteUser } from "firebase/auth"
+import { UserRole } from "../roles"
 
 /**
  * Function using Firebase sdk for checking if an application is
@@ -918,6 +920,52 @@ export const submitLink = async (
 
     return teamDocSnap.data() as any as TeamFormationProps
   } catch (error) {
+    console.error(error)
+    throw error
+  }
+}
+
+export const convertUserToHacker = async (email: string) => {
+  try {
+    if (!email) throw new Error("No user provided")
+
+    const role: UserRole = "hacker"
+    const docRef = doc(db, `users/${email}/user_items/role`)
+
+    await updateDoc(docRef, {
+      role: role,
+    })
+
+    console.log("User Role updated: ", docRef)
+  }catch (error) {
+    console.error("application", error)
+    throw error as Error
+  }
+}
+
+export const convertAllApplicantsToHackers = async () => {
+  try{
+    const q = query(
+      collectionGroup(db, "user_items"),
+      where("role", "==", "applicant"),
+      where("status", "==", "accepted")
+    );
+
+    const querySnapshot = await getDocs(q)
+
+    const updates = querySnapshot.docs.map(async (docSnap) => {
+      try {
+        await updateDoc(docSnap.ref, {
+          role: "hacker"
+        });
+        console.log(`Updated role at ${docSnap.ref.path}`);
+      } catch (err) {
+        console.error(`Failed to update ${docSnap.ref.path}`, err);
+      }
+    });
+  
+    await Promise.all(updates);
+  }catch (error) {
     console.error(error)
     throw error
   }
