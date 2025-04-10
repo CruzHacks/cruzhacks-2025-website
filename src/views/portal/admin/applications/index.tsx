@@ -17,6 +17,7 @@ import {
 import toast from "react-hot-toast"
 import { Menu, Transition } from "@headlessui/react"
 import { getFullHackerExport } from "../../../../utils/apis/cloudFunctions"
+import { convertAllApplicantsToHackers } from "../../../../utils/apis/firebase"
 import useAuth from "../../../../hooks/useAuth"
 
 const LOADING_ENTRIES = 50
@@ -84,6 +85,15 @@ const ApplicationsAdmin = () => {
     document.body.removeChild(a)
   }
 
+  const handleGiveHackerPortals = async () => {
+    try {
+      await convertAllApplicantsToHackers();
+      console.log("All accepted applicants have been updated to hackers!");
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
   const downloadApplicationsFullCsv = async () => {
     const getAndConstruct = async () => {
       try {
@@ -137,6 +147,13 @@ const ApplicationsAdmin = () => {
           <p className='block rounded-md bg-dark_orange/80 px-3 py-2 text-center font-subtext text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white'>
             {applications && applications?.length} Submissions
           </p>
+
+          <button
+            onClick={handleGiveHackerPortals}
+            className='block rounded-md bg-dark_orange/80 px-3 py-2 text-center font-subtext text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white'
+          >
+            Hacker Portals
+          </button>
 
           <Menu>
             <Menu.Button className='block rounded-md bg-dark_orange/80 px-3 py-2 text-center font-subtext text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white'>
@@ -227,12 +244,6 @@ const ApplicationsAdmin = () => {
                   </th>
                   <th
                     scope='col'
-                    className='sticky top-[3.8rem] z-10 hidden border-b border-white/90 bg-dark_orange/80 px-3 py-3.5 text-left text-sm font-semibold text-white backdrop-blur sm:table-cell lg:top-0'
-                  >
-                    To Hacker
-                  </th>
-                  <th
-                    scope='col'
                     className='sticky top-[3.8rem] z-10 border-b border-white/90 bg-dark_orange/80 py-3.5 pl-3 pr-4 backdrop-blur sm:pr-6 lg:top-0 lg:pr-8'
                   >
                     <span className='sr-only'>Review Application</span>
@@ -315,16 +326,6 @@ const ApplicationsAdmin = () => {
                             )}
                           >
                             {formatTime(application._submitted)}
-                          </td>
-                          {/* To Hacker Toggle */}
-                          <td
-                            className={classNames(
-                              applicationIdx !== applications.length - 1 &&
-                                "border-b border-white/20",
-                              "hidden whitespace-nowrap px-3 py-4 text-sm md:table-cell"
-                            )}
-                          >
-                            Hello World
                           </td>
 
 
