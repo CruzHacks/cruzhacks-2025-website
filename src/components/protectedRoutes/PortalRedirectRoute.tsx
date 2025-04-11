@@ -5,7 +5,10 @@ import useAuth from "../../hooks/useAuth"
 const PortalRedirectRoute = () => {
   const { auth, isAuthenticated } = useAuth()
   const { role } = auth
+  const { loading } = auth
 
+  if (loading) return null
+  
   if (role === "applicant") return <Navigate replace to='/portal/applicant' />
   if (role === "admin") return <Navigate replace to='/portal/admin' />
   if (role === "hacker") return <Navigate replace to='/portal/hacker' />
