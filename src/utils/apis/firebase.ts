@@ -980,3 +980,41 @@ export const convertAllApplicantsToHackers = async () => {
     throw error
   }
 }
+
+export const convertAllRejectedToApplicants = async () => {
+  try{
+    const q = query(
+      collectionGroup(db, "user_items"),
+      where("status", "==", "rejected"),
+    );
+
+    const querySnapshot = await getDocs(q)
+
+    const updates = querySnapshot.docs.map(async (docSnap) => {
+      try {
+        const data = docSnap.data();
+        const email = data.email;
+
+        if (email) {
+          // Now, locate the corresponding `roles` document
+          const roleDocRef = doc(db, `users/${email}/user_items/role`);
+
+          // Update the role to "hacker"
+          await updateDoc(roleDocRef, {
+            role: "applicant",
+          });
+
+          console.log(`Updated role for ${email} at ${roleDocRef.path}`);
+        }
+
+      } catch (err) {
+        console.error(`Failed to update ${docSnap.ref.path}`, err);
+      }
+    });
+  
+    await Promise.all(updates);
+  }catch (error) {
+    console.error(error)
+    throw error
+  }
+}

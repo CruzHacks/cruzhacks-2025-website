@@ -17,7 +17,7 @@ import {
 import toast from "react-hot-toast"
 import { Menu, Transition } from "@headlessui/react"
 import { getFullHackerExport } from "../../../../utils/apis/cloudFunctions"
-import { convertAllApplicantsToHackers } from "../../../../utils/apis/firebase"
+import { convertAllApplicantsToHackers, convertAllRejectedToApplicants } from "../../../../utils/apis/firebase"
 import useAuth from "../../../../hooks/useAuth"
 
 const LOADING_ENTRIES = 50
@@ -94,6 +94,15 @@ const ApplicationsAdmin = () => {
     }
   }
 
+  const handleGiveApplicantPortals = async () => {
+    try {
+      await convertAllRejectedToApplicants();
+      console.log("All accepted applicants have been updated to hackers!");
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
   const downloadApplicationsFullCsv = async () => {
     const getAndConstruct = async () => {
       try {
@@ -153,6 +162,13 @@ const ApplicationsAdmin = () => {
             className='block rounded-md bg-dark_orange/80 px-3 py-2 text-center font-subtext text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white'
           >
             Hacker Portals
+          </button>
+
+          <button
+            onClick={handleGiveApplicantPortals}
+            className='block rounded-md bg-dark_orange/80 px-3 py-2 text-center font-subtext text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white'
+          >
+            Applicant Portals
           </button>
 
           <Menu>
