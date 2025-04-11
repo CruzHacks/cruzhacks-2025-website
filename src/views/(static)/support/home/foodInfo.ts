@@ -4,7 +4,7 @@ export const foodInfo = [
     events: [
       {
         title: "Dinner",
-        provider: "Panda Express",
+        provider: "Ike's Love & Sandwiches",
         time: "8:00PM",
       },
       {
@@ -19,17 +19,17 @@ export const foodInfo = [
     events: [
       {
         title: "Breakfast",
-        provider: "The Bagelry",
+        provider: "iHop",
         time: "8:00 am",
       },
       {
         title: "Lunch",
         provider: "Woodstock's Pizza",
-        time: "12:00 pm",
+        time: "11:45 pm",
       },
       {
         title: "Dinner",
-        provider: "Costco Wholesale, Pretty Good Advice (Veg.)",
+        provider: "Panda Express",
         time: "6:00 pm",
       },
       {
@@ -49,7 +49,7 @@ export const foodInfo = [
       },
       {
         title: "Lunch",
-        provider: "Ike's Love & Sandwiches",
+        provider: "Achilles By the Sea",
         time: "12:30 pm",
       },
     ],
