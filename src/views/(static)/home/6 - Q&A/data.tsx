@@ -195,8 +195,7 @@ const faqs = [
       question: "Will CruzHacks be in-person? Where is it located?",
       answer: (
         <>
-          CruzHacks will be in-person this year! It will be located at UC Santa
-          Cruz, Stevenson Event Center.
+          CruzHacks will be in-person this year! It will be located at the Civic Auditorium in Downtown Santa Cruz.
         </>
       ),
     },

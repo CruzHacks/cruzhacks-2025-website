@@ -9,6 +9,7 @@ const PortalRedirectRoute = () => {
 
   if (loading) return null
   
+  
   if (role === "applicant") return <Navigate replace to='/portal/applicant' />
   if (role === "admin") return <Navigate replace to='/portal/admin' />
   if (role === "hacker") return <Navigate replace to='/portal/hacker' />
