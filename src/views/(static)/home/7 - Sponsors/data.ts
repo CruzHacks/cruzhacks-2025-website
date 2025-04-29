@@ -39,11 +39,18 @@ import Balsamiq from "../../../../assets/sponsors/Balsamiq.svg"
 import Vectara from "../../../../assets/sponsors/Vectara.svg"
 import Verbwire from "../../../../assets/sponsors/Verbwire.svg"
 import OReilly from "../../../../assets/sponsors/OReilly.svg"
+import Wolfram from "../../../../assets/sponsors/Wolfram.svg"
+import NordVPN from "../../../../assets/sponsors/NordPass.png"
+import Hakko from "../../../../assets/sponsors/Hakko.svg"
+import Warp from "../../../../assets/sponsors/Warp.svg"
+import Modal from "../../../../assets/sponsors/Modal.svg"
+
 
 import InterviewCake from "../../../../assets/sponsors/InterviewCake.svg"
+import InterviewBuddy from "../../../../assets/sponsors/InterviewBuddy.png"
+import OnePassword from "../../../../assets/sponsors/1Password.svg"
 import CleanShot from "../../../../assets/sponsors/CleanShot.svg"
 import Synty from "../../../../assets/sponsors/Synty.svg"
-import XYZ from "../../../../assets/sponsors/xyz.svg"
 import CodeCrafters from "../../../../assets/sponsors/CodeCrafters.svg"
 import PCBWay from "../../../../assets/sponsors/PCBWay.svg"
 import VueSchool from "../../../../assets/sponsors/VueSchool.svg"
@@ -155,15 +162,6 @@ export const sponsors = [
       url: "https://innovation.ucsc.edu/"
     },
     {
-      name: "Teaching and Learning Center",
-      icon: TeachingLearningCenter,
-      url: "https://tlc.ucsc.edu/",
-    },
-  ],
-
-  // Tier 7
-  [
-    {
       name: "Verbwire",
       icon: Verbwire,
       url: "https://www.verbwire.com/",
@@ -179,10 +177,28 @@ export const sponsors = [
       url: "https://balsamiq.com/",
     },
     {
+      name: "NordVPN",
+      icon: NordVPN,
+      url: "https://nordpass.com/",
+    },
+    
+
+  ],
+
+  // Tier 7
+  [
+    
+    {
       name: "OReilly",
       icon: OReilly,
       url: "https://www.oreilly.com/",
     },
+    {
+      name: "Wolfram",
+      icon: Wolfram,
+      url: "https://www.wolfram.com/",
+    },
+
     {
       name: "Vectara",
       icon: Vectara,
@@ -207,9 +223,14 @@ export const sponsors = [
       url: "https://syntystudios.com/",
     },
     {
-      name: ".XYZ",
-      icon: XYZ,
-      url: "https://gen.xyz/",
+      name: "InterviewBuddy",
+      icon: InterviewBuddy,
+      url: "https://interviewbuddy.in",
+    },
+    {
+      name: "1Password",
+      icon: OnePassword,
+      url: "https://1password.com/",
     },
     {
       name: "CodeCrafters",
@@ -230,6 +251,21 @@ export const sponsors = [
       name: "AoPS",
       icon: AoPS,
       url: "https://artofproblemsolving.com/",
+    },
+    {
+      name: "Hakko",
+      icon: Hakko,
+      url: "https://www.hakko.com/",
+    },
+    {
+      name: "Warp",
+      icon: Warp,
+      url: "http://warp.dev/",
+    },
+    {
+      name: "Modal",
+      icon: Modal,
+      url: "https://modal.com/",
     },
   ]
 ]
