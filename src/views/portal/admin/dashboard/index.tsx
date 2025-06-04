@@ -22,7 +22,7 @@ const DashboardAdmin = () => {
 
       <div className='h-5' />
 
-      {/* <StatisticsDisplay /> */}
+      <StatisticsDisplay />
     </div>
   )
 }
