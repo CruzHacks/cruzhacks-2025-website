@@ -34,6 +34,7 @@ const Footer: React.FC = () => {
 
         <div className='flex grow flex-col items-center justify-between gap-5 md:flex-row'>
           <div className='flex transition-all'>
+            <p>This group is open to all students consistent with state and federal law, the UC Nondiscrimination Statement and the Nondiscrimination Policy Statement for University of California Publications Regarding Student-Related Matters.</p>
             <p>CRUZHACKS © 2025</p>
           </div>
           <div className='flex justify-end gap-5'>
