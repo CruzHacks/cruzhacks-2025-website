@@ -31,26 +31,28 @@ const Footer: React.FC = () => {
             Participant Agreement
           </a>
         </div>
-
-        <div className='flex grow flex-col items-center justify-between gap-5 md:flex-row'>
-          <div className='flex flex-col items-center gap-2 text-center md:flex-row md:items-start md:text-left md:gap-5'>
-            <p>This group is open to all students consistent with state and federal law, the UC Nondiscrimination Statement and the Nondiscrimination Policy Statement for University of California Publications Regarding Student-Related Matters.</p>
+         <div className='flex w-full flex-col items-center gap-4 md:flex-row md:justify-between'>
+          <p className='max-w-3xl text-center md:text-left'>
+            This group is open to all students consistent with state and federal law, the UC Nondiscrimination Statement and the Nondiscrimination Policy Statement for University of California Publications Regarding Student-Related Matters.
+          </p>
+          <div className='flex flex-col items-center gap-2 md:items-end'>
             <p>CRUZHACKS © 2025</p>
-          </div>
-          <div className='flex justify-end gap-5'>
-            {socials.map(({ name, url, icon }) => (
-              <a
-                key={name}
-                target='_blank'
-                rel='noopener noreferrer'
-                href={url}
-              >
-                <img src={icon} alt={`${name} Icon`} className='h-8 w-auto' />
-              </a>
-            ))}
+            <div className='flex gap-4'>
+              {socials.map(({ name, url, icon }) => (
+                <a
+                  key={name}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  href={url}
+                >
+                  <img src={icon} alt={`${name} Icon`} className='h-6 w-auto' />
+                </a>
+              ))}
+            </div>
           </div>
         </div>
       </div>
+        
     </footer>
   )
 }
