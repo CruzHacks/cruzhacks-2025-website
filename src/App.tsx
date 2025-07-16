@@ -3,7 +3,6 @@ import { Navigate, Outlet, Route, Routes } from "react-router-dom"
 import RoleProtectedRoute from "./components/protectedRoutes/RoleProtectedRoute"
 import PortalRedirectRoute from "./components/protectedRoutes/PortalRedirectRoute"
 import UnauthenticatedRoute from "./components/protectedRoutes/UnauthenticatedRoute"
-import Home from "./views/(static)/home"
 import Login from "./views/Login"
 import Signup from "./views/Signup"
 import NotFound from "./views/NotFound"
@@ -81,11 +80,9 @@ const App: React.FC = () => {
 
       <Routes>
         {/* These routes are accessible to everyone*/}
-        
-        
+
         <Route element={<StaticWrapper />}>
-          <Route path='sponsorship' element = {<SponsorshipPage />} />
-          <Route index element={<Home />} />
+          <Route path='sponsorship' element={<SponsorshipPage />} />
           <Route path='team' element={<Team />} />
           <Route path='support' element={<Outlet />}>
             <Route index element={<Support />} />
@@ -98,7 +95,7 @@ const App: React.FC = () => {
         {/* You cannot be logged in to access these routes*/}
         <Route element={<UnauthenticatedRoute />}>
           <Route path='login' element={<Login />} />
-          <Route path="password-reset" element={<PasswordReset />} />
+          <Route path='password-reset' element={<PasswordReset />} />
           <Route path='organizers-only/signup' element={<Signup />} />
 
           {/* comment this and change route in /home/2-Applications/ To Open applications */}

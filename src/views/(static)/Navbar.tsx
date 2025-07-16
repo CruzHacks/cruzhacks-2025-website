@@ -10,7 +10,7 @@ import {
   InformationCircleIcon,
   MapIcon,
   QuestionMarkCircleIcon,
-  ArrowRightOnRectangleIcon
+  ArrowRightOnRectangleIcon,
 } from "@heroicons/react/24/outline"
 // import { Popover, Transition } from "@headlessui/react"
 
@@ -57,16 +57,8 @@ const Navbar = () => {
 
   return (
     <>
-      <div className='fixed z-[300] flex w-screen justify-center bg-[#0000]/20'>
-        <div className='relative flex h-6 w-screen items-center justify-center px-6 py-8 pt-10 font-subtext md:text-xl lg:px-10 lg:justify-center'>
-          <Link to='/#landing' className='left-10 lg:absolute'>
-            <img
-              className='hidden h-8 w-auto md:block lg:ml-48'
-              src={CruzHacksLogo}
-              alt='CruzHacks logo'
-            />
-          </Link>
-
+      <div className='fixed z-[300] flex w-screen justify-center'>
+        <div className='relative flex h-6 w-screen items-center justify-center px-6 py-8 pt-10 font-subtext md:text-xl lg:justify-center lg:px-10'>
           {/* links to all navbar pages */}
           {/* <div className="w-full mx-64 bg-orange flex justify-end">
             BEANS
@@ -81,12 +73,6 @@ const Navbar = () => {
               </div>
             </Link>
           </div> */}
-          <Link
-            to='/support'
-            className='font-subtext text-xs leading-6 hover:text-yellow-red md:text-lg'
-          >
-            Event Logistics
-          </Link>
           {/* <div className='flex grow items-center justify-evenly font-light uppercase md:grow-0 md:gap-10 lg:gap-16'>
             {navigation.map(item => (
               <div key={item.name}>
@@ -166,36 +152,19 @@ const Navbar = () => {
           <a
             id='mlh-trust-badge'
             className={classNames(
-              isAuthenticated ? "right-24" : "right-[12.3rem]",
+              isAuthenticated ? "right-24" : "right-[4em]",
               "absolute top-0 hidden w-20 md:block"
             )}
-            href='https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2025-season&utm_content=red'
+            href='https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2026-season&utm_content=blue'
             target='_blank'
             rel='noreferrer'
           >
             <img
-              src='https://s3.amazonaws.com/logged-assets/trust-badge/2025/mlh-trust-badge-2025-blue.svg'
-              alt='Major League Hacking 2025 Hackathon Season'
+              src='https://s3.amazonaws.com/logged-assets/trust-badge/2026/mlh-trust-badge-2026-blue.svg'
+              alt='Major League Hacking 2026 Hackathon Season'
               className='w-full'
             />
           </a>
-
-          <div className='right-10 lg:absolute'>
-            {!isAuthenticated ? (
-              <Link
-                to='/login'
-                className='md:text-blue-white z-10 flex items-center justify-center gap-2 rounded-full px-6 py-3 font-subtext text-sm text-off_white shadow-lg md:bg-sponsor_light_orange/30 md:text-off_white'
-              >
-                <span className='hidden md:block'><b>LOGIN</b></span>
-              </Link>
-            ) : (
-              <AvatarButton
-                nav={[{ name: "Portal", href: "/portal" }]}
-                email={user?.email || ""}
-                direction='down'
-              />
-            )}
-          </div>
         </div>
       </div>
 
