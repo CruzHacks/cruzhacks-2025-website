@@ -7,16 +7,17 @@ import Shell2017 from "../../../../assets/PageDividers/shell-2017.svg"
 import Shell2018 from "../../../../assets/PageDividers/shell-2018.svg"
 import Shell2021 from "../../../../assets/PageDividers/shell-2021.svg"
 import Shell2025 from "../../../../assets/PageDividers/shell-2025.svg"
+import Shell2026 from "../../../../assets/PageDividers/shell-2026.svg"
 import Stat1 from "../../../../assets/PageDividers/stat-1.svg"
 import Stat2 from "../../../../assets/PageDividers/stat-2.svg"
 import Stat3 from "../../../../assets/PageDividers/stat-3.svg"
 import Stat4 from "../../../../assets/PageDividers/stat-4.svg"
 import Stat5 from "../../../../assets/PageDividers/stat-5.svg"
 import Waves from "../../../../assets/PageDividers/waves.svg"
-import winner1 from "../../../../assets/2024winners/1hydrosense.png"
-import winner2 from "../../../../assets/2024winners/2bananabulletin.png"
-import winner3 from "../../../../assets/2024winners/3jobstr.png"
-import winner4 from "../../../../assets/2024winners/4slughug.png"
+import winner1 from "../../../../assets/2025winners/SatChat.png"
+import winner2 from "../../../../assets/2025winners/Mirror.png"
+import winner3 from "../../../../assets/2025winners/Minesweep.png"
+import winner4 from "../../../../assets/2025winners/ShopShadow.png"
 
 const Beach: React.FC = () => {
   return (
@@ -69,6 +70,10 @@ const Beach: React.FC = () => {
           </div>
           <div className='w-36 text-center md:w-52'>
             <img src={Shell2025} alt='2025' className='mx-auto' />
+          </div>
+          <div></div>
+          <div className='w-36 text-center md:w-52'>
+            <img src={Shell2026} alt='2026' className='mx-auto' />
           </div>
         </div>
       </div>
@@ -132,6 +137,7 @@ const Beach: React.FC = () => {
           <div className='mx-auto w-40 bg-sponsor_light_orange p-3 text-center md:w-64'>
             <a href='https://devpost.com/software/satchat'>
               <img
+                src={winner1}
                 alt="SatChat - Health Hacks Winner '25"
                 className='mx-auto'
               />
@@ -149,6 +155,7 @@ const Beach: React.FC = () => {
           <div className='mx-auto w-40 bg-sponsor_light_orange p-3 text-center md:w-64'>
             <a href='https://devpost.com/software/mirror-yo9mcb?_gl=1*1gahrs0*_gcl_au*NTMzMzYyMzI3LjE3NTIwMDQ0MTA.*_ga*OTI2MDMxMzM4LjE3NTIwMDQ0MTA.*_ga_0YHJK3Y10M*czE3NTI2NTk5MTIkbzIkZzEkdDE3NTI2NjAzNTMkajU3JGwwJGgwn'>
               <img
+                src={winner2}
                 alt="Mirror - President's Pick Winner '25"
                 className='mx-auto'
               />
@@ -165,39 +172,39 @@ const Beach: React.FC = () => {
           </div>
 
           <div className='mx-auto w-40 bg-sponsor_light_orange p-3 text-center md:w-64'>
-            <a href='https://devpost.com/software/jobstr'>
+            <a href='https://devpost.com/software/minesweep?_gl=1*c7kaa3*_gcl_au*NTMzMzYyMzI3LjE3NTIwMDQ0MTA.*_ga*OTI2MDMxMzM4LjE3NTIwMDQ0MTA.*_ga_0YHJK3Y10M*czE3NTI2NTk5MTIkbzIkZzEkdDE3NTI2NjA2NjkkajYwJGwwJGgw'>
               <img
                 src={winner3}
-                alt='37% Non-UCSC Hackers'
+                alt="Minesweep - Most Ambitious Winner '25"
                 className='mx-auto'
               />
               <p className='mt-5 text-base text-dark_orange hover:text-deep_orange md:text-2xl'>
-                <b>Jobstr</b>
+                <b>Minesweep</b>
               </p>
             </a>
-            <p className='mb-4 text-deep_orange'>Sponsor Prize - Vectara</p>
+            <p className='mb-4 text-deep_orange'>Most Ambitious</p>
             <p className='text-[#FFFFFF] lg:text-xl'>
-              An interactive job search platform with AI chatbot that is
-              programmed with knowledge of professionals in the field
+              An navigation system used to promote safe mobility and prevent
+              activity in areas with reported explosion cases.
             </p>
           </div>
 
           <div className='mx-auto w-40 bg-sponsor_light_orange p-3 text-center md:w-64'>
-            <a href='https://devpost.com/software/slughug'>
+            <a href='https://devpost.com/software/shopshadow?_gl=1*yu7v5h*_gcl_au*NTMzMzYyMzI3LjE3NTIwMDQ0MTA.*_ga*OTI2MDMxMzM4LjE3NTIwMDQ0MTA.*_ga_0YHJK3Y10M*czE3NTI3MTg5NTUkbzMkZzEkdDE3NTI3MTkxODEkajMyJGwwJGgw'>
               <img
                 src={winner4}
-                alt='40% First-Time Hackers'
+                alt="ShopShadow - Best AI Hack '25"
                 className='mx-auto'
               />
               <p className='mt-5 text-base text-dark_orange hover:text-deep_orange md:text-2xl'>
-                <b>SlugHug</b>
+                <b>ShopShadow</b>
               </p>
             </a>
 
-            <p className='mb-4 text-deep_orange'>Sponsor Prize - Axure</p>
+            <p className='mb-4 text-deep_orange'>Best AI Hack</p>
             <p className='text-[#FFFFFF] lg:text-xl'>
-              A journaling platform where users share thoughts anonymously,
-              receive emphathetic responses, and create meaningful connections
+              An AI powered smart shopping cart that scans items and bills them
+              directly.
             </p>
           </div>
         </div>
