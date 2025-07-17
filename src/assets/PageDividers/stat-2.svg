@@ -3,24 +3,25 @@
   <defs>
     <style>
       .cls-1 {
-        letter-spacing: 0em;
+        isolation: isolate;
       }
 
       .cls-2 {
         fill: #fff;
-        font-family: MadimiOne-Regular, 'Madimi One';
-        font-size: 60px;
       }
 
       .cls-3 {
         fill: #f9b047;
       }
-
-      .cls-4 {
-        letter-spacing: -.05em;
-      }
     </style>
   </defs>
   <circle class="cls-3" cx="120" cy="120" r="120"/>
-  <text class="cls-2" transform="translate(86.01 136.2)"><tspan class="cls-4" x="0" y="0">7</tspan><tspan class="cls-1" x="31.62" y="0">0</tspan></text>
+  <g class="cls-1">
+    <g class="cls-1">
+      <path class="cls-2" d="M94.89,130.56l10.8-25.68c.54-1.32,2.04-4.86,2.04-4.86-.96,1.14-2.46,1.86-3.84,1.86h-11.46c-2.94,0-4.62-1.5-4.62-4.2s1.62-4.14,4.62-4.14h21.06c3.54,0,5.4,2.04,4.32,4.68l-14.16,33.78c-.6,1.44-1.44,4.68-4.32,4.68s-6.24-1.8-4.44-6.12Z"/>
+    </g>
+    <g class="cls-1">
+      <path class="cls-2" d="M120.51,115.14c0-15.66,5.52-21.6,15.3-21.6s15.3,5.94,15.3,21.6-5.64,21.54-15.3,21.54-15.3-5.88-15.3-21.54ZM142.11,115.14c0-11.1-1.92-13.68-6.3-13.68s-6.3,2.58-6.3,13.68,1.92,13.62,6.3,13.62,6.3-2.52,6.3-13.62Z"/>
+    </g>
+  </g>
 </svg>
