@@ -1,147 +1,217 @@
-import React from 'react';
+import React from "react"
 
 // Import SVG assets here, assuming they are saved in an assets folder
-import Shell2013 from '../../../../assets/PageDividers/shell-2013.svg';
-import Shell2014 from '../../../../assets/PageDividers/shell-2014.svg';
-import Shell2017 from '../../../../assets/PageDividers/shell-2017.svg';
-import Shell2018 from '../../../../assets/PageDividers/shell-2018.svg';
-import Shell2021 from '../../../../assets/PageDividers/shell-2021.svg';
-import Shell2025 from '../../../../assets/PageDividers/shell-2025.svg';
-import Stat1 from '../../../../assets/PageDividers/stat-1.svg';
-import Stat2 from '../../../../assets/PageDividers/stat-2.svg';
-import Stat3 from '../../../../assets/PageDividers/stat-3.svg';
-import Stat4 from '../../../../assets/PageDividers/stat-4.svg';
-import Stat5 from '../../../../assets/PageDividers/stat-5.svg';
-import Waves from '../../../../assets/PageDividers/waves.svg';
-import winner1 from '../../../../assets/2024winners/1hydrosense.png'
-import winner2 from '../../../../assets/2024winners/2bananabulletin.png'
-import winner3 from '../../../../assets/2024winners/3jobstr.png'
-import winner4 from '../../../../assets/2024winners/4slughug.png'
-
-
-
+import Shell2013 from "../../../../assets/PageDividers/shell-2013.svg"
+import Shell2014 from "../../../../assets/PageDividers/shell-2014.svg"
+import Shell2017 from "../../../../assets/PageDividers/shell-2017.svg"
+import Shell2018 from "../../../../assets/PageDividers/shell-2018.svg"
+import Shell2021 from "../../../../assets/PageDividers/shell-2021.svg"
+import Shell2025 from "../../../../assets/PageDividers/shell-2025.svg"
+import Shell2026 from "../../../../assets/PageDividers/shell-2026.svg"
+import Stat1 from "../../../../assets/PageDividers/stat-1.svg"
+import Stat2 from "../../../../assets/PageDividers/stat-2.svg"
+import Stat3 from "../../../../assets/PageDividers/stat-3.svg"
+import Stat4 from "../../../../assets/PageDividers/stat-4.svg"
+import Stat5 from "../../../../assets/PageDividers/stat-5.svg"
+import Waves from "../../../../assets/PageDividers/waves.svg"
+import winner1 from "../../../../assets/2025winners/SatChat.png"
+import winner2 from "../../../../assets/2025winners/Mirror.png"
+import winner3 from "../../../../assets/2025winners/Minesweep.png"
+import winner4 from "../../../../assets/2025winners/ShopShadow.png"
 
 const Beach: React.FC = () => {
   return (
-    <div className="relative bg-yellow-gradient text-black font-body">
+    <div className='relative bg-yellow-gradient font-body text-black'>
       {/* Sponsor Us Section */}
-      <div className="text-center mb-8 max-w-5xl mx-auto px-4">
-        <h1 className="text-5xl md:text-7xl font-heading font-bold text-sponsor_dark_orange mb-24">SPONSOR US!</h1>
-        <h2 className="text-3xl md:text-5xl font-heading text-sponsor_light_orange mb-4">OUR MISSION</h2>
-        <p className="text-lg md:text-xl leading-relaxed font-subtext max-w-3xl mx-auto text-sponsor_medium_orange tracking-wide">
-          CruzHacks is a non-profit, student-run annual hackathon at UC Santa Cruz. As one of
-          the largest collegiate hackathons in California, we welcome hundreds of college and high school students
-          every year. Backed with support from Major League Hacking (MLH), this year&apos;s event will take place from
-          <span className="font-bold"> April 11th - 13th</span> at Civic Auditorium Center in Santa Cruz!
+      <div className='mx-auto mb-8 max-w-5xl px-4 text-center'>
+        <h1 className='mb-24 font-heading text-5xl font-bold text-sponsor_dark_orange md:text-7xl'>
+          SPONSOR US!
+        </h1>
+        <h2 className='mb-4 font-heading text-3xl text-sponsor_light_orange md:text-5xl'>
+          OUR MISSION
+        </h2>
+        <p className='mx-auto max-w-3xl font-subtext text-lg leading-relaxed tracking-wide text-sponsor_medium_orange md:text-xl'>
+          CruzHacks is a non-profit, student-run annual hackathon at UC Santa
+          Cruz. As one of the largest collegiate hackathons in California, we
+          welcome hundreds of college and high school students every year.
+          Backed with support from Major League Hacking (MLH), this year&apos;s
+          event will take place from
+          <span className='font-bold'> January 16th - 18th</span> at UC Santa
+          Cruz!
         </p>
-        <p className="text-lg md:text-xl leading-relaxed font-subtext max-w-3xl mx-auto mt-4 text-sponsor_medium_orange tracking-wide">
-          CruzHacks empowers students to explore, collaborate, and create. With a commitment to diversity, equity,
-          and inclusion, we hope to inspire the next generation of innovators who will drive positive change and make a
-          lasting impact.
+        <p className='mx-auto mt-4 max-w-3xl font-subtext text-lg leading-relaxed tracking-wide text-sponsor_medium_orange md:text-xl'>
+          CruzHacks empowers students to explore, collaborate, and create. With
+          a commitment to diversity, equity, and inclusion, we hope to inspire
+          the next generation of innovators who will drive positive change and
+          make a lasting impact.
         </p>
       </div>
 
       {/* History of CruzHacks Section */}
-      <div className="py-10 text-center">
-        <h2 className="text-4xl md:text-5xl font-heading text-sponsor_light_orange mb-4">HISTORY OF CRUZHACKS</h2>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-10 max-w-4xl mx-auto place-items-center">
-          <div className="text-center w-36 md:w-52">
-            <img src={Shell2013} alt="2013" className="mx-auto" />
+      <div className='py-10 text-center'>
+        <h2 className='mb-4 font-heading text-4xl text-sponsor_light_orange md:text-5xl'>
+          HISTORY OF CRUZHACKS
+        </h2>
+        <div className='mx-auto grid max-w-4xl grid-cols-2 place-items-center gap-6 md:grid-cols-3 md:gap-10'>
+          <div className='w-36 text-center md:w-52'>
+            <img src={Shell2013} alt='2013' className='mx-auto' />
           </div>
-          <div className="text-center w-36 md:w-52">
-            <img src={Shell2014} alt="2014" className="mx-auto" />
+          <div className='w-36 text-center md:w-52'>
+            <img src={Shell2014} alt='2014' className='mx-auto' />
           </div>
-          <div className="text-center w-36 md:w-52">
-            <img src={Shell2017} alt="2017" className="mx-auto" />
+          <div className='w-36 text-center md:w-52'>
+            <img src={Shell2017} alt='2017' className='mx-auto' />
           </div>
-          <div className="text-center w-36 md:w-52">
-            <img src={Shell2018} alt="2018" className="mx-auto" />
+          <div className='w-36 text-center md:w-52'>
+            <img src={Shell2018} alt='2018' className='mx-auto' />
           </div>
-          <div className="text-center w-36 md:w-52">
-            <img src={Shell2021} alt="2021" className="mx-auto" />
+          <div className='w-36 text-center md:w-52'>
+            <img src={Shell2021} alt='2021' className='mx-auto' />
           </div>
-          <div className="text-center w-36 md:w-52">
-            <img src={Shell2025} alt="2025" className="mx-auto" />
+          <div className='w-36 text-center md:w-52'>
+            <img src={Shell2025} alt='2025' className='mx-auto' />
+          </div>
+          <div></div>
+          <div className='w-36 text-center md:w-52'>
+            <img src={Shell2026} alt='2026' className='mx-auto' />
           </div>
         </div>
       </div>
 
       {/* CruzHacks 2024 Statistics Section */}
-      <div className="py-10 text-center max-w-5xl mx-auto px-4">
-        <h2 className="text-4xl md:text-5xl font-heading text-sponsor_light_orange mb-10">CRUZHACKS 2024 STATISTICS</h2>
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4 font-subtext font-medium">
-          <div className="text-center w-28 md:w-40 mx-auto">
-            <img src={Stat1} alt="700+ Applications" className="mx-auto" />
-            <p className="text-deep_orange mt-2 text-base md:text-xl">Applications</p>
+      <div className='mx-auto max-w-5xl px-4 py-10 text-center'>
+        <h2 className='mb-10 font-heading text-4xl text-sponsor_light_orange md:text-5xl'>
+          CRUZHACKS 2025 STATISTICS
+        </h2>
+        <div className='grid grid-cols-2 gap-3 font-subtext font-medium sm:grid-cols-3 md:gap-4 lg:grid-cols-5'>
+          <div className='mx-auto w-28 text-center md:w-40'>
+            <img src={Stat1} alt='800+ Applications' className='mx-auto' />
+            <p className='mt-2 text-base text-deep_orange md:text-xl'>
+              Applications
+            </p>
           </div>
-          <div className="text-center w-28 md:w-40 mx-auto">
-            <img src={Stat2} alt="80+ Projects Submitted" className="mx-auto" />
-            <p className="text-deep_orange mt-2 text-base md:text-xl">Projects Submitted</p>
+          <div className='mx-auto w-28 text-center md:w-40'>
+            <img src={Stat2} alt='65+ Projects Submitted' className='mx-auto' />
+            <p className='mt-2 text-base text-deep_orange md:text-xl'>
+              Projects Submitted
+            </p>
           </div>
-          <div className="text-center w-28 md:w-40 mx-auto">
-            <img src={Stat3} alt="37% Non-UCSC Hackers" className="mx-auto" />
-            <p className="text-deep_orange mt-2 text-base md:text-xl">Non-UCSC Hackers</p>
+          <div className='mx-auto w-28 text-center md:w-40'>
+            <img src={Stat3} alt='13% Non-UCSC Hackers' className='mx-auto' />
+            <p className='mt-2 text-base text-deep_orange md:text-xl'>
+              Non-UCSC Hackers
+            </p>
           </div>
-          <div className="text-center w-28 md:w-40 mx-auto">
-            <img src={Stat4} alt="40% First-Time Hackers" className="mx-auto" />
-            <p className="text-deep_orange mt-2 text-base md:text-xl">First-Time Hackers</p>
+          <div className='mx-auto w-28 text-center md:w-40'>
+            <img src={Stat4} alt='67% First-Time Hackers' className='mx-auto' />
+            <p className='mt-2 text-base text-deep_orange md:text-xl'>
+              First-Time Hackers
+            </p>
           </div>
-          <div className="text-center w-28 md:w-40 mx-auto">
-            <img src={Stat5} alt="23% Female/Non-Binary Hackers" className="mx-auto" />
-            <p className="text-deep_orange mt-2 text-base md:text-xl">Female/Non-Binary Hackers</p>
+          <div className='mx-auto w-28 text-center md:w-40'>
+            <img
+              src={Stat5}
+              alt='23% Female/Non-Binary Hackers'
+              className='mx-auto'
+            />
+            <p className='mt-2 text-base text-deep_orange md:text-xl'>
+              Female/Non-Binary Hackers
+            </p>
           </div>
         </div>
       </div>
 
       {/* past projects */}
-      <div className="py-10 text-center max-w-5xl mx-auto px-4">
-        <h2 className="text-4xl md:text-6xl font-heading text-sponsor_dark_orange mb-10">PROJECTS MADE POSSIBLE BY YOU</h2>
-        <a href = "https://cruzhacks-2024.devpost.com/">
-          <h1 className="text-3xl md:text-4xl font-heading text-sponsor_light_orange mb-10 hover:text-medium_orange">DEVPOST - CRUZHACKS2024 WINNERS</h1>
+      <div className='mx-auto max-w-5xl px-4 py-10 text-center'>
+        <h2 className='mb-10 font-heading text-4xl text-sponsor_dark_orange md:text-6xl'>
+          PROJECTS MADE POSSIBLE BY YOU
+        </h2>
+        <a href='https://cruzhacks-2025.devpost.com/'>
+          <h1 className='mb-10 font-heading text-3xl text-sponsor_light_orange hover:text-medium_orange md:text-4xl'>
+            DEVPOST - CRUZHACKS2025 WINNERS
+          </h1>
         </a>
-        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-28 font-subtext font-medium lg:mt-12 lg:-ml-16">
-          <div className="text-center w-40 md:w-64 mx-auto bg-sponsor_light_orange p-3">
-            <a href="https://devpost.com/software/hydrosense-xbnphl">
-              <img src={winner1} alt="700+ Applications" className="mx-auto" />
-              <p className="text-dark_orange mt-5 text-base md:text-2xl hover:text-deep_orange"><b>Hydrosense</b></p>
+
+        {/* POST 1 */}
+        <div className='grid grid-cols-2 gap-3 font-subtext font-medium sm:grid-cols-2 md:gap-28 lg:-ml-16 lg:mt-12 lg:grid-cols-4'>
+          <div className='mx-auto w-40 bg-sponsor_light_orange p-3 text-center md:w-64'>
+            <a href='https://devpost.com/software/satchat'>
+              <img
+                src={winner1}
+                alt="SatChat - Health Hacks Winner '25"
+                className='mx-auto'
+              />
+              <p className='mt-5 text-base text-dark_orange hover:text-deep_orange md:text-2xl'>
+                <b>SatChat</b>
+              </p>
             </a>
-            <p className='text-deep_orange mb-4'>Sustainability Hack</p>
-            <p className='text-[#FFFFFF] lg:text-xl'>A device that monitors water usage that is integrated with an interactive website to assist water budgeting</p>
+            <p className='mb-4 text-deep_orange'>Health Hacks</p>
+            <p className='text-[#FFFFFF] lg:text-xl'>
+              Access AI in dire situations with satellite connection.
+            </p>
           </div>
 
-          <div className="text-center w-40 md:w-64 mx-auto bg-sponsor_light_orange p-3">
-            <a href="https://devpost.com/software/the-banana-bulletin">
-              <img src={winner2} alt="80+ Projects Submitted" className="mx-auto" />
-              <p className="text-dark_orange mt-5 text-base md:text-2xl hover:text-deep_orange"> <b>BananaBulletin</b></p>
+          {/* POST 2 */}
+          <div className='mx-auto w-40 bg-sponsor_light_orange p-3 text-center md:w-64'>
+            <a href='https://devpost.com/software/mirror-yo9mcb?_gl=1*1gahrs0*_gcl_au*NTMzMzYyMzI3LjE3NTIwMDQ0MTA.*_ga*OTI2MDMxMzM4LjE3NTIwMDQ0MTA.*_ga_0YHJK3Y10M*czE3NTI2NTk5MTIkbzIkZzEkdDE3NTI2NjAzNTMkajU3JGwwJGgwn'>
+              <img
+                src={winner2}
+                alt="Mirror - President's Pick Winner '25"
+                className='mx-auto'
+              />
+              <p className='mt-5 text-base text-dark_orange hover:text-deep_orange md:text-2xl'>
+                {" "}
+                <b>Mirror</b>
+              </p>
             </a>
-            <p className='text-deep_orange mb-4'>Justice Hack</p>
-            <p className='text-[#FFFFFF] lg:text-xl'>A chrome extension that suggests news sites of similar topics to diversify our media consumption and perspectives</p>
+            <p className='mb-4 text-deep_orange'>President&apos;s Pick</p>
+            <p className='text-[#FFFFFF] lg:text-xl'>
+              A mobile app which democratizes access to personalized beauty and
+              health advice.
+            </p>
           </div>
 
-          <div className="text-center w-40 md:w-64 mx-auto bg-sponsor_light_orange p-3">
-            <a href = "https://devpost.com/software/jobstr">
-              <img src={winner3} alt="37% Non-UCSC Hackers" className="mx-auto" />
-              <p className="text-dark_orange mt-5 text-base md:text-2xl hover:text-deep_orange"><b>Jobstr</b></p>
+          <div className='mx-auto w-40 bg-sponsor_light_orange p-3 text-center md:w-64'>
+            <a href='https://devpost.com/software/minesweep?_gl=1*c7kaa3*_gcl_au*NTMzMzYyMzI3LjE3NTIwMDQ0MTA.*_ga*OTI2MDMxMzM4LjE3NTIwMDQ0MTA.*_ga_0YHJK3Y10M*czE3NTI2NTk5MTIkbzIkZzEkdDE3NTI2NjA2NjkkajYwJGwwJGgw'>
+              <img
+                src={winner3}
+                alt="Minesweep - Most Ambitious Winner '25"
+                className='mx-auto'
+              />
+              <p className='mt-5 text-base text-dark_orange hover:text-deep_orange md:text-2xl'>
+                <b>Minesweep</b>
+              </p>
             </a>
-            <p className='text-deep_orange mb-4'>Sponsor Prize - Vectara</p>
-            <p className='text-[#FFFFFF] lg:text-xl'>An interactive job search platform with AI chatbot that is programmed with knowledge of professionals in the field</p>
+            <p className='mb-4 text-deep_orange'>Most Ambitious</p>
+            <p className='text-[#FFFFFF] lg:text-xl'>
+              An navigation system used to promote safe mobility and prevent
+              activity in areas with reported explosion cases.
+            </p>
           </div>
 
-
-          <div className="text-center w-40 md:w-64 mx-auto bg-sponsor_light_orange p-3">
-            <a href="https://devpost.com/software/slughug">
-              <img src={winner4} alt="40% First-Time Hackers" className="mx-auto" />
-              <p className="text-dark_orange mt-5 text-base md:text-2xl hover:text-deep_orange"><b>SlugHug</b></p>
+          <div className='mx-auto w-40 bg-sponsor_light_orange p-3 text-center md:w-64'>
+            <a href='https://devpost.com/software/shopshadow?_gl=1*yu7v5h*_gcl_au*NTMzMzYyMzI3LjE3NTIwMDQ0MTA.*_ga*OTI2MDMxMzM4LjE3NTIwMDQ0MTA.*_ga_0YHJK3Y10M*czE3NTI3MTg5NTUkbzMkZzEkdDE3NTI3MTkxODEkajMyJGwwJGgw'>
+              <img
+                src={winner4}
+                alt="ShopShadow - Best AI Hack '25"
+                className='mx-auto'
+              />
+              <p className='mt-5 text-base text-dark_orange hover:text-deep_orange md:text-2xl'>
+                <b>ShopShadow</b>
+              </p>
             </a>
-            
-            <p className='text-deep_orange mb-4'>Sponsor Prize - Axure</p>
-            <p className='text-[#FFFFFF] lg:text-xl'>A journaling platform where users share thoughts anonymously, receive emphathetic responses, and create meaningful connections</p>
+
+            <p className='mb-4 text-deep_orange'>Best AI Hack</p>
+            <p className='text-[#FFFFFF] lg:text-xl'>
+              An AI powered smart shopping cart that scans items and bills them
+              directly.
+            </p>
           </div>
         </div>
       </div>
-      <img src={Waves} alt="Waves illustration" className='w-screen' />
+      <img src={Waves} alt='Waves illustration' className='w-screen' />
     </div>
-  );
-};
+  )
+}
 
-export default Beach;
+export default Beach
