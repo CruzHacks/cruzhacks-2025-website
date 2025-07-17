@@ -97,7 +97,7 @@ const Beach: React.FC = () => {
             </p>
           </div>
           <div className='mx-auto w-28 text-center md:w-40'>
-            <img src={Stat3} alt='37% Non-UCSC Hackers' className='mx-auto' />
+            <img src={Stat3} alt='13% Non-UCSC Hackers' className='mx-auto' />
             <p className='mt-2 text-base text-deep_orange md:text-xl'>
               Non-UCSC Hackers
             </p>
