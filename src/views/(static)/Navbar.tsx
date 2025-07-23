@@ -163,19 +163,20 @@ const Navbar = () => {
           </div> */}
 
           {/* Desktop MLH Trust Badge */}
+
           <a
             id='mlh-trust-badge'
             className={classNames(
               isAuthenticated ? "right-24" : "right-[12.3rem]",
               "absolute top-0 hidden w-20 md:block"
             )}
-            href='https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2025-season&utm_content=red'
+            href='https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2026-season&utm_content=red'
             target='_blank'
             rel='noreferrer'
           >
             <img
-              src='https://s3.amazonaws.com/logged-assets/trust-badge/2025/mlh-trust-badge-2025-blue.svg'
-              alt='Major League Hacking 2025 Hackathon Season'
+              src='https://s3.amazonaws.com/logged-assets/trust-badge/2026/mlh-trust-badge-2026-blue.svg'
+              alt='Major League Hacking 2026 Hackathon Season'
               className='w-full'
             />
           </a>
@@ -203,13 +204,13 @@ const Navbar = () => {
       <a
         id='mlh-trust-badge'
         className='absolute right-5 z-10 block w-20 md:hidden'
-        href='https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2025-season&utm_content=blue'
+        href='https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2026-season&utm_content=blue'
         target='_blank'
         rel='noreferrer'
       >
         <img
-          src='https://s3.amazonaws.com/logged-assets/trust-badge/2025/mlh-trust-badge-2025-blue.svg'
-          alt='Major League Hacking 2025 Hackathon Season'
+          src='https://s3.amazonaws.com/logged-assets/trust-badge/2026/mlh-trust-badge-2026-blue.svg'
+          alt='Major League Hacking 2026 Hackathon Season'
           className='w-full'
         />
       </a>
