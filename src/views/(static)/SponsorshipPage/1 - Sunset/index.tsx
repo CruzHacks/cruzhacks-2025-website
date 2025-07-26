@@ -68,7 +68,7 @@ const Sunset = ({ id }: { id?: string }) => {
               UCSC PREMIERE HACKATHON
             </p>
             <p className='z-10 w-2/3 self-center text-center font-subtext text-[10px] uppercase text-off_white md:w-1/2 md:self-end md:text-right lg:w-full lg:text-xl'>
-              307 Church St, Santa Cruz, CA 95060
+              COMING SOON!
             </p>
           </div>
 

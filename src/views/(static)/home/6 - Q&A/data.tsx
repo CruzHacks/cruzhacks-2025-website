@@ -22,9 +22,8 @@ const faqs = [
       question: "When does the hackathon take place? How long is it?",
       answer: (
         <>
-          CruzHacks 2025 is a 3 day event that starts Saturday night and ends
-          Monday afternoon. This year, it will take place on January 18-20th,
-          2025.
+          CruzHacks 2026 is a 3 day event that starts Saturday night and ends
+          Monday afternoon. The dates for this year will be determined soon!
         </>
       ),
     },
@@ -49,9 +48,9 @@ const faqs = [
       question: "How much does this cost?",
       answer: (
         <>
-          Thanks to our generous sponsors, CruzHacks 2025 is free for our
+          Thanks to our generous sponsors, CruzHacks 2026 is free for our
           student attendees, mentors, judges, and volunteers! We will cover all
-          meals for the entire duration of the event. Note: CruzHacks 2025 may
+          meals for the entire duration of the event. Note: CruzHacks 2026 may
           be unable to cover travel costs.
         </>
       ),
@@ -73,7 +72,7 @@ const faqs = [
           Some essential things to bring include a laptop (with charger), an
           empty bag for swag, a change of clothes if you plan on spending the
           night, and a sleeping bag/blanket if you&apos;re not local to Santa
-          Cruz! We encourage the use of portable chargers at CruzHacks2025 to 
+          Cruz! We encourage the use of portable chargers at CruzHacks 2026 to 
           be mindful of power usage.
         </>
       ),
@@ -82,7 +81,7 @@ const faqs = [
       question: "What rules do I need to follow?",
       answer: (
         <>
-          All CruzHacks 2025 participants will need to follow the{" "}
+          All CruzHacks 2026 participants will need to follow the{" "}
           <a
             target='_blank'
             rel='noreferrer'
@@ -97,7 +96,7 @@ const faqs = [
             href='https://docs.google.com/document/d/e/2PACX-1vRpuRz1HdQNinOPhP45YKZ2byY79aFhZSlbZOwjMuPx7BC4NxL-KWo4Dr1NXrQG-dy66IZMz40yzq8O/pub'
             className='text-blue-imperial'
           >
-            CruzHacks 2025 Participant and Release Agreement
+            CruzHacks 2026 Participant and Release Agreement
           </a>
           , the{" "}
           <a
@@ -106,7 +105,7 @@ const faqs = [
             href='https://github.com/CruzHacks/hackathon-rules/blob/master/Rules.md'
             className='text-blue-imperial'
           >
-            CruzHacks 2025 Rules
+            CruzHacks 2026 Rules
           </a>
           .
         </>
@@ -159,7 +158,7 @@ const faqs = [
       question: "How do I sign up?",
       answer: (
         <>
-          Applications will open November 26th 11:59PM! To stay updated, follow us on Instagram
+          Applications will open soon! To stay updated, follow us on Instagram
           and Twitter @cruzhacks and{" "}
           <a
             target='_blank'
@@ -195,7 +194,7 @@ const faqs = [
       question: "Will CruzHacks be in-person? Where is it located?",
       answer: (
         <>
-          CruzHacks will be in-person this year! It will be located at the Civic Auditorium in Downtown Santa Cruz.
+          CruzHacks will be in-person this year! Location to be determined.
         </>
       ),
     },
@@ -216,7 +215,7 @@ const faqs = [
       question: "Can I become a judge or mentor?",
       answer: (
         <>
-          For CruzHacks 2025, mentors and judges will not be allowed to
+          For CruzHacks 2026, mentors and judges will not be allowed to
           participate as hackers. In addition, judges cannot be a current high
           school or undergraduate college student. Mentors that are in the
           industry/working professionally are preferred, but we will still
