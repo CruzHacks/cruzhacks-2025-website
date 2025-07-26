@@ -17,7 +17,7 @@ const Home = () => {
     <>
       <Landing id='landing' />
  
-      <ApplicationBlurb id='about' />
+      {/*<ApplicationBlurb id='about' /> */}
       <PrizeTracks id='prize-tracks' />
       <MentorJudgeVolunteerBlurb id='about' />
       <HeroBlurb id='about' />

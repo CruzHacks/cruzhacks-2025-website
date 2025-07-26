@@ -23,10 +23,10 @@ const Sponsors = ({ id }: { id?: string }) => {
 
       <div className='relative space-y-10'>
         <h2 className='text-center font-heading text-2xl uppercase md:text-6xl'>
-          thanks to our sponsors!
+          thanks to our 2025 sponsors!
         </h2>
         <h2 className="text-center font-subtext text:xl md:text-2xl">
-          Interested in sponsoring us this year? &nbsp;
+          Interested in sponsoring us next year? &nbsp;
           <Link to="/sponsorship">
             <b>Click Here!</b>
           </Link>

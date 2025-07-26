@@ -81,12 +81,16 @@ const Navbar = () => {
               </div>
             </Link>
           </div> */}
+
+          {/*
           <Link
             to='/support'
             className='font-subtext text-xs leading-6 hover:text-yellow-red md:text-lg'
           >
             Event Logistics
           </Link>
+            */}
+
           {/* <div className='flex grow items-center justify-evenly font-light uppercase md:grow-0 md:gap-10 lg:gap-16'>
             {navigation.map(item => (
               <div key={item.name}>
@@ -180,7 +184,8 @@ const Navbar = () => {
               className='w-full'
             />
           </a>
-
+          
+          {/*
           <div className='right-10 lg:absolute'>
             {!isAuthenticated ? (
               <Link
@@ -197,6 +202,7 @@ const Navbar = () => {
               />
             )}
           </div>
+          */}
         </div>
       </div>
 

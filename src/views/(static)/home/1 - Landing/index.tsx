@@ -57,7 +57,7 @@ const Landing = ({ id }: { id?: string }) => {
               Cruz
             </h1>
             <h1 className='z-10 font-heading text-[20px] uppercase pb-3 md:text-4xl lg:text-[75px] text-off_white lg:pb-7'>
-              2025
+              2026
             </h1>
             
           </div>
@@ -69,8 +69,7 @@ const Landing = ({ id }: { id?: string }) => {
             UCSC PREMIERE HACKATHON
           </p>
           <p className='z-10 w-2/3 self-center text-center font-subtext text-[10px] uppercase md:w-1/2 md:self-end md:text-right lg:w-full lg:text-xl text-off_white'>
-            APRIL 11-13 &nbsp;&nbsp;: &nbsp;&nbsp;<b>
-              <a href="https://maps.app.goo.gl/8n4kSN9dCHqoUToa9">CIVIC AUDITORIUM CENTER</a></b>
+            COMING SOON!
           </p>
         </div>
 
