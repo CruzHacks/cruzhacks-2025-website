@@ -168,7 +168,7 @@ const Navbar = () => {
 
           {/* Desktop MLH Trust Badge */}
 
-          <a
+          {/* <a
             id='mlh-trust-badge'
             className={classNames(
               isAuthenticated ? "right-24" : "right-[12.3rem]",
@@ -184,6 +184,7 @@ const Navbar = () => {
               className='w-full'
             />
           </a>
+          */}
           
           {/*
           <div className='right-10 lg:absolute'>
@@ -206,7 +207,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile MLH Trust Badge */}
+      {/* Mobile MLH Trust Badge 
       <a
         id='mlh-trust-badge'
         className='absolute right-5 z-10 block w-20 md:hidden'
@@ -220,6 +221,7 @@ const Navbar = () => {
           className='w-full'
         />
       </a>
+      */}
     </>
   )
 }

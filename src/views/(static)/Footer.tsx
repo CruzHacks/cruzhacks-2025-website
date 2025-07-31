@@ -36,7 +36,7 @@ const Footer: React.FC = () => {
             This group is open to all students consistent with state and federal law, the UC Nondiscrimination Statement and the Nondiscrimination Policy Statement for University of California Publications Regarding Student-Related Matters.
           </p>
           <div className='flex flex-col items-center gap-2 md:items-end'>
-            <p>CRUZHACKS © 2025</p>
+            <p>CRUZHACKS © 2026</p>
             <div className='flex gap-4'>
               {socials.map(({ name, url, icon }) => (
                 <a
