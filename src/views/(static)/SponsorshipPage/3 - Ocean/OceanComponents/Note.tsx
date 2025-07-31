@@ -10,7 +10,7 @@ const Notes = () => {
       </div>
       <div className='flex justify-center'>
         <Button
-          text='View CruzHacks 2024 Sponsorship Packet'
+          text='View CruzHacks 2026 Sponsorship Packet'
           link='https://drive.google.com/file/d/1Hg2zUFu_5niwyyG9s9wrbefkDoeRunj9/view?usp=sharing'
           type='full'
         />
