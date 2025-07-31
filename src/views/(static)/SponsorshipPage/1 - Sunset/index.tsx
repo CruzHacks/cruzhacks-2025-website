@@ -57,7 +57,7 @@ const Sunset = ({ id }: { id?: string }) => {
                 Cruz
               </h1>
               <h1 className='z-10 pb-3 font-heading text-[20px] uppercase text-off_white md:text-4xl lg:pb-7 lg:text-[75px]'>
-                2025
+                2026
               </h1>
             </div>
 
