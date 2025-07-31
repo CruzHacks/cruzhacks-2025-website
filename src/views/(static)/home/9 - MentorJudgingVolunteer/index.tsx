@@ -25,11 +25,10 @@ const MentorJudgeVolunteerBlurb = ({ id }: { id?: string }) => {
                             <h1 className="font-subtext text-[#FFFFFF] text-lg md:text-2xl"><b>Mentor</b></h1>
                             <p className="text-[#FFFFFF]">Help guide hackers and provide insights on how to approach coding, design, or problem-solving issues. Mentors encourage creativity, and help hackers stay on track to achieving their project goals!</p>
 
-                            <a 
-                                href="https://docs.google.com/forms/d/e/1FAIpQLScH6THyJBAObDLq4eHSpeOXL2I788mbpyE7OYFkpopzXzVwcA/viewform" 
+                            <a  
                                 className="flex justify-center items-center px-6 py-2 border-2 my-4 border-[#FFFFFF] hover:bg-off_white/30">
                                 
-                                <p className="text-[#FFFFFF] text-lg"><b>APPLY</b></p>
+                                <p className="text-[#FFFFFF] text-lg"><b>APPLY SOON!</b></p>
                             </a>
                         </div>
                         <div className='flex flex-col gap-4 bg-[#EF9A87] px-8 py-4 rounded-3xl'>
@@ -37,21 +36,19 @@ const MentorJudgeVolunteerBlurb = ({ id }: { id?: string }) => {
                             <p className="text-[#FFFFFF]">Evaluate teams based on functionality, creativity, and impact, and identify projects that best align with this year&apos;s prize tracks. Judges provide constructive feedback, helping hackers grow and learn</p>
                             
                             <a 
-                                href="https://docs.google.com/forms/d/e/1FAIpQLScH6THyJBAObDLq4eHSpeOXL2I788mbpyE7OYFkpopzXzVwcA/viewform" 
                                 className="flex justify-center items-center px-6 py-2 border-2 my-4 border-[#FFFFFF] hover:bg-off_white/30">
                                 
-                                <p className="text-[#FFFFFF] text-lg"><b>APPLY</b></p>
+                                <p className="text-[#FFFFFF] text-lg"><b>APPLY SOON!</b></p>
                             </a>
                         </div>
                         <div className='flex flex-col gap-4 bg-[#8CB176] px-8 py-4 rounded-3xl'>
                             <h1 className="font-subtext text-[#FFFFFF] text-lg md:text-2xl"><b>Volunteer</b></h1>
                             <p className="text-[#FFFFFF]">Ensures the event runs smoothly by helping with operations, supplies and supporting participants. Help out day-of and setup to ensure hackers have a seemless experience</p>
                             
-                            <a 
-                                href="https://docs.google.com/forms/d/e/1FAIpQLSdesWqrObNNAgVfymbURV5rNWHLPfF52Uwhgfo3h1BR-I-tTA/viewform?usp=sf_link" 
+                            <a  
                                 className="flex justify-center items-center px-6 py-2 border-2 my-4 border-[#FFFFFF] hover:bg-off_white/30">
                                 
-                                <p className="text-[#FFFFFF] text-lg"><b>APPLY</b></p>
+                                <p className="text-[#FFFFFF] text-lg"><b>APPLY SOON!</b></p>
                             </a>
                         </div>
                     </div>
