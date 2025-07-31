@@ -3,6 +3,7 @@ import { specialThanks, sponsors } from "./data"
 import Star from "../../../../components/Star"
 import {Link} from "react-router-dom"
 import ScrollToTop from "../../../../components/scrollControl/ScrollToTop"
+import Notes from "../../SponsorshipPage/3 - Ocean/OceanComponents/Note"
 const maxTierHeight = 10
 const minTierHeight = 8
 
@@ -31,6 +32,7 @@ const Sponsors = ({ id }: { id?: string }) => {
             <b>Click Here!</b>
           </Link>
         </h2>
+        <Notes />
         <div className='flex max-w-4xl flex-col items-center justify-between gap-4 rounded-xl bg-[#A488DA] p-10 ring-2 ring-inset ring-dark_pink/80'>
           {sponsors.map((tier, i) => {
             return (
