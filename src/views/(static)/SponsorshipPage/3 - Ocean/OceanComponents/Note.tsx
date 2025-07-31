@@ -11,7 +11,7 @@ const Notes = () => {
       <div className='flex justify-center'>
         <Button
           text='View CruzHacks 2026 Sponsorship Packet'
-          link='https://drive.google.com/file/d/1Hg2zUFu_5niwyyG9s9wrbefkDoeRunj9/view?usp=sharing'
+          link='https://docs.google.com/presentation/d/1x0X03CSs2gZMYsVk3OqJggVFroZA-Ee5A0iIUuy9YS8/edit?usp=sharing'
           type='full'
         />
       </div>
