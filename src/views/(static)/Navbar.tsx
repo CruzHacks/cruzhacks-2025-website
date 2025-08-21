@@ -168,32 +168,32 @@ const Navbar = () => {
 
           {/* Desktop MLH Trust Badge */}
 
-          {/* <a
+           <a
             id='mlh-trust-badge'
             className={classNames(
-              isAuthenticated ? "right-24" : "right-[12.3rem]",
+              isAuthenticated ? "right-25" : "right-[15rem]",
               "absolute top-0 hidden w-20 md:block"
             )}
-            href='https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2026-season&utm_content=red'
+            href='https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2025-season&utm_content=red'
             target='_blank'
             rel='noreferrer'
           >
             <img
-              src='https://s3.amazonaws.com/logged-assets/trust-badge/2026/mlh-trust-badge-2026-blue.svg'
-              alt='Major League Hacking 2026 Hackathon Season'
+              src='https://s3.amazonaws.com/logged-assets/trust-badge/2025/mlh-trust-badge-2025-blue.svg'
+              alt='Major League Hacking 2025 Hackathon Season'
               className='w-full'
             />
           </a>
-          */}
           
-          {/*
+          
+          
           <div className='right-10 lg:absolute'>
             {!isAuthenticated ? (
               <Link
-                to='/login'
+                to='https://www.cruzhacks.com'
                 className='md:text-blue-white z-10 flex items-center justify-center gap-2 rounded-full px-6 py-3 font-subtext text-sm text-off_white shadow-lg md:bg-sponsor_light_orange/30 md:text-off_white'
               >
-                <span className='hidden md:block'><b>LOGIN</b></span>
+                <span className='hidden md:block'><b>CRUZHACKS 2026</b></span>
               </Link>
             ) : (
               <AvatarButton
@@ -203,7 +203,7 @@ const Navbar = () => {
               />
             )}
           </div>
-          */}
+          
         </div>
       </div>
 

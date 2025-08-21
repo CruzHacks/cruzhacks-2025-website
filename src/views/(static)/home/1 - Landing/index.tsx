@@ -57,7 +57,7 @@ const Landing = ({ id }: { id?: string }) => {
               Cruz
             </h1>
             <h1 className='z-10 font-heading text-[20px] uppercase pb-3 md:text-4xl lg:text-[75px] text-off_white lg:pb-7'>
-              2026
+              2025
             </h1>
             
           </div>
@@ -69,7 +69,7 @@ const Landing = ({ id }: { id?: string }) => {
             UCSC PREMIERE HACKATHON
           </p>
           <p className='z-10 w-2/3 self-center text-center font-subtext text-[10px] uppercase md:w-1/2 md:self-end md:text-right lg:w-full lg:text-xl text-off_white'>
-            COMING SOON!
+            THANKS FOR ATTENDING!
           </p>
         </div>
 
@@ -78,6 +78,13 @@ const Landing = ({ id }: { id?: string }) => {
         </div>
         
       </div>
+
+      <div className="w-full flex flex-col items-center justify-center -mt-4">
+        <Link to="https://cruzhacks-2025.devpost.com/project-gallery" className="flex items-center gap-2 px-6 py-3 rounded-full bg-blue-button hover:bg-blue-button/50 text-white font-bold text-lg shadow-lg transition-colors -mt-80">
+          Check out 2025s Winners!
+        </Link>
+      </div>
+
       </Transition>
       <div className="-mt-36 w-screen">
         <img src= {Sandcastle} alt= "sandcastle" className="w-screen"></img>

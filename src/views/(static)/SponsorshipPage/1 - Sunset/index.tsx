@@ -57,7 +57,7 @@ const Sunset = ({ id }: { id?: string }) => {
                 Cruz
               </h1>
               <h1 className='z-10 pb-3 font-heading text-[20px] uppercase text-off_white md:text-4xl lg:pb-7 lg:text-[75px]'>
-                2026
+                2025
               </h1>
             </div>
 
@@ -68,7 +68,7 @@ const Sunset = ({ id }: { id?: string }) => {
               UCSC PREMIERE HACKATHON
             </p>
             <p className='z-10 w-2/3 self-center text-center font-subtext text-[10px] uppercase text-off_white md:w-1/2 md:self-end md:text-right lg:w-full lg:text-xl'>
-              COMING SOON!
+              SPONSORSHIP PAGE
             </p>
           </div>
 
