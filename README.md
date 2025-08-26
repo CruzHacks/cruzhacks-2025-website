@@ -1,4 +1,4 @@
-#  CruzHacks 2025 Website
+#  CruzHacks 2025 Website (Post Hackathon)
 
 CruzHacks 2025 website built with React, Typescript, Tailwind, and hosted with
 firebase. Website depends on firestore rules, indexes, and functions defined in
@@ -58,6 +58,6 @@ Site Map, Feature List, UI Mockups, Style Guide, etc.
 
 ## Contact
 
-Reach out to 2025 CruzHacks Engineering Director
-Sophie Han regarding any questions about the
+Reach out to 2026 CruzHacks Engineering Director
+Ashwin Prabou regarding any questions about the
 codebase.
