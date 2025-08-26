@@ -186,7 +186,7 @@ const Navbar = () => {
           </a>
           
           
-          
+          {/* 
           <div className='right-10 lg:absolute'>
             {!isAuthenticated ? (
               <Link
@@ -203,6 +203,7 @@ const Navbar = () => {
               />
             )}
           </div>
+          */}
           
         </div>
       </div>
